@@ -129,7 +129,7 @@ function Index() {
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">O que fazemos</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Inteligência de compras aplicada a <span className="italic">resultados tangíveis</span>.
+              Inteligência de compras aplicada a <span className="text-green">resultados tangíveis</span>.
             </h2>
           </div>
           <Link
@@ -172,7 +172,7 @@ function Index() {
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/55">Nosso método</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
-              Diagnóstico, execução e <span className="italic text-white/60">governança</span> — sem teoria solta.
+              Diagnóstico, execução e <span className="text-white/60">governança</span> — sem teoria solta.
             </h2>
             <p className="mt-6 max-w-lg text-pretty text-white/70">
               Cada projeto começa com uma análise profunda do spend e termina com
@@ -208,7 +208,7 @@ function Index() {
         <div className="max-w-3xl">
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">Diferenciais Buy Group</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro compromissos que <span className="italic">alinham</span> nossos interesses aos seus.
+            Quatro compromissos que <span className="text-green">alinham</span> nossos interesses aos seus.
           </h2>
         </div>
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
