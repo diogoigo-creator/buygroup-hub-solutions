@@ -455,7 +455,7 @@ function CursosPage() {
 
       {/* Modal de conteúdo do curso */}
       <Dialog open={!!detail} onOpenChange={(o) => !o && setDetail(null)}>
-        <DialogContent className="max-h-[85vh] overflow-y-auto bg-white text-[#0A1628] sm:max-w-2xl">
+        <DialogContent className="max-h-[85vh] overflow-y-auto bg-white text-navy sm:max-w-2xl">
           {detail && (
             <>
               <DialogHeader>
@@ -467,14 +467,14 @@ function CursosPage() {
                     {detail.level}
                   </span>
                 </div>
-                <DialogTitle className="mt-3 text-left font-serif text-3xl leading-tight text-[#0A1628]">
+                <DialogTitle className="mt-3 text-left font-serif text-3xl leading-tight text-navy">
                   {detail.title}
                 </DialogTitle>
-                <DialogDescription className="text-left text-slate-600">
+                <DialogDescription className="text-left text-muted-foreground">
                   {detail.description}
                 </DialogDescription>
               </DialogHeader>
-              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5">
                   <Clock className="h-4 w-4" /> {detail.hours}
                 </span>
@@ -483,11 +483,11 @@ function CursosPage() {
                 </span>
               </div>
               <div className="mt-4">
-                <h4 className="font-serif text-xl">Conteúdo programático</h4>
+                <h4 className="font-serif text-xl text-navy">Conteúdo programático</h4>
                 <ul className="mt-3 space-y-2">
                   {detail.topics.map((t) => (
-                    <li key={t} className="flex gap-2 text-sm text-slate-700">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#00D68F]" />
+                    <li key={t} className="flex gap-2 text-sm text-navy/85">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -497,7 +497,7 @@ function CursosPage() {
                 <button
                   type="button"
                   onClick={() => openRequest(detail.title)}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-5 py-2.5 text-sm font-semibold text-[#0A1628]"
+                  className="inline-flex items-center gap-2 rounded-full bg-green px-5 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
                 >
                   Solicitar este curso
                 </button>
@@ -506,6 +506,7 @@ function CursosPage() {
           )}
         </DialogContent>
       </Dialog>
+
 
       {/* WhatsApp flutuante */}
       <a
