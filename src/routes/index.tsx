@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
+import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import heroImg from "@/assets/hero-boardroom.jpg";
 import markWhite from "@/assets/buy-group-mark-white.png";
 
