@@ -50,7 +50,7 @@
   --color-navy-soft: var(--navy-soft);
   --color-green: var(--green);
   --color-green-soft: var(--green-soft);
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-serif: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
