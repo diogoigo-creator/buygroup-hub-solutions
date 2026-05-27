@@ -60,7 +60,7 @@ function ServicosPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Serviços"
-        title={<>Soluções end-to-end para a função de <span className="italic">compras</span>.</>}
+        title={<>Soluções end-to-end para a função de <span className="text-green">compras</span>.</>}
         description="Da análise do primeiro real ao saving auditado, passando por capacitação e operação terceirizada — tudo conectado em uma única metodologia."
       />
 
