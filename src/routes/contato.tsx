@@ -29,7 +29,7 @@ function ContatoPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Contato"
-        title={<>Solicite um <span className="italic">diagnóstico gratuito</span>.</>}
+        title={<>Solicite um <span className="text-green">diagnóstico gratuito</span>.</>}
         description="Em até 5 dias úteis entregamos uma estimativa preliminar de saving baseada no perfil da sua empresa."
       />
 
