@@ -103,7 +103,7 @@ function ContatoPage() {
           </div>
           <div className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)]">
             <p className="font-serif text-2xl leading-snug text-navy">
-              "Compre melhor.<br /><span className="italic text-green">Cresça mais.</span>"
+              "Compre melhor.<br /><span className="text-green">Cresça mais.</span>"
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Mais de 200 projetos entregues. 18% de saving médio. Confidencialidade absoluta.
