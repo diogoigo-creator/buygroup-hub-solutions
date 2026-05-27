@@ -34,19 +34,19 @@ export function PageHero({
       {/* Logomarca animada — assinatura visual */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 top-1/2 hidden -translate-y-1/2 lg:block"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-6 lg:translate-x-0"
       >
-        <div className="relative h-[560px] w-[560px]">
+        <div className="relative h-[280px] w-[280px] sm:h-[360px] sm:w-[360px] lg:h-[460px] lg:w-[460px]">
           <span className="absolute inset-0 rounded-full bg-green/15 blur-3xl animate-mark-pulse-ring" />
-          <span className="absolute inset-8 rounded-full border border-green/20 animate-mark-spin-slow" />
+          <span className="absolute inset-6 rounded-full border border-green/20 animate-mark-spin-slow" />
           <span
-            className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow"
+            className="absolute inset-16 rounded-full border border-white/10 animate-mark-spin-slow"
             style={{ animationDirection: "reverse", animationDuration: "55s" }}
           />
           <img
             src={markWhite}
             alt=""
-            className="absolute inset-0 m-auto h-[300px] w-[300px] select-none opacity-[0.16] animate-mark-float"
+            className="absolute inset-0 m-auto h-[55%] w-[55%] select-none opacity-[0.10] animate-mark-float lg:opacity-[0.18]"
           />
         </div>
       </div>
