@@ -1,12 +1,42 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useMemo, useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { Check } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Search,
+  GraduationCap,
+  BarChart3,
+  Handshake,
+  Bot,
+  Store,
+  Leaf,
+  FileCheck2,
+  Cpu,
+  TrendingDown,
+  Clock,
+  Users,
+  Check,
+  CheckCircle2,
+  Lock,
+  MessageCircle,
+  type LucideIcon,
+} from "lucide-react";
 
 export const Route = createFileRoute("/cursos")({
   head: () => ({
     meta: [
       { title: "Cursos in company — Capacitação em procurement | Buy Group" },
-      { name: "description", content: "Programas in company de negociação, strategic sourcing, gestão de contratos e analytics para áreas de compras." },
+      {
+        name: "description",
+        content:
+          "Programas in company de strategic sourcing, negociação, IA aplicada, ESG e gestão de compras. Treinamentos customizados para sua equipe.",
+      },
       { property: "og:title", content: "Cursos in company Buy Group" },
       { property: "og:description", content: "Forme compradores que entregam saving." },
     ],
@@ -14,122 +44,663 @@ export const Route = createFileRoute("/cursos")({
   component: CursosPage,
 });
 
-const courses = [
+type Category = "Compras Estratégicas" | "Negociação" | "IA e Tecnologia" | "Gestão" | "ESG";
+type Level = "Iniciante" | "Intermediário" | "Avançado";
+type BadgeKind = "popular" | "novo" | "tendencia" | "exclusivo";
+
+type Course = {
+  id: string;
+  category: Category;
+  badge?: BadgeKind;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  hours: string;
+  level: Level;
+  topics: string[];
+};
+
+const categoryStyles: Record<Category, { pill: string; iconBg: string; iconColor: string }> = {
+  "Compras Estratégicas": {
+    pill: "bg-teal-100 text-teal-800",
+    iconBg: "bg-teal-500/10",
+    iconColor: "text-teal-600",
+  },
+  Negociação: {
+    pill: "bg-orange-100 text-orange-800",
+    iconBg: "bg-orange-500/10",
+    iconColor: "text-orange-600",
+  },
+  "IA e Tecnologia": {
+    pill: "bg-blue-100 text-blue-800",
+    iconBg: "bg-blue-500/10",
+    iconColor: "text-blue-600",
+  },
+  Gestão: {
+    pill: "bg-purple-100 text-purple-800",
+    iconBg: "bg-purple-500/10",
+    iconColor: "text-purple-600",
+  },
+  ESG: {
+    pill: "bg-green-100 text-green-800",
+    iconBg: "bg-green-500/10",
+    iconColor: "text-green-600",
+  },
+};
+
+const badgeStyles: Record<BadgeKind, { label: string; cls: string }> = {
+  popular: { label: "Mais solicitado", cls: "bg-[#00D68F] text-[#0A1628]" },
+  novo: { label: "Novo", cls: "bg-[#FFB800] text-[#0A1628]" },
+  tendencia: { label: "Tendência", cls: "bg-[#FFB800] text-[#0A1628]" },
+  exclusivo: { label: "Exclusivo", cls: "bg-[#00D68F] text-[#0A1628]" },
+};
+
+const levelStyles: Record<Level, string> = {
+  Iniciante: "border-emerald-300 text-emerald-700 bg-emerald-50",
+  Intermediário: "border-amber-300 text-amber-700 bg-amber-50",
+  Avançado: "border-rose-300 text-rose-700 bg-rose-50",
+};
+
+const courses: Course[] = [
   {
-    code: "N-01",
-    title: "Negociação aplicada a compras",
-    duration: "16h",
-    level: "Comprador / Sr.",
-    summary: "Frameworks de negociação adaptados ao dia a dia de procurement: BATNA, ZOPA, planos de concessão e gestão de objeções.",
-    topics: ["Preparação estruturada", "Negociação distributiva e integrativa", "Negociação com fornecedor único", "Role-plays gravados com feedback"],
+    id: "strategic-sourcing",
+    category: "Compras Estratégicas",
+    badge: "popular",
+    icon: Search,
+    title: "Strategic Sourcing e Spend Analysis",
+    description:
+      "Processo completo de sourcing estratégico integrado à análise de gastos: Matriz de Kraljic, TCO, RFQ/RFP, dashboards de spend intelligence e identificação de oportunidades de redução de custos.",
+    hours: "16h a 32h",
+    level: "Intermediário",
+    topics: [
+      "Spend analysis: coleta, limpeza e categorização de dados de gastos",
+      "Dashboards de spend intelligence (Excel / Power BI)",
+      "Segmentação de categorias e Matriz de Kraljic",
+      "TCO — Custo Total de Propriedade",
+      "Processo de RFI, RFQ e RFP",
+      "Avaliação e seleção de fornecedores",
+      "Negociação baseada em dados",
+      "KPIs e monitoramento de resultados",
+    ],
   },
   {
-    code: "S-02",
-    title: "Strategic sourcing por categoria",
-    duration: "24h",
-    level: "Comprador / Coord.",
-    summary: "Metodologia de 7 passos para construir estratégias de categoria que entregam saving sustentável.",
-    topics: ["Mapa de mercado e supply", "Modelos de custo (should-cost)", "Estratégia por matriz de Kraljic", "RFI/RFP de alto impacto"],
+    id: "gestao-compras-pratica",
+    category: "Compras Estratégicas",
+    icon: GraduationCap,
+    title: "Gestão de Compras na Prática",
+    description:
+      "Formação completa para equipes que estão iniciando ou consolidando a área de compras: ciclo P2P, cotação, equalização de propostas e relacionamento com fornecedores.",
+    hours: "8h a 20h",
+    level: "Iniciante",
+    topics: [
+      "O papel estratégico de compras na empresa",
+      "Ciclo completo de compras — P2P",
+      "Tipos de compras: diretas, indiretas e serviços",
+      "Processo de cotação e equalização de propostas",
+      "Relacionamento com fornecedores",
+      "Indicadores de desempenho em compras",
+      "Ferramentas e sistemas: ERP e e-procurement",
+    ],
   },
   {
-    code: "C-03",
-    title: "Gestão de contratos e fornecedores",
-    duration: "12h",
-    level: "Comprador / Jurídico",
-    summary: "Como redigir, monitorar e revisar contratos que protegem margem e mitigam riscos operacionais.",
-    topics: ["Cláusulas críticas", "SLA, reajuste e penalidades", "SRM e avaliação periódica", "Encerramento e renovação"],
+    id: "procurement-estrategico-gestores",
+    category: "Gestão",
+    icon: BarChart3,
+    title: "Procurement Estratégico para Gestores",
+    description:
+      "Para líderes de compras que querem elevar a função ao nível estratégico: BSC, KPIs, operating model, governança e geração de valor para o negócio.",
+    hours: "12h a 28h",
+    level: "Avançado",
+    topics: [
+      "Procurement como função estratégica do negócio",
+      "Balanced Scorecard aplicado a compras",
+      "Desenho do operating model de procurement",
+      "Gestão de times e desenvolvimento de equipes",
+      "Governança, compliance e políticas de compras",
+      "Projeto aplicado: plano estratégico da área",
+    ],
   },
   {
-    code: "A-04",
-    title: "Procurement analytics e KPIs",
-    duration: "12h",
-    level: "Analista / Coord.",
-    summary: "Indicadores que medem o que importa: saving, compliance, lead time, qualidade de fornecedor e produtividade.",
-    topics: ["Spend cube e classificação", "Painéis em Power BI", "Cálculo de saving (TCO)", "Storytelling com dados"],
+    id: "negociacao-avancada",
+    category: "Negociação",
+    badge: "popular",
+    icon: Handshake,
+    title: "Negociação Avançada com Fornecedores",
+    description:
+      "Técnicas práticas de negociação para compradores: planejamento, BATNA, ancoragem, táticas e contra-táticas — com simulações baseadas em situações reais do mercado.",
+    hours: "8h a 16h",
+    level: "Intermediário",
+    topics: [
+      "Fundamentos e psicologia da negociação",
+      "Planejamento e preparação da negociação",
+      "BATNA, ZOPA e poder de barganha",
+      "Táticas e contra-táticas",
+      "Negociação por categorias: commodities, serviços e tecnologia",
+      "Simulações práticas com feedback",
+    ],
   },
   {
-    code: "L-05",
-    title: "Liderança em procurement",
-    duration: "16h",
-    level: "Coord. / Gerente",
-    summary: "Para quem precisa estruturar times, governança e influência junto às áreas demandantes.",
-    topics: ["Operating model de compras", "Stakeholder management", "OKRs e gestão de performance", "Transformação digital"],
+    id: "ia-supply-chain",
+    category: "IA e Tecnologia",
+    badge: "novo",
+    icon: Bot,
+    title: "IA Aplicada ao Supply Chain",
+    description:
+      "Como usar Inteligência Artificial para prever demanda, analisar riscos de fornecedores, automatizar procurement e criar dashboards inteligentes — sem necessidade de programação.",
+    hours: "16h a 40h",
+    level: "Intermediário",
+    topics: [
+      "Fundamentos de IA aplicados a supply chain",
+      "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA",
+      "Previsão de demanda na prática",
+      "Gestão de fornecedores com analytics",
+      "Automação de processos de compras",
+      "Spend analytics e dashboards inteligentes",
+      "Gestão de riscos com IA",
+      "Projeto prático aplicado à realidade da empresa",
+    ],
+  },
+  {
+    id: "gestao-fornecedores",
+    category: "Compras Estratégicas",
+    icon: Store,
+    title: "Gestão e Desenvolvimento de Fornecedores",
+    description:
+      "Como estruturar, segmentar, avaliar e desenvolver a base de fornecedores para garantir qualidade, continuidade de fornecimento e vantagem competitiva nas compras.",
+    hours: "8h a 18h",
+    level: "Intermediário",
+    topics: [
+      "Segmentação e classificação de fornecedores",
+      "Homologação e qualificação de novos fornecedores",
+      "Scorecard de avaliação de desempenho",
+      "Planos de desenvolvimento e melhoria contínua",
+      "Gestão de risco na base fornecedora",
+      "Relacionamentos estratégicos e parcerias",
+    ],
+  },
+  {
+    id: "esg-compras",
+    category: "ESG",
+    badge: "tendencia",
+    icon: Leaf,
+    title: "ESG Aplicado a Compras e Supply Chain",
+    description:
+      "Como implementar critérios ambientais, sociais e de governança nas decisões de compra, atender exigências regulatórias e criar valor sustentável na cadeia de suprimentos.",
+    hours: "8h a 14h",
+    level: "Intermediário",
+    topics: [
+      "Fundamentos de ESG e impacto direto em compras",
+      "Regulamentações e exigências do mercado brasileiro",
+      "Critérios ESG na seleção e avaliação de fornecedores",
+      "Rastreabilidade e transparência na cadeia",
+      "Métricas e relatórios de sustentabilidade em procurement",
+    ],
+  },
+  {
+    id: "gestao-contratos",
+    category: "Gestão",
+    icon: FileCheck2,
+    title: "Gestão de Contratos para Compradores",
+    description:
+      "Elaboração, análise e gestão de contratos comerciais com fornecedores: cláusulas críticas, SLAs, reajustes, penalidades e encerramento de contratos.",
+    hours: "8h a 16h",
+    level: "Intermediário",
+    topics: [
+      "Estrutura e elementos do contrato comercial",
+      "Cláusulas críticas para o comprador",
+      "Definição e monitoramento de SLAs",
+      "Reajustes, índices contratuais e gatilhos",
+      "Gestão de inadimplência e penalidades",
+      "Encerramento e renovação de contratos",
+    ],
+  },
+  {
+    id: "supply-chain-4",
+    category: "IA e Tecnologia",
+    icon: Cpu,
+    title: "Supply Chain 4.0 — Tecnologia e Inovação",
+    description:
+      "Como aplicar os conceitos da Indústria 4.0 na cadeia de suprimentos: automação, IoT, big data, blockchain e as tecnologias que estão transformando compras e logística.",
+    hours: "12h a 22h",
+    level: "Intermediário",
+    topics: [
+      "Indústria 4.0 e impacto no supply chain",
+      "Automação de processos em compras e logística",
+      "IoT aplicado à cadeia de suprimentos",
+      "Big data e analytics em supply chain",
+      "Blockchain para rastreabilidade",
+      "Roadmap de transformação digital em compras",
+    ],
+  },
+  {
+    id: "custos-indiretos",
+    category: "Compras Estratégicas",
+    badge: "exclusivo",
+    icon: TrendingDown,
+    title: "Redução de Custos Indiretos na Prática",
+    description:
+      "Metodologia completa para identificar e executar projetos de redução em despesas indiretas: energia, telecom, TI, facilities, logística e serviços — com ou sem troca de fornecedor.",
+    hours: "12h a 24h",
+    level: "Intermediário",
+    topics: [
+      "Mapeamento e classificação de custos indiretos",
+      "Diagnóstico de oportunidades por categoria",
+      "Benchmarking de preços e mercado fornecedor",
+      "Estratégias de redução sem troca de fornecedor",
+      "Negociação orientada a dados para custos indiretos",
+      "Implementação e monitoramento de ganhos",
+      "Apresentação de resultados para a liderança",
+    ],
   },
 ];
 
-const includes = [
-  "Conteúdo customizado para a realidade da sua empresa",
-  "Cases reais do seu setor e do seu spend",
-  "Material didático impresso e digital",
-  "Certificado individual de participação",
-  "Sessão de follow-up 30 dias após a turma",
-];
+const filters = ["Todos", "Compras Estratégicas", "Negociação", "IA e Tecnologia", "Gestão", "ESG"] as const;
+type Filter = (typeof filters)[number];
+
+const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
 function CursosPage() {
+  const [filter, setFilter] = useState<Filter>("Todos");
+  const [detail, setDetail] = useState<Course | null>(null);
+  const [requestCourse, setRequestCourse] = useState<string>("");
+
+  const visible = useMemo(
+    () => (filter === "Todos" ? courses : courses.filter((c) => c.category === filter)),
+    [filter],
+  );
+
+  function openRequest(courseTitle: string) {
+    setRequestCourse(courseTitle);
+    setDetail(null);
+    setTimeout(() => {
+      document.getElementById("solicitar")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+
   return (
     <SiteLayout>
       <PageHero
         eyebrow="Cursos in company"
         title={<>Forme compradores que entregam <span className="italic">saving</span>.</>}
-        description="Programas de capacitação 100% customizados, conduzidos na sua empresa, com instrutores que operam projetos de procurement todos os dias."
+        description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
-          <div className="space-y-6">
-            {courses.map((c) => (
-              <article key={c.code} className="rounded-2xl border border-border bg-card p-8">
-                <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-border/60 pb-5">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-serif text-2xl text-primary">{c.code}</span>
-                    <h2 className="font-serif text-2xl md:text-3xl">{c.title}</h2>
+      {/* Catálogo de cursos — fundo branco */}
+      <section className="bg-white text-[#0A1628]">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+          <div className="max-w-3xl">
+            <h2 className="font-serif text-4xl md:text-5xl text-[#0A1628]">
+              Cursos disponíveis para sua equipe
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Todos os cursos são adaptados à realidade, setor e nível de maturidade da sua equipe.
+            </p>
+          </div>
+
+          {/* Filtros */}
+          <div className="mt-10 flex flex-wrap gap-2">
+            {filters.map((f) => {
+              const active = filter === f;
+              return (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setFilter(f)}
+                  className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                    active
+                      ? "border-[#0A1628] bg-[#0A1628] text-white"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-400"
+                  }`}
+                >
+                  {f}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Grid */}
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visible.map((c) => {
+              const s = categoryStyles[c.category];
+              const Icon = c.icon;
+              return (
+                <article
+                  key={c.id}
+                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors duration-300 hover:border-[rgba(0,214,143,0.4)] animate-fade-in"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}>
+                      {c.category}
+                    </span>
+                    {c.badge && (
+                      <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeStyles[c.badge].cls}`}>
+                        {badgeStyles[c.badge].label}
+                      </span>
+                    )}
                   </div>
-                  <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    <span>{c.duration}</span>
-                    <span aria-hidden>·</span>
-                    <span>{c.level}</span>
+
+                  <div className={`mt-5 flex h-10 w-10 items-center justify-center rounded-xl ${s.iconBg}`}>
+                    <Icon className={`h-5 w-5 ${s.iconColor}`} />
                   </div>
+
+                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#0A1628]">{c.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-slate-600">{c.description}</p>
+
+                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-600">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5" /> {c.hours}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Users className="h-3.5 w-3.5" /> A partir de 8 participantes
+                    </span>
+                  </div>
+
+                  <div className="mt-4">
+                    <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[c.level]}`}>
+                      {c.level}
+                    </span>
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                    <button
+                      type="button"
+                      onClick={() => setDetail(c)}
+                      className="text-sm font-medium text-slate-700 underline-offset-4 hover:underline"
+                    >
+                      Ver conteúdo
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => openRequest(c.title)}
+                      className="ml-auto inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-4 py-2 text-sm font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+                    >
+                      Solicitar este curso
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Banner CTA */}
+      <section className="bg-[#00D68F] text-[#0A1628]">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+          <div>
+            <h3 className="font-serif text-3xl md:text-4xl">
+              Não tem certeza de qual curso sua equipe precisa?
+            </h3>
+            <p className="mt-2 max-w-2xl text-base">
+              Oferecemos um diagnóstico gratuito para identificar as principais lacunas e recomendar o treinamento ideal.
+            </p>
+          </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0A1628] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            Quero um diagnóstico gratuito
+          </a>
+        </div>
+      </section>
+
+      {/* Formulário de solicitação */}
+      <RequestSection
+        initialCourse={requestCourse}
+        onCourseChange={setRequestCourse}
+      />
+
+      {/* Modal de conteúdo do curso */}
+      <Dialog open={!!detail} onOpenChange={(o) => !o && setDetail(null)}>
+        <DialogContent className="max-h-[85vh] overflow-y-auto bg-white text-[#0A1628] sm:max-w-2xl">
+          {detail && (
+            <>
+              <DialogHeader>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${categoryStyles[detail.category].pill}`}>
+                    {detail.category}
+                  </span>
+                  <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[detail.level]}`}>
+                    {detail.level}
+                  </span>
                 </div>
-                <p className="mt-5 text-pretty text-muted-foreground">{c.summary}</p>
-                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
-                  {c.topics.map((t) => (
-                    <li key={t} className="flex gap-2 text-sm text-foreground/85">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      {t}
+                <DialogTitle className="mt-3 text-left font-serif text-3xl leading-tight text-[#0A1628]">
+                  {detail.title}
+                </DialogTitle>
+                <DialogDescription className="text-left text-slate-600">
+                  {detail.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" /> {detail.hours}
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Users className="h-4 w-4" /> A partir de 8 participantes
+                </span>
+              </div>
+              <div className="mt-4">
+                <h4 className="font-serif text-xl">Conteúdo programático</h4>
+                <ul className="mt-3 space-y-2">
+                  {detail.topics.map((t) => (
+                    <li key={t} className="flex gap-2 text-sm text-slate-700">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#00D68F]" />
+                      <span>{t}</span>
                     </li>
                   ))}
                 </ul>
-              </article>
-            ))}
-          </div>
+              </div>
+              <div className="mt-6 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => openRequest(detail.title)}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-5 py-2.5 text-sm font-semibold text-[#0A1628]"
+                >
+                  Solicitar este curso
+                </button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
-          <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-2xl border border-border bg-charcoal-soft p-8">
-              <h3 className="font-serif text-2xl">O que está incluído</h3>
-              <ul className="mt-5 space-y-3 text-sm">
-                {includes.map((i) => (
-                  <li key={i} className="flex gap-2 text-foreground/90">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-primary/40 bg-primary/10 p-8">
-              <p className="font-serif text-2xl">Quer uma proposta?</p>
-              <p className="mt-2 text-sm text-foreground/90">
-                Em até 3 dias úteis enviamos ementa, agenda e investimento para a sua turma.
-              </p>
-              <Link
-                to="/contato"
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
-              >
-                Solicitar proposta
-              </Link>
-            </div>
-          </aside>
-        </div>
-      </section>
+      {/* WhatsApp flutuante */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
     </SiteLayout>
+  );
+}
+
+/* ---------------- Formulário de solicitação ---------------- */
+
+function RequestSection({
+  initialCourse,
+  onCourseChange,
+}: {
+  initialCourse: string;
+  onCourseChange: (v: string) => void;
+}) {
+  const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const courseOptions = [...courses.map((c) => c.title), "Mais de um curso / Programa completo"];
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const required = ["nome", "empresa", "cargo", "email", "telefone"];
+    const next: Record<string, string> = {};
+    for (const k of required) {
+      const v = (fd.get(k) as string | null)?.trim();
+      if (!v) next[k] = "Campo obrigatório.";
+    }
+    const email = (fd.get("email") as string | null)?.trim() ?? "";
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "E-mail inválido.";
+    setErrors(next);
+    if (Object.keys(next).length === 0) setSent(true);
+  }
+
+  return (
+    <section id="solicitar" className="bg-[#0A1628] text-white">
+      <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="text-center">
+          <h2 className="font-serif text-4xl md:text-5xl">Solicite um treinamento para sua equipe</h2>
+          <p className="mt-4 text-base text-slate-300">
+            Preencha o formulário e entraremos em contato em até 4 horas úteis com uma proposta personalizada.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-[640px]">
+          {sent ? (
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-[#00D68F]/40 bg-[#00D68F]/10 p-10 text-center">
+              <CheckCircle2 className="h-12 w-12 text-[#00D68F]" />
+              <h3 className="font-serif text-2xl">Solicitação recebida!</h3>
+              <p className="text-slate-300">Entraremos em contato em até 4 horas úteis.</p>
+            </div>
+          ) : (
+            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <FormField label="Nome completo" name="nome" required error={errors.nome} />
+              <div className="grid gap-5 md:grid-cols-2">
+                <FormField label="Empresa" name="empresa" required error={errors.empresa} />
+                <FormField label="Cargo" name="cargo" required error={errors.cargo} />
+              </div>
+              <div className="grid gap-5 md:grid-cols-2">
+                <FormField label="E-mail corporativo" name="email" type="email" required error={errors.email} />
+                <FormField label="Telefone / WhatsApp" name="telefone" type="tel" required error={errors.telefone} placeholder="(11) 99999-9999" />
+              </div>
+
+              <FormSelect
+                label="Curso de interesse"
+                name="curso"
+                value={initialCourse || courseOptions[0]}
+                onChange={onCourseChange}
+                options={courseOptions}
+              />
+
+              <FormSelect
+                label="Tamanho da equipe"
+                name="tamanho"
+                defaultValue="8 a 15 pessoas"
+                options={["8 a 15 pessoas", "16 a 30 pessoas", "31 a 50 pessoas", "Mais de 50 pessoas"]}
+              />
+
+              <div>
+                <span className="text-sm text-slate-300">Formato preferido</span>
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {["Presencial", "Online", "Híbrido", "Sem preferência"].map((opt, i) => (
+                    <label
+                      key={opt}
+                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white transition-colors hover:border-[#00D68F]/60 has-[:checked]:border-[#00D68F] has-[:checked]:bg-[#00D68F]/10"
+                    >
+                      <input
+                        type="radio"
+                        name="formato"
+                        value={opt}
+                        defaultChecked={i === 3}
+                        className="accent-[#00D68F]"
+                      />
+                      {opt}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="mensagem" className="text-sm text-slate-300">Mensagem (opcional)</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows={4}
+                  placeholder="Conte-nos sobre os desafios da sua equipe ou objetivos do treinamento"
+                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F]"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full rounded-lg bg-[#00D68F] px-6 py-3.5 text-base font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+              >
+                Enviar solicitação
+              </button>
+
+              <p className="flex items-center justify-center gap-2 text-xs text-slate-400">
+                <Lock className="h-3.5 w-3.5" />
+                Seus dados estão seguros. Não compartilhamos suas informações.
+              </p>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FormField({
+  label, name, type = "text", required, error, placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  error?: string;
+  placeholder?: string;
+}) {
+  return (
+    <div>
+      <label htmlFor={name} className="text-sm text-slate-300">
+        {label} {required && <span className="text-[#00D68F]">*</span>}
+      </label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        aria-invalid={!!error}
+        className={`mt-2 w-full rounded-lg border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F] ${
+          error ? "border-rose-400" : "border-white/10"
+        }`}
+      />
+      {error && <p className="mt-1 text-xs text-rose-400">{error}</p>}
+    </div>
+  );
+}
+
+function FormSelect({
+  label, name, options, value, defaultValue, onChange,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  value?: string;
+  defaultValue?: string;
+  onChange?: (v: string) => void;
+}) {
+  return (
+    <div>
+      <label htmlFor={name} className="text-sm text-slate-300">{label}</label>
+      <select
+        id={name}
+        name={name}
+        value={value}
+        defaultValue={value ? undefined : defaultValue}
+        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[#00D68F]"
+      >
+        {options.map((o) => (
+          <option key={o} value={o} className="bg-[#0A1628] text-white">
+            {o}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
