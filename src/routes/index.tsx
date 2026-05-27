@@ -6,40 +6,40 @@ import heroImg from "@/assets/hero-boardroom.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Redução de custos, outsourcing de compras e cursos in company" },
-      { name: "description", content: "Consultoria especializada em redução de custos empresariais, outsourcing de compras e capacitação in company para áreas de suprimentos." },
-      { property: "og:title", content: "Buy Group — Compre melhor. Cresça mais." },
-      { property: "og:description", content: "Reduzimos custos, operamos suas compras e capacitamos seu time." },
+      { title: "Buy Group — Mais que comprar. É comprar bem." },
+      { name: "description", content: "Buy Group: consultoria de procurement que transforma despesas em margem de lucro com modelo 'No Savings, No Fee'. Auditoria gratuita." },
+      { property: "og:title", content: "Buy Group — Mais que comprar. É comprar bem." },
+      { property: "og:description", content: "Transformamos despesas em lucro com inteligência de compras e modelo sem risco financeiro." },
     ],
   }),
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
+const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20uma%20auditoria%20gratuita%20de%20custos";
 
 const services = [
   {
     icon: TrendingDown,
-    title: "Redução de custos",
-    body: "Diagnóstico de spend, renegociação estratégica e modelos de saving sustentável com remuneração atrelada a resultado.",
+    title: "Redução de custos recorrentes",
+    body: "Otimizamos contratos de energia, telecom, facilities, logística, seguros e terceirizados — sem interromper a operação. Economia típica de 10% a 40%.",
   },
   {
     icon: Users,
     title: "Outsourcing de compras",
-    body: "Operamos sua área de suprimentos como extensão do seu time — governança, processo e tecnologia incluídos.",
+    body: "Terceirização parcial ou total da função de compras com governança, KPIs, SLAs e tecnologia. Estrutura escalável e independente.",
   },
   {
     icon: GraduationCap,
-    title: "Cursos in company",
-    body: "Programas de capacitação desenhados sob medida para compradores, gestores e lideranças de procurement.",
+    title: "Compras spot e projetos de alto valor",
+    body: "Aquisições pontuais de alto impacto — obras corporativas, equipamentos industriais e tecnologia — com TCO, should-cost e RFPs competitivas.",
   },
 ];
 
 const metrics = [
-  { value: "18%", label: "Saving médio sobre o spend endereçável" },
-  { value: "+200", label: "Projetos entregues no Brasil" },
-  { value: "12sem", label: "Tempo médio do primeiro resultado" },
-  { value: "97%", label: "Retenção de clientes recorrentes" },
+  { value: "10–40%", label: "Economia média sobre o spend endereçável" },
+  { value: "R$500k+", label: "Liberados no primeiro ano em caso ilustrativo" },
+  { value: "3h", label: "De dedicação para a auditoria gratuita" },
+  { value: "0", label: "Risco financeiro: No Savings, No Fee" },
 ];
 
 function Index() {
@@ -59,42 +59,43 @@ function Index() {
         <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
-              Consultoria de procurement
+              Consultoria de procurement · Desde a estratégia ao saving auditado
             </div>
             <h1 className="mt-10 text-balance font-serif text-5xl leading-[1.0] text-white md:text-7xl lg:text-[6rem]">
-              Compre melhor.
+              Mais que comprar.
               <br />
-              <span className="italic text-white/55">Cresça mais.</span>
+              <span className="italic text-white/55">É comprar bem.</span>
             </h1>
             <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
-              A Buy Group transforma a área de compras em alavanca real de
-              margem — com redução de custos, terceirização especializada e
-              capacitação executiva.
+              A Buy Group transforma despesas em margem de lucro sustentada.
+              Atuamos com modelo <span className="text-green">No Savings, No Fee</span> —
+              você só paga pelas economias comprovadas e auditadas.
             </p>
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Solicitar diagnóstico gratuito
+                Solicitar auditoria gratuita
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
               <Link
                 to="/servicos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white/70"
               >
-                Conhecer serviços
+                Conhecer nossa metodologia
               </Link>
             </div>
           </div>
           <div className="lg:col-span-4 lg:pt-32">
             <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm">
               <p className="font-serif text-2xl leading-snug text-white">
-                "Quem domina o custo de aquisição, domina a margem."
+                "Transformando despesas em lucro — sem interromper a operação e
+                sem investimento inicial."
               </p>
               <p className="mt-4 text-sm text-white/60">
-                Princípio fundador da Buy Group, aplicado a cada projeto desde
-                indústrias a serviços B2B.
+                Princípio fundador da Buy Group: cada real investido vira
+                investimento inteligente.
               </p>
             </div>
           </div>
@@ -119,7 +120,7 @@ function Index() {
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">O que fazemos</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Três frentes, um único <span className="italic">objetivo</span>: margem.
+              Inteligência de compras aplicada a <span className="italic">resultados tangíveis</span>.
             </h2>
           </div>
           <Link
@@ -176,10 +177,10 @@ function Index() {
           </div>
           <ol className="space-y-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
             {[
-              { n: "01", t: "Diagnóstico do spend", d: "Mapa completo de gastos por categoria, fornecedor e área." },
-              { n: "02", t: "Plano de captura", d: "Iniciativas priorizadas por impacto, complexidade e prazo." },
-              { n: "03", t: "Execução conjunta", d: "Negociação, RFPs, contratos e implantação de governança." },
-              { n: "04", t: "Saving auditado", d: "Reporting mensal com baseline, captura e desvios." },
+              { n: "01", t: "Diagnóstico inicial", d: "Coleta e auditoria de 12 a 24 meses de despesas — baseline auditável e oficial." },
+              { n: "02", t: "Benchmarking inteligente", d: "Comparação com referências de mercado para identificar gaps e oportunidades." },
+              { n: "03", t: "Negociação estratégica", d: "Conduzimos as negociações reduzindo custos sem comprometer qualidade." },
+              { n: "04", t: "Monitoramento contínuo", d: "Acompanhamento ativo das economias com auditoria constante." },
             ].map((step) => (
               <li key={step.n} className="flex gap-6 bg-navy p-6">
                 <span className="font-serif text-3xl text-green">{step.n}</span>
@@ -193,19 +194,44 @@ function Index() {
         </div>
       </section>
 
+      {/* DIFERENCIAIS */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+        <div className="max-w-3xl">
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">Diferenciais Buy Group</p>
+          <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
+            Quatro compromissos que <span className="italic">alinham</span> nossos interesses aos seus.
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
+          {[
+            { t: "No Savings, No Fee", d: "Você só paga se houver economia comprovada. Sem custos iniciais, sem risco financeiro — nossos interesses estão 100% alinhados aos seus." },
+            { t: "Metodologia comprovada", d: "Práticas reconhecidas globalmente adaptadas à realidade econômica do Brasil. TCO, should-cost e RFPs competitivas." },
+            { t: "Transparência e auditabilidade", d: "Relatórios claros, objetivos e auditáveis. Cada economia é documentada e validada, com baseline oficial." },
+            { t: "Independência total", d: "Sem conflito de interesse com fornecedores. Foco exclusivo no melhor resultado para o cliente." },
+          ].map((d, i) => (
+            <div key={d.t} className="bg-white p-8 lg:p-10">
+              <p className="font-serif text-3xl text-green">0{i + 1}</p>
+              <h3 className="mt-4 font-serif text-2xl text-navy">{d.t}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl bg-navy p-10 text-white md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-green/30 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/15 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="text-balance font-serif text-4xl md:text-5xl">
-                Quanto a sua empresa pode economizar nos próximos 12 meses?
+              <p className="text-xs uppercase tracking-[0.28em] text-green">Auditoria gratuita</p>
+              <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
+                3 horas da sua equipe. Um relatório claro de oportunidades.
               </h2>
               <p className="mt-4 max-w-lg text-white/75">
-                Em até 5 dias úteis entregamos uma estimativa preliminar de
-                saving baseada em benchmarks reais do seu setor.
+                Identificamos o potencial real de economia da sua empresa e
+                entregamos um plano de captura — sem compromisso, sem custo.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4 lg:justify-end">
@@ -213,11 +239,11 @@ function Index() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
               >
-                Solicitar diagnóstico gratuito
+                Solicitar auditoria gratuita
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link to="/cursos" className="text-sm text-white/80 hover:text-green">
-                Conhecer cursos →
+              <Link to="/servicos" className="text-sm text-white/80 hover:text-green">
+                Ver metodologia →
               </Link>
             </div>
           </div>
