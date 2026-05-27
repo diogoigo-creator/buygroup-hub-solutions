@@ -6,40 +6,40 @@ import heroImg from "@/assets/hero-boardroom.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Redução de custos, outsourcing de compras e cursos in company" },
-      { name: "description", content: "Consultoria especializada em redução de custos empresariais, outsourcing de compras e capacitação in company para áreas de suprimentos." },
-      { property: "og:title", content: "Buy Group — Compre melhor. Cresça mais." },
-      { property: "og:description", content: "Reduzimos custos, operamos suas compras e capacitamos seu time." },
+      { title: "Buy Group — Mais que comprar. É comprar bem." },
+      { name: "description", content: "Buy Group: consultoria de procurement que transforma despesas em margem de lucro com modelo 'No Savings, No Fee'. Auditoria gratuita." },
+      { property: "og:title", content: "Buy Group — Mais que comprar. É comprar bem." },
+      { property: "og:description", content: "Transformamos despesas em lucro com inteligência de compras e modelo sem risco financeiro." },
     ],
   }),
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
+const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20uma%20auditoria%20gratuita%20de%20custos";
 
 const services = [
   {
     icon: TrendingDown,
-    title: "Redução de custos",
-    body: "Diagnóstico de spend, renegociação estratégica e modelos de saving sustentável com remuneração atrelada a resultado.",
+    title: "Redução de custos recorrentes",
+    body: "Otimizamos contratos de energia, telecom, facilities, logística, seguros e terceirizados — sem interromper a operação. Economia típica de 10% a 40%.",
   },
   {
     icon: Users,
     title: "Outsourcing de compras",
-    body: "Operamos sua área de suprimentos como extensão do seu time — governança, processo e tecnologia incluídos.",
+    body: "Terceirização parcial ou total da função de compras com governança, KPIs, SLAs e tecnologia. Estrutura escalável e independente.",
   },
   {
     icon: GraduationCap,
-    title: "Cursos in company",
-    body: "Programas de capacitação desenhados sob medida para compradores, gestores e lideranças de procurement.",
+    title: "Compras spot e projetos de alto valor",
+    body: "Aquisições pontuais de alto impacto — obras corporativas, equipamentos industriais e tecnologia — com TCO, should-cost e RFPs competitivas.",
   },
 ];
 
 const metrics = [
-  { value: "18%", label: "Saving médio sobre o spend endereçável" },
-  { value: "+200", label: "Projetos entregues no Brasil" },
-  { value: "12sem", label: "Tempo médio do primeiro resultado" },
-  { value: "97%", label: "Retenção de clientes recorrentes" },
+  { value: "10–40%", label: "Economia média sobre o spend endereçável" },
+  { value: "R$500k+", label: "Liberados no primeiro ano em caso ilustrativo" },
+  { value: "3h", label: "De dedicação para a auditoria gratuita" },
+  { value: "0", label: "Risco financeiro: No Savings, No Fee" },
 ];
 
 function Index() {
