@@ -56,11 +56,22 @@ function Index() {
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-50"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+        {/* Oversized brand mark watermark */}
+        <img
+          src={mark}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-16 -z-10 hidden h-[680px] w-[680px] select-none opacity-[0.045] md:block"
+        />
         <div className="mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-32 lg:pt-36">
           <div className="lg:col-span-8">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-primary">
-              Consultoria de procurement
-            </p>
+            <div className="flex items-center gap-4">
+              <img src={markEmber} alt="" aria-hidden="true" className="h-10 w-10" />
+              <span className="h-px w-12 bg-border" />
+              <p className="font-sans text-xs uppercase tracking-[0.28em] text-primary">
+                Consultoria de procurement
+              </p>
+            </div>
             <h1 className="mt-8 text-balance font-serif text-5xl leading-[1.02] md:text-7xl lg:text-[5.5rem]">
               Compre melhor.
               <br />
@@ -100,6 +111,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
       {/* METRICS */}
       <section className="border-y border-border/60 bg-card/30">
