@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import hero from "@/assets/hero-boardroom.jpg";
+import mark from "@/assets/buy-group-mark-white.png";
+import markEmber from "@/assets/buy-group-mark-ember.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,11 +56,22 @@ function Index() {
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-50"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+        {/* Oversized brand mark watermark */}
+        <img
+          src={mark}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-16 -z-10 hidden h-[680px] w-[680px] select-none opacity-[0.045] md:block"
+        />
         <div className="mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-32 lg:pt-36">
           <div className="lg:col-span-8">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-primary">
-              Consultoria de procurement
-            </p>
+            <div className="flex items-center gap-4">
+              <img src={markEmber} alt="" aria-hidden="true" className="h-10 w-10" />
+              <span className="h-px w-12 bg-border" />
+              <p className="font-sans text-xs uppercase tracking-[0.28em] text-primary">
+                Consultoria de procurement
+              </p>
+            </div>
             <h1 className="mt-8 text-balance font-serif text-5xl leading-[1.02] md:text-7xl lg:text-[5.5rem]">
               Compre melhor.
               <br />
@@ -99,6 +112,7 @@ function Index() {
         </div>
       </section>
 
+
       {/* METRICS */}
       <section className="border-y border-border/60 bg-card/30">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-border/60 lg:grid-cols-4">
@@ -132,9 +146,15 @@ function Index() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/60"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/60"
             >
-              <div>
+              <img
+                src={mark}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 select-none opacity-[0.06] transition-opacity duration-500 group-hover:opacity-[0.12]"
+              />
+              <div className="relative">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <s.icon className="h-6 w-6" />
                 </div>
@@ -143,13 +163,14 @@ function Index() {
               </div>
               <Link
                 to="/servicos"
-                className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/80 group-hover:text-primary"
+                className="relative mt-8 inline-flex items-center gap-1 text-sm text-foreground/80 group-hover:text-primary"
               >
                 Saiba mais <ArrowUpRight className="h-4 w-4" />
               </Link>
             </article>
           ))}
         </div>
+
       </section>
 
       {/* APPROACH */}
@@ -193,7 +214,14 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-charcoal-soft p-10 md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
+          <img
+            src={mark}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] select-none opacity-[0.05]"
+          />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+
             <div>
               <h2 className="text-balance font-serif text-4xl md:text-5xl">
                 Quanto a sua empresa pode economizar nos próximos 12 meses?
