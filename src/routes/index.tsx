@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import heroImg from "@/assets/hero-boardroom.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,26 +46,32 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-b from-secondary/60 to-white">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full bg-green/20 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-navy/5 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-32 lg:pt-28">
+      <section className="relative isolate overflow-hidden bg-navy text-white">
+        <img
+          src={heroImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50" />
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/15 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
           <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-navy/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-green" />
+            <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
               Consultoria de procurement
             </div>
-            <h1 className="mt-8 text-balance font-serif text-5xl leading-[1.02] text-navy md:text-7xl lg:text-[5.5rem]">
+            <h1 className="mt-10 text-balance font-serif text-5xl leading-[1.0] text-white md:text-7xl lg:text-[6rem]">
               Compre melhor.
               <br />
-              <span className="italic text-muted-foreground">Cresça mais.</span>
+              <span className="italic text-white/55">Cresça mais.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-pretty text-lg text-muted-foreground">
-              A Buy Group ajuda empresas a transformar a área de compras em uma
-              alavanca real de margem — com redução de custos, terceirização
-              especializada e capacitação executiva.
+            <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
+              A Buy Group transforma a área de compras em alavanca real de
+              margem — com redução de custos, terceirização especializada e
+              capacitação executiva.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-12 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
@@ -74,18 +81,18 @@ function Index() {
               </Link>
               <Link
                 to="/servicos"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-medium text-navy hover:border-navy"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white/70"
               >
                 Conhecer serviços
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-4 lg:pt-24">
-            <div className="rounded-2xl border border-border bg-white p-7 shadow-[var(--shadow-soft)]">
-              <p className="font-serif text-2xl leading-snug text-navy">
+          <div className="lg:col-span-4 lg:pt-32">
+            <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm">
+              <p className="font-serif text-2xl leading-snug text-white">
                 "Quem domina o custo de aquisição, domina a margem."
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-4 text-sm text-white/60">
                 Princípio fundador da Buy Group, aplicado a cada projeto desde
                 indústrias a serviços B2B.
               </p>
@@ -95,12 +102,12 @@ function Index() {
       </section>
 
       {/* METRICS */}
-      <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-border lg:grid-cols-4">
+      <section className="border-y border-white/5 bg-navy text-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
           {metrics.map((m) => (
-            <div key={m.label} className="bg-white px-6 py-10 lg:px-10">
-              <p className="font-serif text-5xl text-navy">{m.value}</p>
-              <p className="mt-3 text-sm leading-snug text-muted-foreground">{m.label}</p>
+            <div key={m.label} className="bg-navy px-6 py-12 lg:px-10">
+              <p className="font-serif text-5xl text-green">{m.value}</p>
+              <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
             </div>
           ))}
         </div>
@@ -110,7 +117,7 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="font-sans text-xs uppercase tracking-[0.24em] text-navy/70">O que fazemos</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">O que fazemos</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
               Três frentes, um único <span className="italic">objetivo</span>: margem.
             </h2>
@@ -147,36 +154,38 @@ function Index() {
         </div>
       </section>
 
-      {/* APPROACH */}
-      <section className="border-t border-border bg-secondary/40">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-28">
+      {/* APPROACH - dark editorial */}
+      <section className="relative overflow-hidden bg-navy text-white">
+        <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-green/15 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-32">
           <div>
-            <p className="font-sans text-xs uppercase tracking-[0.24em] text-navy/70">Nosso método</p>
-            <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Diagnóstico, execução e governança — sem teoria solta.
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/55">Nosso método</p>
+            <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
+              Diagnóstico, execução e <span className="italic text-white/60">governança</span> — sem teoria solta.
             </h2>
-            <p className="mt-6 max-w-lg text-pretty text-muted-foreground">
+            <p className="mt-6 max-w-lg text-pretty text-white/70">
               Cada projeto começa com uma análise profunda do spend e termina com
               indicadores claros de saving auditado. Trabalhamos lado a lado com
               suas equipes, transferindo método e ferramentas.
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-border bg-white px-4 py-2 text-sm text-navy">
+            <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
               <ShieldCheck className="h-4 w-4 text-green" />
               Remuneração parcial atrelada a resultado
             </div>
           </div>
-          <ol className="space-y-px overflow-hidden rounded-2xl border border-border bg-border">
+          <ol className="space-y-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
             {[
               { n: "01", t: "Diagnóstico do spend", d: "Mapa completo de gastos por categoria, fornecedor e área." },
               { n: "02", t: "Plano de captura", d: "Iniciativas priorizadas por impacto, complexidade e prazo." },
               { n: "03", t: "Execução conjunta", d: "Negociação, RFPs, contratos e implantação de governança." },
               { n: "04", t: "Saving auditado", d: "Reporting mensal com baseline, captura e desvios." },
             ].map((step) => (
-              <li key={step.n} className="flex gap-6 bg-white p-6">
+              <li key={step.n} className="flex gap-6 bg-navy p-6">
                 <span className="font-serif text-3xl text-green">{step.n}</span>
                 <div>
-                  <p className="font-medium text-navy">{step.t}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{step.d}</p>
+                  <p className="font-medium text-white">{step.t}</p>
+                  <p className="mt-1 text-sm text-white/65">{step.d}</p>
                 </div>
               </li>
             ))}
