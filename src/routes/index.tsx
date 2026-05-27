@@ -59,42 +59,43 @@ function Index() {
         <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
-              Consultoria de procurement
+              Consultoria de procurement · Desde a estratégia ao saving auditado
             </div>
             <h1 className="mt-10 text-balance font-serif text-5xl leading-[1.0] text-white md:text-7xl lg:text-[6rem]">
-              Compre melhor.
+              Mais que comprar.
               <br />
-              <span className="italic text-white/55">Cresça mais.</span>
+              <span className="italic text-white/55">É comprar bem.</span>
             </h1>
             <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
-              A Buy Group transforma a área de compras em alavanca real de
-              margem — com redução de custos, terceirização especializada e
-              capacitação executiva.
+              A Buy Group transforma despesas em margem de lucro sustentada.
+              Atuamos com modelo <span className="text-green">No Savings, No Fee</span> —
+              você só paga pelas economias comprovadas e auditadas.
             </p>
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Solicitar diagnóstico gratuito
+                Solicitar auditoria gratuita
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
               <Link
                 to="/servicos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white/70"
               >
-                Conhecer serviços
+                Conhecer nossa metodologia
               </Link>
             </div>
           </div>
           <div className="lg:col-span-4 lg:pt-32">
             <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm">
               <p className="font-serif text-2xl leading-snug text-white">
-                "Quem domina o custo de aquisição, domina a margem."
+                "Transformando despesas em lucro — sem interromper a operação e
+                sem investimento inicial."
               </p>
               <p className="mt-4 text-sm text-white/60">
-                Princípio fundador da Buy Group, aplicado a cada projeto desde
-                indústrias a serviços B2B.
+                Princípio fundador da Buy Group: cada real investido vira
+                investimento inteligente.
               </p>
             </div>
           </div>
