@@ -6,18 +6,11 @@
 
 @layer base {
   @font-face {
-    font-family: "Instrument Serif";
+    font-family: "Outfit";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100 900;
     font-display: swap;
-    src: url("https://fonts.gstatic.com/s/instrumentserif/v4/jizDREVItHgc8qDIbSTKq4XKVjE.woff2") format("woff2");
-  }
-  @font-face {
-    font-family: "Instrument Serif";
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("https://fonts.gstatic.com/s/instrumentserif/v4/jizGREVItHgc8qDIbSTKq4XKWiONxw.woff2") format("woff2");
+    src: url("https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4G-EiAou6Y.woff2") format("woff2");
   }
   @font-face {
     font-family: "Work Sans";
@@ -27,6 +20,7 @@
     src: url("https://fonts.gstatic.com/s/worksans/v23/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXBi8Jpg.woff2") format("woff2");
   }
 }
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
