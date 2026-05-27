@@ -177,10 +177,10 @@ function Index() {
           </div>
           <ol className="space-y-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
             {[
-              { n: "01", t: "Diagnóstico do spend", d: "Mapa completo de gastos por categoria, fornecedor e área." },
-              { n: "02", t: "Plano de captura", d: "Iniciativas priorizadas por impacto, complexidade e prazo." },
-              { n: "03", t: "Execução conjunta", d: "Negociação, RFPs, contratos e implantação de governança." },
-              { n: "04", t: "Saving auditado", d: "Reporting mensal com baseline, captura e desvios." },
+              { n: "01", t: "Diagnóstico inicial", d: "Coleta e auditoria de 12 a 24 meses de despesas — baseline auditável e oficial." },
+              { n: "02", t: "Benchmarking inteligente", d: "Comparação com referências de mercado para identificar gaps e oportunidades." },
+              { n: "03", t: "Negociação estratégica", d: "Conduzimos as negociações reduzindo custos sem comprometer qualidade." },
+              { n: "04", t: "Monitoramento contínuo", d: "Acompanhamento ativo das economias com auditoria constante." },
             ].map((step) => (
               <li key={step.n} className="flex gap-6 bg-navy p-6">
                 <span className="font-serif text-3xl text-green">{step.n}</span>
@@ -194,19 +194,44 @@ function Index() {
         </div>
       </section>
 
+      {/* DIFERENCIAIS */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+        <div className="max-w-3xl">
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">Diferenciais Buy Group</p>
+          <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
+            Quatro compromissos que <span className="italic">alinham</span> nossos interesses aos seus.
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
+          {[
+            { t: "No Savings, No Fee", d: "Você só paga se houver economia comprovada. Sem custos iniciais, sem risco financeiro — nossos interesses estão 100% alinhados aos seus." },
+            { t: "Metodologia comprovada", d: "Práticas reconhecidas globalmente adaptadas à realidade econômica do Brasil. TCO, should-cost e RFPs competitivas." },
+            { t: "Transparência e auditabilidade", d: "Relatórios claros, objetivos e auditáveis. Cada economia é documentada e validada, com baseline oficial." },
+            { t: "Independência total", d: "Sem conflito de interesse com fornecedores. Foco exclusivo no melhor resultado para o cliente." },
+          ].map((d, i) => (
+            <div key={d.t} className="bg-white p-8 lg:p-10">
+              <p className="font-serif text-3xl text-green">0{i + 1}</p>
+              <h3 className="mt-4 font-serif text-2xl text-navy">{d.t}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl bg-navy p-10 text-white md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-green/30 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/15 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="text-balance font-serif text-4xl md:text-5xl">
-                Quanto a sua empresa pode economizar nos próximos 12 meses?
+              <p className="text-xs uppercase tracking-[0.28em] text-green">Auditoria gratuita</p>
+              <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
+                3 horas da sua equipe. Um relatório claro de oportunidades.
               </h2>
               <p className="mt-4 max-w-lg text-white/75">
-                Em até 5 dias úteis entregamos uma estimativa preliminar de
-                saving baseada em benchmarks reais do seu setor.
+                Identificamos o potencial real de economia da sua empresa e
+                entregamos um plano de captura — sem compromisso, sem custo.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4 lg:justify-end">
@@ -214,11 +239,11 @@ function Index() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
               >
-                Solicitar diagnóstico gratuito
+                Solicitar auditoria gratuita
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link to="/cursos" className="text-sm text-white/80 hover:text-green">
-                Conhecer cursos →
+              <Link to="/servicos" className="text-sm text-white/80 hover:text-green">
+                Ver metodologia →
               </Link>
             </div>
           </div>
