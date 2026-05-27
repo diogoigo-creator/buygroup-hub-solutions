@@ -552,24 +552,24 @@ function RequestSection({
   }
 
   return (
-    <section id="solicitar" className="bg-[#0A1628] text-white">
+    <section id="solicitar" className="bg-navy text-white">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="text-center">
-          <h2 className="font-serif text-4xl md:text-5xl">Solicite um treinamento para sua equipe</h2>
-          <p className="mt-4 text-base text-slate-300">
+          <h2 className="font-serif text-4xl text-white md:text-5xl">Solicite um treinamento para sua equipe</h2>
+          <p className="mt-4 text-base text-white/70">
             Preencha o formulário e entraremos em contato em até 4 horas úteis com uma proposta personalizada.
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-[640px]">
           {sent ? (
-            <div className="flex flex-col items-center gap-4 rounded-2xl border border-[#00D68F]/40 bg-[#00D68F]/10 p-10 text-center">
-              <CheckCircle2 className="h-12 w-12 text-[#00D68F]" />
-              <h3 className="font-serif text-2xl">Solicitação recebida!</h3>
-              <p className="text-slate-300">Entraremos em contato em até 4 horas úteis.</p>
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-green/40 bg-green/10 p-10 text-center">
+              <CheckCircle2 className="h-12 w-12 text-green" />
+              <h3 className="font-serif text-2xl text-white">Solicitação recebida!</h3>
+              <p className="text-white/70">Entraremos em contato em até 4 horas úteis.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur">
               <FormField label="Nome completo" name="nome" required error={errors.nome} />
               <div className="grid gap-5 md:grid-cols-2">
                 <FormField label="Empresa" name="empresa" required error={errors.empresa} />
@@ -596,19 +596,19 @@ function RequestSection({
               />
 
               <div>
-                <span className="text-sm text-slate-300">Formato preferido</span>
+                <span className="text-sm text-white/70">Formato preferido</span>
                 <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
                   {["Presencial", "Online", "Híbrido", "Sem preferência"].map((opt, i) => (
                     <label
                       key={opt}
-                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white transition-colors hover:border-[#00D68F]/60 has-[:checked]:border-[#00D68F] has-[:checked]:bg-[#00D68F]/10"
+                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white transition-colors hover:border-green/60 has-[:checked]:border-green has-[:checked]:bg-green/10"
                     >
                       <input
                         type="radio"
                         name="formato"
                         value={opt}
                         defaultChecked={i === 3}
-                        className="accent-[#00D68F]"
+                        className="accent-green"
                       />
                       {opt}
                     </label>
@@ -617,24 +617,24 @@ function RequestSection({
               </div>
 
               <div>
-                <label htmlFor="mensagem" className="text-sm text-slate-300">Mensagem (opcional)</label>
+                <label htmlFor="mensagem" className="text-sm text-white/70">Mensagem (opcional)</label>
                 <textarea
                   id="mensagem"
                   name="mensagem"
                   rows={4}
                   placeholder="Conte-nos sobre os desafios da sua equipe ou objetivos do treinamento"
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F]"
+                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-[#00D68F] px-6 py-3.5 text-base font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+                className="w-full rounded-full bg-green px-6 py-3.5 text-base font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
                 Enviar solicitação
               </button>
 
-              <p className="flex items-center justify-center gap-2 text-xs text-slate-400">
+              <p className="flex items-center justify-center gap-2 text-xs text-white/55">
                 <Lock className="h-3.5 w-3.5" />
                 Seus dados estão seguros. Não compartilhamos suas informações.
               </p>
@@ -658,8 +658,8 @@ function FormField({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-slate-300">
-        {label} {required && <span className="text-[#00D68F]">*</span>}
+      <label htmlFor={name} className="text-sm text-white/70">
+        {label} {required && <span className="text-green">*</span>}
       </label>
       <input
         id={name}
@@ -667,11 +667,11 @@ function FormField({
         type={type}
         placeholder={placeholder}
         aria-invalid={!!error}
-        className={`mt-2 w-full rounded-lg border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F] ${
-          error ? "border-rose-400" : "border-white/10"
+        className={`mt-2 w-full rounded-lg border bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green ${
+          error ? "border-destructive" : "border-white/10"
         }`}
       />
-      {error && <p className="mt-1 text-xs text-rose-400">{error}</p>}
+      {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
     </div>
   );
 }
@@ -688,17 +688,17 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-slate-300">{label}</label>
+      <label htmlFor={name} className="text-sm text-white/70">{label}</label>
       <select
         id={name}
         name={name}
         value={value}
         defaultValue={value ? undefined : defaultValue}
         onChange={onChange ? (e) => onChange(e.target.value) : undefined}
-        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[#00D68F]"
+        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition focus:border-green"
       >
         {options.map((o) => (
-          <option key={o} value={o} className="bg-[#0A1628] text-white">
+          <option key={o} value={o} className="bg-navy text-white">
             {o}
           </option>
         ))}
@@ -706,3 +706,4 @@ function FormSelect({
     </div>
   );
 }
+
