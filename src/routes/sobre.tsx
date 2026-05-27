@@ -53,16 +53,26 @@ function SobrePage() {
           </div>
         </div>
         <aside className="lg:col-span-5">
-          <div className="rounded-2xl border border-border bg-card p-8">
-            <p className="font-serif text-2xl leading-snug">
-              "Não vendemos relatórios. Entregamos saving auditado, com baseline
-              claro e responsabilidade compartilhada."
-            </p>
-            <p className="mt-6 text-sm uppercase tracking-[0.18em] text-muted-foreground">
-              Diretoria · Buy Group
-            </p>
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-8">
+            <img
+              src={markEmber}
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 opacity-20"
+            />
+            <div className="relative">
+              <img src={markEmber} alt="" aria-hidden="true" className="h-10 w-10" />
+              <p className="mt-6 font-serif text-2xl leading-snug">
+                "Não vendemos relatórios. Entregamos saving auditado, com baseline
+                claro e responsabilidade compartilhada."
+              </p>
+              <p className="mt-6 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+                Diretoria · Buy Group
+              </p>
+            </div>
           </div>
         </aside>
+
       </section>
 
       <section className="border-t border-border/60 bg-card/30">
