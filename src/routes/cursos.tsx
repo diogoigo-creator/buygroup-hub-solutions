@@ -62,43 +62,43 @@ type Course = {
 
 const categoryStyles: Record<Category, { pill: string; iconBg: string; iconColor: string }> = {
   "Compras Estratégicas": {
-    pill: "bg-teal-100 text-teal-800",
-    iconBg: "bg-teal-500/10",
-    iconColor: "text-teal-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   Negociação: {
-    pill: "bg-orange-100 text-orange-800",
-    iconBg: "bg-orange-500/10",
-    iconColor: "text-orange-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   "IA e Tecnologia": {
-    pill: "bg-blue-100 text-blue-800",
-    iconBg: "bg-blue-500/10",
-    iconColor: "text-blue-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   Gestão: {
-    pill: "bg-purple-100 text-purple-800",
-    iconBg: "bg-purple-500/10",
-    iconColor: "text-purple-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   ESG: {
-    pill: "bg-green-100 text-green-800",
-    iconBg: "bg-green-500/10",
-    iconColor: "text-green-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
 };
 
 const badgeStyles: Record<BadgeKind, { label: string; cls: string }> = {
-  popular: { label: "Mais solicitado", cls: "bg-[#00D68F] text-[#0A1628]" },
-  novo: { label: "Novo", cls: "bg-[#FFB800] text-[#0A1628]" },
-  tendencia: { label: "Tendência", cls: "bg-[#FFB800] text-[#0A1628]" },
-  exclusivo: { label: "Exclusivo", cls: "bg-[#00D68F] text-[#0A1628]" },
+  popular: { label: "Mais solicitado", cls: "bg-green text-navy" },
+  novo: { label: "Novo", cls: "border border-navy/20 bg-white text-navy" },
+  tendencia: { label: "Tendência", cls: "border border-navy/20 bg-white text-navy" },
+  exclusivo: { label: "Exclusivo", cls: "bg-green text-navy" },
 };
 
 const levelStyles: Record<Level, string> = {
-  Iniciante: "border-emerald-300 text-emerald-700 bg-emerald-50",
-  Intermediário: "border-amber-300 text-amber-700 bg-amber-50",
-  Avançado: "border-rose-300 text-rose-700 bg-rose-50",
+  Iniciante: "border-border text-muted-foreground bg-secondary",
+  Intermediário: "border-border text-navy bg-secondary",
+  Avançado: "border-navy/30 text-navy bg-green/10",
 };
 
 const courses: Course[] = [
@@ -325,14 +325,14 @@ function CursosPage() {
         description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
       />
 
-      {/* Catálogo de cursos — fundo branco */}
-      <section className="bg-white text-[#0A1628]">
+      {/* Catálogo de cursos */}
+      <section className="bg-background text-foreground">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#0A1628]">
+            <h2 className="font-serif text-4xl text-navy md:text-5xl">
               Cursos disponíveis para sua equipe
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-muted-foreground">
               Todos os cursos são adaptados à realidade, setor e nível de maturidade da sua equipe.
             </p>
           </div>
@@ -348,8 +348,8 @@ function CursosPage() {
                   onClick={() => setFilter(f)}
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                     active
-                      ? "border-[#0A1628] bg-[#0A1628] text-white"
-                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-400"
+                      ? "border-navy bg-navy text-white"
+                      : "border-border bg-white text-muted-foreground hover:border-navy/40 hover:text-navy"
                   }`}
                 >
                   {f}
@@ -366,7 +366,7 @@ function CursosPage() {
               return (
                 <article
                   key={c.id}
-                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors duration-300 hover:border-[rgba(0,214,143,0.4)] animate-fade-in"
+                  className="group flex flex-col rounded-2xl border border-border bg-white p-6 transition-colors duration-300 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}>
@@ -383,10 +383,10 @@ function CursosPage() {
                     <Icon className={`h-5 w-5 ${s.iconColor}`} />
                   </div>
 
-                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#0A1628]">{c.title}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-600">{c.description}</p>
+                  <h3 className="mt-4 font-serif text-2xl leading-tight text-navy">{c.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{c.description}</p>
 
-                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-600">
+                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5" /> {c.hours}
                     </span>
@@ -401,18 +401,18 @@ function CursosPage() {
                     </span>
                   </div>
 
-                  <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                  <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
                     <button
                       type="button"
                       onClick={() => setDetail(c)}
-                      className="text-sm font-medium text-slate-700 underline-offset-4 hover:underline"
+                      className="text-sm font-medium text-navy underline-offset-4 hover:underline"
                     >
                       Ver conteúdo
                     </button>
                     <button
                       type="button"
                       onClick={() => openRequest(c.title)}
-                      className="ml-auto inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-4 py-2 text-sm font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+                      className="ml-auto inline-flex items-center gap-2 rounded-full bg-green px-4 py-2 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
                     >
                       Solicitar este curso
                     </button>
@@ -425,13 +425,13 @@ function CursosPage() {
       </section>
 
       {/* Banner CTA */}
-      <section className="bg-[#00D68F] text-[#0A1628]">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+      <section className="bg-navy text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            <h3 className="font-serif text-3xl md:text-4xl">
+            <h3 className="font-serif text-3xl text-white md:text-4xl">
               Não tem certeza de qual curso sua equipe precisa?
             </h3>
-            <p className="mt-2 max-w-2xl text-base">
+            <p className="mt-2 max-w-2xl text-base text-white/75">
               Oferecemos um diagnóstico gratuito para identificar as principais lacunas e recomendar o treinamento ideal.
             </p>
           </div>
@@ -439,12 +439,13 @@ function CursosPage() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0A1628] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             Quero um diagnóstico gratuito
           </a>
         </div>
       </section>
+
 
       {/* Formulário de solicitação */}
       <RequestSection
@@ -454,7 +455,7 @@ function CursosPage() {
 
       {/* Modal de conteúdo do curso */}
       <Dialog open={!!detail} onOpenChange={(o) => !o && setDetail(null)}>
-        <DialogContent className="max-h-[85vh] overflow-y-auto bg-white text-[#0A1628] sm:max-w-2xl">
+        <DialogContent className="max-h-[85vh] overflow-y-auto bg-white text-navy sm:max-w-2xl">
           {detail && (
             <>
               <DialogHeader>
@@ -466,14 +467,14 @@ function CursosPage() {
                     {detail.level}
                   </span>
                 </div>
-                <DialogTitle className="mt-3 text-left font-serif text-3xl leading-tight text-[#0A1628]">
+                <DialogTitle className="mt-3 text-left font-serif text-3xl leading-tight text-navy">
                   {detail.title}
                 </DialogTitle>
-                <DialogDescription className="text-left text-slate-600">
+                <DialogDescription className="text-left text-muted-foreground">
                   {detail.description}
                 </DialogDescription>
               </DialogHeader>
-              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
+              <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5">
                   <Clock className="h-4 w-4" /> {detail.hours}
                 </span>
@@ -482,11 +483,11 @@ function CursosPage() {
                 </span>
               </div>
               <div className="mt-4">
-                <h4 className="font-serif text-xl">Conteúdo programático</h4>
+                <h4 className="font-serif text-xl text-navy">Conteúdo programático</h4>
                 <ul className="mt-3 space-y-2">
                   {detail.topics.map((t) => (
-                    <li key={t} className="flex gap-2 text-sm text-slate-700">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#00D68F]" />
+                    <li key={t} className="flex gap-2 text-sm text-navy/85">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -496,7 +497,7 @@ function CursosPage() {
                 <button
                   type="button"
                   onClick={() => openRequest(detail.title)}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-5 py-2.5 text-sm font-semibold text-[#0A1628]"
+                  className="inline-flex items-center gap-2 rounded-full bg-green px-5 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
                 >
                   Solicitar este curso
                 </button>
@@ -505,6 +506,7 @@ function CursosPage() {
           )}
         </DialogContent>
       </Dialog>
+
 
       {/* WhatsApp flutuante */}
       <a
@@ -550,24 +552,24 @@ function RequestSection({
   }
 
   return (
-    <section id="solicitar" className="bg-[#0A1628] text-white">
+    <section id="solicitar" className="bg-navy text-white">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="text-center">
-          <h2 className="font-serif text-4xl md:text-5xl">Solicite um treinamento para sua equipe</h2>
-          <p className="mt-4 text-base text-slate-300">
+          <h2 className="font-serif text-4xl text-white md:text-5xl">Solicite um treinamento para sua equipe</h2>
+          <p className="mt-4 text-base text-white/70">
             Preencha o formulário e entraremos em contato em até 4 horas úteis com uma proposta personalizada.
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-[640px]">
           {sent ? (
-            <div className="flex flex-col items-center gap-4 rounded-2xl border border-[#00D68F]/40 bg-[#00D68F]/10 p-10 text-center">
-              <CheckCircle2 className="h-12 w-12 text-[#00D68F]" />
-              <h3 className="font-serif text-2xl">Solicitação recebida!</h3>
-              <p className="text-slate-300">Entraremos em contato em até 4 horas úteis.</p>
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-green/40 bg-green/10 p-10 text-center">
+              <CheckCircle2 className="h-12 w-12 text-green" />
+              <h3 className="font-serif text-2xl text-white">Solicitação recebida!</h3>
+              <p className="text-white/70">Entraremos em contato em até 4 horas úteis.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur">
               <FormField label="Nome completo" name="nome" required error={errors.nome} />
               <div className="grid gap-5 md:grid-cols-2">
                 <FormField label="Empresa" name="empresa" required error={errors.empresa} />
@@ -594,19 +596,19 @@ function RequestSection({
               />
 
               <div>
-                <span className="text-sm text-slate-300">Formato preferido</span>
+                <span className="text-sm text-white/70">Formato preferido</span>
                 <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
                   {["Presencial", "Online", "Híbrido", "Sem preferência"].map((opt, i) => (
                     <label
                       key={opt}
-                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white transition-colors hover:border-[#00D68F]/60 has-[:checked]:border-[#00D68F] has-[:checked]:bg-[#00D68F]/10"
+                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2.5 text-sm text-white transition-colors hover:border-green/60 has-[:checked]:border-green has-[:checked]:bg-green/10"
                     >
                       <input
                         type="radio"
                         name="formato"
                         value={opt}
                         defaultChecked={i === 3}
-                        className="accent-[#00D68F]"
+                        className="accent-green"
                       />
                       {opt}
                     </label>
@@ -615,24 +617,24 @@ function RequestSection({
               </div>
 
               <div>
-                <label htmlFor="mensagem" className="text-sm text-slate-300">Mensagem (opcional)</label>
+                <label htmlFor="mensagem" className="text-sm text-white/70">Mensagem (opcional)</label>
                 <textarea
                   id="mensagem"
                   name="mensagem"
                   rows={4}
                   placeholder="Conte-nos sobre os desafios da sua equipe ou objetivos do treinamento"
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F]"
+                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-[#00D68F] px-6 py-3.5 text-base font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+                className="w-full rounded-full bg-green px-6 py-3.5 text-base font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
                 Enviar solicitação
               </button>
 
-              <p className="flex items-center justify-center gap-2 text-xs text-slate-400">
+              <p className="flex items-center justify-center gap-2 text-xs text-white/55">
                 <Lock className="h-3.5 w-3.5" />
                 Seus dados estão seguros. Não compartilhamos suas informações.
               </p>
@@ -656,8 +658,8 @@ function FormField({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-slate-300">
-        {label} {required && <span className="text-[#00D68F]">*</span>}
+      <label htmlFor={name} className="text-sm text-white/70">
+        {label} {required && <span className="text-green">*</span>}
       </label>
       <input
         id={name}
@@ -665,11 +667,11 @@ function FormField({
         type={type}
         placeholder={placeholder}
         aria-invalid={!!error}
-        className={`mt-2 w-full rounded-lg border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-[#00D68F] ${
-          error ? "border-rose-400" : "border-white/10"
+        className={`mt-2 w-full rounded-lg border bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green ${
+          error ? "border-destructive" : "border-white/10"
         }`}
       />
-      {error && <p className="mt-1 text-xs text-rose-400">{error}</p>}
+      {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
     </div>
   );
 }
@@ -686,17 +688,17 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-slate-300">{label}</label>
+      <label htmlFor={name} className="text-sm text-white/70">{label}</label>
       <select
         id={name}
         name={name}
         value={value}
         defaultValue={value ? undefined : defaultValue}
         onChange={onChange ? (e) => onChange(e.target.value) : undefined}
-        className="mt-2 w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[#00D68F]"
+        className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition focus:border-green"
       >
         {options.map((o) => (
-          <option key={o} value={o} className="bg-[#0A1628] text-white">
+          <option key={o} value={o} className="bg-navy text-white">
             {o}
           </option>
         ))}
@@ -704,3 +706,4 @@ function FormSelect({
     </div>
   );
 }
+
