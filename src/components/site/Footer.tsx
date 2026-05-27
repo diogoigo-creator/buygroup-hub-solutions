@@ -1,15 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/buy-group-logo-white.png";
+import mark from "@/assets/buy-group-mark-white.png";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/60 bg-charcoal">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
+    <footer className="relative overflow-hidden border-t border-border/60 bg-charcoal">
+      <img
+        src={mark}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -right-16 h-[520px] w-[520px] select-none opacity-[0.04]"
+      />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
         <div className="lg:col-span-2">
           <img src={logo} alt="Buy Group" className="h-7 w-auto" />
           <p className="mt-6 max-w-sm text-pretty text-sm text-muted-foreground">
             Redução de custos, outsourcing de compras e capacitação para empresas
             que tratam o suprimento como vantagem competitiva.
+          </p>
+          <p className="mt-6 font-serif text-xl italic text-foreground/80">
+            Compre melhor. Cresça mais.
           </p>
         </div>
         <div>
@@ -34,10 +44,10 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-muted-foreground md:flex-row md:items-center lg:px-10">
+      <div className="relative border-t border-border/60">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-6 py-6 text-xs text-muted-foreground lg:px-10">
           <p>© {new Date().getFullYear()} Buy Group. Todos os direitos reservados.</p>
-          <p className="font-serif italic text-foreground/60">Compre melhor. Cresça mais.</p>
+          <img src={mark} alt="" aria-hidden="true" className="h-5 w-5 opacity-50" />
         </div>
       </div>
     </footer>
