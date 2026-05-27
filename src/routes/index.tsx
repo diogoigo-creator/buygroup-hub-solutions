@@ -208,7 +208,7 @@ function Index() {
         <div className="max-w-3xl">
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">Diferenciais Buy Group</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro compromissos que <span className="italic">alinham</span> nossos interesses aos seus.
+            Quatro compromissos que <span className="text-green">alinham</span> nossos interesses aos seus.
           </h2>
         </div>
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
