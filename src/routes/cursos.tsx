@@ -325,14 +325,14 @@ function CursosPage() {
         description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
       />
 
-      {/* Catálogo de cursos — fundo branco */}
-      <section className="bg-white text-[#0A1628]">
+      {/* Catálogo de cursos */}
+      <section className="bg-background text-foreground">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#0A1628]">
+            <h2 className="font-serif text-4xl text-navy md:text-5xl">
               Cursos disponíveis para sua equipe
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-muted-foreground">
               Todos os cursos são adaptados à realidade, setor e nível de maturidade da sua equipe.
             </p>
           </div>
@@ -348,8 +348,8 @@ function CursosPage() {
                   onClick={() => setFilter(f)}
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                     active
-                      ? "border-[#0A1628] bg-[#0A1628] text-white"
-                      : "border-slate-200 bg-white text-slate-700 hover:border-slate-400"
+                      ? "border-navy bg-navy text-white"
+                      : "border-border bg-white text-muted-foreground hover:border-navy/40 hover:text-navy"
                   }`}
                 >
                   {f}
@@ -366,7 +366,7 @@ function CursosPage() {
               return (
                 <article
                   key={c.id}
-                  className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-colors duration-300 hover:border-[rgba(0,214,143,0.4)] animate-fade-in"
+                  className="group flex flex-col rounded-2xl border border-border bg-white p-6 transition-colors duration-300 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}>
@@ -383,10 +383,10 @@ function CursosPage() {
                     <Icon className={`h-5 w-5 ${s.iconColor}`} />
                   </div>
 
-                  <h3 className="mt-4 font-serif text-2xl leading-tight text-[#0A1628]">{c.title}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm text-slate-600">{c.description}</p>
+                  <h3 className="mt-4 font-serif text-2xl leading-tight text-navy">{c.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{c.description}</p>
 
-                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-600">
+                  <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5" /> {c.hours}
                     </span>
@@ -401,18 +401,18 @@ function CursosPage() {
                     </span>
                   </div>
 
-                  <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                  <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
                     <button
                       type="button"
                       onClick={() => setDetail(c)}
-                      className="text-sm font-medium text-slate-700 underline-offset-4 hover:underline"
+                      className="text-sm font-medium text-navy underline-offset-4 hover:underline"
                     >
                       Ver conteúdo
                     </button>
                     <button
                       type="button"
                       onClick={() => openRequest(c.title)}
-                      className="ml-auto inline-flex items-center gap-2 rounded-full bg-[#00D68F] px-4 py-2 text-sm font-semibold text-[#0A1628] transition-transform hover:-translate-y-0.5"
+                      className="ml-auto inline-flex items-center gap-2 rounded-full bg-green px-4 py-2 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
                     >
                       Solicitar este curso
                     </button>
@@ -425,13 +425,13 @@ function CursosPage() {
       </section>
 
       {/* Banner CTA */}
-      <section className="bg-[#00D68F] text-[#0A1628]">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+      <section className="bg-navy text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 py-14 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            <h3 className="font-serif text-3xl md:text-4xl">
+            <h3 className="font-serif text-3xl text-white md:text-4xl">
               Não tem certeza de qual curso sua equipe precisa?
             </h3>
-            <p className="mt-2 max-w-2xl text-base">
+            <p className="mt-2 max-w-2xl text-base text-white/75">
               Oferecemos um diagnóstico gratuito para identificar as principais lacunas e recomendar o treinamento ideal.
             </p>
           </div>
@@ -439,12 +439,13 @@ function CursosPage() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0A1628] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             Quero um diagnóstico gratuito
           </a>
         </div>
       </section>
+
 
       {/* Formulário de solicitação */}
       <RequestSection
