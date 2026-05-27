@@ -62,43 +62,43 @@ type Course = {
 
 const categoryStyles: Record<Category, { pill: string; iconBg: string; iconColor: string }> = {
   "Compras Estratégicas": {
-    pill: "bg-teal-100 text-teal-800",
-    iconBg: "bg-teal-500/10",
-    iconColor: "text-teal-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   Negociação: {
-    pill: "bg-orange-100 text-orange-800",
-    iconBg: "bg-orange-500/10",
-    iconColor: "text-orange-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   "IA e Tecnologia": {
-    pill: "bg-blue-100 text-blue-800",
-    iconBg: "bg-blue-500/10",
-    iconColor: "text-blue-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   Gestão: {
-    pill: "bg-purple-100 text-purple-800",
-    iconBg: "bg-purple-500/10",
-    iconColor: "text-purple-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
   ESG: {
-    pill: "bg-green-100 text-green-800",
-    iconBg: "bg-green-500/10",
-    iconColor: "text-green-600",
+    pill: "bg-navy/8 text-navy",
+    iconBg: "bg-green/15",
+    iconColor: "text-navy",
   },
 };
 
 const badgeStyles: Record<BadgeKind, { label: string; cls: string }> = {
-  popular: { label: "Mais solicitado", cls: "bg-[#00D68F] text-[#0A1628]" },
-  novo: { label: "Novo", cls: "bg-[#FFB800] text-[#0A1628]" },
-  tendencia: { label: "Tendência", cls: "bg-[#FFB800] text-[#0A1628]" },
-  exclusivo: { label: "Exclusivo", cls: "bg-[#00D68F] text-[#0A1628]" },
+  popular: { label: "Mais solicitado", cls: "bg-green text-navy" },
+  novo: { label: "Novo", cls: "border border-navy/20 bg-white text-navy" },
+  tendencia: { label: "Tendência", cls: "border border-navy/20 bg-white text-navy" },
+  exclusivo: { label: "Exclusivo", cls: "bg-green text-navy" },
 };
 
 const levelStyles: Record<Level, string> = {
-  Iniciante: "border-emerald-300 text-emerald-700 bg-emerald-50",
-  Intermediário: "border-amber-300 text-amber-700 bg-amber-50",
-  Avançado: "border-rose-300 text-rose-700 bg-rose-50",
+  Iniciante: "border-border text-muted-foreground bg-secondary",
+  Intermediário: "border-border text-navy bg-secondary",
+  Avançado: "border-navy/30 text-navy bg-green/10",
 };
 
 const courses: Course[] = [
