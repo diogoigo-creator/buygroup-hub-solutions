@@ -60,16 +60,16 @@ function Index() {
         {/* Logomarca animada — elemento gráfico recorrente */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 top-1/2 hidden -translate-y-1/2 lg:block"
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
         >
-          <div className="relative h-[640px] w-[640px]">
+          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[520px] lg:w-[520px]">
             <span className="absolute inset-0 rounded-full bg-green/15 blur-3xl animate-mark-pulse-ring" />
-            <span className="absolute inset-10 rounded-full border border-green/20 animate-mark-spin-slow" />
-            <span className="absolute inset-24 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
+            <span className="absolute inset-8 rounded-full border border-green/20 animate-mark-spin-slow" />
+            <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
             <img
               src={markWhite}
               alt=""
-              className="absolute inset-0 m-auto h-[360px] w-[360px] select-none opacity-[0.18] animate-mark-float"
+              className="absolute inset-0 m-auto h-[55%] w-[55%] select-none opacity-[0.10] animate-mark-float lg:opacity-[0.18]"
             />
           </div>
         </div>
