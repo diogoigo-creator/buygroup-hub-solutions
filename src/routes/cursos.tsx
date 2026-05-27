@@ -24,9 +24,9 @@ import {
   Check,
   CheckCircle2,
   Lock,
-  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 export const Route = createFileRoute("/cursos")({
   head: () => ({
@@ -366,7 +366,7 @@ function CursosPage() {
               return (
                 <article
                   key={c.id}
-                  className="group flex flex-col rounded-2xl border border-border bg-white p-6 transition-colors duration-300 hover:border-green/60"
+                  className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}>
@@ -508,16 +508,7 @@ function CursosPage() {
       </Dialog>
 
 
-      {/* WhatsApp flutuante */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
-      >
-        <MessageCircle className="h-7 w-7" />
-      </a>
+      <WhatsAppFab />
     </SiteLayout>
   );
 }
