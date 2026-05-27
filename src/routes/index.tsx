@@ -46,26 +46,32 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-b from-secondary/60 to-white">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full bg-green/20 blur-3xl" />
-        <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-navy/5 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-32 lg:pt-28">
+      <section className="relative isolate overflow-hidden bg-navy text-white">
+        <img
+          src={heroImg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50" />
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/15 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
           <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-navy/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-green" />
+            <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
               Consultoria de procurement
             </div>
-            <h1 className="mt-8 text-balance font-serif text-5xl leading-[1.02] text-navy md:text-7xl lg:text-[5.5rem]">
+            <h1 className="mt-10 text-balance font-serif text-5xl leading-[1.0] text-white md:text-7xl lg:text-[6rem]">
               Compre melhor.
               <br />
-              <span className="italic text-muted-foreground">Cresça mais.</span>
+              <span className="italic text-white/55">Cresça mais.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-pretty text-lg text-muted-foreground">
-              A Buy Group ajuda empresas a transformar a área de compras em uma
-              alavanca real de margem — com redução de custos, terceirização
-              especializada e capacitação executiva.
+            <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
+              A Buy Group transforma a área de compras em alavanca real de
+              margem — com redução de custos, terceirização especializada e
+              capacitação executiva.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-12 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
@@ -75,18 +81,18 @@ function Index() {
               </Link>
               <Link
                 to="/servicos"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-sm font-medium text-navy hover:border-navy"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white/70"
               >
                 Conhecer serviços
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-4 lg:pt-24">
-            <div className="rounded-2xl border border-border bg-white p-7 shadow-[var(--shadow-soft)]">
-              <p className="font-serif text-2xl leading-snug text-navy">
+          <div className="lg:col-span-4 lg:pt-32">
+            <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm">
+              <p className="font-serif text-2xl leading-snug text-white">
                 "Quem domina o custo de aquisição, domina a margem."
               </p>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-4 text-sm text-white/60">
                 Princípio fundador da Buy Group, aplicado a cada projeto desde
                 indústrias a serviços B2B.
               </p>
