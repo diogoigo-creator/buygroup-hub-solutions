@@ -146,9 +146,15 @@ function Index() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/60"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/60"
             >
-              <div>
+              <img
+                src={mark}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 select-none opacity-[0.06] transition-opacity duration-500 group-hover:opacity-[0.12]"
+              />
+              <div className="relative">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <s.icon className="h-6 w-6" />
                 </div>
@@ -157,13 +163,14 @@ function Index() {
               </div>
               <Link
                 to="/servicos"
-                className="mt-8 inline-flex items-center gap-1 text-sm text-foreground/80 group-hover:text-primary"
+                className="relative mt-8 inline-flex items-center gap-1 text-sm text-foreground/80 group-hover:text-primary"
               >
                 Saiba mais <ArrowUpRight className="h-4 w-4" />
               </Link>
             </article>
           ))}
         </div>
+
       </section>
 
       {/* APPROACH */}
