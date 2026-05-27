@@ -79,10 +79,16 @@ function Index() {
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
               Consultoria de procurement · Desde a estratégia ao saving auditado
             </div>
-            <h1 className="mt-10 text-balance font-sans text-4xl font-bold uppercase leading-[1.05] tracking-[0.08em] text-white md:text-6xl lg:text-7xl">
-              Mais que comprar.
-              <br />
-              <span className="text-white/55">É comprar bem.</span>
+            <h1 className="mt-10 max-w-3xl text-balance font-serif leading-[0.95] text-white">
+              <span className="block text-5xl md:text-7xl lg:text-[5.5rem]">
+                Mais que comprar.
+              </span>
+              <span className="mt-3 flex items-baseline gap-5">
+                <span className="hidden h-px w-16 shrink-0 translate-y-[-0.6em] bg-green md:block" />
+                <span className="block font-serif italic text-5xl text-green md:text-7xl lg:text-[5.5rem]">
+                  É comprar bem.
+                </span>
+              </span>
             </h1>
             <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
               A Buy Group transforma despesas em margem de lucro sustentada.
