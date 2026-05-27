@@ -85,7 +85,7 @@ function Index() {
               </span>
               <span className="mt-3 flex items-baseline gap-5">
                 <span className="hidden h-px w-16 shrink-0 translate-y-[-0.6em] bg-green md:block" />
-                <span className="block font-serif italic text-5xl text-green md:text-7xl lg:text-[5.5rem]">
+                <span className="block text-5xl text-green md:text-7xl lg:text-[5.5rem]">
                   É comprar bem.
                 </span>
               </span>
@@ -109,18 +109,6 @@ function Index() {
               >
                 Conhecer nossa metodologia
               </Link>
-            </div>
-          </div>
-          <div className="lg:col-span-4 lg:pt-32">
-            <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-7 backdrop-blur-sm">
-              <p className="font-serif text-2xl leading-snug text-white">
-                "Transformando despesas em lucro — sem interromper a operação e
-                sem investimento inicial."
-              </p>
-              <p className="mt-4 text-sm text-white/60">
-                Princípio fundador da Buy Group: cada real investido vira
-                investimento inteligente.
-              </p>
             </div>
           </div>
         </div>
