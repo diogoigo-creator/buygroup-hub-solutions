@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
+import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import heroImg from "@/assets/hero-boardroom.jpg";
 import markWhite from "@/assets/buy-group-mark-white.png";
 
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20uma%20auditoria%20gratuita%20de%20custos";
+
 
 const services = [
   {
@@ -144,7 +145,7 @@ function Index() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-white p-8 transition-colors duration-300 hover:border-green/60"
+              className="group card-lift flex flex-col justify-between rounded-2xl border border-border bg-white p-8 hover:border-green/60"
             >
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
@@ -259,16 +260,7 @@ function Index() {
         </div>
       </section>
 
-      {/* WhatsApp flutuante */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
-      >
-        <MessageCircle className="h-7 w-7" />
-      </a>
+      <WhatsAppFab />
     </SiteLayout>
   );
 }

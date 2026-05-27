@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { Mail, Phone, MapPin, CheckCircle2, Lock, MessageCircle } from "lucide-react";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { Mail, Phone, MapPin, CheckCircle2, Lock } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/contato")({
   component: ContatoPage,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
+
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
@@ -112,15 +113,7 @@ function ContatoPage() {
         </aside>
       </section>
 
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
-      >
-        <MessageCircle className="h-7 w-7" />
-      </a>
+      <WhatsAppFab />
     </SiteLayout>
   );
 }
