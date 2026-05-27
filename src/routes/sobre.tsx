@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import markEmber from "@/assets/buy-group-mark-ember.png";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
