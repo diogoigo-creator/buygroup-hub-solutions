@@ -214,7 +214,14 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-charcoal-soft p-10 md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
+          <img
+            src={mark}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] select-none opacity-[0.05]"
+          />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
+
             <div>
               <h2 className="text-balance font-serif text-4xl md:text-5xl">
                 Quanto a sua empresa pode economizar nos próximos 12 meses?
