@@ -17,40 +17,41 @@ export const Route = createFileRoute("/sobre")({
 const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
 const values = [
-  { t: "Resultado antes de retórica", d: "Métrica única: saving auditado e sustentável." },
-  { t: "Método aberto", d: "Transferimos ferramentas e processo — o cliente fica autônomo." },
-  { t: "Conflito controlado", d: "Independência total em relação a fornecedores." },
-  { t: "Sigilo absoluto", d: "Tratamos spend como informação financeira sensível." },
+  { t: "No Savings, No Fee", d: "Cliente só paga se houver economia comprovada. Sem custos iniciais, sem risco." },
+  { t: "Metodologia comprovada", d: "Práticas globais adaptadas à realidade brasileira — TCO, should-cost, RFPs competitivas." },
+  { t: "Transparência total", d: "Relatórios auditáveis com baseline oficial. Cada economia documentada e validada." },
+  { t: "Independência", d: "Zero conflito de interesse com fornecedores — foco exclusivo no resultado do cliente." },
 ];
 
 function SobrePage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Sobre"
-        title={<>Procurement como <span className="italic">vantagem competitiva</span>.</>}
-        description="A Buy Group nasceu da convicção de que compras é, antes de qualquer coisa, um centro de lucro — e não de despesa."
+        eyebrow="Quem somos"
+        title={<>Mais que comprar. <span className="italic">É comprar bem.</span></>}
+        description="A Buy Group é referência em negociação estratégica e otimização de custos corporativos — transformamos o setor de compras em uma alavanca de lucro, sem interromper operações ou exigir investimentos iniciais."
       />
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
         <div className="lg:col-span-7">
-          <h2 className="font-serif text-3xl text-navy md:text-4xl">Quem somos</h2>
+          <h2 className="font-serif text-3xl text-navy md:text-4xl">Nosso propósito</h2>
           <div className="mt-6 space-y-5 text-pretty text-muted-foreground">
             <p>
-              Somos um time multidisciplinar formado por executivos de procurement,
-              engenheiros e analistas financeiros com passagens por indústrias,
-              varejo, serviços e setor financeiro. Nossa metodologia combina
-              análise quantitativa de spend, expertise setorial e negociação de
-              alto desempenho.
+              Atuamos como parceiros estratégicos, oferecendo inteligência de
+              mercado e poder de negociação para maximizar resultados. Nosso
+              propósito é garantir que cada real investido seja um investimento
+              inteligente, otimizando despesas e impulsionando o crescimento.
             </p>
             <p>
-              Atendemos da média empresa ao grupo multinacional, sempre com o
-              mesmo princípio: comprar melhor é uma decisão estratégica, não
-              tática. Cada real economizado entra direto na margem.
+              Combinamos análise quantitativa de spend, expertise setorial e
+              negociação de alto desempenho. Atendemos da média empresa ao grupo
+              multinacional, sempre com o mesmo princípio: comprar melhor é uma
+              decisão estratégica — cada real economizado entra direto na margem.
             </p>
             <p>
-              Mais de 200 projetos entregues e um índice de retenção acima de 95%
-              confirmam o que nos move: clientes que voltam porque viram resultado.
+              Nosso modelo <span className="font-semibold text-navy">No Savings, No Fee</span> elimina
+              o risco financeiro do cliente e alinha nossos interesses: só
+              ganhamos quando o cliente ganha — e ganhamos juntos.
             </p>
           </div>
         </div>
@@ -60,11 +61,11 @@ function SobrePage() {
               <Quote className="h-6 w-6" />
             </div>
             <p className="mt-6 font-serif text-2xl leading-snug text-navy">
-              "Não vendemos relatórios. Entregamos saving auditado, com baseline
-              claro e responsabilidade compartilhada."
+              "Transformamos despesas em margem de lucro sustentada, com
+              estratégias inteligentes de compras e resultados tangíveis."
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              Diretoria · Buy Group
+              Buy Group · Supply Chain
             </p>
           </div>
         </aside>
@@ -72,7 +73,7 @@ function SobrePage() {
 
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-          <h2 className="font-serif text-3xl text-navy md:text-4xl">Valores que orientam o nosso trabalho</h2>
+          <h2 className="font-serif text-3xl text-navy md:text-4xl">Diferenciais que sustentam nossos resultados</h2>
           <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
             {values.map((v) => (
               <div key={v.t} className="bg-white p-8">
