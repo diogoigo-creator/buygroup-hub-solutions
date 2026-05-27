@@ -14,8 +14,8 @@ export function Footer() {
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
         <div className="lg:col-span-2">
           <img src={logo} alt="Buy Group" className="h-7 w-auto" />
-          <p className="mt-6 font-serif text-2xl leading-snug text-white">
-            Mais que comprar. <span className="italic text-green">É comprar bem.</span>
+          <p className="mt-6 font-sans text-lg font-bold uppercase leading-tight tracking-[0.14em] text-white">
+            Mais que comprar. <span className="text-white/60">É comprar bem.</span>
           </p>
           <p className="mt-6 max-w-sm text-pretty text-sm text-white/70">
             Transformamos despesas em margem de lucro sustentada por meio de

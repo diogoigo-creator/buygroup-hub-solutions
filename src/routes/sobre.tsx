@@ -28,7 +28,7 @@ function SobrePage() {
     <SiteLayout>
       <PageHero
         eyebrow="Quem somos"
-        title={<>Mais que comprar. <span className="italic">É comprar bem.</span></>}
+        title={<span className="block font-sans font-bold uppercase tracking-[0.08em] text-[0.72em]">Mais que comprar. <span className="text-white/55">É comprar bem.</span></span>}
         description="A Buy Group é referência em negociação estratégica e otimização de custos corporativos — transformamos o setor de compras em uma alavanca de lucro, sem interromper operações ou exigir investimentos iniciais."
       />
 

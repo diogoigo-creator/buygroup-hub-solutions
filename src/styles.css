@@ -63,11 +63,11 @@
 :root {
   --radius: 0.75rem;
 
-  /* Navy & Green palette */
-  --navy: oklch(0.21 0.04 256);          /* #0A1628 */
+  /* Navy & Gold institutional palette */
+  --navy: oklch(0.21 0.04 256);          /* deep navy */
   --navy-soft: oklch(0.28 0.04 256);     /* deeper navy surface */
-  --green: oklch(0.78 0.18 162);         /* #00D68F */
-  --green-soft: oklch(0.94 0.07 162);
+  --green: oklch(0.74 0.11 78);          /* warm institutional gold */
+  --green-soft: oklch(0.95 0.04 85);     /* soft champagne */
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.21 0.04 256);
@@ -97,9 +97,9 @@
   --input: oklch(0.92 0.01 250);
   --ring: var(--green);
 
-  --gradient-green: linear-gradient(135deg, oklch(0.78 0.18 162), oklch(0.84 0.14 168));
+  --gradient-green: linear-gradient(135deg, oklch(0.74 0.11 78), oklch(0.82 0.09 82));
   --shadow-soft: 0 10px 30px -12px oklch(0.21 0.04 256 / 0.15);
-  --shadow-green: 0 12px 32px -12px oklch(0.78 0.18 162 / 0.45);
+  --shadow-green: 0 12px 32px -12px oklch(0.21 0.04 256 / 0.35);
 }
 
 @layer base {
