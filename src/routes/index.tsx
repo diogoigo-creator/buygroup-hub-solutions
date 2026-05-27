@@ -79,15 +79,12 @@ function Index() {
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
               Consultoria de procurement · Desde a estratégia ao saving auditado
             </div>
-            <h1 className="mt-10 max-w-3xl text-balance font-serif leading-[0.95] text-white">
+            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.02em] text-white">
               <span className="block text-5xl md:text-7xl lg:text-[5.5rem]">
                 Mais que comprar.
               </span>
-              <span className="mt-3 flex items-baseline gap-5">
-                <span className="hidden h-px w-16 shrink-0 translate-y-[-0.6em] bg-green md:block" />
-                <span className="block text-5xl text-green md:text-7xl lg:text-[5.5rem]">
-                  É comprar bem.
-                </span>
+              <span className="mt-2 block text-5xl text-white md:text-7xl lg:text-[5.5rem]">
+                É comprar bem.
               </span>
             </h1>
             <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
