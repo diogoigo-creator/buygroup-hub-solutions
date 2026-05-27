@@ -172,7 +172,7 @@ function Index() {
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/55">Nosso método</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
-              Diagnóstico, execução e <span className="italic text-white/60">governança</span> — sem teoria solta.
+              Diagnóstico, execução e <span className="text-white/60">governança</span> — sem teoria solta.
             </h2>
             <p className="mt-6 max-w-lg text-pretty text-white/70">
               Cada projeto começa com uma análise profunda do spend e termina com
