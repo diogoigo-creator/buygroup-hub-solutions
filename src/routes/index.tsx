@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import heroImg from "@/assets/hero-boardroom.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
