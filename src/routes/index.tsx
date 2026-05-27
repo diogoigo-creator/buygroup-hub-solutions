@@ -120,7 +120,7 @@ function Index() {
           <div className="max-w-2xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">O que fazemos</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Três frentes, um único <span className="italic">objetivo</span>: margem.
+              Inteligência de compras aplicada a <span className="italic">resultados tangíveis</span>.
             </h2>
           </div>
           <Link
