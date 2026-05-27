@@ -145,7 +145,7 @@ function Index() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-white p-8 transition-colors duration-300 hover:border-green/60"
+              className="group card-lift flex flex-col justify-between rounded-2xl border border-border bg-white p-8 hover:border-green/60"
             >
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">

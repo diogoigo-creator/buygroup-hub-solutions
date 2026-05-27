@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, MessageCircle, ArrowUpRight } from "lucide-react";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/servicos")({
   component: ServicosPage,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
+
 
 const services = [
   {
@@ -69,7 +70,7 @@ function ServicosPage() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors duration-300 hover:border-green/60"
+              className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-8 hover:border-green/60"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
                 <s.icon className="h-6 w-6" />
@@ -107,15 +108,7 @@ function ServicosPage() {
         </div>
       </section>
 
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
-      >
-        <MessageCircle className="h-7 w-7" />
-      </a>
+      <WhatsAppFab />
     </SiteLayout>
   );
 }
