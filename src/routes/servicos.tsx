@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3 } from "lucide-react";
+import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, MessageCircle, ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
@@ -13,6 +13,8 @@ export const Route = createFileRoute("/servicos")({
   }),
   component: ServicosPage,
 });
+
+const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
 const services = [
   {
@@ -62,19 +64,22 @@ function ServicosPage() {
         description="Da análise do primeiro real ao saving auditado, passando por capacitação e operação terceirizada — tudo conectado em uma única metodologia."
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((s) => (
-            <article key={s.title} className="flex flex-col rounded-2xl border border-border bg-card p-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <article
+              key={s.title}
+              className="group flex flex-col rounded-2xl border border-border bg-white p-8 transition-colors duration-300 hover:border-green/60"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
                 <s.icon className="h-6 w-6" />
               </div>
-              <h2 className="mt-8 font-serif text-2xl">{s.title}</h2>
+              <h2 className="mt-8 font-serif text-2xl text-navy">{s.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               <ul className="mt-6 space-y-2 text-sm">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-2 text-foreground/85">
-                    <span aria-hidden className="mt-2 inline-block h-1 w-1 rounded-full bg-primary" />
+                  <li key={b} className="flex gap-2 text-navy/85">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" />
                     {b}
                   </li>
                 ))}
@@ -83,24 +88,34 @@ function ServicosPage() {
           ))}
         </div>
 
-        <div className="mt-20 rounded-2xl border border-border bg-charcoal-soft p-10 md:p-14">
+        <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
               <h3 className="font-serif text-3xl md:text-4xl">Como começamos um projeto</h3>
-              <p className="mt-3 max-w-xl text-muted-foreground">
+              <p className="mt-3 max-w-xl text-white/75">
                 Em uma conversa de 45 minutos entendemos seu contexto e propomos
                 um diagnóstico gratuito com estimativa de saving potencial.
               </p>
             </div>
             <Link
               to="/contato"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-ember)]"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
             >
-              Agendar conversa
+              Agendar conversa <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
+
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
     </SiteLayout>
   );
 }

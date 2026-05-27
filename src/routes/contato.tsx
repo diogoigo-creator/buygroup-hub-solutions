@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { Mail, Phone, MapPin, Check } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2, Lock, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -14,6 +14,8 @@ export const Route = createFileRoute("/contato")({
   }),
   component: ContatoPage,
 });
+
+const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
@@ -31,20 +33,18 @@ function ContatoPage() {
         description="Em até 5 dias úteis entregamos uma estimativa preliminar de saving baseada no perfil da sua empresa."
       />
 
-      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[1.4fr_1fr] lg:px-10">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
         <div>
           {sent ? (
-            <div className="flex flex-col items-start gap-4 rounded-2xl border border-primary/40 bg-primary/10 p-10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Check className="h-6 w-6" />
-              </div>
-              <h2 className="font-serif text-3xl">Recebido. Obrigado!</h2>
+            <div className="flex flex-col items-start gap-4 rounded-2xl border border-green/40 bg-green/10 p-10">
+              <CheckCircle2 className="h-12 w-12 text-green" />
+              <h2 className="font-serif text-3xl text-navy">Recebido. Obrigado!</h2>
               <p className="text-muted-foreground">
                 Nossa equipe vai responder em até 1 dia útil no e-mail informado.
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-border bg-card p-8 md:p-10">
+            <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:p-10">
               <div className="grid gap-5 md:grid-cols-2">
                 <Field label="Nome" name="nome" required />
                 <Field label="Empresa" name="empresa" required />
@@ -65,17 +65,18 @@ function ContatoPage() {
                   id="mensagem"
                   name="mensagem"
                   rows={5}
-                  className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary"
+                  className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
                   placeholder="Conte brevemente o contexto e o que você espera de um parceiro."
                 />
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[var(--shadow-ember)]"
+                className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
                 Enviar pedido de diagnóstico
               </button>
-              <p className="text-xs text-muted-foreground">
+              <p className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Lock className="h-3.5 w-3.5" />
                 Tratamos as informações com sigilo absoluto e nunca as compartilhamos com terceiros.
               </p>
             </form>
@@ -83,26 +84,26 @@ function ContatoPage() {
         </div>
 
         <aside className="space-y-6">
-          <div className="rounded-2xl border border-border bg-charcoal-soft p-8">
+          <div className="rounded-2xl bg-navy p-8 text-white">
             <h3 className="font-serif text-2xl">Fale direto com a gente</h3>
             <ul className="mt-6 space-y-4 text-sm">
               <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:contato@buygroup.com.br" className="hover:text-primary">contato@buygroup.com.br</a>
+                <Mail className="h-4 w-4 text-green" />
+                <a href="mailto:contato@buygroup.com.br" className="hover:text-green">contato@buygroup.com.br</a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+551140000000" className="hover:text-primary">+55 11 4000-0000</a>
+                <Phone className="h-4 w-4 text-green" />
+                <a href="tel:+551140000000" className="hover:text-green">+55 11 4000-0000</a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 text-primary" />
+              <li className="flex items-center gap-3 text-white/70">
+                <MapPin className="h-4 w-4 text-green" />
                 São Paulo · Brasil
               </li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-border bg-card p-8">
-            <p className="font-serif text-2xl leading-snug">
-              "Compre melhor.<br /><span className="italic text-primary">Cresça mais.</span>"
+          <div className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)]">
+            <p className="font-serif text-2xl leading-snug text-navy">
+              "Compre melhor.<br /><span className="italic text-green">Cresça mais.</span>"
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Mais de 200 projetos entregues. 18% de saving médio. Confidencialidade absoluta.
@@ -110,6 +111,16 @@ function ContatoPage() {
           </div>
         </aside>
       </section>
+
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-1"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
     </SiteLayout>
   );
 }
@@ -120,7 +131,7 @@ function Field({
   return (
     <div>
       <label htmlFor={name} className="text-sm text-muted-foreground">
-        {label} {required && <span className="text-primary">*</span>}
+        {label} {required && <span className="text-green">*</span>}
       </label>
       <input
         id={name}
@@ -128,7 +139,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary"
+        className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
       />
     </div>
   );
@@ -141,7 +152,7 @@ function Select({ label, name, options }: { label: string; name: string; options
       <select
         id={name}
         name={name}
-        className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary"
+        className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
       >
         {options.map((o) => <option key={o}>{o}</option>)}
       </select>
