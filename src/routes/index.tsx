@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroImg from "@/assets/hero-boardroom.jpg";
+import markWhite from "@/assets/buy-group-mark-white.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,7 +57,24 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/15 blur-3xl" />
+        {/* Logomarca animada — elemento gráfico recorrente */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-32 top-1/2 hidden -translate-y-1/2 lg:block"
+        >
+          <div className="relative h-[640px] w-[640px]">
+            <span className="absolute inset-0 rounded-full bg-green/15 blur-3xl animate-mark-pulse-ring" />
+            <span className="absolute inset-10 rounded-full border border-green/20 animate-mark-spin-slow" />
+            <span className="absolute inset-24 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
+            <img
+              src={markWhite}
+              alt=""
+              className="absolute inset-0 m-auto h-[360px] w-[360px] select-none opacity-[0.18] animate-mark-float"
+            />
+          </div>
+        </div>
         <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
+
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
               Consultoria de procurement · Desde a estratégia ao saving auditado
