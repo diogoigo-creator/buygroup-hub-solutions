@@ -12,22 +12,22 @@ export function KineticSlogan({
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 flex items-center justify-center lg:justify-end lg:pr-12"
+      className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-center px-6 pb-8 lg:justify-end lg:px-12 lg:pb-12"
     >
-      {/* Background watermark mark */}
+      {/* Background watermark mark (no rotation) */}
       <img
         src={markWhite}
         alt=""
-        className="pointer-events-none absolute right-4 top-1/2 h-[260px] w-[260px] -translate-y-1/2 select-none opacity-[0.06] animate-mark-float lg:right-12 lg:h-[420px] lg:w-[420px] lg:opacity-[0.08]"
+        className="pointer-events-none absolute right-6 top-1/2 h-[220px] w-[220px] -translate-y-1/2 select-none opacity-[0.06] animate-mark-bob lg:right-16 lg:h-[360px] lg:w-[360px] lg:opacity-[0.08]"
       />
-      <div className="relative max-w-[90%] text-center lg:max-w-[520px] lg:text-right">
+      <div className="relative max-w-[92%] text-center lg:max-w-[640px] lg:text-right">
         {lines.map((segments, lineIdx) => (
           <p
             key={lineIdx}
-            className="font-serif text-3xl leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+            className="font-serif text-2xl leading-[1.1] text-white sm:text-3xl lg:text-[2.75rem]"
           >
             {segments.map((seg, segIdx) => {
-              const words = seg.text.split(" ");
+              const words = seg.text.split(" ").filter(Boolean);
               return (
                 <span key={segIdx} className={seg.accent ? "relative inline-block" : "inline"}>
                   {words.map((w, wi) => {
