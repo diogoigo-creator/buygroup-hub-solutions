@@ -91,7 +91,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-3 rounded-full bg-navy px-5 py-3.5 text-center text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)]"
             >
-              Diagnóstico gratuito
+              Executive briefing
             </Link>
           </nav>
         </div>
