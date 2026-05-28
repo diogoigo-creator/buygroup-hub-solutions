@@ -58,7 +58,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-navy text-white">
+      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[calc(100svh-68px)] lg:items-center">
         <img
           src={heroImg}
           alt=""
@@ -84,31 +84,32 @@ function Index() {
           </div>
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-16 lg:pt-12">
           <div className="lg:col-span-9">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
               By invitation · Procurement transformation
             </div>
 
-            <h1 className="mt-10 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
-              <span className="block text-5xl md:text-7xl lg:text-[5.25rem]">
+            <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
+              <span className="block text-5xl md:text-6xl lg:text-7xl">
                 R$ <span className="text-green">[2.1]</span> bilhões
               </span>
-              <span className="mt-3 block text-3xl text-white/85 md:text-4xl lg:text-[2.75rem]">
+              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-[2.25rem]">
                 em savings auditados.
                 <span className="text-white/55"> Zero risco à sua reputação.</span>
               </span>
             </h1>
 
-            <p className="mt-10 max-w-2xl text-pretty text-lg text-white/75">
+
+            <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
               A firma de procurement transformation escolhida por
               <span className="text-white"> [23] CFOs de companhias enterprise</span>.
               Modelo <span className="text-green">No Savings, No Fee</span> com garantia contratual:
               resultados auditáveis ou reembolso integral.
             </p>
 
-            <div className="mt-12 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
@@ -124,10 +125,11 @@ function Index() {
               </Link>
             </div>
 
-            <p className="mt-8 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
+            <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
               NDA padrão · Currently accepting [3] new clients this quarter
             </p>
+
           </div>
         </div>
       </section>

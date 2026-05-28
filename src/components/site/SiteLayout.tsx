@@ -23,7 +23,7 @@ export function PageHero({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
+    <section className="relative flex overflow-hidden bg-navy text-white lg:min-h-[calc(100svh-68px)] lg:items-center">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.22]"
         style={{
@@ -36,7 +36,7 @@ export function PageHero({
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-6 lg:translate-x-0"
       >
-        <div className="relative h-[280px] w-[280px] sm:h-[360px] sm:w-[360px] lg:h-[460px] lg:w-[460px]">
+        <div className="relative h-[240px] w-[240px] sm:h-[320px] sm:w-[320px] lg:h-[400px] lg:w-[400px]">
           <span className="absolute inset-0 rounded-full bg-green/15 blur-3xl animate-mark-pulse-ring" />
           <span className="absolute inset-6 rounded-full border border-green/20 animate-mark-spin-slow" />
           <span
@@ -51,18 +51,19 @@ export function PageHero({
         </div>
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/10" />
-      <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-24 lg:px-10 lg:pb-32 lg:pt-36">
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-20 lg:px-10 lg:pb-20 lg:pt-16">
         <div className="flex items-center gap-3">
           <span className="h-px w-10 bg-green" />
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/65">{eyebrow}</p>
         </div>
-        <h1 className="mt-8 max-w-5xl text-balance font-serif text-5xl leading-[1.02] text-white md:text-7xl lg:text-[5.25rem]">
+        <h1 className="mt-6 max-w-5xl text-balance font-serif text-4xl leading-[1.05] text-white md:text-6xl lg:text-[4.5rem]">
           {title}
         </h1>
         {description && (
-          <p className="mt-8 max-w-2xl text-pretty text-lg text-white/70">{description}</p>
+          <p className="mt-6 max-w-2xl text-pretty text-base text-white/70 lg:text-lg">{description}</p>
         )}
       </div>
     </section>
+
   );
 }
