@@ -73,13 +73,13 @@ function ContatoPage() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Enviar pedido de diagnóstico
+                Agendar executive briefing
               </button>
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" />
-                Tratamos as informações com sigilo absoluto e nunca as compartilhamos com terceiros.
+                NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos os engajamentos.
               </p>
             </form>
           )}
