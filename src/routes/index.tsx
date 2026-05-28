@@ -39,6 +39,21 @@ const moat = [
   { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
 ];
 
+const categorias = [
+  { icon: Wifi, t: "Telecom & Conectividade", r: "18–32%", d: "Voz, dados, mobile, links dedicados e cloud connectivity." },
+  { icon: Zap, t: "Energia & Utilities", r: "12–25%", d: "Mercado livre, gestão tarifária, gás natural e eficiência energética." },
+  { icon: Truck, t: "Logística & Frete", r: "10–22%", d: "Transporte rodoviário, last-mile, armazenagem e cabotagem." },
+  { icon: Printer, t: "Outsourcing de Impressão", r: "20–40%", d: "Frota, outsourcing, gestão documental e print-on-demand." },
+  { icon: Laptop, t: "Tecnologia & SaaS", r: "15–30%", d: "Licenciamento, hardware, cloud (AWS/Azure/GCP) e contratos de software." },
+  { icon: Wrench, t: "Facilities & Manutenção", r: "14–28%", d: "Limpeza, segurança patrimonial, manutenção predial e jardinagem." },
+  { icon: Package, t: "Embalagens & Suprimentos", r: "8–20%", d: "Caixas, filmes, paletes, escritório e MRO indiretos." },
+  { icon: Plane, t: "Travel & Eventos Corporativos", r: "15–35%", d: "Aéreo, hospedagem, locação de veículos, TMC e eventos." },
+  { icon: Shield, t: "Seguros Corporativos", r: "10–25%", d: "Patrimonial, frota, vida em grupo, D&O e responsabilidade civil." },
+  { icon: Banknote, t: "Serviços Financeiros & Bancários", r: "12–28%", d: "Tarifas bancárias, cartões corporativos, adquirência e câmbio." },
+  { icon: Boxes, t: "Matéria-prima & Insumos", r: "6–18%", d: "Strategic sourcing, should-cost modeling e leilões reversos." },
+  { icon: Recycle, t: "Resíduos & Sustentabilidade", r: "15–30%", d: "Gestão de resíduos, reciclagem, água e efluentes industriais." },
+];
+
 function Index() {
   return (
     <SiteLayout>
