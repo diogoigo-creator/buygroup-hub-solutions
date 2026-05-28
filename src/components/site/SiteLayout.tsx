@@ -12,10 +12,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="relative flex-1 overflow-hidden">
-        {/* Decorative watermarks mirroring the footer treatment on light sections */}
-        <SectionWatermark variant="right" className="top-[40vh]" />
-        <SectionWatermark variant="left" className="top-[120vh]" />
-        <SectionWatermark variant="right" className="top-[200vh]" />
+        {/* Decorative watermarks — dark mark visible on light sections, light mark visible on dark sections */}
+        <SectionWatermark variant="right" tone="dark" className="top-[40vh]" />
+        <SectionWatermark variant="left" tone="dark" className="top-[120vh]" />
+        <SectionWatermark variant="right" tone="dark" className="top-[200vh]" />
+        <SectionWatermark variant="left" tone="light" className="top-[10vh]" />
+        <SectionWatermark variant="right" tone="light" className="top-[80vh]" />
+        <SectionWatermark variant="left" tone="light" className="top-[160vh]" />
         <div className="relative">{children}</div>
       </main>
       <Footer />
