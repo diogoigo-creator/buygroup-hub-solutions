@@ -1,19 +1,17 @@
-import mark from "@/assets/buy-group-mark.png";
+import markDark from "@/assets/buy-group-mark.png";
+import markLight from "@/assets/buy-group-mark-white.png";
 
 /**
- * Decorative watermark mark for light-background sections.
- * Mirrors the footer's watermark treatment in navy at very low opacity.
- *
- * Variants:
- *  - "right": large mark sticking out from the right edge (default)
- *  - "left":  large mark sticking out from the left edge
- *  - "center-bottom": faint mark anchored bottom-center, useful at page end
+ * Decorative watermark mark mirroring the footer treatment.
+ * Use `tone="dark"` (default) on light sections, `tone="light"` on dark sections.
  */
 export function SectionWatermark({
   variant = "right",
+  tone = "dark",
   className = "",
 }: {
   variant?: "right" | "left" | "center-bottom";
+  tone?: "dark" | "light";
   className?: string;
 }) {
   const position =
@@ -23,12 +21,15 @@ export function SectionWatermark({
         ? "left-1/2 -bottom-32 -translate-x-1/2"
         : "-right-24 top-1/2 -translate-y-1/2";
 
+  const src = tone === "light" ? markLight : markDark;
+  const opacity = tone === "light" ? "opacity-[0.05]" : "opacity-[0.04]";
+
   return (
     <img
-      src={mark}
+      src={src}
       alt=""
       aria-hidden="true"
-      className={`pointer-events-none absolute h-[520px] w-[520px] select-none opacity-[0.04] ${position} ${className}`}
+      className={`pointer-events-none absolute h-[520px] w-[520px] select-none ${opacity} ${position} ${className}`}
     />
   );
 }
