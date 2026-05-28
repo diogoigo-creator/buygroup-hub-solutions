@@ -49,10 +49,10 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/15" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
         <div
           aria-hidden="true"
