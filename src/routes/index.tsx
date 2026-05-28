@@ -12,7 +12,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "The procurement transformation firm trusted by enterprise CFOs. Investment-grade savings, fully documented. No Savings, No Fee." },
       { property: "og:title", content: "Buy Group — Investment-grade procurement transformation" },
       { property: "og:description", content: "Documented enterprise savings with full risk reversal. Executive briefings by invitation." },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
