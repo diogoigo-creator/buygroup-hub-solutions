@@ -61,6 +61,13 @@ function ServicosPage() {
         eyebrow="ProcureMax™ Framework"
         title={<>Engajamentos end-to-end para a função de <span className="text-green">compras enterprise</span>.</>}
         description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
+        identity={{
+          kind: "slogan",
+          lines: [
+            [{ text: "Mais que comprar." }],
+            [{ text: "É comprar" }, { text: " bem.", accent: true }],
+          ],
+        }}
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
