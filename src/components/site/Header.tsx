@@ -59,7 +59,7 @@ export function Header() {
             to="/contato"
             className="rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_12px_28px_-12px_rgba(15,23,42,0.55)]"
           >
-            Diagnóstico gratuito
+            Executive briefing
           </Link>
         </nav>
         <button
