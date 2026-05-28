@@ -29,9 +29,9 @@ function ContatoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contato"
-        title={<>Solicite um <span className="text-green">diagnóstico gratuito</span>.</>}
-        description="Em até 5 dias úteis entregamos uma estimativa preliminar de saving baseada no perfil da sua empresa."
+        eyebrow="Executive briefing · CFO-level · 20min"
+        title={<>Agende um <span className="text-green">briefing sob NDA</span>.</>}
+        description="Em até 5 dias úteis após o briefing, entregamos uma estimativa preliminar de saving baseada no perfil do seu spend. Currently accepting [3] new engagements this quarter."
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
