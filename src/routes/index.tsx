@@ -44,7 +44,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[calc(100svh-68px)] lg:items-center">
+      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:items-center">
         <img
           src={heroImg}
           alt=""
@@ -58,7 +58,7 @@ function Index() {
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
         >
-          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[520px] lg:w-[520px]">
+          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[440px] lg:w-[440px]">
             <span className="absolute inset-0 rounded-full bg-green/10 blur-3xl animate-mark-pulse-ring" />
             <span className="absolute inset-8 rounded-full border border-green/25 animate-mark-spin-slow" />
             <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
@@ -70,7 +70,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-16 lg:pt-12">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
           <div className="lg:col-span-9">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
@@ -78,10 +78,10 @@ function Index() {
             </div>
 
             <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
-              <span className="block text-5xl md:text-6xl lg:text-7xl">
+              <span className="block text-5xl md:text-6xl lg:text-6xl">
                 R$ <span className="text-green">[2.1]</span> bilhões
               </span>
-              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-[2.25rem]">
+              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
                 em savings auditados.
                 <span className="text-white/55"> Zero risco à sua reputação.</span>
               </span>
