@@ -29,6 +29,7 @@ function SobrePage() {
         eyebrow="By invitation · Quem somos"
         title={<>A firma de procurement <span className="text-green">escolhida</span> por CFOs enterprise.</>}
         description="Buy Group é a procurement transformation firm para companhias com P&L de R$ [1]Bi+ que tratam compras como alavanca de margem — não como centro de custo."
+        identity={{ kind: "lockup", caption: "Procurement Transformation Firm" }}
       />
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">

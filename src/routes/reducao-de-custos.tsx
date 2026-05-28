@@ -42,6 +42,7 @@ function ReducaoDeCustosPage() {
           </>
         }
         description="Faixas observadas em [200+] engajamentos enterprise sobre o spend endereçável de cada categoria. O potencial real é confirmado após Spend Intelligence — sem custo até a aprovação do business case."
+        identity={{ kind: "mark", intensity: "bold" }}
       />
 
       <section className="border-t border-border bg-secondary/30">
