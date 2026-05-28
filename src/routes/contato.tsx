@@ -53,10 +53,11 @@ function ContatoPage() {
                 <Field label="Telefone" name="telefone" type="tel" />
               </div>
               <Select label="Interesse principal" name="interesse" options={[
-                "Redução de custos",
-                "Outsourcing de compras",
-                "Cursos in company",
-                "Diagnóstico de maturidade",
+                "Cost Optimization Program",
+                "Procurement BPO",
+                "ProcureMax™ Framework completo",
+                "Spend Intelligence assessment",
+                "Executive Education in-company",
                 "Outro",
               ]} />
               <Field label="Faturamento anual aproximado" name="faturamento" placeholder="Ex: R$ 50M" />
