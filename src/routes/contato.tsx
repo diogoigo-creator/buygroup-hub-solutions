@@ -11,7 +11,9 @@ export const Route = createFileRoute("/contato")({
       { name: "description", content: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos." },
       { property: "og:title", content: "Contato Buy Group" },
       { property: "og:description", content: "Solicite um diagnóstico gratuito." },
+      { property: "og:url", content: "/contato" },
     ],
+    links: [{ rel: "canonical", href: "/contato" }],
   }),
   component: ContatoPage,
 });
