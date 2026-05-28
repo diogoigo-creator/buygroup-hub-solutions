@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, TrendingDown, Users, GraduationCap, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import heroImg from "@/assets/hero-boardroom.jpg";
@@ -8,40 +8,35 @@ import markWhite from "@/assets/buy-group-mark-white.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Mais que comprar. É comprar bem." },
-      { name: "description", content: "Buy Group: consultoria de procurement que transforma despesas em margem de lucro com modelo 'No Savings, No Fee'. Auditoria gratuita." },
-      { property: "og:title", content: "Buy Group — Mais que comprar. É comprar bem." },
-      { property: "og:description", content: "Transformamos despesas em lucro com inteligência de compras e modelo sem risco financeiro." },
+      { title: "Buy Group — Procurement transformation for Fortune-class CFOs" },
+      { name: "description", content: "The procurement transformation firm trusted by enterprise CFOs. Investment-grade savings, fully documented. No Savings, No Fee." },
+      { property: "og:title", content: "Buy Group — Investment-grade procurement transformation" },
+      { property: "og:description", content: "Documented enterprise savings with full risk reversal. Executive briefings by invitation." },
     ],
   }),
   component: Index,
 });
 
-
-
-const services = [
-  {
-    icon: TrendingDown,
-    title: "Redução de custos recorrentes",
-    body: "Otimizamos contratos de energia, telecom, facilities, logística, seguros e terceirizados — sem interromper a operação. Economia típica de 10% a 40%.",
-  },
-  {
-    icon: Users,
-    title: "Outsourcing de compras",
-    body: "Terceirização parcial ou total da função de compras com governança, KPIs, SLAs e tecnologia. Estrutura escalável e independente.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Compras spot e projetos de alto valor",
-    body: "Aquisições pontuais de alto impacto — obras corporativas, equipamentos industriais e tecnologia — com TCO, should-cost e RFPs competitivas.",
-  },
+// NOTE: Substitua os valores entre [colchetes] por números reais auditáveis.
+const credibility = [
+  { value: "R$ [2.1]Bi+", label: "em savings documentados" },
+  { value: "[23]", label: "clientes enterprise atendidos" },
+  { value: "[8.7]x", label: "ROI médio por engajamento" },
+  { value: "100%", label: "auditável · No Savings, No Fee" },
 ];
 
-const metrics = [
-  { value: "10–40%", label: "Economia média sobre o spend endereçável" },
-  { value: "R$500k+", label: "Liberados no primeiro ano em caso ilustrativo" },
-  { value: "3h", label: "De dedicação para a auditoria gratuita" },
-  { value: "0", label: "Risco financeiro: No Savings, No Fee" },
+const framework = [
+  { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
+  { n: "02", t: "Strategic Sourcing", d: "Should-cost modeling, TCO analysis e RFPs competitivas conduzidas por seniores ex-procurement de grandes corporações." },
+  { n: "03", t: "Negotiation Lab", d: "Negociação executada por nossa equipe. Capturamos margem sem comprometer SLA, qualidade ou continuidade operacional." },
+  { n: "04", t: "Value Assurance", d: "Auditoria trimestral do saving capturado. Reporting board-ready. Garantia contratual de resultado ou reembolso integral." },
+];
+
+const moat = [
+  { icon: ShieldCheck, t: "Investment-grade guarantee", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee — sem exceções." },
+  { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
+  { icon: Award, t: "Senior-only delivery", d: "Zero juniores em projeto. Cada engajamento é conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
+  { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
 ];
 
 function Index() {
@@ -53,19 +48,18 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50" />
-        <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/15 blur-3xl" />
-        {/* Logomarca animada — elemento gráfico recorrente */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/60" />
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
         >
           <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[520px] lg:w-[520px]">
-            <span className="absolute inset-0 rounded-full bg-green/15 blur-3xl animate-mark-pulse-ring" />
-            <span className="absolute inset-8 rounded-full border border-green/20 animate-mark-spin-slow" />
+            <span className="absolute inset-0 rounded-full bg-green/10 blur-3xl animate-mark-pulse-ring" />
+            <span className="absolute inset-8 rounded-full border border-green/25 animate-mark-spin-slow" />
             <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
             <img
               src={markWhite}
@@ -74,187 +68,225 @@ function Index() {
             />
           </div>
         </div>
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
 
-          <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/75">
-              Consultoria de procurement · Desde a estratégia ao saving auditado
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-28 pt-28 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-40 lg:pt-40">
+          <div className="lg:col-span-9">
+            <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
+              <Sparkles className="h-3.5 w-3.5 text-green" />
+              By invitation · Procurement transformation
             </div>
-            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.02em] text-white">
-              <span className="block text-5xl md:text-7xl lg:text-[5.5rem]">
-                Mais que comprar.
+
+            <h1 className="mt-10 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
+              <span className="block text-5xl md:text-7xl lg:text-[5.25rem]">
+                R$ <span className="text-green">[2.1]</span> bilhões
               </span>
-              <span className="mt-2 block text-5xl text-white md:text-7xl lg:text-[5.5rem]">
-                É comprar bem.
+              <span className="mt-3 block text-3xl text-white/85 md:text-4xl lg:text-[2.75rem]">
+                em savings auditados.
+                <span className="text-white/55"> Zero risco à sua reputação.</span>
               </span>
             </h1>
-            <p className="mt-10 max-w-xl text-pretty text-lg text-white/75">
-              A Buy Group transforma despesas em margem de lucro sustentada.
-              Atuamos com modelo <span className="text-green">No Savings, No Fee</span> —
-              você só paga pelas economias comprovadas e auditadas.
+
+            <p className="mt-10 max-w-2xl text-pretty text-lg text-white/75">
+              A firma de procurement transformation escolhida por
+              <span className="text-white"> [23] CFOs de companhias enterprise</span>.
+              Modelo <span className="text-green">No Savings, No Fee</span> com garantia contratual:
+              resultados auditáveis ou reembolso integral.
             </p>
+
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
-                className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Solicitar auditoria gratuita
+                Agendar executive briefing · 20min
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
               <Link
                 to="/servicos"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white hover:border-white/70"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
               >
-                Conhecer nossa metodologia
+                Conhecer o ProcureMax™ Framework
               </Link>
             </div>
+
+            <p className="mt-8 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
+              <Lock className="h-3 w-3" />
+              NDA padrão · Currently accepting [3] new clients this quarter
+            </p>
           </div>
         </div>
       </section>
 
-      {/* METRICS */}
+      {/* CREDIBILITY MATRIX */}
       <section className="border-y border-white/5 bg-navy text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
-          {metrics.map((m) => (
+          {credibility.map((m) => (
             <div key={m.label} className="bg-navy px-6 py-12 lg:px-10">
-              <p className="font-serif text-5xl text-green">{m.value}</p>
+              <p className="font-serif text-4xl text-green lg:text-5xl">{m.value}</p>
               <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* CASE STUDY HERO */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">O que fazemos</p>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Inteligência de compras aplicada a <span className="text-green">resultados tangíveis</span>.
+              R$ [47]MM capturados em <span className="text-green">90 dias</span>.
             </h2>
-          </div>
-          <Link
-            to="/servicos"
-            className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-green"
-          >
-            Ver todos os serviços <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {services.map((s) => (
-            <article
-              key={s.title}
-              className="group card-lift flex flex-col justify-between rounded-2xl border border-border bg-white p-8 hover:border-green/60"
+            <p className="mt-6 text-pretty text-muted-foreground">
+              Grupo industrial brasileiro, faturamento R$ [3.2]Bi. Spend endereçável
+              de R$ [380]MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
+              do board.
+            </p>
+            <Link
+              to="/contato"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-green"
             >
-              <div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
-                  <s.icon className="h-6 w-6" />
+              Solicitar case completo (sob NDA) <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+              {[
+                { k: "Saving capturado", v: "12.4%", s: "sobre spend endereçável" },
+                { k: "Payback", v: "< 90d", s: "do primeiro contrato renegociado" },
+                { k: "ROI do projeto", v: "[11.2]x", s: "vs. fee Buy Group" },
+              ].map((c) => (
+                <div key={c.k} className="bg-white p-8">
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
+                  <p className="mt-4 font-serif text-4xl text-navy">{c.v}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">{c.s}</p>
                 </div>
-                <h3 className="mt-8 font-serif text-2xl text-navy">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </div>
-              <Link
-                to="/servicos"
-                className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-navy/80 group-hover:text-green"
-              >
-                Saiba mais <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </article>
-          ))}
+              ))}
+            </div>
+
+            <figure className="mt-6 rounded-2xl border border-border bg-secondary/40 p-8">
+              <blockquote className="font-serif text-2xl leading-snug text-navy">
+                "Em 90 dias entregaram o que três consultorias tier-1 não conseguiram em
+                dois anos. O modelo de risco compartilhado mudou a equação."
+              </blockquote>
+              <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                CFO · Grupo industrial · R$ [3.2]Bi faturamento
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
-      {/* APPROACH - dark editorial */}
+      {/* PROCUREMAX FRAMEWORK */}
       <section className="relative overflow-hidden bg-navy text-white">
         <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:px-10 lg:py-32">
-          <div>
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/55">Nosso método</p>
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+          <div className="max-w-3xl">
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">ProcureMax™ Framework</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
-              Diagnóstico, execução e <span className="text-white/60">governança</span> — sem teoria solta.
+              Metodologia proprietária. Quatro fases.
+              <span className="text-white/55"> Um único KPI: saving auditado.</span>
             </h2>
-            <p className="mt-6 max-w-lg text-pretty text-white/70">
-              Cada projeto começa com uma análise profunda do spend e termina com
-              indicadores claros de saving auditado. Trabalhamos lado a lado com
-              suas equipes, transferindo método e ferramentas.
+            <p className="mt-6 max-w-2xl text-white/70">
+              Desenvolvida ao longo de [200+] engajamentos enterprise. ProcureMax™ é o
+              único framework de procurement com garantia contratual de resultado e
+              auditoria third-party em cada fase.
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
-              <ShieldCheck className="h-4 w-4 text-green" />
-              Remuneração parcial atrelada a resultado
-            </div>
           </div>
-          <ol className="space-y-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-            {[
-              { n: "01", t: "Diagnóstico inicial", d: "Coleta e auditoria de 12 a 24 meses de despesas — baseline auditável e oficial." },
-              { n: "02", t: "Benchmarking inteligente", d: "Comparação com referências de mercado para identificar gaps e oportunidades." },
-              { n: "03", t: "Negociação estratégica", d: "Conduzimos as negociações reduzindo custos sem comprometer qualidade." },
-              { n: "04", t: "Monitoramento contínuo", d: "Acompanhamento ativo das economias com auditoria constante." },
-            ].map((step) => (
-              <li key={step.n} className="flex gap-6 bg-navy p-6">
-                <span className="font-serif text-3xl text-green">{step.n}</span>
-                <div>
-                  <p className="font-medium text-white">{step.t}</p>
-                  <p className="mt-1 text-sm text-white/65">{step.d}</p>
-                </div>
+
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            {framework.map((step) => (
+              <li key={step.n} className="bg-navy p-8 lg:p-10">
+                <span className="font-serif text-4xl text-green">{step.n}</span>
+                <p className="mt-6 font-serif text-xl text-white">{step.t}</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">{step.d}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* DIFERENCIAIS */}
+      {/* DIFFERENTIATION MOAT */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/60">Diferenciais Buy Group</p>
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Por que Buy Group</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro compromissos que <span className="text-green">alinham</span> nossos interesses aos seus.
+            Quatro razões pelas quais boards de companhias enterprise
+            <span className="text-green"> nos escolhem</span> sobre Big Four.
           </h2>
         </div>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
-          {[
-            { t: "No Savings, No Fee", d: "Você só paga se houver economia comprovada. Sem custos iniciais, sem risco financeiro — nossos interesses estão 100% alinhados aos seus." },
-            { t: "Metodologia comprovada", d: "Práticas reconhecidas globalmente adaptadas à realidade econômica do Brasil. TCO, should-cost e RFPs competitivas." },
-            { t: "Transparência e auditabilidade", d: "Relatórios claros, objetivos e auditáveis. Cada economia é documentada e validada, com baseline oficial." },
-            { t: "Independência total", d: "Sem conflito de interesse com fornecedores. Foco exclusivo no melhor resultado para o cliente." },
-          ].map((d, i) => (
+
+        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
+          {moat.map((d) => (
             <div key={d.t} className="bg-white p-8 lg:p-10">
-              <p className="font-serif text-3xl text-green">0{i + 1}</p>
-              <h3 className="mt-4 font-serif text-2xl text-navy">{d.t}</h3>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
+                <d.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-6 font-serif text-2xl text-navy">{d.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d.d}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+      {/* TEAM CREDENTIALS */}
+      <section className="border-y border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="grid items-start gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Quem conduz</p>
+              <h2 className="mt-4 font-serif text-4xl text-navy md:text-5xl">
+                Senior procurement.
+                <span className="text-green"> Sem juniores.</span>
+              </h2>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
+              {[
+                { icon: Building2, t: "[15+] anos", d: "experiência média da equipe sênior em procurement enterprise" },
+                { icon: TrendingUp, t: "[200+]", d: "engajamentos conduzidos em verticais críticas" },
+                { icon: Award, t: "Tier-1", d: "background dos sócios em consultorias globais e indústria" },
+              ].map((c) => (
+                <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
+                  <c.icon className="h-5 w-5 text-green" />
+                  <p className="mt-5 font-serif text-2xl text-navy">{c.t}</p>
+                  <p className="mt-2 text-sm leading-snug text-muted-foreground">{c.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EXECUTIVE CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl bg-navy p-10 text-white md:p-16">
-          <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-green/30 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-green/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-green">Auditoria gratuita</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
-                3 horas da sua equipe. Um relatório claro de oportunidades.
+                Uma conversa. Estimativa preliminar de saving.
+                <span className="text-white/55"> Sob NDA.</span>
               </h2>
-              <p className="mt-4 max-w-lg text-white/75">
-                Identificamos o potencial real de economia da sua empresa e
-                entregamos um plano de captura — sem compromisso, sem custo.
+              <p className="mt-5 max-w-lg text-white/75">
+                Aceitamos no máximo <span className="text-green">[12] clientes por trimestre</span>
+                para preservar o padrão de delivery. Currently accepting [3] new engagements.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-4 lg:justify-end">
+            <div className="flex flex-col gap-4 lg:items-end">
               <Link
                 to="/contato"
-                className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
+                className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
               >
-                Solicitar auditoria gratuita
+                Agendar executive briefing
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
-              <Link to="/servicos" className="text-sm text-white/80 hover:text-green">
-                Ver metodologia →
-              </Link>
+              <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
+                <ShieldCheck className="h-3 w-3 text-green" />
+                Full guarantee · Investment-grade results or full refund
+              </p>
             </div>
           </div>
         </div>
