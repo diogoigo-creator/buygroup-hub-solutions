@@ -72,14 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Buy Group — Procurement transformation para CFOs enterprise" },
+      { name: "description", content: "A firma de procurement transformation escolhida por CFOs de companhias enterprise. Savings auditáveis, modelo No Savings, No Fee." },
+      { name: "author", content: "Buy Group" },
+      { property: "og:title", content: "Buy Group — Procurement transformation" },
+      { property: "og:description", content: "Savings auditáveis com garantia contratual. Executive briefings sob NDA." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "Buy Group" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
