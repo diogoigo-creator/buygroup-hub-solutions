@@ -5,11 +5,19 @@ import { MarkOrbit } from "./hero-identities/MarkOrbit";
 import { FullLockup } from "./hero-identities/FullLockup";
 import { KineticSlogan } from "./hero-identities/KineticSlogan";
 
+import { SectionWatermark } from "./SectionWatermark";
+
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="relative flex-1 overflow-hidden">
+        {/* Decorative watermarks mirroring the footer treatment on light sections */}
+        <SectionWatermark variant="right" className="top-[40vh]" />
+        <SectionWatermark variant="left" className="top-[120vh]" />
+        <SectionWatermark variant="right" className="top-[200vh]" />
+        <div className="relative">{children}</div>
+      </main>
       <Footer />
     </div>
   );
