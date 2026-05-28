@@ -10,7 +10,9 @@ export const Route = createFileRoute("/servicos")({
       { name: "description", content: "Engajamentos enterprise de procurement transformation: spend intelligence, strategic sourcing, BPO sênior e governança board-ready." },
       { property: "og:title", content: "Serviços Buy Group" },
       { property: "og:description", content: "ProcureMax™ Framework. Investment-grade savings." },
+      { property: "og:url", content: "/servicos" },
     ],
+    links: [{ rel: "canonical", href: "/servicos" }],
   }),
   component: ServicosPage,
 });
