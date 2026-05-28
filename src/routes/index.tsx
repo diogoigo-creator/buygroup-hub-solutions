@@ -58,7 +58,7 @@ function Index() {
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
         >
-          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[520px] lg:w-[520px]">
+          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[440px] lg:w-[440px]">
             <span className="absolute inset-0 rounded-full bg-green/10 blur-3xl animate-mark-pulse-ring" />
             <span className="absolute inset-8 rounded-full border border-green/25 animate-mark-spin-slow" />
             <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
