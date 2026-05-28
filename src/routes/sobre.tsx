@@ -10,7 +10,9 @@ export const Route = createFileRoute("/sobre")({
       { name: "description", content: "A firma de procurement transformation escolhida por CFOs de companhias enterprise. Investment-grade results, garantia contratual." },
       { property: "og:title", content: "Sobre a Buy Group" },
       { property: "og:description", content: "Procurement como alavanca de margem. Sob NDA." },
+      { property: "og:url", content: "/sobre" },
     ],
+    links: [{ rel: "canonical", href: "/sobre" }],
   }),
   component: SobrePage,
 });

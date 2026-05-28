@@ -40,7 +40,7 @@ export function Header() {
             <Link
               key={n.to}
               to={n.to}
-              className="group relative py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-navy"
+              className="group relative rounded-sm py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
               activeProps={{ className: "text-navy" }}
               activeOptions={{ exact: n.to === "/" }}
             >
@@ -58,13 +58,13 @@ export function Header() {
           ))}
           <Link
             to="/contato"
-            className="rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_12px_28px_-12px_rgba(15,23,42,0.55)]"
+            className="rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_12px_28px_-12px_rgba(15,23,42,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
           >
             Executive briefing
           </Link>
         </nav>
         <button
-          className="text-navy md:hidden"
+          className="rounded-md text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 md:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

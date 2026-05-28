@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "";
+// TODO: substituir pelo domínio final quando publicado (ex.: https://www.buygroup.com.br)
+const BASE_URL = "https://buygroup-hub-solutions.lovable.app";
 
 interface SitemapEntry {
   path: string;
@@ -17,6 +18,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/sobre", changefreq: "monthly", priority: "0.8" },
           { path: "/servicos", changefreq: "monthly", priority: "0.9" },
+          { path: "/reducao-de-custos", changefreq: "monthly", priority: "0.85" },
           { path: "/cursos", changefreq: "monthly", priority: "0.8" },
           { path: "/contato", changefreq: "monthly", priority: "0.7" },
         ];

@@ -39,7 +39,9 @@ export const Route = createFileRoute("/cursos")({
       },
       { property: "og:title", content: "Cursos in company Buy Group" },
       { property: "og:description", content: "Forme compradores que entregam saving." },
+      { property: "og:url", content: "/cursos" },
     ],
+    links: [{ rel: "canonical", href: "/cursos" }],
   }),
   component: CursosPage,
 });

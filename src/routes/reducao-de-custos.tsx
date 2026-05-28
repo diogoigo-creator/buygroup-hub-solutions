@@ -10,7 +10,9 @@ export const Route = createFileRoute("/reducao-de-custos")({
       { name: "description", content: "Categorias endereçáveis de spend e faixas de saving observadas em 200+ engajamentos enterprise. Telecom, energia, logística, TI, facilities e mais." },
       { property: "og:title", content: "Redução de Custos · Categorias endereçáveis" },
       { property: "og:description", content: "Onde encontramos saving e quanto cada categoria devolve ao P&L." },
+      { property: "og:url", content: "/reducao-de-custos" },
     ],
+    links: [{ rel: "canonical", href: "/reducao-de-custos" }],
   }),
   component: ReducaoDeCustosPage,
 });
