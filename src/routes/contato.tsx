@@ -29,9 +29,9 @@ function ContatoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contato"
-        title={<>Solicite um <span className="text-green">diagnóstico gratuito</span>.</>}
-        description="Em até 5 dias úteis entregamos uma estimativa preliminar de saving baseada no perfil da sua empresa."
+        eyebrow="Executive briefing · CFO-level · 20min"
+        title={<>Agende um <span className="text-green">briefing sob NDA</span>.</>}
+        description="Em até 5 dias úteis após o briefing, entregamos uma estimativa preliminar de saving baseada no perfil do seu spend. Currently accepting [3] new engagements this quarter."
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
@@ -53,10 +53,11 @@ function ContatoPage() {
                 <Field label="Telefone" name="telefone" type="tel" />
               </div>
               <Select label="Interesse principal" name="interesse" options={[
-                "Redução de custos",
-                "Outsourcing de compras",
-                "Cursos in company",
-                "Diagnóstico de maturidade",
+                "Cost Optimization Program",
+                "Procurement BPO",
+                "ProcureMax™ Framework completo",
+                "Spend Intelligence assessment",
+                "Executive Education in-company",
                 "Outro",
               ]} />
               <Field label="Faturamento anual aproximado" name="faturamento" placeholder="Ex: R$ 50M" />
@@ -72,13 +73,13 @@ function ContatoPage() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Enviar pedido de diagnóstico
+                Agendar executive briefing
               </button>
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" />
-                Tratamos as informações com sigilo absoluto e nunca as compartilhamos com terceiros.
+                NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos os engajamentos.
               </p>
             </form>
           )}
@@ -104,10 +105,11 @@ function ContatoPage() {
           </div>
           <div className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)]">
             <p className="font-serif text-2xl leading-snug text-navy">
-              "Compre melhor.<br /><span className="text-green">Cresça mais.</span>"
+              "R$ <span className="text-green">[2.1]</span>Bi+ em savings auditados.
+              <br />Zero risco à sua reputação."
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Mais de 200 projetos entregues. 18% de saving médio. Confidencialidade absoluta.
+              [200+] engajamentos enterprise. Modelo No Savings, No Fee. Garantia contratual de resultado.
             </p>
           </div>
         </aside>

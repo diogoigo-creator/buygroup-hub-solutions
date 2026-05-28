@@ -1,57 +1,55 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, ArrowUpRight } from "lucide-react";
+import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — Redução de custos e outsourcing de compras | Buy Group" },
-      { name: "description", content: "Consultoria de redução de custos, outsourcing de procurement, sourcing estratégico, gestão de fornecedores e cursos in company." },
+      { title: "Serviços — ProcureMax™ Framework | Buy Group" },
+      { name: "description", content: "Engajamentos enterprise de procurement transformation: spend intelligence, strategic sourcing, BPO sênior e governança board-ready." },
       { property: "og:title", content: "Serviços Buy Group" },
-      { property: "og:description", content: "Compras como alavanca de margem." },
+      { property: "og:description", content: "ProcureMax™ Framework. Investment-grade savings." },
     ],
   }),
   component: ServicosPage,
 });
 
-
-
 const services = [
   {
     icon: TrendingDown,
-    title: "Redução de custos",
-    body: "Programas estruturados de saving sobre o spend endereçável, com remuneração parcial atrelada a resultado auditado.",
-    bullets: ["Diagnóstico de spend (90% do gasto em 30 dias)", "Renegociação de contratos e fornecedores", "Sourcing competitivo e RFPs", "Acompanhamento mensal de captura"],
+    title: "Cost Optimization Program",
+    body: "Programa estruturado de saving sobre o spend endereçável com remuneração 100% atrelada a resultado auditado por third-party.",
+    bullets: ["Spend intelligence em 30 dias (90% do gasto mapeado)", "Renegociação executada por sêniores", "Strategic sourcing competitivo", "Reporting trimestral board-ready"],
   },
   {
     icon: Users,
-    title: "Outsourcing de compras",
-    body: "Operamos parte ou toda a sua área de suprimentos, com governança, tecnologia e indicadores integrados ao seu negócio.",
-    bullets: ["BPO de compras táticas e indiretas", "Implantação de P2P e fluxo aprovativo", "SLA contratual e dashboard executivo", "Time dedicado com expertise setorial"],
+    title: "Procurement BPO",
+    body: "Operamos parte ou toda a função de compras com governança institucional, KPIs board-ready e SLA contratual.",
+    bullets: ["BPO de compras táticas e indiretas", "Implantação de P2P e fluxo aprovativo", "SLA contratual com penalidades", "Time dedicado senior-only"],
   },
   {
     icon: GraduationCap,
-    title: "Cursos in company",
-    body: "Capacitação sob medida para compradores, supervisores e lideranças que querem profissionalizar a função de compras.",
-    bullets: ["Negociação aplicada a procurement", "Strategic sourcing e categoria", "Gestão de contratos e fornecedores", "Procurement analytics e KPIs"],
+    title: "Executive Education",
+    body: "Programas in-company para C-level e lideranças de procurement de companhias enterprise. Confidencial.",
+    bullets: ["Strategic sourcing avançado", "Negotiation lab com simulações reais", "Procurement analytics & KPIs", "Governança e compliance enterprise"],
   },
   {
     icon: FileSearch,
-    title: "Spend analytics",
-    body: "Classificação inteligente do gasto e visualização por categoria, fornecedor, área e centro de custo.",
-    bullets: ["Taxonomia UNSPSC adaptada", "Painéis interativos", "Identificação de quick wins"],
+    title: "Spend Intelligence",
+    body: "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
+    bullets: ["Taxonomia UNSPSC adaptada", "Painéis executivos interativos", "Identificação de oportunidades por categoria"],
   },
   {
     icon: Handshake,
-    title: "Gestão de fornecedores",
-    body: "Homologação, avaliação, segmentação e desenvolvimento de fornecedores críticos.",
-    bullets: ["Critérios ESG e compliance", "Programas de SRM", "Avaliação 360°"],
+    title: "Supplier Risk & Governance",
+    body: "Homologação, segmentação, scoring e desenvolvimento de fornecedores críticos sob ótica de risco enterprise.",
+    bullets: ["Critérios ESG e compliance", "Programas SRM estruturados", "Avaliação 360° auditável"],
   },
   {
     icon: BarChart3,
-    title: "Diagnóstico de maturidade",
-    body: "Assessment da função de compras frente a benchmarks de mercado, com roadmap priorizado de evolução.",
+    title: "Procurement Maturity Assessment",
+    body: "Assessment da função frente a benchmarks de mercado enterprise. Roadmap priorizado com business case.",
     bullets: ["Pessoas, processo e tecnologia", "Roadmap 12-24 meses", "Quick wins acionáveis"],
   },
 ];
@@ -60,9 +58,9 @@ function ServicosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Serviços"
-        title={<>Soluções end-to-end para a função de <span className="text-green">compras</span>.</>}
-        description="Da análise do primeiro real ao saving auditado, passando por capacitação e operação terceirizada — tudo conectado em uma única metodologia."
+        eyebrow="ProcureMax™ Framework"
+        title={<>Engajamentos end-to-end para a função de <span className="text-green">compras enterprise</span>.</>}
+        description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
       />
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
@@ -92,17 +90,24 @@ function ServicosPage() {
         <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <h3 className="font-serif text-3xl md:text-4xl">Como começamos um projeto</h3>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
+              <h3 className="mt-4 font-serif text-3xl md:text-4xl">
+                Como iniciamos um engajamento.
+              </h3>
               <p className="mt-3 max-w-xl text-white/75">
-                Em uma conversa de 45 minutos entendemos seu contexto e propomos
-                um diagnóstico gratuito com estimativa de saving potencial.
+                Briefing sob NDA. Entrega de estimativa preliminar de saving em
+                até 5 dias úteis. Currently accepting [3] new engagements this quarter.
+              </p>
+              <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
+                <ShieldCheck className="h-3 w-3 text-green" />
+                Full guarantee · Investment-grade results or full refund
               </p>
             </div>
             <Link
               to="/contato"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)]"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
-              Agendar conversa <ArrowUpRight className="h-4 w-4" />
+              Agendar briefing <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
