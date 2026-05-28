@@ -78,10 +78,10 @@ function Index() {
             </div>
 
             <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
-              <span className="block text-5xl md:text-6xl lg:text-7xl">
+              <span className="block text-5xl md:text-6xl lg:text-6xl">
                 R$ <span className="text-green">[2.1]</span> bilhões
               </span>
-              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-[2.25rem]">
+              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
                 em savings auditados.
                 <span className="text-white/55"> Zero risco à sua reputação.</span>
               </span>
