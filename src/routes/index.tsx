@@ -44,7 +44,7 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[calc(100svh-68px)] lg:items-center">
+      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:items-center">
         <img
           src={heroImg}
           alt=""
