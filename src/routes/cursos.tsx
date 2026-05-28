@@ -323,6 +323,7 @@ function CursosPage() {
         eyebrow="Cursos in company"
         title={<>Forme compradores que entregam <span className="text-green">saving</span>.</>}
         description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
+        identity={{ kind: "lockup", caption: "Executive Education" }}
       />
 
       {/* Catálogo de cursos */}
