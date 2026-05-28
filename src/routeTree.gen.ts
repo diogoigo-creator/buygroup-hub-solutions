@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +30,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReducaoDeCustosRoute = ReducaoDeCustosRouteImport.update({
+  id: '/reducao-de-custos',
+  path: '/reducao-de-custos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CursosRoute = CursosRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
+  '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
+  '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
+  '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -78,16 +87,25 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/cursos'
+    | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contato' | '/cursos' | '/servicos' | '/sitemap.xml' | '/sobre'
+  to:
+    | '/'
+    | '/contato'
+    | '/cursos'
+    | '/reducao-de-custos'
+    | '/servicos'
+    | '/sitemap.xml'
+    | '/sobre'
   id:
     | '__root__'
     | '/'
     | '/contato'
     | '/cursos'
+    | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
@@ -97,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRoute
+  ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
   ServicosRoute: typeof ServicosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
@@ -123,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/servicos'
       fullPath: '/servicos'
       preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reducao-de-custos': {
+      id: '/reducao-de-custos'
+      path: '/reducao-de-custos'
+      fullPath: '/reducao-de-custos'
+      preLoaderRoute: typeof ReducaoDeCustosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cursos': {
@@ -153,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRoute,
+  ReducaoDeCustosRoute: ReducaoDeCustosRoute,
   ServicosRoute: ServicosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
@@ -160,13 +187,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
