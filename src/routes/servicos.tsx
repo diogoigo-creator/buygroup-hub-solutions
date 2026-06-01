@@ -65,7 +65,6 @@ function ServicosPage() {
         description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
         identity={{
           kind: "lockup",
-          caption: "Procurement Transformation",
           slogan: { primary: "Mais que comprar. É comprar", accent: "bem." },
         }}
       />
