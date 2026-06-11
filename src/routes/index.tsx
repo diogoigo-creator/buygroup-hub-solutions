@@ -9,10 +9,10 @@ import heroImg from "@/assets/hero-boardroom.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Procurement transformation for Fortune-class CFOs" },
-      { name: "description", content: "The procurement transformation firm trusted by enterprise CFOs. Investment-grade savings, fully documented. No Savings, No Fee." },
-      { property: "og:title", content: "Buy Group — Investment-grade procurement transformation" },
-      { property: "og:description", content: "Documented enterprise savings with full risk reversal. Executive briefings by invitation." },
+      { title: "Buy Group — Consultoria estratégica em compras" },
+      { name: "description", content: "Consultoria estratégica em compras para analisar contratos, fornecedores, categorias e projetos com impacto financeiro comprovável." },
+      { property: "og:title", content: "Buy Group — Consultoria estratégica em compras" },
+      { property: "og:description", content: "Análise de contratos, fornecedores, categorias e projetos estratégicos para redução de custos com governança." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -21,24 +21,24 @@ export const Route = createFileRoute("/")({
 });
 
 const credibility = [
-  { value: "R$ 2.1Bi+", label: "em savings documentados" },
-  { value: "23", label: "clientes enterprise atendidos" },
-  { value: "8.7x", label: "ROI médio por engajamento" },
-  { value: "100%", label: "auditável · No Savings, No Fee" },
+  { value: "R$ 2,1 bi", label: "em volume de compras analisado" },
+  { value: "Contratos", label: "análise de bases negociadas e vigentes" },
+  { value: "Fornecedores", label: "mapeamento de alternativas e riscos" },
+  { value: "Categorias", label: "priorização por impacto financeiro" },
 ];
 
 
 const framework = [
-  { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
-  { n: "02", t: "Strategic Sourcing", d: "Should-cost modeling, TCO analysis e RFPs competitivas conduzidas por seniores ex-procurement de grandes corporações." },
-  { n: "03", t: "Negotiation Lab", d: "Negociação executada por nossa equipe. Capturamos margem sem comprometer SLA, qualidade ou continuidade operacional." },
-  { n: "04", t: "Value Assurance", d: "Auditoria trimestral do saving capturado. Reporting board-ready. Garantia contratual de resultado ou reembolso integral." },
+  { n: "01", t: "Diagnóstico de compras", d: "Leitura estruturada de contratos, despesas, categorias e fornecedores para definir uma base confiável de análise." },
+  { n: "02", t: "Priorização de oportunidades", d: "Classificação das iniciativas por potencial financeiro, risco operacional, complexidade e viabilidade de captura." },
+  { n: "03", t: "Negociação e homologação", d: "Apoio à negociação com fornecedores, validação técnica e alinhamento com áreas usuárias e governança interna." },
+  { n: "04", t: "Comprovação de impacto", d: "Documentação dos resultados capturados e acompanhamento executivo para sustentar a redução de custos no P&L." },
 ];
 
 const moat = [
-  { icon: ShieldCheck, t: "Investment-grade guarantee", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee — sem exceções." },
+  { icon: ShieldCheck, t: "Governança executiva", d: "Cada oportunidade é tratada com critério financeiro, validação operacional e documentação adequada para decisão." },
   { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
-  { icon: Award, t: "Senior-only delivery", d: "Zero juniores em projeto. Cada engajamento é conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
+  { icon: Award, t: "Condução sênior", d: "Os projetos são conduzidos por profissionais experientes em compras, operações e negociações corporativas complexas." },
   { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
 ];
 
@@ -82,7 +82,7 @@ function Index() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              Analisamos contratos, fornecedores, categorias e projetos estratégicos
+              A Buy Group analisa contratos, fornecedores, categorias e projetos estratégicos
               para identificar oportunidades reais de redução de custos, apoiar
               negociações e homologar savings com governança.
             </p>
@@ -129,20 +129,20 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Exemplo de atuação · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
               R$ 47MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend endereçável
-              de R$ 380MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
-              do board.
+              Grupo industrial brasileiro com base relevante de contratos e fornecedores.
+              O trabalho priorizou categorias críticas, negociação com governança e validação
+              das economias junto às áreas responsáveis.
             </p>
             <Link
               to="/contato"
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-green"
             >
-              Solicitar case completo (sob NDA) <ArrowUpRight className="h-4 w-4" />
+              Solicitar exemplo completo <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="lg:col-span-7">
@@ -179,15 +179,15 @@ function Index() {
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">ProcureMax™ Framework</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">Metodologia</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
               Metodologia proprietária. Quatro fases.
-              <span className="text-white/55"> Um único KPI: saving auditado.</span>
+              <span className="text-white/55"> Um único foco: impacto financeiro comprovável.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de 200+ engajamentos enterprise. ProcureMax™ é o
-              único framework de procurement com garantia contratual de resultado e
-              auditoria third-party em cada fase.
+              A Buy Group combina análise de contratos, leitura de fornecedores,
+              entendimento das categorias e apoio à negociação para capturar redução
+              de custos sem comprometer continuidade operacional.
             </p>
           </div>
 
@@ -295,14 +295,14 @@ function Index() {
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Diagnóstico executivo · Compras estratégicas</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
-                Uma conversa. Estimativa preliminar de saving.
-                <span className="text-white/55"> Sob NDA.</span>
+                Uma conversa para mapear oportunidades reais de redução de custos.
+                <span className="text-white/55"> Sob confidencialidade.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Aceitamos no máximo <span className="text-green">12 clientes por trimestre</span>
-                para preservar o padrão de delivery. Currently accepting 3 new engagements.
+                Avaliamos contratos, fornecedores, categorias e projetos estratégicos
+                para indicar onde há potencial de impacto financeiro com governança.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
@@ -310,12 +310,12 @@ function Index() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
               >
-                Agendar executive briefing
+                Solicitar diagnóstico executivo
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                Full guarantee · Investment-grade results or full refund
+                Projetos sob confidencialidade · Remuneração vinculada a savings homologados
               </p>
             </div>
           </div>
