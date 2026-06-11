@@ -129,7 +129,7 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Exemplo de atuação · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
               R$ 47MM capturados em <span className="text-green">90 dias</span>.
             </h2>
@@ -142,7 +142,7 @@ function Index() {
               to="/contato"
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-green"
             >
-              Solicitar case completo (sob NDA) <ArrowUpRight className="h-4 w-4" />
+              Solicitar exemplo completo <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="lg:col-span-7">
@@ -298,7 +298,7 @@ function Index() {
               <p className="text-xs uppercase tracking-[0.32em] text-green">Diagnóstico executivo · Compras estratégicas</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
                 Uma conversa para mapear oportunidades reais de redução de custos.
-                <span className="text-white/55"> Sob NDA.</span>
+                <span className="text-white/55"> Sob confidencialidade.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
                 Avaliamos contratos, fornecedores, categorias e projetos estratégicos
