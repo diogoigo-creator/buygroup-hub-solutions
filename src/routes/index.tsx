@@ -20,13 +20,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// NOTE: Substitua os valores entre [colchetes] por números reais auditáveis.
 const credibility = [
-  { value: "R$ [2.1]Bi+", label: "em savings documentados" },
-  { value: "[23]", label: "clientes enterprise atendidos" },
-  { value: "[8.7]x", label: "ROI médio por engajamento" },
+  { value: "R$ 2.1Bi+", label: "em savings documentados" },
+  { value: "23", label: "clientes enterprise atendidos" },
+  { value: "8.7x", label: "ROI médio por engajamento" },
   { value: "100%", label: "auditável · No Savings, No Fee" },
 ];
+
 
 const framework = [
   { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
