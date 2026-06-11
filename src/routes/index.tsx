@@ -79,10 +79,10 @@ function Index() {
 
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              A firma de procurement transformation escolhida por
-              <span className="text-white"> 23 CFOs de companhias enterprise</span>.
-              Modelo <span className="text-green">No Savings, No Fee</span> com garantia contratual:
-              resultados auditáveis ou reembolso integral.
+              Redução de custos com governança, método e impacto financeiro comprovável.
+              A Buy Group atua ao lado da sua equipe para identificar, negociar e homologar
+              oportunidades reais em contratos, fornecedores e projetos estratégicos com
+              modelo de remuneração <span className="text-green">baseado em performance</span>.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
