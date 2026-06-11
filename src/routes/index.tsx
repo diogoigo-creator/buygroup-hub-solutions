@@ -69,7 +69,7 @@ function Index() {
 
             <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
               <span className="block text-5xl md:text-6xl lg:text-6xl">
-                R$ <span className="text-green">[2.1]</span> bilhões
+                R$ <span className="text-green">2.1</span> bilhões
               </span>
               <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
                 em savings auditados.
@@ -80,7 +80,7 @@ function Index() {
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
               A firma de procurement transformation escolhida por
-              <span className="text-white"> [23] CFOs de companhias enterprise</span>.
+              <span className="text-white"> 23 CFOs de companhias enterprise</span>.
               Modelo <span className="text-green">No Savings, No Fee</span> com garantia contratual:
               resultados auditáveis ou reembolso integral.
             </p>
@@ -103,7 +103,7 @@ function Index() {
 
             <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
-              NDA padrão · Currently accepting [3] new clients this quarter
+              NDA padrão · Currently accepting 3 new clients this quarter
             </p>
 
           </div>
@@ -128,11 +128,11 @@ function Index() {
           <div className="lg:col-span-5">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              R$ [47]MM capturados em <span className="text-green">90 dias</span>.
+              R$ 47MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, faturamento R$ [3.2]Bi. Spend endereçável
-              de R$ [380]MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
+              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend endereçável
+              de R$ 380MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
               do board.
             </p>
             <Link
@@ -147,7 +147,7 @@ function Index() {
               {[
                 { k: "Saving capturado", v: "12.4%", s: "sobre spend endereçável" },
                 { k: "Payback", v: "< 90d", s: "do primeiro contrato renegociado" },
-                { k: "ROI do projeto", v: "[11.2]x", s: "vs. fee Buy Group" },
+                { k: "ROI do projeto", v: "11.2x", s: "vs. fee Buy Group" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
@@ -163,7 +163,7 @@ function Index() {
                 dois anos. O modelo de risco compartilhado mudou a equação."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                CFO · Grupo industrial · R$ [3.2]Bi faturamento
+                CFO · Grupo industrial · R$ 3.2Bi faturamento
               </figcaption>
             </figure>
           </div>
@@ -182,7 +182,7 @@ function Index() {
               <span className="text-white/55"> Um único KPI: saving auditado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de [200+] engajamentos enterprise. ProcureMax™ é o
+              Desenvolvida ao longo de 200+ engajamentos enterprise. ProcureMax™ é o
               único framework de procurement com garantia contratual de resultado e
               auditoria third-party em cada fase.
             </p>
@@ -236,8 +236,8 @@ function Index() {
             </div>
             <div className="lg:col-span-5">
               <p className="text-pretty text-muted-foreground">
-                Telecom, energia, logística, TI, facilities, travel, seguros e mais [40+] verticais.
-                Veja as faixas de saving observadas em [200+] engajamentos enterprise.
+                Telecom, energia, logística, TI, facilities, travel, seguros e mais 40+ verticais.
+                Veja as faixas de saving observadas em 200+ engajamentos enterprise.
               </p>
               <Link
                 to="/reducao-de-custos"
@@ -265,8 +265,8 @@ function Index() {
             </div>
             <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
               {[
-                { icon: Building2, t: "[15+] anos", d: "experiência média da equipe sênior em procurement enterprise" },
-                { icon: TrendingUp, t: "[200+]", d: "engajamentos conduzidos em verticais críticas" },
+                { icon: Building2, t: "15+ anos", d: "experiência média da equipe sênior em procurement enterprise" },
+                { icon: TrendingUp, t: "200+", d: "engajamentos conduzidos em verticais críticas" },
                 { icon: Award, t: "Tier-1", d: "background dos sócios em consultorias globais e indústria" },
               ].map((c) => (
                 <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
@@ -293,8 +293,8 @@ function Index() {
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Aceitamos no máximo <span className="text-green">[12] clientes por trimestre</span>
-                para preservar o padrão de delivery. Currently accepting [3] new engagements.
+                Aceitamos no máximo <span className="text-green">12 clientes por trimestre</span>
+                para preservar o padrão de delivery. Currently accepting 3 new engagements.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">

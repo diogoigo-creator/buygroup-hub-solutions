@@ -111,7 +111,7 @@ function ServicosPage() {
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
                 Briefing sob NDA. Entrega de estimativa preliminar de saving em
-                até 5 dias úteis. Currently accepting [3] new engagements this quarter.
+                até 5 dias úteis. Currently accepting 3 new engagements this quarter.
               </p>
               <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />

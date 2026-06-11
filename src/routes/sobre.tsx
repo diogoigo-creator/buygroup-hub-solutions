@@ -30,7 +30,7 @@ function SobrePage() {
       <PageHero
         eyebrow="By invitation · Quem somos"
         title={<>A firma de procurement <span className="text-green">escolhida</span> por CFOs enterprise.</>}
-        description="Buy Group é a procurement transformation firm para companhias com P&L de R$ [1]Bi+ que tratam compras como alavanca de margem — não como centro de custo."
+        description="Buy Group é a procurement transformation firm para companhias com P&L de R$ 1Bi+ que tratam compras como alavanca de margem — não como centro de custo."
         identity={{ kind: "lockup", caption: "Procurement Transformation Firm" }}
       />
 
@@ -72,7 +72,7 @@ function SobrePage() {
               equação."
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              CFO · Grupo industrial · R$ [3.2]Bi
+              CFO · Grupo industrial · R$ 3.2Bi
             </p>
           </div>
         </aside>
@@ -106,7 +106,7 @@ function SobrePage() {
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · 20min</p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
-                Currently accepting <span className="text-green">[3]</span> new engagements.
+                Currently accepting <span className="text-green">3</span> new engagements.
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
                 Sob NDA. Estimativa preliminar de saving entregue em até 5 dias úteis após o briefing.
