@@ -74,18 +74,27 @@ function ServicosPage() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-8 hover:border-green/60"
+              className="group relative flex flex-col rounded-3xl border border-border/80 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12),0_4px_16px_-8px_oklch(0.75_0.13_86_/_0.08)] overflow-hidden"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
-                <s.icon className="h-6 w-6" />
+              {/* Decorative hover glow */}
+              <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full bg-green/5 blur-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none" />
+
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm group-hover:shadow-[0_8px_20px_-8px_rgba(212,175,55,0.4)]">
+                <s.icon className="h-6 w-6 transition-transform duration-500 group-hover:scale-110" />
               </div>
-              <h2 className="mt-8 font-serif text-2xl text-navy">{s.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              <ul className="mt-6 space-y-2 text-sm">
+              
+              <h2 className="mt-8 font-serif text-2xl text-navy transition-colors duration-300 group-hover:text-navy-soft flex items-center justify-between gap-2">
+                <span>{s.title}</span>
+                <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-green shrink-0" />
+              </h2>
+              
+              <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground/90 flex-grow">{s.body}</p>
+              
+              <ul className="mt-8 space-y-3 border-t border-border/50 pt-6 text-sm">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-2 text-navy/85">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green" />
-                    {b}
+                  <li key={b} className="flex gap-2.5 text-navy/85 transition-transform duration-300 hover:translate-x-1">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green transition-transform duration-300 group-hover:scale-110" />
+                    <span className="text-[13px] leading-snug text-navy/80">{b}</span>
                   </li>
                 ))}
               </ul>
