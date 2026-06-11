@@ -208,7 +208,7 @@ function Index() {
         <div className="max-w-3xl">
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Por que Buy Group</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro razões pelas quais lideranças executivas nos escolhem para negociações de alto impacto
+            Quatro razões pelas quais lideranças executivas <span className="text-green">nos escolhem</span> para negociações de alto impacto
           </h2>
         </div>
 
