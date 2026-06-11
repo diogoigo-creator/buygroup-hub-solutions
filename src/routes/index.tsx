@@ -21,10 +21,10 @@ export const Route = createFileRoute("/")({
 });
 
 const credibility = [
-  { value: "R$ 2,1 bi", label: "em volume de compras analisado" },
-  { value: "Contratos", label: "análise de bases negociadas e vigentes" },
-  { value: "Fornecedores", label: "mapeamento de alternativas e riscos" },
-  { value: "Categorias", label: "priorização por impacto financeiro" },
+  { value: "R$ 2,1 bi+", label: "em spend enterprise analisado" },
+  { value: "8.7x", label: "ROI médio por engajamento" },
+  { value: "Baseline aprovado", label: "saving auditável homologado" },
+  { value: "Senior-only", label: "delivery por sócios e seniores" },
 ];
 
 
@@ -36,10 +36,10 @@ const framework = [
 ];
 
 const moat = [
-  { icon: ShieldCheck, t: "Governança executiva", d: "Cada oportunidade é tratada com critério financeiro, validação operacional e documentação adequada para decisão." },
-  { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
-  { icon: Award, t: "Condução sênior", d: "Os projetos são conduzidos por profissionais experientes em compras, operações e negociações corporativas complexas." },
-  { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
+  { icon: ShieldCheck, t: "Governança financeira", d: "Baseline aprovado em conjunto com o CFO, validação de savings e documentação auditável para decisão no board." },
+  { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes de qualquer briefing. Sem acesso prévio a dados sensíveis. Cobertura de seguro corporativo em todos os engajamentos." },
+  { icon: Award, t: "Senior-only delivery", d: "Engajamentos conduzidos por sócios e profissionais seniores com background em consultorias globais e indústria. Sem juniores na ponta." },
+  { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Alinhamento único com o P&L e a estratégia do cliente." },
 ];
 
 
