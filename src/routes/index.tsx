@@ -128,12 +128,12 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">ESTUDO DE CASO · CONFIDENCIAL</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              R$ 47MM capturados em <span className="text-green">90 dias</span>.
+              R$ 12MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend endereçável
+              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend anual
               de R$ 380MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
               do board.
             </p>
@@ -147,9 +147,9 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
               {[
-                { k: "Saving capturado", v: "12.4%", s: "sobre spend endereçável" },
+                { k: "Saving capturado", v: "12.4%", s: "sobre spend anual" },
                 { k: "Payback", v: "< 90d", s: "do primeiro contrato renegociado" },
-                { k: "ROI do projeto", v: "11.2x", s: "vs. fee Buy Group" },
+                { k: "ROI do projeto", v: "9.3x", s: "vs. fee Buy Group" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
@@ -161,8 +161,9 @@ function Index() {
 
             <figure className="mt-6 rounded-2xl border border-border bg-secondary/40 p-8">
               <blockquote className="font-serif text-2xl leading-snug text-navy">
-                "Em 90 dias entregaram o que três consultorias tier-1 não conseguiram em
-                dois anos. O modelo de risco compartilhado mudou a equação."
+                "Em 90 dias, savings que permaneciam não capturados havia dois anos
+                foram destravados com governança financeira, risco compartilhado e
+                validação do resultado.."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 CFO · Grupo industrial · R$ 3.2Bi faturamento
