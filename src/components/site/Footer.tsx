@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/buy-group-logo-white.png";
 import mark from "@/assets/buy-group-mark-white.png";
 
@@ -11,8 +12,8 @@ export function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 -right-16 h-[520px] w-[520px] select-none opacity-[0.05]"
       />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4 lg:px-10">
-        <div className="lg:col-span-2">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-12 lg:px-10">
+        <div className="lg:col-span-5">
           <img src={logo} alt="Buy Group" className="h-7 w-auto" />
           <p className="mt-6 font-sans text-lg font-bold uppercase leading-tight tracking-[0.14em] text-white">
             Mais que comprar. <span className="text-white/60">É comprar bem.</span>
@@ -22,33 +23,61 @@ export function Footer() {
             inteligência de mercado, negociação estratégica e governança de
             compras — sem risco financeiro para o cliente.
           </p>
+          <div className="mt-6 flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="LinkedIn da Buy Group"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/75 transition-all hover:-translate-y-0.5 hover:border-green/60 hover:text-green"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+          </div>
         </div>
-        <div>
+
+        <div className="lg:col-span-3">
           <h4 className="font-sans text-xs font-medium uppercase tracking-[0.18em] text-white/60">
             Navegação
           </h4>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link to="/sobre" className="text-white/85 hover:text-green">Sobre</Link></li>
             <li><Link to="/servicos" className="text-white/85 hover:text-green">Serviços</Link></li>
+            <li><Link to="/reducao-de-custos" className="text-white/85 hover:text-green">Redução de custos</Link></li>
             <li><Link to="/cursos" className="text-white/85 hover:text-green">Cursos in company</Link></li>
             <li><Link to="/contato" className="text-white/85 hover:text-green">Contato</Link></li>
           </ul>
         </div>
-        <div>
+
+        <div className="lg:col-span-4">
           <h4 className="font-sans text-xs font-medium uppercase tracking-[0.18em] text-white/60">
-            Contato
+            Contato executivo
           </h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="mailto:contato@buygroup.com.br" className="text-white/85 hover:text-green">contato@buygroup.com.br</a></li>
-            <li><a href="tel:+551140000000" className="text-white/85 hover:text-green">+55 11 4000-0000</a></li>
-            <li className="text-white/60">São Paulo · Brasil</li>
+          <ul className="mt-4 space-y-3 text-sm">
+            <li>
+              <a href="mailto:contato@buygroup.com.br" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
+                <Mail className="h-4 w-4 text-green/80" />
+                contato@buygroup.com.br
+              </a>
+            </li>
+            <li>
+              <a href="tel:+551140000000" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
+                <Phone className="h-4 w-4 text-green/80" />
+                +55 11 4000-0000
+              </a>
+            </li>
+            <li className="inline-flex items-center gap-2.5 text-white/65">
+              <MapPin className="h-4 w-4 text-green/80" />
+              São Paulo · Brasil
+            </li>
           </ul>
+          <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
+            Atendimento por agendamento · NDA padrão
+          </p>
         </div>
       </div>
       <div className="relative border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-6 py-6 text-xs text-white/60 lg:px-10">
-          <p>© {new Date().getFullYear()} Buy Group. Todos os direitos reservados.</p>
-          <img src={mark} alt="" aria-hidden="true" className="h-5 w-5 opacity-60" />
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-white/55 sm:flex-row sm:items-center lg:px-10">
+          <p>© {new Date().getFullYear()} Buy Group Consultoria. Todos os direitos reservados.</p>
+          <p className="text-white/45">Procurement Transformation Firm</p>
         </div>
       </div>
     </footer>
