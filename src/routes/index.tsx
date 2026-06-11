@@ -210,10 +210,14 @@ function Index() {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {moat.map((d) => (
-            <div key={d.t} className="bg-white p-8 lg:p-10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
+            <div
+              key={d.t}
+              className="group relative overflow-hidden rounded-3xl border border-border/80 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12)] lg:p-10"
+            >
+              <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-green/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_8px_20px_-8px_rgba(212,175,55,0.4)]">
                 <d.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-6 font-serif text-2xl text-navy">{d.t}</h3>
@@ -221,6 +225,7 @@ function Index() {
             </div>
           ))}
         </div>
+
       </section>
 
       {/* CATEGORIAS DE SPEND — TEASER */}
