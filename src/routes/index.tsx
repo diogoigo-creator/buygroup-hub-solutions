@@ -2,8 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { FullLockup } from "@/components/site/hero-identities/FullLockup";
 import heroImg from "@/assets/hero-boardroom.jpg";
-import markWhite from "@/assets/buy-group-mark-white.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
