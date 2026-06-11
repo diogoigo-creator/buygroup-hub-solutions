@@ -57,26 +57,8 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/15" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
-        >
-          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[440px] lg:w-[440px]">
-            <span className="absolute inset-0 rounded-full bg-green/10 blur-3xl animate-mark-pulse-ring" />
-            <span className="absolute inset-8 rounded-full border border-green/25 animate-mark-spin-slow" />
-            <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
-            <div className="absolute inset-0 hidden lg:block">
-              <div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green animate-orbit-cw" style={{ ["--orbit-r" as never]: "180px" }} />
-              <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green/70 animate-orbit-ccw" style={{ ["--orbit-r" as never]: "210px", animationDelay: "-9s" }} />
-              <div className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 animate-orbit-cw" style={{ ["--orbit-r" as never]: "140px", animationDelay: "-4s", animationDuration: "18s" }} />
-            </div>
-            <img
-              src={markWhite}
-              alt=""
-              className="absolute inset-0 m-auto h-[55%] w-[55%] select-none opacity-[0.10] animate-mark-float lg:opacity-[0.22]"
-            />
-          </div>
-        </div>
+        <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
+
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
           <div className="lg:col-span-9">
