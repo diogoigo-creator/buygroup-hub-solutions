@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { FullLockup } from "@/components/site/hero-identities/FullLockup";
+
 import heroImg from "@/assets/hero-boardroom.jpg";
 
 
@@ -135,8 +135,8 @@ function Index() {
       </section>
 
 
-      {/* CREDIBILITY MATRIX */}
-      <section className="border-y border-white/5 bg-navy text-white">
+      {/* CREDIBILITY MATRIX — IMPACTO */}
+      <section id="impacto" className="scroll-mt-24 border-y border-white/5 bg-navy text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
           {credibility.map((m) => (
             <div key={m.label} className="bg-navy px-6 py-12 lg:px-10">
@@ -147,11 +147,11 @@ function Index() {
         </div>
       </section>
 
-      {/* CASE STUDY HERO */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      {/* CASE STUDY HERO — PROVAS */}
+      <section id="provas" className="scroll-mt-24 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Exemplo de atuação · Confidencial</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Engajamento representativo · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
               R$ 47MM capturados em <span className="text-green">90 dias</span>.
             </h2>
@@ -184,8 +184,9 @@ function Index() {
 
             <figure className="mt-6 rounded-2xl border border-border bg-secondary/40 p-8">
               <blockquote className="font-serif text-2xl leading-snug text-navy">
-                "Em 90 dias entregaram o que três consultorias tier-1 não conseguiram em
-                dois anos. O modelo de risco compartilhado mudou a equação."
+                "Conseguiram entregar em 90 dias um saving auditado que se traduziu
+                diretamente no P&amp;L. O baseline aprovado e o modelo de risco
+                compartilhado mudaram a equação para o board."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 CFO · Grupo industrial · R$ 3.2Bi faturamento
@@ -195,21 +196,22 @@ function Index() {
         </div>
       </section>
 
-      {/* PROCUREMAX FRAMEWORK */}
-      <section className="relative overflow-hidden bg-navy text-white">
+      {/* FRAMEWORK */}
+      <section id="framework" className="scroll-mt-24 relative overflow-hidden bg-navy text-white">
         <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">Metodologia</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">ProcureMax™ Framework</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
               Metodologia proprietária. Quatro fases.
-              <span className="text-white/55"> Um único foco: impacto financeiro comprovável.</span>
+              <span className="text-white/55"> Um único foco: impacto financeiro auditável.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              A Buy Group combina análise de contratos, leitura de fornecedores,
-              entendimento das categorias e apoio à negociação para capturar redução
-              de custos sem comprometer continuidade operacional.
+              Combinamos análise de contratos, leitura de fornecedores, priorização
+              de categorias e apoio à negociação para transformar spend existente em
+              margem capturada — com baseline aprovado e governança financeira em
+              cada fase.
             </p>
           </div>
 
@@ -225,14 +227,19 @@ function Index() {
         </div>
       </section>
 
-      {/* DIFFERENTIATION MOAT */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      {/* GOVERNANÇA */}
+      <section id="governanca" className="scroll-mt-24 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Por que Buy Group</p>
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Governança</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro razões pelas quais boards de companhias enterprise
-            <span className="text-green"> nos escolhem</span> sobre Big Four.
+            Alternativa senior-only e performance-based
+            <span className="text-green"> às consultorias tradicionais de procurement.</span>
           </h2>
+          <p className="mt-6 max-w-2xl text-muted-foreground">
+            No Savings, No Fee — com baseline aprovado, validação financeira e
+            proteção de SLA e continuidade operacional. Alinhamento econômico
+            com controle, não apenas comissão sobre economia.
+          </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -310,21 +317,23 @@ function Index() {
         </div>
       </section>
 
-      {/* EXECUTIVE CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      {/* EXECUTIVE BRIEFING */}
+      <section id="briefing" className="scroll-mt-24 mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl bg-navy p-10 text-white md:p-16">
           <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-green/25 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Diagnóstico executivo · Compras estratégicas</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · Board-level · 20min</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
-                Uma conversa para mapear oportunidades reais de redução de custos.
-                <span className="text-white/55"> Sob confidencialidade.</span>
+                Uma conversa executiva. Potencial preliminar de saving, riscos e
+                próximos passos.
+                <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Avaliamos contratos, fornecedores, categorias e projetos estratégicos
-                para indicar onde há potencial de impacto financeiro com governança.
+                Conduzida por sócios. Sem acesso prévio a dados sensíveis.
+                Próximo passo apenas se houver potencial material de saving,
+                governança aplicável e fit estratégico para CFO, CEO e board.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
@@ -332,12 +341,12 @@ function Index() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
               >
-                Solicitar diagnóstico executivo
+                Agendar executive briefing
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                Projetos sob confidencialidade · Remuneração vinculada a savings homologados
+                NDA padrão · Baseline aprovado · Saving auditável
               </p>
             </div>
           </div>
