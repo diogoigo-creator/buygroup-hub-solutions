@@ -104,7 +104,7 @@ function Index() {
 
             <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
-              Atendimento consultivo · Projetos sob confidencialidade · Remuneração vinculada a savings homologados
+              ATENDIMENTO CONSULTIVO · SOB NDA · REMUNERAÇÃO VINCULADA A SAVINGS HOMOLOGADOS
             </p>
 
           </div>
