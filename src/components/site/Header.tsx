@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/buy-group-logo.png";
 
-const nav = [
-  { to: "/", label: "Início" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/servicos", label: "Serviços" },
-  { to: "/reducao-de-custos", label: "Redução de Custos" },
-  { to: "/cursos", label: "Cursos" },
-  { to: "/contato", label: "Contato" },
-] as const;
+type NavItem = { to: string; label: string; hash?: string; exact?: boolean };
+
+const nav: NavItem[] = [
+  { to: "/", label: "Início", exact: true },
+  { to: "/", hash: "impacto", label: "Impacto" },
+  { to: "/", hash: "framework", label: "Framework" },
+  { to: "/", hash: "provas", label: "Provas" },
+  { to: "/", hash: "governanca", label: "Governança" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -49,13 +50,14 @@ export function Header() {
 
         <nav className="hidden md:flex">
           <ul className="flex items-center gap-1 rounded-full border border-border/60 bg-white/60 p-1 shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset,0_8px_24px_-16px_rgba(15,23,42,0.2)] backdrop-blur-xl">
-            {nav.slice(0, -1).map((n) => (
-              <li key={n.to}>
+            {nav.map((n) => (
+              <li key={`${n.to}-${n.hash ?? "root"}`}>
                 <Link
                   to={n.to}
+                  hash={n.hash}
                   className="group relative block rounded-full px-4 py-2 text-[13px] font-medium text-muted-foreground transition-colors duration-300 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
                   activeProps={{ className: "!text-navy" }}
-                  activeOptions={{ exact: n.to === "/" }}
+                  activeOptions={{ exact: n.exact ?? false, includeHash: !!n.hash }}
                 >
                   {({ isActive }) => (
                     <>
@@ -81,7 +83,7 @@ export function Header() {
             to="/contato"
             className="group inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-[13px] font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_14px_30px_-12px_rgba(15,23,42,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
           >
-            Solicitar diagnóstico
+            Executive briefing
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -125,7 +127,7 @@ export function Header() {
             <ul className="flex flex-col gap-1">
               {nav.map((n, i) => (
                 <li
-                  key={n.to}
+                  key={`${n.to}-${n.hash ?? "root"}`}
                   className={`transition-all duration-300 ${
                     open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                   }`}
@@ -133,10 +135,11 @@ export function Header() {
                 >
                   <Link
                     to={n.to}
+                    hash={n.hash}
                     onClick={() => setOpen(false)}
                     className="flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-navy"
                     activeProps={{ className: "!text-navy bg-secondary" }}
-                    activeOptions={{ exact: n.to === "/" }}
+                    activeOptions={{ exact: n.exact ?? false, includeHash: !!n.hash }}
                   >
                     <span>{n.label}</span>
                     <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -149,7 +152,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-3 flex items-center justify-center gap-1.5 rounded-2xl bg-navy px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)]"
             >
-              Solicitar diagnóstico
+              Executive briefing
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </nav>

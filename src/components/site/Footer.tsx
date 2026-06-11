@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/buy-group-logo-white.png";
 import mark from "@/assets/buy-group-mark-white.png";
 
@@ -39,11 +39,12 @@ export function Footer() {
             Navegação
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm">
+            <li><Link to="/" hash="impacto" className="text-white/85 hover:text-green">Impacto</Link></li>
+            <li><Link to="/" hash="framework" className="text-white/85 hover:text-green">Framework</Link></li>
+            <li><Link to="/" hash="provas" className="text-white/85 hover:text-green">Provas</Link></li>
+            <li><Link to="/" hash="governanca" className="text-white/85 hover:text-green">Governança</Link></li>
             <li><Link to="/sobre" className="text-white/85 hover:text-green">Sobre</Link></li>
-            <li><Link to="/servicos" className="text-white/85 hover:text-green">Serviços</Link></li>
-            <li><Link to="/reducao-de-custos" className="text-white/85 hover:text-green">Redução de custos</Link></li>
-            <li><Link to="/cursos" className="text-white/85 hover:text-green">Cursos in company</Link></li>
-            <li><Link to="/contato" className="text-white/85 hover:text-green">Contato</Link></li>
+            <li><Link to="/contato" className="text-white/85 hover:text-green">Executive briefing</Link></li>
           </ul>
         </div>
 
@@ -58,19 +59,13 @@ export function Footer() {
                 contato@buygroup.com.br
               </a>
             </li>
-            <li>
-              <a href="tel:+551140000000" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
-                <Phone className="h-4 w-4 text-green/80" />
-                +55 11 4000-0000
-              </a>
-            </li>
             <li className="inline-flex items-center gap-2.5 text-white/65">
               <MapPin className="h-4 w-4 text-green/80" />
               São Paulo · Brasil
             </li>
           </ul>
           <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
-            Atendimento por agendamento · NDA padrão
+            Atendimento executivo por agendamento · NDA padrão
           </p>
         </div>
       </div>
