@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/buy-group-logo-white.png";
 import mark from "@/assets/buy-group-mark-white.png";
 
