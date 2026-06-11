@@ -57,7 +57,6 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
-        <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
 
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
