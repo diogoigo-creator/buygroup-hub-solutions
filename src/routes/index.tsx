@@ -52,10 +52,10 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-75"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
         <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
 
