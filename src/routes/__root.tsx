@@ -88,12 +88,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Buy Group",
+          legalName: "Buy Group Consultoria",
+          url: "https://buygroup-hub-solutions.lovable.app",
+          description: "Procurement transformation firm para companhias enterprise. Modelo No Savings, No Fee com garantia contratual.",
+          slogan: "Mais que comprar. É comprar bem.",
+          areaServed: "BR",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "São Paulo",
+            addressCountry: "BR",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "Executive briefing",
+            email: "contato@buygroup.com.br",
+            availableLanguage: ["Portuguese", "English"],
+          },
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (

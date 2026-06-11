@@ -43,7 +43,7 @@ function ReducaoDeCustosPage() {
             <span className="text-green">Quanto cada categoria devolve ao P&amp;L.</span>
           </>
         }
-        description="Faixas observadas em [200+] engajamentos enterprise sobre o spend endereçável de cada categoria. O potencial real é confirmado após Spend Intelligence — sem custo até a aprovação do business case."
+        description="Faixas observadas em 200+ engajamentos enterprise sobre o spend endereçável de cada categoria. O potencial real é confirmado após Spend Intelligence — sem custo até a aprovação do business case."
         identity={{ kind: "mark", intensity: "bold" }}
       />
 
@@ -70,7 +70,7 @@ function ReducaoDeCustosPage() {
           <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-white p-8 md:flex-row md:items-center md:p-10">
             <div>
               <p className="font-serif text-2xl text-navy">
-                Não vê sua categoria? <span className="text-green">Trabalhamos com [40+] verticais.</span>
+                Não vê sua categoria? <span className="text-green">Trabalhamos com 40+ verticais.</span>
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 Spend Intelligence em 30 dias mapeia 90% do gasto e dimensiona o potencial real por categoria.

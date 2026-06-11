@@ -2,8 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { FullLockup } from "@/components/site/hero-identities/FullLockup";
 import heroImg from "@/assets/hero-boardroom.jpg";
-import markWhite from "@/assets/buy-group-mark-white.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,13 +20,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// NOTE: Substitua os valores entre [colchetes] por números reais auditáveis.
 const credibility = [
-  { value: "R$ [2.1]Bi+", label: "em savings documentados" },
-  { value: "[23]", label: "clientes enterprise atendidos" },
-  { value: "[8.7]x", label: "ROI médio por engajamento" },
+  { value: "R$ 2.1Bi+", label: "em savings documentados" },
+  { value: "23", label: "clientes enterprise atendidos" },
+  { value: "8.7x", label: "ROI médio por engajamento" },
   { value: "100%", label: "auditável · No Savings, No Fee" },
 ];
+
 
 const framework = [
   { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
@@ -56,26 +57,8 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/15" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-8 lg:translate-x-0"
-        >
-          <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] lg:h-[440px] lg:w-[440px]">
-            <span className="absolute inset-0 rounded-full bg-green/10 blur-3xl animate-mark-pulse-ring" />
-            <span className="absolute inset-8 rounded-full border border-green/25 animate-mark-spin-slow" />
-            <span className="absolute inset-20 rounded-full border border-white/10 animate-mark-spin-slow" style={{ animationDirection: "reverse", animationDuration: "55s" }} />
-            <div className="absolute inset-0 hidden lg:block">
-              <div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green animate-orbit-cw" style={{ ["--orbit-r" as never]: "180px" }} />
-              <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green/70 animate-orbit-ccw" style={{ ["--orbit-r" as never]: "210px", animationDelay: "-9s" }} />
-              <div className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/60 animate-orbit-cw" style={{ ["--orbit-r" as never]: "140px", animationDelay: "-4s", animationDuration: "18s" }} />
-            </div>
-            <img
-              src={markWhite}
-              alt=""
-              className="absolute inset-0 m-auto h-[55%] w-[55%] select-none opacity-[0.10] animate-mark-float lg:opacity-[0.22]"
-            />
-          </div>
-        </div>
+        <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
+
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
           <div className="lg:col-span-9">
@@ -86,7 +69,7 @@ function Index() {
 
             <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
               <span className="block text-5xl md:text-6xl lg:text-6xl">
-                R$ <span className="text-green">[2.1]</span> bilhões
+                R$ <span className="text-green">2.1</span> bilhões
               </span>
               <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
                 em savings auditados.
@@ -97,7 +80,7 @@ function Index() {
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
               A firma de procurement transformation escolhida por
-              <span className="text-white"> [23] CFOs de companhias enterprise</span>.
+              <span className="text-white"> 23 CFOs de companhias enterprise</span>.
               Modelo <span className="text-green">No Savings, No Fee</span> com garantia contratual:
               resultados auditáveis ou reembolso integral.
             </p>
@@ -120,7 +103,7 @@ function Index() {
 
             <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
-              NDA padrão · Currently accepting [3] new clients this quarter
+              NDA padrão · Currently accepting 3 new clients this quarter
             </p>
 
           </div>
@@ -145,11 +128,11 @@ function Index() {
           <div className="lg:col-span-5">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Case study · Confidencial</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              R$ [47]MM capturados em <span className="text-green">90 dias</span>.
+              R$ 47MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, faturamento R$ [3.2]Bi. Spend endereçável
-              de R$ [380]MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
+              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend endereçável
+              de R$ 380MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
               do board.
             </p>
             <Link
@@ -164,7 +147,7 @@ function Index() {
               {[
                 { k: "Saving capturado", v: "12.4%", s: "sobre spend endereçável" },
                 { k: "Payback", v: "< 90d", s: "do primeiro contrato renegociado" },
-                { k: "ROI do projeto", v: "[11.2]x", s: "vs. fee Buy Group" },
+                { k: "ROI do projeto", v: "11.2x", s: "vs. fee Buy Group" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
@@ -180,7 +163,7 @@ function Index() {
                 dois anos. O modelo de risco compartilhado mudou a equação."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                CFO · Grupo industrial · R$ [3.2]Bi faturamento
+                CFO · Grupo industrial · R$ 3.2Bi faturamento
               </figcaption>
             </figure>
           </div>
@@ -199,7 +182,7 @@ function Index() {
               <span className="text-white/55"> Um único KPI: saving auditado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de [200+] engajamentos enterprise. ProcureMax™ é o
+              Desenvolvida ao longo de 200+ engajamentos enterprise. ProcureMax™ é o
               único framework de procurement com garantia contratual de resultado e
               auditoria third-party em cada fase.
             </p>
@@ -227,10 +210,14 @@ function Index() {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {moat.map((d) => (
-            <div key={d.t} className="bg-white p-8 lg:p-10">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green/15 text-navy">
+            <div
+              key={d.t}
+              className="group relative overflow-hidden rounded-3xl border border-border/80 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12)] lg:p-10"
+            >
+              <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-green/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_8px_20px_-8px_rgba(212,175,55,0.4)]">
                 <d.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-6 font-serif text-2xl text-navy">{d.t}</h3>
@@ -238,6 +225,7 @@ function Index() {
             </div>
           ))}
         </div>
+
       </section>
 
       {/* CATEGORIAS DE SPEND — TEASER */}
@@ -253,8 +241,8 @@ function Index() {
             </div>
             <div className="lg:col-span-5">
               <p className="text-pretty text-muted-foreground">
-                Telecom, energia, logística, TI, facilities, travel, seguros e mais [40+] verticais.
-                Veja as faixas de saving observadas em [200+] engajamentos enterprise.
+                Telecom, energia, logística, TI, facilities, travel, seguros e mais 40+ verticais.
+                Veja as faixas de saving observadas em 200+ engajamentos enterprise.
               </p>
               <Link
                 to="/reducao-de-custos"
@@ -282,8 +270,8 @@ function Index() {
             </div>
             <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
               {[
-                { icon: Building2, t: "[15+] anos", d: "experiência média da equipe sênior em procurement enterprise" },
-                { icon: TrendingUp, t: "[200+]", d: "engajamentos conduzidos em verticais críticas" },
+                { icon: Building2, t: "15+ anos", d: "experiência média da equipe sênior em procurement enterprise" },
+                { icon: TrendingUp, t: "200+", d: "engajamentos conduzidos em verticais críticas" },
                 { icon: Award, t: "Tier-1", d: "background dos sócios em consultorias globais e indústria" },
               ].map((c) => (
                 <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
@@ -310,8 +298,8 @@ function Index() {
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Aceitamos no máximo <span className="text-green">[12] clientes por trimestre</span>
-                para preservar o padrão de delivery. Currently accepting [3] new engagements.
+                Aceitamos no máximo <span className="text-green">12 clientes por trimestre</span>
+                para preservar o padrão de delivery. Currently accepting 3 new engagements.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
