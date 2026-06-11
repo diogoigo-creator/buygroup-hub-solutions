@@ -67,22 +67,24 @@ function Index() {
               PERFORMANCE EM COMPRAS · IMPACTO NO RESULTADO
             </div>
 
-            <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
-              <span className="block text-5xl md:text-6xl lg:text-6xl">
-                R$ <span className="text-green">2.1</span> bilhões
-              </span>
-              <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
-                Destravamos margem nas compras
-                <span className="text-white/55"> que sua empresa já realiza.</span>
-              </span>
+            <div className="mt-10">
+              <p className="font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
+                R$ <span className="text-green">2,1</span> bi
+              </p>
+              <p className="mt-4 text-sm uppercase tracking-[0.28em] text-white/55">
+                em volume de compras analisado
+              </p>
+            </div>
+
+            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[1.05] tracking-[-0.02em] text-white text-3xl md:text-4xl lg:text-[2.65rem]">
+              Compras estratégicas para transformar base contratada
+              <span className="text-white/60"> em resultado financeiro.</span>
             </h1>
 
-
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              Redução de custos com governança, método e impacto financeiro comprovável.
-              A Buy Group atua ao lado da sua equipe para identificar, negociar e homologar
-              oportunidades reais em contratos, fornecedores e projetos estratégicos com
-              modelo de remuneração <span className="text-green">baseado em performance</span>.
+              Analisamos contratos, fornecedores, categorias e projetos estratégicos
+              para identificar oportunidades reais de redução de custos, apoiar
+              negociações e homologar savings com governança.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -90,25 +92,26 @@ function Index() {
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Agendar executive briefing · 20min
+                Solicitar diagnóstico executivo
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
               <Link
                 to="/servicos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
               >
-                Conhecer o ProcureMax™ Framework
+                Conhecer metodologia
               </Link>
             </div>
 
             <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
-              NDA padrão · Currently accepting 3 new clients this quarter
+              Atendimento consultivo · Projetos sob confidencialidade · Remuneração vinculada a savings homologados
             </p>
 
           </div>
         </div>
       </section>
+
 
       {/* CREDIBILITY MATRIX */}
       <section className="border-y border-white/5 bg-navy text-white">
