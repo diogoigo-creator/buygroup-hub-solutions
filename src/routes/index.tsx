@@ -47,68 +47,90 @@ function Index() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:items-center">
+      <section className="relative isolate flex overflow-hidden bg-navy text-white lg:min-h-[88svh] lg:items-center">
         <img
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-55"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/15" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/30" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-navy/45" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
-        <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
 
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
-          <div className="lg:col-span-9">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-14 px-6 pb-24 pt-20 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pb-20 lg:pt-16">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
-              PERFORMANCE EM COMPRAS · IMPACTO NO RESULTADO
+              PROCUREMENT TRANSFORMATION · PERFORMANCE-BASED
             </div>
 
-            <div className="mt-10">
-              <p className="font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
-                R$ <span className="text-green">2,1</span> bi
-              </p>
-              <p className="mt-4 text-sm uppercase tracking-[0.28em] text-white/55">
-                em volume de compras analisado
-              </p>
-            </div>
-
-            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[1.05] tracking-[-0.02em] text-white text-3xl md:text-4xl lg:text-[2.65rem]">
-              Compras estratégicas para transformar base contratada
-              <span className="text-white/60"> em resultado financeiro.</span>
+            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[1.05] tracking-[-0.02em] text-white text-3xl md:text-4xl lg:text-[2.85rem]">
+              R$ <span className="text-green">2,1 bi+</span> em spend enterprise analisado.
+              <span className="text-white/70"> Transformamos compras existentes em margem auditada, resiliência operacional e decisões defensáveis no board.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              A Buy Group analisa contratos, fornecedores, categorias e projetos estratégicos
-              para identificar oportunidades reais de redução de custos, apoiar
-              negociações e homologar savings com governança.
+            <p className="mt-8 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
+              A Buy Group atua ao lado do CFO, CEO e time de procurement para
+              identificar, negociar e homologar oportunidades reais em contratos,
+              fornecedores e projetos estratégicos — com baseline aprovado,
+              governança financeira e remuneração vinculada ao saving
+              efetivamente capturado.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Solicitar diagnóstico executivo
+                Agendar executive briefing
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
-              <Link
-                to="/servicos"
+              <a
+                href="#framework"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
               >
-                Conhecer metodologia
-              </Link>
+                Ver framework
+              </a>
             </div>
 
-            <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
-              <Lock className="h-3 w-3" />
-              Atendimento consultivo · Projetos sob confidencialidade · Remuneração vinculada a savings homologados
+            <p className="mt-6 flex items-start gap-2 text-xs leading-relaxed tracking-[0.08em] text-white/55 lg:text-[11px] lg:uppercase lg:tracking-[0.22em]">
+              <Lock className="mt-0.5 h-3 w-3 shrink-0 text-green/80" />
+              Briefing sob NDA · 20 minutos · sem acesso prévio a dados sensíveis · próximo passo apenas se houver potencial material de saving
             </p>
-
           </div>
+
+          {/* Board-ready value case */}
+          <aside className="lg:col-span-5 lg:pl-4">
+            <div className="relative rounded-2xl border border-white/12 bg-navy/65 p-8 backdrop-blur-xl shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] lg:p-10">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-green/40 to-transparent" />
+              <p className="text-[10px] uppercase tracking-[0.36em] text-green/80">
+                Board-ready value case
+              </p>
+              <h2 className="mt-3 font-serif text-2xl leading-snug text-white lg:text-[1.6rem]">
+                Como apresentamos o caso ao board.
+              </h2>
+
+              <dl className="mt-8 divide-y divide-white/10">
+                {[
+                  { k: "Spend analisado", v: "R$ 2,1 bi+" },
+                  { k: "ROI médio", v: "8.7x por engajamento" },
+                  { k: "Governança", v: "Baseline aprovado + saving auditável" },
+                  { k: "Modelo", v: "No Savings, No Fee" },
+                ].map((row) => (
+                  <div key={row.k} className="flex items-baseline justify-between gap-6 py-4">
+                    <dt className="text-[11px] uppercase tracking-[0.22em] text-white/55">{row.k}</dt>
+                    <dd className="text-right font-serif text-base text-white lg:text-lg">{row.v}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <p className="mt-8 border-t border-white/10 pt-5 text-[11px] leading-relaxed tracking-[0.12em] text-white/50">
+                Briefing sob NDA · 20 minutos · sem acesso prévio a dados sensíveis
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 
