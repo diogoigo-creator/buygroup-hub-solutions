@@ -21,9 +21,9 @@ export const Route = createFileRoute("/")({
 });
 
 const credibility = [
-  { value: "R$ 2.1Bi+", label: "em savings documentados" },
-  { value: "23", label: "clientes enterprise atendidos" },
-  { value: "8.7x", label: "ROI médio por engajamento" },
+  { value: "R$ 1.4 bi+", label: "Em volume de compras analisado" },
+  { value: "23", label: "Clientes entreprise atendidos" },
+  { value: "8.7x", label: "ROI médio por projeto" },
   { value: "100%", label: "auditável · No Savings, No Fee" },
 ];
 
@@ -68,7 +68,7 @@ function Index() {
 
             <div className="mt-10">
               <p className="font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
-                R$ <span className="text-green">2,1</span> bi
+                R$ <span className="text-green">1,4</span> bi
               </p>
               <p className="mt-4 text-sm uppercase tracking-[0.28em] text-white/55">
                 em volume de compras analisado
@@ -81,9 +81,9 @@ function Index() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              Analisamos contratos, fornecedores, categorias e projetos estratégicos
-              para identificar oportunidades reais de redução de custos, apoiar
-              negociações e homologar savings com governança.
+              A Buy Group transforma spend existente em margem capturada:
+              identificamos oportunidades, conduzimos negociações estratégicas e
+              homologamos savings com governança financeira para decisões defensáveis no board.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
