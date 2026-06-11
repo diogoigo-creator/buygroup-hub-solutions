@@ -179,15 +179,15 @@ function Index() {
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">ProcureMax™ Framework</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">CUT4MORE™ FRAMEWORK</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
               Metodologia proprietária. Quatro fases.
               <span className="text-white/55"> Um único KPI: saving auditado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de 200+ engajamentos enterprise. ProcureMax™ é o
+              Desenvolvida ao longo de anos de projetos enterprise. cut4more™ é o
               único framework de procurement com garantia contratual de resultado e
-              auditoria third-party em cada fase.
+              auditoria em cada fase.
             </p>
           </div>
 
