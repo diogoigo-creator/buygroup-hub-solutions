@@ -9,10 +9,10 @@ import heroImg from "@/assets/hero-boardroom.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Procurement transformation for Fortune-class CFOs" },
-      { name: "description", content: "The procurement transformation firm trusted by enterprise CFOs. Investment-grade savings, fully documented. No Savings, No Fee." },
-      { property: "og:title", content: "Buy Group — Investment-grade procurement transformation" },
-      { property: "og:description", content: "Documented enterprise savings with full risk reversal. Executive briefings by invitation." },
+      { title: "Buy Group — Consultoria estratégica em compras" },
+      { name: "description", content: "Consultoria estratégica em compras para analisar contratos, fornecedores, categorias e projetos com impacto financeiro comprovável." },
+      { property: "og:title", content: "Buy Group — Consultoria estratégica em compras" },
+      { property: "og:description", content: "Análise de contratos, fornecedores, categorias e projetos estratégicos para redução de custos com governança." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -21,24 +21,24 @@ export const Route = createFileRoute("/")({
 });
 
 const credibility = [
-  { value: "R$ 2.1Bi+", label: "em savings documentados" },
-  { value: "23", label: "clientes enterprise atendidos" },
-  { value: "8.7x", label: "ROI médio por engajamento" },
-  { value: "100%", label: "auditável · No Savings, No Fee" },
+  { value: "R$ 2,1 bi", label: "em volume de compras analisado" },
+  { value: "Contratos", label: "análise de bases negociadas e vigentes" },
+  { value: "Fornecedores", label: "mapeamento de alternativas e riscos" },
+  { value: "Categorias", label: "priorização por impacto financeiro" },
 ];
 
 
 const framework = [
-  { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
-  { n: "02", t: "Strategic Sourcing", d: "Should-cost modeling, TCO analysis e RFPs competitivas conduzidas por seniores ex-procurement de grandes corporações." },
-  { n: "03", t: "Negotiation Lab", d: "Negociação executada por nossa equipe. Capturamos margem sem comprometer SLA, qualidade ou continuidade operacional." },
-  { n: "04", t: "Value Assurance", d: "Auditoria trimestral do saving capturado. Reporting board-ready. Garantia contratual de resultado ou reembolso integral." },
+  { n: "01", t: "Diagnóstico de compras", d: "Leitura estruturada de contratos, despesas, categorias e fornecedores para definir uma base confiável de análise." },
+  { n: "02", t: "Priorização de oportunidades", d: "Classificação das iniciativas por potencial financeiro, risco operacional, complexidade e viabilidade de captura." },
+  { n: "03", t: "Negociação e homologação", d: "Apoio à negociação com fornecedores, validação técnica e alinhamento com áreas usuárias e governança interna." },
+  { n: "04", t: "Comprovação de impacto", d: "Documentação dos resultados capturados e acompanhamento executivo para sustentar a redução de custos no P&L." },
 ];
 
 const moat = [
-  { icon: ShieldCheck, t: "Investment-grade guarantee", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee — sem exceções." },
+  { icon: ShieldCheck, t: "Governança executiva", d: "Cada oportunidade é tratada com critério financeiro, validação operacional e documentação adequada para decisão." },
   { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
-  { icon: Award, t: "Senior-only delivery", d: "Zero juniores em projeto. Cada engajamento é conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
+  { icon: Award, t: "Condução sênior", d: "Os projetos são conduzidos por profissionais experientes em compras, operações e negociações corporativas complexas." },
   { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
 ];
 
