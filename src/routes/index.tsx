@@ -55,7 +55,7 @@ function Index() {
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-95"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/40 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
         <FullLockup slogan={{ primary: "Mais que comprar. É comprar", accent: "bem." }} />
 
