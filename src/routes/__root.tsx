@@ -72,11 +72,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buy Group — Procurement transformation para CFOs enterprise" },
-      { name: "description", content: "A firma de procurement transformation escolhida por CFOs de companhias enterprise. Savings auditáveis, modelo No Savings, No Fee." },
+      { title: "Buy Group — Consultoria estratégica em compras" },
+      { name: "description", content: "Consultoria estratégica em compras para analisar contratos, fornecedores, categorias e projetos com impacto financeiro comprovável." },
       { name: "author", content: "Buy Group" },
-      { property: "og:title", content: "Buy Group — Procurement transformation" },
-      { property: "og:description", content: "Savings auditáveis com garantia contratual. Executive briefings sob NDA." },
+      { property: "og:title", content: "Buy Group — Consultoria estratégica em compras" },
+      { property: "og:description", content: "Análise de contratos, fornecedores, categorias e projetos estratégicos para redução de custos com governança." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Buy Group" },
       { property: "og:locale", content: "pt_BR" },
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Buy Group",
           legalName: "Buy Group Consultoria",
           url: "https://buygroup-hub-solutions.lovable.app",
-          description: "Procurement transformation firm para companhias enterprise. Modelo No Savings, No Fee com garantia contratual.",
+          description: "Consultoria estratégica em compras para redução de custos com governança e impacto financeiro comprovável.",
           slogan: "Mais que comprar. É comprar bem.",
           areaServed: "BR",
           address: {
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           contactPoint: {
             "@type": "ContactPoint",
-            contactType: "Executive briefing",
+            contactType: "Diagnóstico executivo",
             email: "contato@buygroup.com.br",
             availableLanguage: ["Portuguese", "English"],
           },
