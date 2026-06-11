@@ -52,7 +52,7 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-75"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
