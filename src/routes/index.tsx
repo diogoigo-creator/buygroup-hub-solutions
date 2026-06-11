@@ -29,10 +29,10 @@ const credibility = [
 
 
 const framework = [
-  { n: "01", t: "Spend Intelligence", d: "Auditoria forense de 24 meses de despesas. Baseline oficial, classificação UNSPSC, identificação de quick wins em 30 dias." },
-  { n: "02", t: "Strategic Sourcing", d: "Should-cost modeling, TCO analysis e RFPs competitivas conduzidas por seniores ex-procurement de grandes corporações." },
-  { n: "03", t: "Negotiation Lab", d: "Negociação executada por nossa equipe. Capturamos margem sem comprometer SLA, qualidade ou continuidade operacional." },
-  { n: "04", t: "Value Assurance", d: "Auditoria trimestral do saving capturado. Reporting board-ready. Garantia contratual de resultado ou reembolso integral." },
+  { n: "01", t: "Spend Intelligence", d: "Analisamos 24 meses de despesas, contratos e fornecedores para construir um baseline confiável, organizar categorias de gasto e identificar quick wins negociáveis nos primeiros 30 dias." },
+  { n: "02", t: "Strategic Sourcing", d: "Avaliamos composição de custos, custo total da contratação e alternativas de fornecimento para estruturar negociações competitivas e capturar savings com governança." },
+  { n: "03", t: "Negotiation Lab", d: "Negociações conduzidas com foco em margem capturada, preservando SLA, qualidade, relacionamento com fornecedores e continuidade operacional." },
+  { n: "04", t: "Value Assurance", d: "Acompanhamento mensal dos savings capturados, com reporting executivo e validação financeira conforme baseline aprovado." },
 ];
 
 const moat = [
