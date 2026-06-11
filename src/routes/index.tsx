@@ -64,7 +64,7 @@ function Index() {
           <div className="lg:col-span-9">
             <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
-              By invitation · Procurement transformation
+              PERFORMANCE EM COMPRAS · IMPACTO NO RESULTADO
             </div>
 
             <h1 className="mt-8 max-w-4xl text-balance font-serif font-medium leading-[0.95] tracking-[-0.025em] text-white">
@@ -72,8 +72,8 @@ function Index() {
                 R$ <span className="text-green">2.1</span> bilhões
               </span>
               <span className="mt-3 block text-2xl text-white/85 md:text-3xl lg:text-3xl">
-                em savings auditados.
-                <span className="text-white/55"> Zero risco à sua reputação.</span>
+                Destravamos margem nas compras
+                <span className="text-white/55"> que sua empresa já realiza.</span>
               </span>
             </h1>
 
