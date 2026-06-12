@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import logo from "@/assets/buy-group-logo-white.png";
 import mark from "@/assets/buy-group-mark-white.png";
 
@@ -22,15 +22,6 @@ export function Footer() {
             Transformamos despesas em margem com inteligência de mercado,
             negociação estratégica e governança de compras.
           </p>
-          <div className="mt-6 flex items-center gap-3">
-            <a
-              href="#"
-              aria-label="LinkedIn da Buy Group"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/75 transition-all hover:-translate-y-0.5 hover:border-green/60 hover:text-green"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-          </div>
         </div>
 
         <div className="lg:col-span-3">
@@ -57,12 +48,6 @@ export function Footer() {
                 atendimento@buygroup.com.br
               </a>
             </li>
-            <li>
-              <a href="tel:+551140000000" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
-                <Phone className="h-4 w-4 text-green/80" />
-                +55 11 4000-0000
-              </a>
-            </li>
             <li className="inline-flex items-center gap-2.5 text-white/65">
               <MapPin className="h-4 w-4 text-green/80" />
               São Paulo · Brasil
@@ -76,7 +61,7 @@ export function Footer() {
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-6 py-6 text-xs text-white/55 sm:flex-row sm:items-center lg:px-10">
           <p>© {new Date().getFullYear()} Buy Group Consultoria. Todos os direitos reservados.</p>
-          <p className="text-white/45">Procurement Transformation Firm</p>
+          <p className="text-white/45">Consultoria em compras e negociação</p>
         </div>
       </div>
     </footer>
