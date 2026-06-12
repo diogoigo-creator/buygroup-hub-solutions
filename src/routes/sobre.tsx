@@ -7,9 +7,17 @@ export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
       { title: "Sobre a Buy Group — Compras estratégicas" },
-      { name: "description", content: "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado." },
+      {
+        name: "description",
+        content:
+          "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado.",
+      },
       { property: "og:title", content: "Sobre a Buy Group" },
-      { property: "og:description", content: "Compras como alavanca de margem, com abordagem independente e governança financeira." },
+      {
+        property: "og:description",
+        content:
+          "Compras como alavanca de margem, com abordagem independente e governança financeira.",
+      },
       { property: "og:url", content: "/sobre" },
     ],
     links: [{ rel: "canonical", href: "/sobre" }],
@@ -18,10 +26,26 @@ export const Route = createFileRoute("/sobre")({
 });
 
 const principles = [
-  { icon: ShieldCheck, t: "Resultado alinhado", d: "A remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente." },
-  { icon: Award, t: "Condução por especialistas", d: "Os projetos são conduzidos por profissionais experientes em compras, negociação e gestão de fornecedores." },
-  { icon: Lock, t: "Confidencialidade institucional", d: "O trabalho começa sob NDA, com tratamento reservado das informações e comunicação executiva clara." },
-  { icon: Scale, t: "Abordagem independente", d: "Atuamos sem vínculos comerciais com fornecedores, alinhados às prioridades financeiras e operacionais do cliente." },
+  {
+    icon: ShieldCheck,
+    t: "Resultado alinhado",
+    d: "A remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente.",
+  },
+  {
+    icon: Award,
+    t: "Condução por especialistas",
+    d: "Os projetos são conduzidos por profissionais experientes em compras, negociação e gestão de fornecedores.",
+  },
+  {
+    icon: Lock,
+    t: "Confidencialidade institucional",
+    d: "O trabalho começa sob NDA, com tratamento reservado das informações e comunicação executiva clara.",
+  },
+  {
+    icon: Scale,
+    t: "Abordagem independente",
+    d: "Atuamos sem vínculos comerciais com fornecedores, alinhados às prioridades financeiras e operacionais do cliente.",
+  },
 ];
 
 function SobrePage() {
@@ -29,32 +53,39 @@ function SobrePage() {
     <SiteLayout>
       <PageHero
         eyebrow="Quem somos"
-        title={<>Compras e negociação como alavancas de <span className="text-green">margem e eficiência</span>.</>}
+        title={
+          <>
+            Compras e negociação como alavancas de{" "}
+            <span className="text-green">margem e eficiência</span>.
+          </>
+        }
         description="A Buy Group apoia grandes empresas na identificação de oportunidades, condução de negociações e validação de resultados com governança financeira."
         identity={{ kind: "lockup", caption: "Consultoria em compras e negociação" }}
       />
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
         <div className="lg:col-span-7">
-          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Posicionamento</p>
-          <h2 className="mt-4 font-serif text-3xl text-navy md:text-4xl">
-            Por que existimos.
-          </h2>
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+            Posicionamento
+          </p>
+          <h2 className="mt-4 font-serif text-3xl text-navy md:text-4xl">Por que existimos.</h2>
           <div className="mt-6 space-y-5 text-pretty text-muted-foreground">
             <p>
               Em grandes empresas, decisões de compra afetam margem, risco e continuidade
-              operacional. Contratos relevantes exigem análise consistente, estratégia clara
-              e uma negociação bem conduzida.
+              operacional. Contratos relevantes exigem análise consistente, estratégia clara e uma
+              negociação bem conduzida.
             </p>
             <p>
               A Buy Group atua como extensão especializada da área de compras, com{" "}
-              <span className="font-semibold text-navy">remuneração vinculada ao resultado validado</span>{" "}
+              <span className="font-semibold text-navy">
+                remuneração vinculada ao resultado validado
+              </span>{" "}
               e critérios financeiros definidos antes do início do projeto.
             </p>
             <p>
-              Esse modelo alinha nossos incentivos à margem do cliente: os savings são
-              acompanhados e homologados conforme o baseline aprovado, com transparência
-              sobre premissas, riscos e resultados.
+              Esse modelo alinha nossos incentivos à margem do cliente: os savings são acompanhados
+              e homologados conforme o baseline aprovado, com transparência sobre premissas, riscos
+              e resultados.
             </p>
           </div>
         </div>
@@ -64,8 +95,8 @@ function SobrePage() {
               <Quote className="h-6 w-6" />
             </div>
             <p className="mt-6 font-serif text-2xl leading-snug text-navy">
-              "A condução estruturada permitiu capturar oportunidades que estavam
-              represadas, preservando a operação e dando clareza ao resultado financeiro."
+              "A condução estruturada permitiu capturar oportunidades que estavam represadas,
+              preservando a operação e dando clareza ao resultado financeiro."
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">
               CFO · Grupo industrial · R$ 3.2Bi
@@ -77,7 +108,9 @@ function SobrePage() {
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Princípios de atuação</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+              Princípios de atuação
+            </p>
             <h2 className="mt-4 font-serif text-3xl text-navy md:text-4xl">
               Quatro princípios que <span className="text-green">não negociamos</span>.
             </h2>
@@ -100,7 +133,9 @@ function SobrePage() {
         <div className="rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · nível diretivo · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">
+                Executive briefing · nível diretivo · 20min
+              </p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Uma conversa executiva para avaliar o potencial de economia.
               </h3>

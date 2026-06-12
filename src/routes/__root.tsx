@@ -73,10 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Buy Group — Compras estratégicas e margem" },
-      { name: "description", content: "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, resultado validado e governança financeira." },
+      {
+        name: "description",
+        content:
+          "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, resultado validado e governança financeira.",
+      },
       { name: "author", content: "Buy Group" },
       { property: "og:title", content: "Buy Group — Compras estratégicas e margem" },
-      { property: "og:description", content: "Economia em compras, negociação estratégica e resultado validado com governança financeira." },
+      {
+        property: "og:description",
+        content:
+          "Economia em compras, negociação estratégica e resultado validado com governança financeira.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Buy Group" },
       { property: "og:locale", content: "pt_BR" },
@@ -97,7 +105,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Buy Group",
           legalName: "Buy Group Consultoria",
           url: "https://buygroup-hub-solutions.lovable.app",
-          description: "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem e governança financeira.",
+          description:
+            "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem e governança financeira.",
           slogan: "Mais que comprar. É comprar bem.",
           areaServed: "BR",
           address: {
@@ -120,7 +129,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (

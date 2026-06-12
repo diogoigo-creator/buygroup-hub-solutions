@@ -19,8 +19,8 @@ export function Footer() {
             Mais que comprar. <span className="text-white/60">É comprar bem.</span>
           </p>
           <p className="mt-6 max-w-sm text-pretty text-sm text-white/70">
-            Transformamos despesas em margem com inteligência de mercado,
-            negociação estratégica e governança de compras.
+            Transformamos despesas em margem com inteligência de mercado, negociação estratégica e
+            governança de compras.
           </p>
         </div>
 
@@ -29,11 +29,31 @@ export function Footer() {
             Navegação
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link to="/sobre" className="text-white/85 hover:text-green">Sobre</Link></li>
-            <li><Link to="/servicos" className="text-white/85 hover:text-green">Serviços</Link></li>
-            <li><Link to="/reducao-de-custos" className="text-white/85 hover:text-green">Redução de custos</Link></li>
-            <li><Link to="/cursos" className="text-white/85 hover:text-green">Cursos in company</Link></li>
-            <li><Link to="/contato" className="text-white/85 hover:text-green">Contato</Link></li>
+            <li>
+              <Link to="/sobre" className="text-white/85 hover:text-green">
+                Sobre
+              </Link>
+            </li>
+            <li>
+              <Link to="/servicos" className="text-white/85 hover:text-green">
+                Serviços
+              </Link>
+            </li>
+            <li>
+              <Link to="/reducao-de-custos" className="text-white/85 hover:text-green">
+                Redução de custos
+              </Link>
+            </li>
+            <li>
+              <Link to="/cursos" className="text-white/85 hover:text-green">
+                Cursos para empresas
+              </Link>
+            </li>
+            <li>
+              <Link to="/contato" className="text-white/85 hover:text-green">
+                Contato
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -43,7 +63,10 @@ export function Footer() {
           </h4>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <a href="mailto:atendimento@buygroup.com.br" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
+              <a
+                href="mailto:atendimento@buygroup.com.br"
+                className="inline-flex items-center gap-2.5 text-white/85 hover:text-green"
+              >
                 <Mail className="h-4 w-4 text-green/80" />
                 atendimento@buygroup.com.br
               </a>
