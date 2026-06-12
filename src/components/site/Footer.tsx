@@ -69,7 +69,7 @@ export function Footer() {
             </li>
           </ul>
           <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
-            Atendimento por agendamento · NDA padrão
+            ATENDIMENTO POR AGENDAMENTO · NDA
           </p>
         </div>
       </div>
