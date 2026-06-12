@@ -6,10 +6,10 @@ import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, C
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — CUT4MORE™ FRAMEWORK | Buy Group" },
-      { name: "description", content: "Engajamentos enterprise de procurement transformation: spend intelligence, strategic sourcing, BPO sênior e governança board-ready." },
+      { title: "Serviços de compras estratégicas — Buy Group" },
+      { name: "description", content: "Projetos completos de compras estratégicas, da análise à negociação, com foco em economia, margem e governança financeira." },
       { property: "og:title", content: "Serviços Buy Group" },
-      { property: "og:description", content: "CUT4MORE™ FRAMEWORK. Investment-grade savings." },
+      { property: "og:description", content: "Atuação da análise à negociação em contratos, fornecedores e categorias estratégicas." },
       { property: "og:url", content: "/servicos" },
     ],
     links: [{ rel: "canonical", href: "/servicos" }],
@@ -20,39 +20,39 @@ export const Route = createFileRoute("/servicos")({
 const services = [
   {
     icon: TrendingDown,
-    title: "Cost Optimization Program",
-    body: "Programa estruturado de saving sobre o spend endereçável com remuneração 100% atrelada a resultado auditado por third-party.",
-    bullets: ["Spend intelligence em 30 dias (90% do gasto mapeado)", "Renegociação executada por sêniores", "Strategic sourcing competitivo", "Reporting trimestral board-ready"],
+    title: "Programa de Otimização de Custos",
+    body: "Projeto estruturado para identificar, negociar e validar economia sobre o volume de compras analisado, com remuneração vinculada ao resultado.",
+    bullets: ["Mapeamento de oportunidades", "Renegociação conduzida por especialistas", "Estratégia de compra competitiva", "Relatórios para decisão executiva"],
   },
   {
     icon: Users,
-    title: "Procurement BPO",
-    body: "Operamos parte ou toda a função de compras com governança institucional, KPIs board-ready e SLA contratual.",
-    bullets: ["BPO de compras táticas e indiretas", "Implantação de P2P e fluxo aprovativo", "SLA contratual com penalidades", "Time dedicado senior-only"],
+    title: "Gestão de Compras",
+    body: "Apoiamos parte ou toda a operação de compras com processos claros, indicadores de desempenho e governança institucional.",
+    bullets: ["Compras táticas e indiretas", "Fluxos de compra e aprovação", "SLA e indicadores de desempenho", "Equipe dedicada e experiente"],
   },
   {
     icon: GraduationCap,
-    title: "Executive Education",
-    body: "Programas in-company para C-level e lideranças de procurement de companhias enterprise. Confidencial.",
-    bullets: ["Strategic sourcing avançado", "Negotiation lab com simulações reais", "Procurement analytics & KPIs", "Governança e compliance enterprise"],
+    title: "Educação Executiva",
+    body: "Programas sob medida para lideranças e equipes de compras de grandes empresas, com aplicação prática e confidencialidade.",
+    bullets: ["Estratégia de compra avançada", "Negociação com simulações reais", "Análise e indicadores de compras", "Governança e conformidade"],
   },
   {
     icon: FileSearch,
-    title: "Spend Intelligence",
-    body: "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
+    title: "Mapeamento de Oportunidades",
+    body: "Análise das despesas para organizar categorias, construir um baseline confiável e priorizar oportunidades de economia.",
     bullets: ["Taxonomia UNSPSC adaptada", "Painéis executivos interativos", "Identificação de oportunidades por categoria"],
   },
   {
     icon: Handshake,
-    title: "Supplier Risk & Governance",
-    body: "Homologação, segmentação, scoring e desenvolvimento de fornecedores críticos sob ótica de risco enterprise.",
-    bullets: ["Critérios ESG e compliance", "Programas SRM estruturados", "Avaliação 360° auditável"],
+    title: "Risco e Governança de Fornecedores",
+    body: "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade operacional.",
+    bullets: ["Critérios ESG e conformidade", "Gestão estruturada de fornecedores", "Avaliação de desempenho documentada"],
   },
   {
     icon: BarChart3,
-    title: "Procurement Maturity Assessment",
-    body: "Assessment da função frente a benchmarks de mercado enterprise. Roadmap priorizado com business case.",
-    bullets: ["Pessoas, processo e tecnologia", "Roadmap 12-24 meses", "Quick wins acionáveis"],
+    title: "Diagnóstico da Área de Compras",
+    body: "Avaliação da área frente a referências de mercado, com plano priorizado e justificativa financeira para a decisão.",
+    bullets: ["Pessoas, processos e tecnologia", "Plano de evolução de 12 a 24 meses", "Oportunidades de curto prazo"],
   },
 ];
 
