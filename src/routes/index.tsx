@@ -2,42 +2,41 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { FullLockup } from "@/components/site/hero-identities/FullLockup";
 import heroImg from "@/assets/hero-boardroom.jpg";
 
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Group — Procurement transformation for Fortune-class CFOs" },
-      { name: "description", content: "The procurement transformation firm trusted by enterprise CFOs. Investment-grade savings, fully documented. No Savings, No Fee." },
-      { property: "og:title", content: "Buy Group — Investment-grade procurement transformation" },
-      { property: "og:description", content: "Documented enterprise savings with full risk reversal. Executive briefings by invitation." },
-      { property: "og:url", content: "/" },
+      { title: "Buy Group — Economia em compras com governança" },
+      { name: "description", content: "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira." },
+      { property: "og:title", content: "Buy Group — Compras estratégicas e margem real" },
+      { property: "og:description", content: "Economia em compras, negociações estratégicas e savings validados com governança financeira." },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/" }],
   }),
   component: Index,
 });
 
 const credibility = [
   { value: "R$ 1.4 bi+", label: "Em volume de compras analisado" },
-  { value: "23", label: "Clientes entreprise atendidos" },
-  { value: "8.7x", label: "ROI médio por projeto" },
-  { value: "100%", label: "auditável · No Savings, No Fee" },
+  { value: "23", label: "Grandes empresas atendidas" },
+  { value: "8,7x", label: "ROI médio nos projetos" },
+  { value: "100%", label: "Remuneração vinculada ao resultado validado" },
 ];
 
 
 const framework = [
-  { n: "01", t: "Inteligência de Gastos", d: "Analisamos 24 meses de despesas, contratos e fornecedores para construir um baseline confiável, organizar categorias de gasto e identificar quick wins negociáveis nos primeiros 30 dias." },
-  { n: "02", t: "Estratégia de Fornecimento", d: "Avaliamos composição de custos, custo total da contratação e alternativas de fornecimento para estruturar negociações competitivas e capturar savings com governança." },
-  { n: "03", t: "Negociação Estratégica", d: "Negociações conduzidas com foco em margem capturada, preservando SLA, qualidade, relacionamento com fornecedores e continuidade operacional." },
-  { n: "04", t: "Validação de Resultado", d: "Acompanhamento mensal dos savings capturados, com reporting executivo e validação financeira conforme baseline aprovado." },
+  { n: "01", t: "Mapeamento de Oportunidades", d: "Analisamos despesas, contratos e fornecedores para construir um baseline confiável e priorizar oportunidades de economia." },
+  { n: "02", t: "Estratégia de Compra", d: "Avaliamos a composição de custos e as alternativas de fornecimento para estruturar negociações competitivas." },
+  { n: "03", t: "Condução da Negociação", d: "Conduzimos as negociações com foco em margem, sem comprometer SLA, qualidade ou continuidade operacional." },
+  { n: "04", t: "Validação dos Savings", d: "Acompanhamos os resultados e validamos financeiramente os savings conforme o baseline aprovado." },
 ];
 
 const moat = [
-  { icon: ShieldCheck, t: "Garantia baseada em resultado", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee sem exceções." },
-  { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
+  { icon: ShieldCheck, t: "Remuneração vinculada ao resultado", d: "Nossa remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente." },
+  { icon: Lock, t: "Confidencialidade institucional", d: "O trabalho começa sob NDA, com tratamento reservado das informações comerciais e financeiras." },
   { icon: Award, t: "Atuação direta de especialistas", d: "Cada projeto é liderado por profissionais com mais de 15 anos de experiência em compras, negociação e gestão de fornecedores em ambientes corporativos complexos." },
   { icon: Scale, t: "Independência estrutural", d: "A Buy Group atua sem vínculos comerciais com fornecedores, garantindo recomendações alinhadas às prioridades financeiras e operacionais do cliente." },
 ];
