@@ -98,7 +98,7 @@ function Index() {
                 to="/servicos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
               >
-                Conhecer metodologia
+                cut4more™
               </Link>
             </div>
 
