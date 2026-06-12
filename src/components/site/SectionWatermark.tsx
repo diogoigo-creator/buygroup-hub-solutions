@@ -29,7 +29,7 @@ export function SectionWatermark({
       src={src}
       alt=""
       aria-hidden="true"
-      className={`pointer-events-none absolute h-[520px] w-[520px] select-none ${opacity} ${position} ${className}`}
+      className={`pointer-events-none absolute hidden h-[520px] w-[520px] select-none md:block ${opacity} ${position} ${className}`}
     />
   );
 }

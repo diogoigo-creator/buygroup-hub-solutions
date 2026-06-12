@@ -53,9 +53,13 @@ export function PageHero({
       />
 
       {/* Identity visual */}
-      {identity.kind === "mark" && <MarkOrbit intensity={identity.intensity} />}
-      {identity.kind === "lockup" && <FullLockup caption={identity.caption} slogan={identity.slogan} />}
-      {identity.kind === "slogan" && <KineticSlogan lines={identity.lines} />}
+      <div className="hidden lg:contents">
+        {identity.kind === "mark" && <MarkOrbit intensity={identity.intensity} />}
+        {identity.kind === "lockup" && (
+          <FullLockup caption={identity.caption} slogan={identity.slogan} />
+        )}
+        {identity.kind === "slogan" && <KineticSlogan lines={identity.lines} />}
+      </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/10" />
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-20 lg:px-10 lg:pb-16 lg:pt-14">
