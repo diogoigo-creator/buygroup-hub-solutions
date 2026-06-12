@@ -1,17 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, ShieldCheck, Lock, Award, Sparkles, TrendingUp, Scale, Building2 } from "lucide-react";
+import {
+  ArrowUpRight,
+  ShieldCheck,
+  Lock,
+  Award,
+  Sparkles,
+  TrendingUp,
+  Scale,
+  Building2,
+} from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import heroImg from "@/assets/hero-boardroom.jpg";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Buy Group — Economia em compras com governança" },
-      { name: "description", content: "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira." },
+      {
+        name: "description",
+        content:
+          "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.",
+      },
       { property: "og:title", content: "Buy Group — Compras estratégicas e margem real" },
-      { property: "og:description", content: "Economia em compras, negociações estratégicas e savings validados com governança financeira." },
+      {
+        property: "og:description",
+        content:
+          "Economia em compras, negociações estratégicas e savings validados com governança financeira.",
+      },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/" },
     ],
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/" }],
@@ -26,21 +42,51 @@ const credibility = [
   { value: "100%", label: "Remuneração vinculada ao resultado validado" },
 ];
 
-
 const framework = [
-  { n: "01", t: "Mapeamento de Oportunidades", d: "Analisamos despesas, contratos e fornecedores para construir um baseline confiável e priorizar oportunidades de economia." },
-  { n: "02", t: "Estratégia de Compra", d: "Avaliamos a composição de custos e as alternativas de fornecimento para estruturar negociações competitivas." },
-  { n: "03", t: "Condução da Negociação", d: "Conduzimos as negociações com foco em margem, sem comprometer SLA, qualidade ou continuidade operacional." },
-  { n: "04", t: "Validação dos Savings", d: "Acompanhamos os resultados e validamos financeiramente os savings conforme o baseline aprovado." },
+  {
+    n: "01",
+    t: "Mapeamento de Oportunidades",
+    d: "Analisamos despesas, contratos e fornecedores para construir um baseline confiável e priorizar oportunidades de economia.",
+  },
+  {
+    n: "02",
+    t: "Estratégia de Compra",
+    d: "Avaliamos a composição de custos e as alternativas de fornecimento para estruturar negociações competitivas.",
+  },
+  {
+    n: "03",
+    t: "Condução da Negociação",
+    d: "Conduzimos as negociações com foco em margem, sem comprometer SLA, qualidade ou continuidade operacional.",
+  },
+  {
+    n: "04",
+    t: "Validação dos Savings",
+    d: "Acompanhamos os resultados e validamos financeiramente os savings conforme o baseline aprovado.",
+  },
 ];
 
 const moat = [
-  { icon: ShieldCheck, t: "Remuneração vinculada ao resultado", d: "Nossa remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente." },
-  { icon: Lock, t: "Confidencialidade institucional", d: "O trabalho começa sob NDA, com tratamento reservado das informações comerciais e financeiras." },
-  { icon: Award, t: "Atuação direta de especialistas", d: "Cada projeto é liderado por profissionais com mais de 15 anos de experiência em compras, negociação e gestão de fornecedores em ambientes corporativos complexos." },
-  { icon: Scale, t: "Independência estrutural", d: "A Buy Group atua sem vínculos comerciais com fornecedores, garantindo recomendações alinhadas às prioridades financeiras e operacionais do cliente." },
+  {
+    icon: ShieldCheck,
+    t: "Remuneração vinculada ao resultado",
+    d: "Nossa remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente.",
+  },
+  {
+    icon: Lock,
+    t: "Confidencialidade institucional",
+    d: "O trabalho começa sob NDA, com tratamento reservado das informações comerciais e financeiras.",
+  },
+  {
+    icon: Award,
+    t: "Atuação direta de especialistas",
+    d: "Cada projeto é liderado por profissionais com mais de 15 anos de experiência em compras, negociação e gestão de fornecedores em ambientes corporativos complexos.",
+  },
+  {
+    icon: Scale,
+    t: "Independência estrutural",
+    d: "A Buy Group atua sem vínculos comerciais com fornecedores, garantindo recomendações alinhadas às prioridades financeiras e operacionais do cliente.",
+  },
 ];
-
 
 function Index() {
   return (
@@ -56,7 +102,6 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
-
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
           <div className="lg:col-span-9">
@@ -104,11 +149,9 @@ function Index() {
               <Lock className="h-3 w-3" />
               ATENDIMENTO CONSULTIVO · SOB NDA · REMUNERAÇÃO VINCULADA A SAVINGS HOMOLOGADOS
             </p>
-
           </div>
         </div>
       </section>
-
 
       {/* CREDIBILITY MATRIX */}
       <section className="border-y border-white/5 bg-navy text-white">
@@ -126,13 +169,15 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">ESTUDO DE CASO · CONFIDENCIAL</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+              ESTUDO DE CASO · CONFIDENCIAL
+            </p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
               R$ 12MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, com faturamento de R$ 3,2 bilhões e volume anual
-              de compras de R$ 380 milhões. Resultado validado pelo comitê de auditoria.
+              Grupo industrial brasileiro, com faturamento de R$ 3,2 bilhões e volume anual de
+              compras de R$ 380 milhões. Resultado validado pelo comitê de auditoria.
             </p>
             <Link
               to="/contato"
@@ -158,9 +203,9 @@ function Index() {
 
             <figure className="mt-6 rounded-2xl border border-border bg-secondary/40 p-8">
               <blockquote className="font-serif text-2xl leading-snug text-navy">
-                "Em 90 dias, savings que permaneciam não capturados havia dois anos
-                foram destravados com governança financeira, risco compartilhado e
-                 validação do resultado."
+                "Em 90 dias, savings que permaneciam não capturados havia dois anos foram
+                destravados com governança financeira, risco compartilhado e validação do
+                resultado."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 CFO · Grupo industrial · R$ 3.2Bi faturamento
@@ -176,15 +221,17 @@ function Index() {
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">CUT4MORE™ FRAMEWORK</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">
+              CUT4MORE™ FRAMEWORK
+            </p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
               Uma metodologia estruturada em quatro fases.
               <span className="text-white/55"> Da análise ao resultado validado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
               Desenvolvida a partir da experiência em projetos de compras complexos, a{" "}
-              <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> organiza a análise,
-              a estratégia, a negociação e a validação financeira dos savings.
+              <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> organiza a
+              análise, a estratégia, a negociação e a validação financeira dos savings.
             </p>
           </div>
 
@@ -203,9 +250,12 @@ function Index() {
       {/* DIFFERENTIATION MOAT */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
-          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Por que Buy Group</p>
+          <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+            Por que Buy Group
+          </p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Quatro razões pelas quais lideranças executivas <span className="text-green">nos escolhem</span> para negociações de alto impacto
+            Quatro razões pelas quais lideranças executivas{" "}
+            <span className="text-green">nos escolhem</span> para negociações de alto impacto
           </h2>
         </div>
 
@@ -224,7 +274,6 @@ function Index() {
             </div>
           ))}
         </div>
-
       </section>
 
       {/* CATEGORIAS E POTENCIAL DE ECONOMIA */}
@@ -232,16 +281,21 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="grid items-end gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Redução de custos</p>
+              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+                Redução de custos
+              </p>
               <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
                 Onde encontramos economia.
-                <span className="text-green"> Quanto cada categoria pode contribuir para a margem.</span>
+                <span className="text-green">
+                  {" "}
+                  Quanto cada categoria pode contribuir para a margem.
+                </span>
               </h2>
             </div>
             <div className="lg:col-span-5">
               <p className="text-pretty text-muted-foreground">
-                Telecomunicações, energia, logística, tecnologia, serviços corporativos,
-                seguros, matérias-primas e outras categorias estratégicas.
+                Telecomunicações, energia, logística, tecnologia, serviços corporativos, seguros,
+                matérias-primas e outras categorias estratégicas.
               </p>
               <Link
                 to="/reducao-de-custos"
@@ -255,13 +309,14 @@ function Index() {
         </div>
       </section>
 
-
       {/* TEAM CREDENTIALS */}
       <section className="border-y border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="grid items-start gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Quem conduz</p>
+              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+                Quem conduz
+              </p>
               <h2 className="mt-4 font-serif text-4xl text-navy md:text-5xl">
                 Condução por especialistas.
                 <span className="text-green"> Experiência aplicada à negociação.</span>
@@ -269,9 +324,17 @@ function Index() {
             </div>
             <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
               {[
-                { icon: Building2, t: "15+ anos", d: "experiência média da equipe em compras e negociação" },
+                {
+                  icon: Building2,
+                  t: "15+ anos",
+                  d: "experiência média da equipe em compras e negociação",
+                },
                 { icon: TrendingUp, t: "100+", d: "projetos conduzidos em verticais críticas" },
-                { icon: Award, t: "Vivência executiva", d: "background dos sócios em projetos globais e indústria" },
+                {
+                  icon: Award,
+                  t: "Vivência executiva",
+                  d: "background dos sócios em projetos globais e indústria",
+                },
               ].map((c) => (
                 <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
                   <c.icon className="h-5 w-5 text-green" />
@@ -291,13 +354,16 @@ function Index() {
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">
+                EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN
+              </p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
                 Avalie o potencial de economia, os riscos e os próximos passos.
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Uma conversa executiva para entender o cenário de compras e identificar onde uma análise aprofundada pode gerar margem.
+                Uma conversa executiva para entender o cenário de compras e identificar onde uma
+                análise aprofundada pode gerar margem.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">

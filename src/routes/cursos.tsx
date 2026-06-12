@@ -38,7 +38,11 @@ export const Route = createFileRoute("/cursos")({
           "Programas sob medida de estratégia de compra, negociação, IA aplicada, ESG e gestão de compras para equipes de grandes empresas.",
       },
       { property: "og:title", content: "Cursos para equipes de compras — Buy Group" },
-      { property: "og:description", content: "Capacitação prática para equipes que precisam gerar economia com método e governança." },
+      {
+        property: "og:description",
+        content:
+          "Capacitação prática para equipes que precisam gerar economia com método e governança.",
+      },
       { property: "og:url", content: "/cursos" },
     ],
     links: [{ rel: "canonical", href: "/cursos" }],
@@ -296,7 +300,14 @@ const courses: Course[] = [
   },
 ];
 
-const filters = ["Todos", "Compras Estratégicas", "Negociação", "IA e Tecnologia", "Gestão", "ESG"] as const;
+const filters = [
+  "Todos",
+  "Compras Estratégicas",
+  "Negociação",
+  "IA e Tecnologia",
+  "Gestão",
+  "ESG",
+] as const;
 type Filter = (typeof filters)[number];
 
 const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
@@ -323,7 +334,11 @@ function CursosPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Capacitação para empresas"
-        title={<>Prepare sua equipe para gerar <span className="text-green">economia com método</span>.</>}
+        title={
+          <>
+            Prepare sua equipe para gerar <span className="text-green">economia com método</span>.
+          </>
+        }
         description="Programas sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
         identity={{ kind: "lockup", caption: "Educação executiva" }}
       />
@@ -372,17 +387,23 @@ function CursosPage() {
                   className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}>
+                    <span
+                      className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${s.pill}`}
+                    >
                       {c.category}
                     </span>
                     {c.badge && (
-                      <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeStyles[c.badge].cls}`}>
+                      <span
+                        className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badgeStyles[c.badge].cls}`}
+                      >
                         {badgeStyles[c.badge].label}
                       </span>
                     )}
                   </div>
 
-                  <div className={`mt-5 flex h-10 w-10 items-center justify-center rounded-xl ${s.iconBg}`}>
+                  <div
+                    className={`mt-5 flex h-10 w-10 items-center justify-center rounded-xl ${s.iconBg}`}
+                  >
                     <Icon className={`h-5 w-5 ${s.iconColor}`} />
                   </div>
 
@@ -399,7 +420,9 @@ function CursosPage() {
                   </div>
 
                   <div className="mt-4">
-                    <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[c.level]}`}>
+                    <span
+                      className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[c.level]}`}
+                    >
                       {c.level}
                     </span>
                   </div>
@@ -435,7 +458,8 @@ function CursosPage() {
               Não tem certeza de qual curso sua equipe precisa?
             </h3>
             <p className="mt-2 max-w-2xl text-base text-white/75">
-               Realizamos uma conversa inicial para identificar as principais lacunas e recomendar o treinamento mais adequado.
+              Realizamos uma conversa inicial para identificar as principais lacunas e recomendar o
+              treinamento mais adequado.
             </p>
           </div>
           <a
@@ -444,17 +468,13 @@ function CursosPage() {
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
-             Falar sobre a capacitação
+            Falar sobre a capacitação
           </a>
         </div>
       </section>
 
-
       {/* Formulário de solicitação */}
-      <RequestSection
-        initialCourse={requestCourse}
-        onCourseChange={setRequestCourse}
-      />
+      <RequestSection initialCourse={requestCourse} onCourseChange={setRequestCourse} />
 
       {/* Modal de conteúdo do curso */}
       <Dialog open={!!detail} onOpenChange={(o) => !o && setDetail(null)}>
@@ -463,10 +483,14 @@ function CursosPage() {
             <>
               <DialogHeader>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${categoryStyles[detail.category].pill}`}>
+                  <span
+                    className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${categoryStyles[detail.category].pill}`}
+                  >
                     {detail.category}
                   </span>
-                  <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[detail.level]}`}>
+                  <span
+                    className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${levelStyles[detail.level]}`}
+                  >
                     {detail.level}
                   </span>
                 </div>
@@ -510,7 +534,6 @@ function CursosPage() {
         </DialogContent>
       </Dialog>
 
-
       <WhatsAppFab />
     </SiteLayout>
   );
@@ -549,9 +572,12 @@ function RequestSection({
     <section id="solicitar" className="bg-navy text-white">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="text-center">
-          <h2 className="font-serif text-4xl text-white md:text-5xl">Solicite um treinamento para sua equipe</h2>
+          <h2 className="font-serif text-4xl text-white md:text-5xl">
+            Solicite um treinamento para sua equipe
+          </h2>
           <p className="mt-4 text-base text-white/70">
-             Preencha o formulário e nossa equipe entrará em contato para entender o contexto e preparar uma proposta.
+            Preencha o formulário e nossa equipe entrará em contato para entender o contexto e
+            preparar uma proposta.
           </p>
         </div>
 
@@ -560,18 +586,37 @@ function RequestSection({
             <div className="flex flex-col items-center gap-4 rounded-2xl border border-green/40 bg-green/10 p-10 text-center">
               <CheckCircle2 className="h-12 w-12 text-green" />
               <h3 className="font-serif text-2xl text-white">Solicitação recebida!</h3>
-               <p className="text-white/70">Nossa equipe entrará em contato para dar continuidade à solicitação.</p>
+              <p className="text-white/70">
+                Nossa equipe entrará em contato para dar continuidade à solicitação.
+              </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur">
+            <form
+              onSubmit={onSubmit}
+              noValidate
+              className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur"
+            >
               <FormField label="Nome completo" name="nome" required error={errors.nome} />
               <div className="grid gap-5 md:grid-cols-2">
                 <FormField label="Empresa" name="empresa" required error={errors.empresa} />
                 <FormField label="Cargo" name="cargo" required error={errors.cargo} />
               </div>
               <div className="grid gap-5 md:grid-cols-2">
-                <FormField label="E-mail corporativo" name="email" type="email" required error={errors.email} />
-                <FormField label="Telefone / WhatsApp" name="telefone" type="tel" required error={errors.telefone} placeholder="(11) 99999-9999" />
+                <FormField
+                  label="E-mail corporativo"
+                  name="email"
+                  type="email"
+                  required
+                  error={errors.email}
+                />
+                <FormField
+                  label="Telefone / WhatsApp"
+                  name="telefone"
+                  type="tel"
+                  required
+                  error={errors.telefone}
+                  placeholder="(11) 99999-9999"
+                />
               </div>
 
               <FormSelect
@@ -586,7 +631,12 @@ function RequestSection({
                 label="Tamanho da equipe"
                 name="tamanho"
                 defaultValue="8 a 15 pessoas"
-                options={["8 a 15 pessoas", "16 a 30 pessoas", "31 a 50 pessoas", "Mais de 50 pessoas"]}
+                options={[
+                  "8 a 15 pessoas",
+                  "16 a 30 pessoas",
+                  "31 a 50 pessoas",
+                  "Mais de 50 pessoas",
+                ]}
               />
 
               <div>
@@ -611,7 +661,9 @@ function RequestSection({
               </div>
 
               <div>
-                <label htmlFor="mensagem" className="text-sm text-white/70">Mensagem (opcional)</label>
+                <label htmlFor="mensagem" className="text-sm text-white/70">
+                  Mensagem (opcional)
+                </label>
                 <textarea
                   id="mensagem"
                   name="mensagem"
@@ -641,7 +693,12 @@ function RequestSection({
 }
 
 function FormField({
-  label, name, type = "text", required, error, placeholder,
+  label,
+  name,
+  type = "text",
+  required,
+  error,
+  placeholder,
 }: {
   label: string;
   name: string;
@@ -671,7 +728,12 @@ function FormField({
 }
 
 function FormSelect({
-  label, name, options, value, defaultValue, onChange,
+  label,
+  name,
+  options,
+  value,
+  defaultValue,
+  onChange,
 }: {
   label: string;
   name: string;
@@ -682,7 +744,9 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-white/70">{label}</label>
+      <label htmlFor={name} className="text-sm text-white/70">
+        {label}
+      </label>
       <select
         id={name}
         name={name}
@@ -700,4 +764,3 @@ function FormSelect({
     </div>
   );
 }
-

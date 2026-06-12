@@ -1,15 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, Check, ArrowUpRight, ShieldCheck } from "lucide-react";
+import {
+  TrendingDown,
+  Users,
+  GraduationCap,
+  FileSearch,
+  Handshake,
+  BarChart3,
+  Check,
+  ArrowUpRight,
+  ShieldCheck,
+} from "lucide-react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
       { title: "Serviços de compras estratégicas — Buy Group" },
-      { name: "description", content: "Projetos completos de compras estratégicas, da análise à negociação, com foco em economia, margem e governança financeira." },
+      {
+        name: "description",
+        content:
+          "Projetos completos de compras estratégicas, da análise à negociação, com foco em economia, margem e governança financeira.",
+      },
       { property: "og:title", content: "Serviços Buy Group" },
-      { property: "og:description", content: "Atuação da análise à negociação em contratos, fornecedores e categorias estratégicas." },
+      {
+        property: "og:description",
+        content:
+          "Atuação da análise à negociação em contratos, fornecedores e categorias estratégicas.",
+      },
       { property: "og:url", content: "/servicos" },
     ],
     links: [{ rel: "canonical", href: "/servicos" }],
@@ -22,37 +40,64 @@ const services = [
     icon: TrendingDown,
     title: "Programa de Otimização de Custos",
     body: "Projeto estruturado para identificar, negociar e validar economia sobre o volume de compras analisado, com remuneração vinculada ao resultado.",
-    bullets: ["Mapeamento de oportunidades", "Renegociação conduzida por especialistas", "Estratégia de compra competitiva", "Relatórios para decisão executiva"],
+    bullets: [
+      "Mapeamento de oportunidades",
+      "Renegociação conduzida por especialistas",
+      "Estratégia de compra competitiva",
+      "Relatórios para decisão executiva",
+    ],
   },
   {
     icon: Users,
     title: "Gestão de Compras",
     body: "Apoiamos parte ou toda a operação de compras com processos claros, indicadores de desempenho e governança institucional.",
-    bullets: ["Compras táticas e indiretas", "Fluxos de compra e aprovação", "SLA e indicadores de desempenho", "Equipe dedicada e experiente"],
+    bullets: [
+      "Compras táticas e indiretas",
+      "Fluxos de compra e aprovação",
+      "SLA e indicadores de desempenho",
+      "Equipe dedicada e experiente",
+    ],
   },
   {
     icon: GraduationCap,
     title: "Educação Executiva",
     body: "Programas sob medida para lideranças e equipes de compras de grandes empresas, com aplicação prática e confidencialidade.",
-    bullets: ["Estratégia de compra avançada", "Negociação com simulações reais", "Análise e indicadores de compras", "Governança e conformidade"],
+    bullets: [
+      "Estratégia de compra avançada",
+      "Negociação com simulações reais",
+      "Análise e indicadores de compras",
+      "Governança e conformidade",
+    ],
   },
   {
     icon: FileSearch,
     title: "Mapeamento de Oportunidades",
     body: "Análise das despesas para organizar categorias, construir um baseline confiável e priorizar oportunidades de economia.",
-    bullets: ["Taxonomia UNSPSC adaptada", "Painéis executivos interativos", "Identificação de oportunidades por categoria"],
+    bullets: [
+      "Taxonomia UNSPSC adaptada",
+      "Painéis executivos interativos",
+      "Identificação de oportunidades por categoria",
+    ],
   },
   {
     icon: Handshake,
     title: "Risco e Governança de Fornecedores",
     body: "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade operacional.",
-    bullets: ["Critérios ESG e conformidade", "Gestão estruturada de fornecedores", "Avaliação de desempenho documentada"],
+    bullets: [
+      "Critérios ESG e conformidade",
+      "Gestão estruturada de fornecedores",
+      "Avaliação de desempenho documentada",
+    ],
   },
   {
     icon: BarChart3,
     title: "Diagnóstico da Área de Compras",
     body: "Avaliação da área frente a referências de mercado, com plano priorizado e justificativa financeira para a decisão.",
-    bullets: ["Pessoas, processos e tecnologia", "Plano de evolução de 12 a 24 meses", "Oportunidades de curto prazo"],
+    bullets: [
+      "Pessoas, processos e tecnologia",
+      "Plano de evolução de 12 a 24 meses",
+      "Oportunidades de curto prazo",
+    ],
   },
 ];
 
@@ -61,7 +106,12 @@ function ServicosPage() {
     <SiteLayout>
       <PageHero
         eyebrow="CUT4MORE™ FRAMEWORK"
-        title={<>Serviços para encontrar economia onde sua empresa já compra — e transformar negociação em <span className="text-green">margem real</span>.</>}
+        title={
+          <>
+            Serviços para encontrar economia onde sua empresa já compra — e transformar negociação
+            em <span className="text-green">margem real</span>.
+          </>
+        }
         description="Atuamos da análise à negociação em contratos, fornecedores, categorias e projetos estratégicos de grandes empresas."
         identity={{
           kind: "lockup",
@@ -82,17 +132,22 @@ function ServicosPage() {
               <div className="relative flex h-14 w-14 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy transition-all duration-300 group-hover:scale-105 shadow-sm">
                 <s.icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-105" />
               </div>
-              
+
               <h2 className="mt-8 font-serif text-2xl text-navy transition-colors duration-300 group-hover:text-navy-soft flex items-center justify-between gap-2">
                 <span>{s.title}</span>
                 <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-1 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-green shrink-0" />
               </h2>
-              
-              <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground/90 flex-grow">{s.body}</p>
-              
+
+              <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground/90 flex-grow">
+                {s.body}
+              </p>
+
               <ul className="mt-8 space-y-3 border-t border-border/50 pt-6 text-sm">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-2.5 text-navy/85 transition-transform duration-300 hover:translate-x-1">
+                  <li
+                    key={b}
+                    className="flex gap-2.5 text-navy/85 transition-transform duration-300 hover:translate-x-1"
+                  >
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-green transition-transform duration-300 group-hover:scale-110" />
                     <span className="text-[13px] leading-snug text-navy/80">{b}</span>
                   </li>
@@ -105,12 +160,15 @@ function ServicosPage() {
         <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · nível diretivo · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">
+                Executive briefing · nível diretivo · 20min
+              </p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Como iniciamos um engajamento.
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
-                Uma conversa executiva para avaliar o potencial de economia, os riscos e os próximos passos. Sob NDA.
+                Uma conversa executiva para avaliar o potencial de economia, os riscos e os próximos
+                passos. Sob NDA.
               </p>
               <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />

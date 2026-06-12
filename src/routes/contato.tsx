@@ -8,7 +8,10 @@ export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
       { title: "Contato — Buy Group" },
-      { name: "description", content: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos." },
+      {
+        name: "description",
+        content: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.",
+      },
       { property: "og:title", content: "Contato Buy Group" },
       { property: "og:description", content: "Solicite um diagnóstico gratuito." },
       { property: "og:url", content: "/contato" },
@@ -17,8 +20,6 @@ export const Route = createFileRoute("/contato")({
   }),
   component: ContatoPage,
 });
-
-
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
@@ -32,11 +33,15 @@ function ContatoPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Executive briefing · nível diretivo · 20min"
-        title={<>Agende uma conversa <span className="text-green">executiva sob NDA</span>.</>}
+        title={
+          <>
+            Agende uma conversa <span className="text-green">executiva sob NDA</span>.
+          </>
+        }
         description="Uma conversa para avaliar o potencial de economia, os riscos e os próximos passos a partir do perfil de compras da sua empresa."
         identity={{
           kind: "slogan",
-          lines: [[{ text: "É comprar", }, { text: " bem.", accent: true }]],
+          lines: [[{ text: "É comprar" }, { text: " bem.", accent: true }]],
         }}
       />
 
@@ -51,24 +56,37 @@ function ContatoPage() {
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:p-10">
+            <form
+              onSubmit={onSubmit}
+              className="space-y-5 rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:p-10"
+            >
               <div className="grid gap-5 md:grid-cols-2">
                 <Field label="Nome" name="nome" required />
                 <Field label="Empresa" name="empresa" required />
                 <Field label="E-mail corporativo" name="email" type="email" required />
                 <Field label="Telefone" name="telefone" type="tel" />
               </div>
-              <Select label="Interesse principal" name="interesse" options={[
-                "Programa de Otimização de Custos",
-                "Gestão de Compras",
-                "CUT4MORE™ FRAMEWORK completo",
-                "Mapeamento de Oportunidades",
-                "Educação Executiva para empresas",
-                "Outro",
-              ]} />
-              <Field label="Faturamento anual aproximado" name="faturamento" placeholder="Ex: R$ 50M" />
+              <Select
+                label="Interesse principal"
+                name="interesse"
+                options={[
+                  "Programa de Otimização de Custos",
+                  "Gestão de Compras",
+                  "CUT4MORE™ FRAMEWORK completo",
+                  "Mapeamento de Oportunidades",
+                  "Educação Executiva para empresas",
+                  "Outro",
+                ]}
+              />
+              <Field
+                label="Faturamento anual aproximado"
+                name="faturamento"
+                placeholder="Ex: R$ 50M"
+              />
               <div>
-                <label htmlFor="mensagem" className="text-sm text-muted-foreground">Mensagem</label>
+                <label htmlFor="mensagem" className="text-sm text-muted-foreground">
+                  Mensagem
+                </label>
                 <textarea
                   id="mensagem"
                   name="mensagem"
@@ -85,7 +103,8 @@ function ContatoPage() {
               </button>
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" />
-                NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos os engajamentos.
+                NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos os
+                engajamentos.
               </p>
             </form>
           )}
@@ -97,7 +116,9 @@ function ContatoPage() {
             <ul className="mt-6 space-y-4 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-green" />
-                <a href="mailto:atendimento@buygroup.com.br" className="hover:text-green">atendimento@buygroup.com.br</a>
+                <a href="mailto:atendimento@buygroup.com.br" className="hover:text-green">
+                  atendimento@buygroup.com.br
+                </a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <MapPin className="h-4 w-4 text-green" />
@@ -107,11 +128,12 @@ function ContatoPage() {
           </div>
           <div className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)]">
             <p className="font-serif text-2xl leading-snug text-navy">
-              Economia transformada em <span className="text-green">margem</span>,
-              com critérios claros e governança financeira.
+              Economia transformada em <span className="text-green">margem</span>, com critérios
+              claros e governança financeira.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Experiência em projetos de compras complexos, com remuneração vinculada ao resultado validado.
+              Experiência em projetos de compras complexos, com remuneração vinculada ao resultado
+              validado.
             </p>
           </div>
         </aside>
@@ -123,8 +145,18 @@ function ContatoPage() {
 }
 
 function Field({
-  label, name, type = "text", required, placeholder,
-}: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+  label,
+  name,
+  type = "text",
+  required,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <div>
       <label htmlFor={name} className="text-sm text-muted-foreground">
@@ -145,13 +177,17 @@ function Field({
 function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm text-muted-foreground">{label}</label>
+      <label htmlFor={name} className="text-sm text-muted-foreground">
+        {label}
+      </label>
       <select
         id={name}
         name={name}
         className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
       >
-        {options.map((o) => <option key={o}>{o}</option>)}
+        {options.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
       </select>
     </div>
   );
