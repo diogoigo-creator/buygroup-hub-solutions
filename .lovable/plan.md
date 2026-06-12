@@ -1,52 +1,35 @@
-## Plano de revisão do site Buy Group
+O site da Buy Group está sólido e alinhado ao tom de consultoria premium para CEOs/CFOs. Para eliminar o aspecto excessivamente estático, propomos adicionar uma camada de movimento sutil, focada em micro-interações de alta classe e animações que preservam a foto de fundo.
 
-### 1. Consolidar a linguagem executiva em todo o site
-- Revisar Home, Sobre, Serviços, Redução de Custos, Cursos, Contato, cabeçalho, rodapé, páginas de erro e metadados.
-- Substituir termos híbridos ou desnecessariamente em inglês por português brasileiro natural, preservando apenas termos consagrados e úteis ao público, como *executive briefing*, NDA, SLA, ROI e savings quando o contexto justificar.
-- Remover formulações agressivas ou frágeis, como “único modelo”, “sem exceções”, “três consultorias tier-1”, “zero juniores”, “full refund” e escassez artificial de projetos.
-- Uniformizar o tom em torno de economia real, margem, baseline aprovado, negociação estratégica, continuidade operacional, resultado validado e governança financeira.
+Abaixo estão as 3 opções de direção de movimento para sua escolha:
 
-### 2. Reposicionar a Home para CFOs e CEOs
-- Reescrever título, apoio e CTAs da hero para explicar rapidamente o que a Buy Group faz, para quem e com qual resultado: encontrar economia nas compras existentes, conduzir negociações e transformar despesas em margem com governança.
-- Padronizar o CTA principal como “Agendar executive briefing” e o secundário como “Ver metodologia” ou “Ver categorias analisadas”.
-- Revisar métricas, estudo de caso, diferenciais, equipe e CTA final para eliminar exageros e melhorar credibilidade, mantendo dados apresentados com contexto e linguagem defensável.
-- Corrigir inconsistências textuais existentes, inclusive pontuação, “entreprise”, números em padrão brasileiro e rótulos mistos.
+---
 
-### 3. Padronizar a metodologia CUT4MORE™
-- Usar os quatro cabeçalhos definidos:
-  1. Mapeamento de Oportunidades
-  2. Estratégia de Compra
-  3. Condução da Negociação
-  4. Validação dos Savings
-- Simplificar os textos de apoio, mantendo baseline, contratos, fornecedores, composição de custos, continuidade operacional e validação financeira.
-- Apresentar CUT4MORE™ como metodologia estruturada, sem alegações de exclusividade difíceis de sustentar.
+### Opção 1 — Executive Motion Refinement (Refinamento Cirúrgico)
+Foco em polimento sutil, focado nos detalhes e botões.
+*   **Foto de fundo do Hero:** Pequeno zoom suave ao carregar a página (102% para 100% em 2.5s) criando uma sensação inicial de assentamento.
+*   **CTAs Primários:** Botão "Agendar executive briefing" ganha um reflexo de luz sutil e discreto (shimmer effect) que passa pela superfície a cada 6 segundos, além de elevação de profundidade sutil no hover.
+*   **Transição de Elementos:** Revelação suave (fade-in + elevação de 15px) para títulos, cards e estatísticas conforme o usuário rola a página, de forma fluida e rápida (300ms), sem "saltar".
 
-### 4. Tornar Serviços mais comercial e claro
-- Ajustar a hero para o tom de referência: “Serviços para encontrar economia onde sua empresa já compra — e transformar negociação em margem real.”
-- Reescrever nomes, descrições e benefícios dos serviços para mostrar atuação da análise à negociação em contratos, fornecedores, categorias e projetos estratégicos.
-- Substituir “engajamentos end-to-end”, “função de compras enterprise”, “Spend Intelligence”, “Procurement BPO”, “assessment” e demais termos desnecessários por equivalentes executivos em português.
-- Padronizar o bloco final com “Executive briefing · nível diretivo · 20min” e apoio sob NDA, sem garantia absoluta ou escassez artificial.
+---
 
-### 5. Refinar categorias, Sobre, Cursos e Contato
-- **Categorias:** simplificar títulos e descrições, remover “40+ verticais”, “spend endereçável”, “should-cost modeling” e similares; usar categorias estratégicas, volume negociável, composição de custos e negociações competitivas.
-- **Sobre:** substituir posicionamento e princípios excessivamente grandiosos por abordagem independente, condução por especialistas, confidencialidade e remuneração vinculada ao resultado validado.
-- **Cursos:** traduzir títulos e conteúdos híbridos, mantendo apenas siglas técnicas reconhecidas; alinhar a apresentação ao mesmo padrão sóbrio do restante do site.
-- **Contato:** remover o telefone placeholder, corrigir o e-mail para `atendimento@buygroup.com.br`, traduzir opções do formulário e aplicar o texto executivo recomendado para o briefing.
+### Opção 2 — Executive Cinematic Hero (Impacto Cinemático)
+Foco em prender a atenção de forma elegante nos primeiros segundos.
+*   **Foto de fundo do Hero:** Movimento contínuo e quase imperceptível de zoom lento (Ken Burns Effect de 100% a 103% em ciclos de 20s) combinado com uma variação sutil na iluminação (os gradientes no escuro se movem de forma orgânica).
+*   **Métricas e Números:** A métrica principal ("R$ 1,4 bi") e estatísticas se revelam com um contador progressivo rápido e elegante ao carregar (0.8s), destacando a grandiosidade dos números.
+*   **Entrada Editorial:** O título principal do Hero é revelado por blocos de palavras com transições de opacidade sequenciais, simulando uma entrada editorial de revista de luxo.
 
-### 6. Uniformizar hierarquia visual e componentes
-- Preservar a paleta azul-marinho e dourado, tipografia, imagens e estrutura atuais.
-- Harmonizar espaçamentos verticais, larguras de texto, proporções dos cards, raios, bordas, sombras e intensidade dos efeitos de hover.
-- Reduzir animações e elevações excessivas em cards para uma presença mais sóbria.
-- Unificar botões e links de ação com variantes consistentes do componente de botão existente, incluindo navegação, formulários e CTAs.
-- Ajustar densidade em seções carregadas e garantir legibilidade e composição em desktop e mobile.
+---
 
-### 7. Credibilidade, SEO e acabamento público
-- Traduzir títulos, descrições sociais, dados estruturados, páginas 404/erro e textos do rodapé.
-- Atualizar o contato estruturado para o e-mail correto e remover referências provisórias ou inconsistentes.
-- Remover links fictícios, telefone fictício e qualquer menção pública a ambiente de construção; verificar também a configuração do badge público quando aplicável.
-- Manter uma única mensagem central e CTAs coerentes em todas as rotas.
+### Opção 3 — Executive Kinetic Depth (Profundidade e Interação)
+Foco em profundidade tátil e comportamento reativo ao mouse.
+*   **Cards Interativos:** Os cards de metodologia e diferenciais reagem sutilmente à direção do cursor (efeito tilt 3D ultra-leve e sombras que se afastam proporcionalmente para criar sensação de flutuação).
+*   **Foto de fundo do Hero:** Parallax sutil controlado pelo movimento do mouse (a imagem se move de ±1% a ±2% de forma amortecida), gerando uma percepção de profundidade tridimensional em relação aos textos.
+*   **Linhas de Conexão:** As linhas finas de divisão e a linha verde ao lado dos títulos se desenham suavemente à medida que surgem na tela (scale-x ou scale-y progressivo).
 
-### 8. Validação final
-- Executar os testes do projeto e revisar visualmente as principais rotas em desktop e mobile.
-- Conferir ausência dos termos proibidos, placeholders, mistura desnecessária de idiomas, quebras de layout e inconsistências de CTA.
-- Validar que a Home, Serviços e Contato conduzem claramente ao agendamento do briefing de 20 minutos, sem promessas excessivas.
+---
+
+### Detalhes Técnicos (Implementação)
+*   **Sem Bibliotecas Pesadas:** Utilizaremos Tailwind v4 nativo com transições otimizadas de CSS (`will-change`, transições aceleradas por hardware) ou animações customizadas simples em CSS para garantir performance perfeita tanto no desktop quanto no mobile, sem afetar o tempo de carregamento da página.
+*   **Segurança Visual:** Todas as animações terão suporte para a preferência de acessibilidade `prefers-reduced-motion` e serão projetadas para não causar distração na leitura das informações.
+
+**Por favor, nos informe qual das direções você prefere (Opção 1, 2 ou 3) para iniciarmos a implementação!**
