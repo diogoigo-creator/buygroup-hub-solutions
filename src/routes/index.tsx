@@ -97,21 +97,21 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
+          className="hero-cinematic-image pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
+        <div className="hero-cinematic-light pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
-        <div className="pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
+        <div className="hero-cinematic-glow pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
 
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
           <div className="lg:col-span-9">
-            <div className="inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
+            <div className="hero-editorial hero-delay-1 inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
               PERFORMANCE EM COMPRAS · IMPACTO NO RESULTADO
             </div>
 
-            <div className="mt-10">
-              <p className="font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
+            <div className="hero-editorial hero-delay-2 mt-10">
+              <p className="hero-metric font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
                 R$ <span className="text-green">1,4</span> bi
               </p>
               <p className="mt-4 text-sm uppercase tracking-[0.28em] text-white/55">
@@ -120,16 +120,20 @@ function Index() {
             </div>
 
             <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[1.05] tracking-[-0.02em] text-white text-3xl md:text-4xl lg:text-[2.65rem]">
-              Compras estratégicas para transformar base contratada
-              <span className="text-white/60"> em resultado financeiro.</span>
+              <span className="hero-editorial hero-delay-3 block">
+                Compras estratégicas para transformar base contratada
+              </span>
+              <span className="hero-editorial hero-delay-4 block text-white/60">
+                em resultado financeiro.
+              </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
+            <p className="hero-editorial hero-delay-5 mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
               A Buy Group ajuda grandes empresas a encontrar economia nas compras que já realizam,
               conduzir negociações estratégicas e transformar despesas em margem com governança.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="hero-editorial hero-delay-6 mt-8 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
@@ -145,7 +149,7 @@ function Index() {
               </Link>
             </div>
 
-            <p className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
+            <p className="hero-editorial hero-delay-7 mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
               <Lock className="h-3 w-3" />
               ATENDIMENTO CONSULTIVO · SOB NDA · REMUNERAÇÃO VINCULADA A SAVINGS HOMOLOGADOS
             </p>
@@ -156,9 +160,15 @@ function Index() {
       {/* CREDIBILITY MATRIX */}
       <section className="border-y border-white/5 bg-navy text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
-          {credibility.map((m) => (
-            <div key={m.label} className="bg-navy px-6 py-12 lg:px-10">
-              <p className="font-serif text-4xl text-green lg:text-5xl">{m.value}</p>
+          {credibility.map((m, index) => (
+            <div
+              key={m.label}
+              className="credibility-reveal bg-navy px-6 py-12 lg:px-10"
+              style={{ animationDelay: `${0.18 + index * 0.12}s` }}
+            >
+              <p className="credibility-value font-serif text-4xl text-green lg:text-5xl">
+                {m.value}
+              </p>
               <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
             </div>
           ))}

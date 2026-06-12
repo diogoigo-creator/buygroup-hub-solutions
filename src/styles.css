@@ -204,6 +204,117 @@
     animation-delay: 0.3s;
   }
 
+  /* Home hero — restrained cinematic movement */
+  @keyframes hero-cinematic-zoom {
+    0%,
+    100% {
+      transform: scale(1.01);
+    }
+    50% {
+      transform: scale(1.045);
+    }
+  }
+  @keyframes hero-light-drift {
+    0%,
+    100% {
+      opacity: 0.9;
+      transform: translateX(-1.5%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(1.5%);
+    }
+  }
+  @keyframes hero-glow-breathe {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.08);
+    }
+  }
+  @keyframes hero-editorial-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  @keyframes credibility-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes credibility-value-settle {
+    0% {
+      opacity: 0;
+      transform: translateY(8px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  .hero-cinematic-image {
+    animation: hero-cinematic-zoom 20s ease-in-out infinite;
+    will-change: transform;
+  }
+  .hero-cinematic-light {
+    animation: hero-light-drift 14s ease-in-out infinite;
+    inset-inline: -3%;
+    will-change: opacity, transform;
+  }
+  .hero-cinematic-glow {
+    animation: hero-glow-breathe 9s ease-in-out infinite;
+    will-change: opacity, transform;
+  }
+  .hero-editorial {
+    animation: hero-editorial-reveal 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .hero-delay-1 {
+    animation-delay: 0.08s;
+  }
+  .hero-delay-2 {
+    animation-delay: 0.18s;
+  }
+  .hero-delay-3 {
+    animation-delay: 0.34s;
+  }
+  .hero-delay-4 {
+    animation-delay: 0.46s;
+  }
+  .hero-delay-5 {
+    animation-delay: 0.58s;
+  }
+  .hero-delay-6 {
+    animation-delay: 0.7s;
+  }
+  .hero-delay-7 {
+    animation-delay: 0.82s;
+  }
+  .hero-metric {
+    animation: credibility-value-settle 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.24s both;
+  }
+  .credibility-reveal {
+    animation: credibility-reveal 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .credibility-value {
+    animation: credibility-value-settle 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
   @keyframes mark-float {
     0%,
     100% {
