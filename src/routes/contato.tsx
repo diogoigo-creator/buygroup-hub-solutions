@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { Mail, Phone, MapPin, CheckCircle2, Lock } from "lucide-react";
+import { Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
