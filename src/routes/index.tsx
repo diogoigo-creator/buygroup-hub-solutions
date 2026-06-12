@@ -300,7 +300,7 @@ function Index() {
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Assumimos um mandato estratégico por vez, garantindo dedicação direta, confidencialidade e foco total na captura de resultado.
+                Assumimos um projeto estratégico por vez, garantindo dedicação direta, confidencialidade e foco total na captura de resultado.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
