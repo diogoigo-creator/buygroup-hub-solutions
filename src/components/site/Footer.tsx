@@ -73,7 +73,7 @@ export function Footer() {
             </li>
             <li className="inline-flex items-center gap-2.5 text-white/65">
               <MapPin className="h-4 w-4 text-green/80" />
-              São Paulo · Brasil
+              Belo Horizonte · Brasil
             </li>
           </ul>
           <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
