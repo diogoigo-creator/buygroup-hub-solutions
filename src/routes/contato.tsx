@@ -61,7 +61,7 @@ function ContatoPage() {
               <Select label="Interesse principal" name="interesse" options={[
                 "Cost Optimization Program",
                 "Procurement BPO",
-                "ProcureMax™ Framework completo",
+                "CUT4MORE™ FRAMEWORK completo",
                 "Spend Intelligence assessment",
                 "Executive Education in-company",
                 "Outro",
