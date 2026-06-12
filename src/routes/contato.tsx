@@ -131,7 +131,7 @@ function ContatoPage() {
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <MapPin className="h-4 w-4 text-green" />
-                São Paulo · Brasil
+                Belo Horizonte · Brasil
               </li>
             </ul>
           </div>
