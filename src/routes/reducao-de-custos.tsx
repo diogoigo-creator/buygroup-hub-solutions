@@ -20,7 +20,7 @@ export const Route = createFileRoute("/reducao-de-custos")({
 const categorias = [
   { icon: Wifi, t: "Telecom & Conectividade", r: "18–32%", d: "Voz, dados, mobile, links dedicados e cloud connectivity." },
   { icon: Zap, t: "Energia & Utilities", r: "12–25%", d: "Mercado livre, gestão tarifária, gás natural e eficiência energética." },
-  { icon: Truck, t: "Logística & Frete", r: "10–22%", d: "Transporte rodoviário, last-mile, armazenagem e cabotagem." },
+  { icon: Truck, t: "Logística & Frete", r: "10–22%", d: "Fretes, armazenagem, distribuição e operações logísticas." },
   { icon: Printer, t: "Outsourcing de Impressão", r: "20–40%", d: "Frota, outsourcing, gestão documental e print-on-demand." },
   { icon: Laptop, t: "Tecnologia & SaaS", r: "15–30%", d: "Licenciamento, hardware, cloud (AWS/Azure/GCP) e contratos de software." },
   { icon: Wrench, t: "Facilities & Manutenção", r: "14–28%", d: "Limpeza, segurança patrimonial, manutenção predial e jardinagem." },
@@ -43,7 +43,7 @@ function ReducaoDeCustosPage() {
             <span className="text-green">Quanto cada categoria devolve ao P&amp;L.</span>
           </>
         }
-        description="Faixas observadas em 200+ engajamentos enterprise sobre o spend endereçável de cada categoria. O potencial real é confirmado após Spend Intelligence — sem custo até a aprovação do business case."
+        description="As faixas indicam potenciais observados por categoria. O saving real depende da análise do spend, contratos e fornecedores e só avançamos após validação do caso com o cliente."
         identity={{ kind: "mark", intensity: "bold" }}
       />
 
