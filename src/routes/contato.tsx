@@ -72,7 +72,7 @@ function ContatoPage() {
                 options={[
                   "Programa de Otimização de Custos",
                   "Gestão de Compras",
-                  "CUT4MORE™ FRAMEWORK completo",
+                  "Metodologia CUT4MORE™ completa",
                   "Mapeamento de Oportunidades",
                   "Educação Executiva para empresas",
                   "Outro",

@@ -105,7 +105,7 @@ function ServicosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="CUT4MORE™ FRAMEWORK"
+        eyebrow="Metodologia CUT4MORE™"
         title={
           <>
             Serviços para encontrar economia onde sua empresa já compra — e transformar negociação

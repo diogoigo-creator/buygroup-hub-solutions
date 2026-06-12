@@ -222,7 +222,7 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">
-              CUT4MORE™ FRAMEWORK
+              Metodologia CUT4MORE™
             </p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
               Uma metodologia estruturada em quatro fases.
