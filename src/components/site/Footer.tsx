@@ -19,9 +19,8 @@ export function Footer() {
             Mais que comprar. <span className="text-white/60">É comprar bem.</span>
           </p>
           <p className="mt-6 max-w-sm text-pretty text-sm text-white/70">
-            Transformamos despesas em margem de lucro sustentada por meio de
-            inteligência de mercado, negociação estratégica e governança de
-            compras — sem risco financeiro para o cliente.
+            Transformamos despesas em margem com inteligência de mercado,
+            negociação estratégica e governança de compras.
           </p>
           <div className="mt-6 flex items-center gap-3">
             <a
