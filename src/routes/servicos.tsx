@@ -61,8 +61,8 @@ function ServicosPage() {
     <SiteLayout>
       <PageHero
         eyebrow="CUT4MORE™ FRAMEWORK"
-        title={<>Engajamentos end-to-end para a função de <span className="text-green">compras enterprise</span>.</>}
-        description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
+        title={<>Serviços para encontrar economia onde sua empresa já compra — e transformar negociação em <span className="text-green">margem real</span>.</>}
+        description="Atuamos da análise à negociação em contratos, fornecedores, categorias e projetos estratégicos de grandes empresas."
         identity={{
           kind: "lockup",
           slogan: { primary: "Mais que comprar. É comprar", accent: "bem." },
@@ -105,17 +105,16 @@ function ServicosPage() {
         <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · nível diretivo · 20min</p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Como iniciamos um engajamento.
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
-                Briefing sob NDA. Entrega de estimativa preliminar de saving em
-                até 5 dias úteis. Currently accepting 3 new engagements this quarter.
+                Uma conversa executiva para avaliar o potencial de economia, os riscos e os próximos passos. Sob NDA.
               </p>
               <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                Full guarantee · Investment-grade results or full refund
+                Remuneração vinculada ao resultado validado
               </p>
             </div>
             <Link
