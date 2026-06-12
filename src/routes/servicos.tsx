@@ -6,10 +6,10 @@ import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, C
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — ProcureMax™ Framework | Buy Group" },
+      { title: "Serviços — CUT4MORE™ FRAMEWORK | Buy Group" },
       { name: "description", content: "Engajamentos enterprise de procurement transformation: spend intelligence, strategic sourcing, BPO sênior e governança board-ready." },
       { property: "og:title", content: "Serviços Buy Group" },
-      { property: "og:description", content: "ProcureMax™ Framework. Investment-grade savings." },
+      { property: "og:description", content: "CUT4MORE™ FRAMEWORK. Investment-grade savings." },
       { property: "og:url", content: "/servicos" },
     ],
     links: [{ rel: "canonical", href: "/servicos" }],
@@ -60,7 +60,7 @@ function ServicosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="ProcureMax™ Framework"
+        eyebrow="CUT4MORE™ FRAMEWORK"
         title={<>Engajamentos end-to-end para a função de <span className="text-green">compras enterprise</span>.</>}
         description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
         identity={{
