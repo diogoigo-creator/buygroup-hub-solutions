@@ -80,9 +80,8 @@ function Index() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              A Buy Group transforma spend existente em margem capturada:
-              identificamos oportunidades, conduzimos negociações estratégicas e
-              homologamos savings com governança financeira para decisões defensáveis no board.
+              A Buy Group ajuda grandes empresas a encontrar economia nas compras que já realizam,
+              conduzir negociações estratégicas e transformar despesas em margem com governança.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -90,14 +89,14 @@ function Index() {
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Solicitar diagnóstico executivo
+                Agendar executive briefing
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
               <Link
                 to="/servicos"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
               >
-                cut4more™
+                Ver metodologia
               </Link>
             </div>
 
@@ -132,9 +131,8 @@ function Index() {
               R$ 12MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, faturamento R$ 3.2Bi. Spend anual
-              de R$ 380MM. Resultado auditado pela KPMG, validado pelo comitê de auditoria
-              do board.
+              Grupo industrial brasileiro, com faturamento de R$ 3,2 bilhões e volume anual
+              de compras de R$ 380 milhões. Resultado validado pelo comitê de auditoria.
             </p>
             <Link
               to="/contato"
@@ -146,9 +144,9 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
               {[
-                { k: "Saving capturado", v: "12.4%", s: "sobre spend anual" },
-                { k: "Payback", v: "< 90d", s: "do primeiro contrato renegociado" },
-                { k: "ROI do projeto", v: "9.3x", s: "vs. fee Buy Group" },
+                { k: "Saving capturado", v: "12,4%", s: "sobre o volume anual analisado" },
+                { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
+                { k: "ROI do projeto", v: "9,3x", s: "sobre o investimento na Buy Group" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
@@ -162,7 +160,7 @@ function Index() {
               <blockquote className="font-serif text-2xl leading-snug text-navy">
                 "Em 90 dias, savings que permaneciam não capturados havia dois anos
                 foram destravados com governança financeira, risco compartilhado e
-                validação do resultado.."
+                 validação do resultado."
               </blockquote>
               <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 CFO · Grupo industrial · R$ 3.2Bi faturamento
@@ -180,13 +178,13 @@ function Index() {
           <div className="max-w-3xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">CUT4MORE™ FRAMEWORK</p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
-              Metodologia proprietária. Quatro fases.
-              <span className="text-white/55"> Um único KPI: saving auditado.</span>
+              Uma metodologia estruturada em quatro fases.
+              <span className="text-white/55"> Da análise ao resultado validado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de anos de projetos enterprise. <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> é o
-              único framework de procurement com garantia contratual de resultado e
-              auditoria em cada fase.
+              Desenvolvida a partir da experiência em projetos de compras complexos, a{" "}
+              <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> organiza a análise,
+              a estratégia, a negociação e a validação financeira dos savings.
             </p>
           </div>
 
@@ -242,8 +240,8 @@ function Index() {
             </div>
             <div className="lg:col-span-5">
               <p className="text-pretty text-muted-foreground">
-                Telecom, energia, logística, TI, facilities, travel, seguros e mais 40+ verticais.
-                Veja as faixas de saving observadas.
+                Telecomunicações, energia, logística, tecnologia, serviços corporativos,
+                seguros, matérias-primas e outras categorias estratégicas.
               </p>
               <Link
                 to="/reducao-de-custos"
@@ -265,13 +263,13 @@ function Index() {
             <div className="lg:col-span-5">
               <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Quem conduz</p>
               <h2 className="mt-4 font-serif text-4xl text-navy md:text-5xl">
-                Senior procurement.
-                <span className="text-green"> Sem juniores.</span>
+                Condução por especialistas.
+                <span className="text-green"> Experiência aplicada à negociação.</span>
               </h2>
             </div>
             <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
               {[
-                { icon: Building2, t: "15+ anos", d: "experiência média da equipe sênior em procurement enterprise" },
+                { icon: Building2, t: "15+ anos", d: "experiência média da equipe em compras e negociação" },
                 { icon: TrendingUp, t: "100+", d: "projetos conduzidos em verticais críticas" },
                 { icon: Award, t: "Vivência executiva", d: "background dos sócios em projetos globais e indústria" },
               ].map((c) => (
@@ -293,13 +291,13 @@ function Index() {
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">EXECUTIVE BRIEFING · NIVEL DIRETIVO · 20MIN</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
-                Uma conversa. Estimativa preliminar de saving.
+                Avalie o potencial de economia, os riscos e os próximos passos.
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Assumimos um projeto estratégico por vez, garantindo dedicação direta, confidencialidade e foco total na captura de resultado.
+                Uma conversa executiva para entender o cenário de compras e identificar onde uma análise aprofundada pode gerar margem.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
@@ -312,7 +310,7 @@ function Index() {
               </Link>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                GARANTIA INTEGRAL · RESULTADOS AUDITAVEIS
+                CONFIDENCIALIDADE · RESULTADO VALIDADO
               </p>
             </div>
           </div>
