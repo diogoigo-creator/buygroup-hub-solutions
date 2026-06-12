@@ -313,7 +313,7 @@ function Index() {
               </Link>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                Full guarantee · Investment-grade results or full refund
+                GARANTIA INTEGRAL · RESULTADOS AUDITAVEIS
               </p>
             </div>
           </div>
