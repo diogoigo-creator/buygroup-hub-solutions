@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 });
 
 const credibility = [
-  { value: "R$ 1.4 bi+", label: "Em volume de compras analisado" },
+  { value: "R$ 1,4 bi+", label: "Em volume de compras analisado" },
   { value: "23", label: "Grandes empresas atendidas" },
   { value: "8,7x", label: "ROI médio nos projetos" },
   { value: "100%", label: "Remuneração vinculada ao resultado validado" },
@@ -103,37 +103,28 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="hero-cinematic-glow pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-20 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-12 lg:pt-10">
-          <div className="lg:col-span-9">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-16 lg:pt-16">
+          <div className="lg:col-span-11">
             <div className="hero-editorial hero-delay-1 inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
-              PERFORMANCE EM COMPRAS · IMPACTO NO RESULTADO
+              PERFORMANCE EM COMPRAS
             </div>
 
-            <div className="hero-editorial hero-delay-2 mt-10">
-              <p className="hero-metric font-serif font-medium leading-[0.95] tracking-[-0.03em] text-white text-6xl md:text-7xl lg:text-8xl">
-                R$ <span className="text-green">1,4</span> bi
-              </p>
-              <p className="mt-4 text-sm uppercase tracking-[0.28em] text-white/55">
-                em volume de compras analisado
-              </p>
-            </div>
-
-            <h1 className="mt-10 max-w-3xl text-balance font-serif font-medium leading-[1.05] tracking-[-0.02em] text-white text-3xl md:text-4xl lg:text-[2.65rem]">
-              <span className="hero-editorial hero-delay-3 block">
-                Compras estratégicas para transformar base contratada
+            <h1 className="mt-9 max-w-5xl text-balance font-serif text-5xl font-medium leading-[0.98] tracking-[-0.035em] text-white md:text-6xl lg:text-[5rem]">
+              <span className="hero-editorial hero-delay-2 block">
+                Encontramos oportunidades que os líderes
               </span>
-              <span className="hero-editorial hero-delay-4 block text-white/60">
-                em resultado financeiro.
+              <span className="hero-editorial hero-delay-3 block text-white/65">
+                ainda não conseguem enxergar.
               </span>
             </h1>
 
-            <p className="hero-editorial hero-delay-5 mt-6 max-w-2xl text-pretty text-base text-white/75 lg:text-lg">
-              A Buy Group ajuda grandes empresas a encontrar economia nas compras que já realizam,
-              conduzir negociações estratégicas e transformar despesas em margem com governança.
+            <p className="hero-editorial hero-delay-4 mt-7 max-w-2xl text-pretty text-base leading-relaxed text-white/75 lg:text-lg">
+              Revelamos economias nas compras que sua empresa já realiza, conduzimos negociações
+              estratégicas e transformamos despesas em margem com governança.
             </p>
 
-            <div className="hero-editorial hero-delay-6 mt-8 flex flex-wrap items-center gap-4">
+            <div className="hero-editorial hero-delay-5 mt-9 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
@@ -141,17 +132,11 @@ function Index() {
                 Agendar executive briefing
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
-              <Link
-                to="/servicos"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-medium text-white hover:border-green/70 hover:text-green"
-              >
-                Ver metodologia
-              </Link>
             </div>
 
-            <p className="hero-editorial hero-delay-7 mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/45">
-              <Lock className="h-3 w-3" />
-              ATENDIMENTO CONSULTIVO · SOB NDA · REMUNERAÇÃO VINCULADA A SAVINGS HOMOLOGADOS
+            <p className="hero-editorial hero-delay-6 mt-7 flex max-w-2xl items-start gap-2 text-xs uppercase leading-relaxed tracking-[0.2em] text-white/45">
+              <Lock className="mt-0.5 h-3 w-3 shrink-0" />
+              SOB NDA · REMUNERAÇÃO VINCULADA A SAVINGS HOMOLOGADOS
             </p>
           </div>
         </div>
