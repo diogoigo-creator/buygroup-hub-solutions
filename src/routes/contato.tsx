@@ -107,8 +107,8 @@ function ContatoPage() {
           </div>
           <div className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)]">
             <p className="font-serif text-2xl leading-snug text-navy">
-              "R$ <span className="text-green">2.1</span>Bi+ em savings auditados.
-              <br />Zero risco à sua reputação."
+              Economia transformada em <span className="text-green">margem</span>,
+              com critérios claros e governança financeira.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Experiência em projetos de compras complexos, com remuneração vinculada ao resultado validado.

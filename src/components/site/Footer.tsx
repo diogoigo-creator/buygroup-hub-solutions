@@ -32,7 +32,7 @@ export function Footer() {
             <li><Link to="/sobre" className="text-white/85 hover:text-green">Sobre</Link></li>
             <li><Link to="/servicos" className="text-white/85 hover:text-green">Serviços</Link></li>
             <li><Link to="/reducao-de-custos" className="text-white/85 hover:text-green">Redução de custos</Link></li>
-            <li><Link to="/cursos" className="text-white/85 hover:text-green">Cursos in company</Link></li>
+            <li><Link to="/cursos" className="text-white/85 hover:text-green">Cursos para empresas</Link></li>
             <li><Link to="/contato" className="text-white/85 hover:text-green">Contato</Link></li>
           </ul>
         </div>

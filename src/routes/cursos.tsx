@@ -141,7 +141,7 @@ const courses: Course[] = [
       "Processo de cotação e equalização de propostas",
       "Relacionamento com fornecedores",
       "Indicadores de desempenho em compras",
-      "Ferramentas e sistemas: ERP e e-procurement",
+      "Ferramentas e sistemas de gestão de compras",
     ],
   },
   {
@@ -287,7 +287,7 @@ const courses: Course[] = [
     topics: [
       "Mapeamento e classificação de custos indiretos",
       "Diagnóstico de oportunidades por categoria",
-      "Benchmarking de preços e mercado fornecedor",
+      "Referências de preços e mercado fornecedor",
       "Estratégias de redução sem troca de fornecedor",
       "Negociação orientada a dados para custos indiretos",
       "Implementação e monitoramento de ganhos",

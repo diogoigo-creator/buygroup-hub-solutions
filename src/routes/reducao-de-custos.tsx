@@ -39,8 +39,8 @@ function ReducaoDeCustosPage() {
         eyebrow="Redução de custos"
         title={
           <>
-            Onde encontramos saving.{" "}
-            <span className="text-green">Quanto cada categoria devolve ao P&amp;L.</span>
+            Onde encontramos economia.{" "}
+            <span className="text-green">Quanto cada categoria pode contribuir para a margem.</span>
           </>
         }
         description="As faixas indicam potenciais observados por categoria. O saving real depende da análise das despesas, dos contratos e dos fornecedores, e o projeto só avança após a validação do caso com o cliente."
@@ -80,7 +80,7 @@ function ReducaoDeCustosPage() {
               to="/contato"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-transform hover:-translate-y-0.5"
             >
-              Solicitar diagnóstico de spend
+              Solicitar diagnóstico de compras
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

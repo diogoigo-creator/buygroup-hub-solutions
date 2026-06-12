@@ -227,15 +227,15 @@ function Index() {
 
       </section>
 
-      {/* CATEGORIAS DE SPEND — TEASER */}
+      {/* CATEGORIAS E POTENCIAL DE ECONOMIA */}
       <section className="border-t border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="grid items-end gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Redução de custos</p>
               <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-                Onde encontramos saving.
-                <span className="text-green"> Quanto cada categoria devolve ao P&amp;L.</span>
+                Onde encontramos economia.
+                <span className="text-green"> Quanto cada categoria pode contribuir para a margem.</span>
               </h2>
             </div>
             <div className="lg:col-span-5">
