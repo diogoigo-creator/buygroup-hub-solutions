@@ -38,7 +38,7 @@ const framework = [
 const moat = [
   { icon: ShieldCheck, t: "Garantia baseada em resultado", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee sem exceções." },
   { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
-  { icon: Award, t: "Atuação direta de especialistas", d: "Zero juniores em projeto. Cada engajamento é conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
+  { icon: Award, t: "Atuação direta de especialistas", d: "Cada projeto é liderado por profissionais com mais de 15 anos de experiência em compras, negociação e gestão de fornecedores em ambientes corporativos complexos." },
   { icon: Scale, t: "Independência estrutural", d: "A Buy Group atua sem vínculos comerciais com fornecedores, garantindo recomendações alinhadas às prioridades financeiras e operacionais do cliente." },
 ];
 
@@ -244,7 +244,7 @@ function Index() {
             <div className="lg:col-span-5">
               <p className="text-pretty text-muted-foreground">
                 Telecom, energia, logística, TI, facilities, travel, seguros e mais 40+ verticais.
-                Veja as faixas de saving observadas em 200+ engajamentos enterprise.
+                Veja as faixas de saving observadas.
               </p>
               <Link
                 to="/reducao-de-custos"
@@ -273,8 +273,8 @@ function Index() {
             <div className="grid gap-6 sm:grid-cols-3 lg:col-span-7">
               {[
                 { icon: Building2, t: "15+ anos", d: "experiência média da equipe sênior em procurement enterprise" },
-                { icon: TrendingUp, t: "200+", d: "engajamentos conduzidos em verticais críticas" },
-                { icon: Award, t: "Tier-1", d: "background dos sócios em consultorias globais e indústria" },
+                { icon: TrendingUp, t: "100+", d: "projetos conduzidos em verticais críticas" },
+                { icon: Award, t: "Vivência executiva", d: "background dos sócios em projetos globais e indústria" },
               ].map((c) => (
                 <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
                   <c.icon className="h-5 w-5 text-green" />
