@@ -31,9 +31,9 @@ function ContatoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Executive briefing · CFO-level · 20min"
-        title={<>Agende um <span className="text-green">briefing sob NDA</span>.</>}
-        description="Em até 5 dias úteis após o briefing, entregamos uma estimativa preliminar de saving baseada no perfil do seu spend. Currently accepting 3 new engagements this quarter."
+        eyebrow="Executive briefing · nível diretivo · 20min"
+        title={<>Agende uma conversa <span className="text-green">executiva sob NDA</span>.</>}
+        description="Uma conversa para avaliar o potencial de economia, os riscos e os próximos passos a partir do perfil de compras da sua empresa."
         identity={{
           kind: "slogan",
           lines: [[{ text: "É comprar", }, { text: " bem.", accent: true }]],
@@ -59,11 +59,11 @@ function ContatoPage() {
                 <Field label="Telefone" name="telefone" type="tel" />
               </div>
               <Select label="Interesse principal" name="interesse" options={[
-                "Cost Optimization Program",
-                "Procurement BPO",
+                "Programa de Otimização de Custos",
+                "Gestão de Compras",
                 "CUT4MORE™ FRAMEWORK completo",
-                "Spend Intelligence assessment",
-                "Executive Education in-company",
+                "Mapeamento de Oportunidades",
+                "Educação Executiva para empresas",
                 "Outro",
               ]} />
               <Field label="Faturamento anual aproximado" name="faturamento" placeholder="Ex: R$ 50M" />
@@ -81,7 +81,7 @@ function ContatoPage() {
                 type="submit"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Agendar executive briefing
+                Solicitar executive briefing
               </button>
               <p className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Lock className="h-3.5 w-3.5" />
@@ -97,11 +97,7 @@ function ContatoPage() {
             <ul className="mt-6 space-y-4 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-green" />
-                <a href="mailto:contato@buygroup.com.br" className="hover:text-green">contato@buygroup.com.br</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-green" />
-                <a href="tel:+551140000000" className="hover:text-green">+55 11 4000-0000</a>
+                <a href="mailto:atendimento@buygroup.com.br" className="hover:text-green">atendimento@buygroup.com.br</a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <MapPin className="h-4 w-4 text-green" />
@@ -115,7 +111,7 @@ function ContatoPage() {
               <br />Zero risco à sua reputação."
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              200+ engajamentos enterprise. Modelo No Savings, No Fee. Garantia contratual de resultado.
+              Experiência em projetos de compras complexos, com remuneração vinculada ao resultado validado.
             </p>
           </div>
         </aside>
