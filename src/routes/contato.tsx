@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
@@ -58,9 +62,9 @@ function ContatoPage() {
           ) : (
             <form
               onSubmit={onSubmit}
-              className="space-y-5 rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:p-10"
+              className="space-y-6 rounded-2xl border border-border bg-white p-6 shadow-[var(--shadow-soft)] sm:p-8 md:p-10"
             >
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
                 <Field label="Nome" name="nome" required />
                 <Field label="Empresa" name="empresa" required />
                 <Field label="E-mail corporativo" name="email" type="email" required />
@@ -83,29 +87,34 @@ function ContatoPage() {
                 name="faturamento"
                 placeholder="Ex: R$ 50M"
               />
-              <div>
-                <label htmlFor="mensagem" className="text-sm text-muted-foreground">
+              <div className="grid gap-2">
+                <Label htmlFor="mensagem" className="text-sm font-normal text-muted-foreground">
                   Mensagem
-                </label>
-                <textarea
+                </Label>
+                <Textarea
                   id="mensagem"
                   name="mensagem"
                   rows={5}
-                  className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
+                  className="min-h-32 resize-y rounded-lg border-border bg-white px-4 py-3 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground/70 focus-visible:border-green focus-visible:ring-green/25"
                   placeholder="Conte brevemente o contexto e o que você espera de um parceiro."
                 />
               </div>
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
-              >
-                Agendar executive briefing
-              </button>
-              <p className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Lock className="h-3.5 w-3.5" />
-                NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos os
-                engajamentos.
-              </p>
+              <div className="flex flex-col items-start gap-4">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="h-12 w-full rounded-full px-7 font-semibold tracking-wide shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+                >
+                  Agendar executive briefing
+                </Button>
+                <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+                  <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  <span>
+                    NDA padrão antes de qualquer briefing. Cobertura de seguro corporativo em todos
+                    os engajamentos.
+                  </span>
+                </p>
+              </div>
             </form>
           )}
         </div>
@@ -158,17 +167,17 @@ function Field({
   placeholder?: string;
 }) {
   return (
-    <div>
-      <label htmlFor={name} className="text-sm text-muted-foreground">
+    <div className="grid gap-2">
+      <Label htmlFor={name} className="text-sm font-normal text-muted-foreground">
         {label} {required && <span className="text-green">*</span>}
-      </label>
-      <input
+      </Label>
+      <Input
         id={name}
         name={name}
         type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
+        className="h-12 rounded-lg border-border bg-white px-4 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground/70 focus-visible:border-green focus-visible:ring-green/25"
       />
     </div>
   );
@@ -176,14 +185,14 @@ function Field({
 
 function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
   return (
-    <div>
-      <label htmlFor={name} className="text-sm text-muted-foreground">
+    <div className="grid gap-2">
+      <Label htmlFor={name} className="text-sm font-normal text-muted-foreground">
         {label}
-      </label>
+      </Label>
       <select
         id={name}
         name={name}
-        className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-green"
+        className="h-12 w-full rounded-lg border border-border bg-white px-4 text-sm text-navy outline-none transition-colors focus:border-green focus:ring-1 focus:ring-green/25"
       >
         {options.map((o) => (
           <option key={o}>{o}</option>
