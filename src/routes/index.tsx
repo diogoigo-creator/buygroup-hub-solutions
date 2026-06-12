@@ -294,14 +294,13 @@ function Index() {
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">EXECUTIVE BRIEFING · NIVEL DIRETIVO · 20MIN</p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
                 Uma conversa. Estimativa preliminar de saving.
                 <span className="text-white/55"> Sob NDA.</span>
               </h2>
               <p className="mt-5 max-w-lg text-white/75">
-                Aceitamos no máximo <span className="text-green">12 clientes por trimestre</span>
-                para preservar o padrão de delivery. Currently accepting 3 new engagements.
+                Assumimos um mandato estratégico por vez, garantindo dedicação direta, confidencialidade e foco total na captura de resultado.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
