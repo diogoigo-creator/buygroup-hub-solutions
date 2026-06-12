@@ -6,10 +6,10 @@ import { TrendingDown, Users, GraduationCap, FileSearch, Handshake, BarChart3, C
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — CUT4MORE™ FRAMEWORK | Buy Group" },
-      { name: "description", content: "Engajamentos enterprise de procurement transformation: spend intelligence, strategic sourcing, BPO sênior e governança board-ready." },
+      { title: "Serviços de compras estratégicas — Buy Group" },
+      { name: "description", content: "Projetos completos de compras estratégicas, da análise à negociação, com foco em economia, margem e governança financeira." },
       { property: "og:title", content: "Serviços Buy Group" },
-      { property: "og:description", content: "CUT4MORE™ FRAMEWORK. Investment-grade savings." },
+      { property: "og:description", content: "Atuação da análise à negociação em contratos, fornecedores e categorias estratégicas." },
       { property: "og:url", content: "/servicos" },
     ],
     links: [{ rel: "canonical", href: "/servicos" }],
@@ -20,39 +20,39 @@ export const Route = createFileRoute("/servicos")({
 const services = [
   {
     icon: TrendingDown,
-    title: "Cost Optimization Program",
-    body: "Programa estruturado de saving sobre o spend endereçável com remuneração 100% atrelada a resultado auditado por third-party.",
-    bullets: ["Spend intelligence em 30 dias (90% do gasto mapeado)", "Renegociação executada por sêniores", "Strategic sourcing competitivo", "Reporting trimestral board-ready"],
+    title: "Programa de Otimização de Custos",
+    body: "Projeto estruturado para identificar, negociar e validar economia sobre o volume de compras analisado, com remuneração vinculada ao resultado.",
+    bullets: ["Mapeamento de oportunidades", "Renegociação conduzida por especialistas", "Estratégia de compra competitiva", "Relatórios para decisão executiva"],
   },
   {
     icon: Users,
-    title: "Procurement BPO",
-    body: "Operamos parte ou toda a função de compras com governança institucional, KPIs board-ready e SLA contratual.",
-    bullets: ["BPO de compras táticas e indiretas", "Implantação de P2P e fluxo aprovativo", "SLA contratual com penalidades", "Time dedicado senior-only"],
+    title: "Gestão de Compras",
+    body: "Apoiamos parte ou toda a operação de compras com processos claros, indicadores de desempenho e governança institucional.",
+    bullets: ["Compras táticas e indiretas", "Fluxos de compra e aprovação", "SLA e indicadores de desempenho", "Equipe dedicada e experiente"],
   },
   {
     icon: GraduationCap,
-    title: "Executive Education",
-    body: "Programas in-company para C-level e lideranças de procurement de companhias enterprise. Confidencial.",
-    bullets: ["Strategic sourcing avançado", "Negotiation lab com simulações reais", "Procurement analytics & KPIs", "Governança e compliance enterprise"],
+    title: "Educação Executiva",
+    body: "Programas sob medida para lideranças e equipes de compras de grandes empresas, com aplicação prática e confidencialidade.",
+    bullets: ["Estratégia de compra avançada", "Negociação com simulações reais", "Análise e indicadores de compras", "Governança e conformidade"],
   },
   {
     icon: FileSearch,
-    title: "Spend Intelligence",
-    body: "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
+    title: "Mapeamento de Oportunidades",
+    body: "Análise das despesas para organizar categorias, construir um baseline confiável e priorizar oportunidades de economia.",
     bullets: ["Taxonomia UNSPSC adaptada", "Painéis executivos interativos", "Identificação de oportunidades por categoria"],
   },
   {
     icon: Handshake,
-    title: "Supplier Risk & Governance",
-    body: "Homologação, segmentação, scoring e desenvolvimento de fornecedores críticos sob ótica de risco enterprise.",
-    bullets: ["Critérios ESG e compliance", "Programas SRM estruturados", "Avaliação 360° auditável"],
+    title: "Risco e Governança de Fornecedores",
+    body: "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade operacional.",
+    bullets: ["Critérios ESG e conformidade", "Gestão estruturada de fornecedores", "Avaliação de desempenho documentada"],
   },
   {
     icon: BarChart3,
-    title: "Procurement Maturity Assessment",
-    body: "Assessment da função frente a benchmarks de mercado enterprise. Roadmap priorizado com business case.",
-    bullets: ["Pessoas, processo e tecnologia", "Roadmap 12-24 meses", "Quick wins acionáveis"],
+    title: "Diagnóstico da Área de Compras",
+    body: "Avaliação da área frente a referências de mercado, com plano priorizado e justificativa financeira para a decisão.",
+    bullets: ["Pessoas, processos e tecnologia", "Plano de evolução de 12 a 24 meses", "Oportunidades de curto prazo"],
   },
 ];
 
@@ -61,8 +61,8 @@ function ServicosPage() {
     <SiteLayout>
       <PageHero
         eyebrow="CUT4MORE™ FRAMEWORK"
-        title={<>Engajamentos end-to-end para a função de <span className="text-green">compras enterprise</span>.</>}
-        description="Da auditoria forense do primeiro real ao saving validado por third-party — uma metodologia proprietária, quatro fases, um único KPI: resultado capturado."
+        title={<>Serviços para encontrar economia onde sua empresa já compra — e transformar negociação em <span className="text-green">margem real</span>.</>}
+        description="Atuamos da análise à negociação em contratos, fornecedores, categorias e projetos estratégicos de grandes empresas."
         identity={{
           kind: "lockup",
           slogan: { primary: "Mais que comprar. É comprar", accent: "bem." },
@@ -74,18 +74,18 @@ function ServicosPage() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group relative flex flex-col rounded-3xl border border-border/80 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12),0_4px_16px_-8px_oklch(0.75_0.13_86_/_0.08)] overflow-hidden"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-green/40 hover:shadow-[var(--shadow-soft)]"
             >
               {/* Decorative hover glow */}
               <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full bg-green/5 blur-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none" />
 
-              <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm group-hover:shadow-[0_8px_20px_-8px_rgba(212,175,55,0.4)]">
-                <s.icon className="h-6 w-6 transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy transition-all duration-300 group-hover:scale-105 shadow-sm">
+                <s.icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-105" />
               </div>
               
               <h2 className="mt-8 font-serif text-2xl text-navy transition-colors duration-300 group-hover:text-navy-soft flex items-center justify-between gap-2">
                 <span>{s.title}</span>
-                <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-green shrink-0" />
+                <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-1 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-green shrink-0" />
               </h2>
               
               <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground/90 flex-grow">{s.body}</p>
@@ -105,17 +105,16 @@ function ServicosPage() {
         <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · CFO-level · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · nível diretivo · 20min</p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Como iniciamos um engajamento.
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
-                Briefing sob NDA. Entrega de estimativa preliminar de saving em
-                até 5 dias úteis. Currently accepting 3 new engagements this quarter.
+                Uma conversa executiva para avaliar o potencial de economia, os riscos e os próximos passos. Sob NDA.
               </p>
               <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
                 <ShieldCheck className="h-3 w-3 text-green" />
-                Full guarantee · Investment-grade results or full refund
+                Remuneração vinculada ao resultado validado
               </p>
             </div>
             <Link

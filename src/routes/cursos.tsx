@@ -31,14 +31,14 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 export const Route = createFileRoute("/cursos")({
   head: () => ({
     meta: [
-      { title: "Cursos in company — Capacitação em procurement | Buy Group" },
+      { title: "Cursos para equipes de compras — Buy Group" },
       {
         name: "description",
         content:
-          "Programas in company de strategic sourcing, negociação, IA aplicada, ESG e gestão de compras. Treinamentos customizados para sua equipe.",
+          "Programas sob medida de estratégia de compra, negociação, IA aplicada, ESG e gestão de compras para equipes de grandes empresas.",
       },
-      { property: "og:title", content: "Cursos in company Buy Group" },
-      { property: "og:description", content: "Forme compradores que entregam saving." },
+      { property: "og:title", content: "Cursos para equipes de compras — Buy Group" },
+      { property: "og:description", content: "Capacitação prática para equipes que precisam gerar economia com método e governança." },
       { property: "og:url", content: "/cursos" },
     ],
     links: [{ rel: "canonical", href: "/cursos" }],
@@ -109,20 +109,20 @@ const courses: Course[] = [
     category: "Compras Estratégicas",
     badge: "popular",
     icon: Search,
-    title: "Strategic Sourcing e Spend Analysis",
+    title: "Estratégia de Compra e Análise de Gastos",
     description:
-      "Processo completo de sourcing estratégico integrado à análise de gastos: Matriz de Kraljic, TCO, RFQ/RFP, dashboards de spend intelligence e identificação de oportunidades de redução de custos.",
+      "Processo completo de estratégia de compra integrado à análise de gastos: Matriz de Kraljic, custo total, concorrências e identificação de oportunidades de redução.",
     hours: "16h a 32h",
     level: "Intermediário",
     topics: [
-      "Spend analysis: coleta, limpeza e categorização de dados de gastos",
-      "Dashboards de spend intelligence (Excel / Power BI)",
+      "Análise de gastos: coleta, limpeza e categorização dos dados",
+      "Painéis de análise de gastos em Excel e Power BI",
       "Segmentação de categorias e Matriz de Kraljic",
       "TCO — Custo Total de Propriedade",
       "Processo de RFI, RFQ e RFP",
       "Avaliação e seleção de fornecedores",
       "Negociação baseada em dados",
-      "KPIs e monitoramento de resultados",
+      "Indicadores e monitoramento de resultados",
     ],
   },
   {
@@ -148,15 +148,15 @@ const courses: Course[] = [
     id: "procurement-estrategico-gestores",
     category: "Gestão",
     icon: BarChart3,
-    title: "Procurement Estratégico para Gestores",
+    title: "Compras Estratégicas para Gestores",
     description:
-      "Para líderes de compras que querem elevar a função ao nível estratégico: BSC, KPIs, operating model, governança e geração de valor para o negócio.",
+      "Para líderes que querem elevar compras ao nível estratégico, com indicadores, modelo de atuação, governança e geração de valor para o negócio.",
     hours: "12h a 28h",
     level: "Avançado",
     topics: [
-      "Procurement como função estratégica do negócio",
+      "Compras como função estratégica do negócio",
       "Balanced Scorecard aplicado a compras",
-      "Desenho do operating model de procurement",
+      "Desenho do modelo de atuação de compras",
       "Gestão de times e desenvolvimento de equipes",
       "Governança, compliance e políticas de compras",
       "Projeto aplicado: plano estratégico da área",
@@ -186,18 +186,18 @@ const courses: Course[] = [
     category: "IA e Tecnologia",
     badge: "novo",
     icon: Bot,
-    title: "IA Aplicada ao Supply Chain",
+    title: "IA Aplicada à Cadeia de Suprimentos",
     description:
-      "Como usar Inteligência Artificial para prever demanda, analisar riscos de fornecedores, automatizar procurement e criar dashboards inteligentes — sem necessidade de programação.",
+      "Como usar inteligência artificial para prever demanda, analisar riscos de fornecedores, automatizar compras e criar painéis inteligentes — sem necessidade de programação.",
     hours: "16h a 40h",
     level: "Intermediário",
     topics: [
-      "Fundamentos de IA aplicados a supply chain",
+      "Fundamentos de IA aplicados à cadeia de suprimentos",
       "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA",
       "Previsão de demanda na prática",
-      "Gestão de fornecedores com analytics",
+      "Gestão de fornecedores orientada por dados",
       "Automação de processos de compras",
-      "Spend analytics e dashboards inteligentes",
+      "Análise de gastos e painéis inteligentes",
       "Gestão de riscos com IA",
       "Projeto prático aplicado à realidade da empresa",
     ],
@@ -225,7 +225,7 @@ const courses: Course[] = [
     category: "ESG",
     badge: "tendencia",
     icon: Leaf,
-    title: "ESG Aplicado a Compras e Supply Chain",
+    title: "ESG Aplicado a Compras e à Cadeia de Suprimentos",
     description:
       "Como implementar critérios ambientais, sociais e de governança nas decisões de compra, atender exigências regulatórias e criar valor sustentável na cadeia de suprimentos.",
     hours: "8h a 14h",
@@ -235,7 +235,7 @@ const courses: Course[] = [
       "Regulamentações e exigências do mercado brasileiro",
       "Critérios ESG na seleção e avaliação de fornecedores",
       "Rastreabilidade e transparência na cadeia",
-      "Métricas e relatórios de sustentabilidade em procurement",
+      "Métricas e relatórios de sustentabilidade em compras",
     ],
   },
   {
@@ -260,18 +260,18 @@ const courses: Course[] = [
     id: "supply-chain-4",
     category: "IA e Tecnologia",
     icon: Cpu,
-    title: "Supply Chain 4.0 — Tecnologia e Inovação",
+    title: "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação",
     description:
-      "Como aplicar os conceitos da Indústria 4.0 na cadeia de suprimentos: automação, IoT, big data, blockchain e as tecnologias que estão transformando compras e logística.",
+      "Como aplicar os conceitos da Indústria 4.0 na cadeia de suprimentos: automação, internet das coisas, dados e tecnologias que transformam compras e logística.",
     hours: "12h a 22h",
     level: "Intermediário",
     topics: [
-      "Indústria 4.0 e impacto no supply chain",
+      "Indústria 4.0 e impacto na cadeia de suprimentos",
       "Automação de processos em compras e logística",
       "IoT aplicado à cadeia de suprimentos",
-      "Big data e analytics em supply chain",
+      "Dados e análises na cadeia de suprimentos",
       "Blockchain para rastreabilidade",
-      "Roadmap de transformação digital em compras",
+      "Plano de transformação digital em compras",
     ],
   },
   {
@@ -322,10 +322,10 @@ function CursosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Cursos in company"
-        title={<>Forme compradores que entregam <span className="text-green">saving</span>.</>}
-        description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
-        identity={{ kind: "lockup", caption: "Executive Education" }}
+        eyebrow="Capacitação para empresas"
+        title={<>Prepare sua equipe para gerar <span className="text-green">economia com método</span>.</>}
+        description="Programas sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
+        identity={{ kind: "lockup", caption: "Educação executiva" }}
       />
 
       {/* Catálogo de cursos */}
@@ -435,7 +435,7 @@ function CursosPage() {
               Não tem certeza de qual curso sua equipe precisa?
             </h3>
             <p className="mt-2 max-w-2xl text-base text-white/75">
-              Oferecemos um diagnóstico gratuito para identificar as principais lacunas e recomendar o treinamento ideal.
+               Realizamos uma conversa inicial para identificar as principais lacunas e recomendar o treinamento mais adequado.
             </p>
           </div>
           <a
@@ -444,7 +444,7 @@ function CursosPage() {
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
-            Quero um diagnóstico gratuito
+             Falar sobre a capacitação
           </a>
         </div>
       </section>
@@ -551,7 +551,7 @@ function RequestSection({
         <div className="text-center">
           <h2 className="font-serif text-4xl text-white md:text-5xl">Solicite um treinamento para sua equipe</h2>
           <p className="mt-4 text-base text-white/70">
-            Preencha o formulário e entraremos em contato em até 4 horas úteis com uma proposta personalizada.
+             Preencha o formulário e nossa equipe entrará em contato para entender o contexto e preparar uma proposta.
           </p>
         </div>
 
@@ -560,7 +560,7 @@ function RequestSection({
             <div className="flex flex-col items-center gap-4 rounded-2xl border border-green/40 bg-green/10 p-10 text-center">
               <CheckCircle2 className="h-12 w-12 text-green" />
               <h3 className="font-serif text-2xl text-white">Solicitação recebida!</h3>
-              <p className="text-white/70">Entraremos em contato em até 4 horas úteis.</p>
+               <p className="text-white/70">Nossa equipe entrará em contato para dar continuidade à solicitação.</p>
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur">

@@ -6,10 +6,10 @@ import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale } from "lucide-rea
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre a Buy Group — The procurement transformation firm" },
-      { name: "description", content: "A firma de procurement transformation escolhida por CFOs de companhias enterprise. Investment-grade results, garantia contratual." },
+      { title: "Sobre a Buy Group — Compras estratégicas" },
+      { name: "description", content: "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado." },
       { property: "og:title", content: "Sobre a Buy Group" },
-      { property: "og:description", content: "Procurement como alavanca de margem. Sob NDA." },
+      { property: "og:description", content: "Compras como alavanca de margem, com abordagem independente e governança financeira." },
       { property: "og:url", content: "/sobre" },
     ],
     links: [{ rel: "canonical", href: "/sobre" }],
@@ -18,20 +18,20 @@ export const Route = createFileRoute("/sobre")({
 });
 
 const principles = [
-  { icon: ShieldCheck, t: "No Savings, No Fee", d: "Garantia contratual de resultado. Sem savings auditados por third-party, sem fee. Sem exceções." },
-  { icon: Award, t: "Senior-only delivery", d: "Zero juniores em engajamento. Todo projeto conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
-  { icon: Lock, t: "Confidencialidade institucional", d: "NDA padrão antes do primeiro briefing. Seguro corporativo em todos os engajamentos. Reporting board-ready." },
-  { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Único alinhamento de incentivo: o P&L do cliente." },
+  { icon: ShieldCheck, t: "Resultado alinhado", d: "A remuneração é vinculada aos savings homologados conforme o baseline aprovado com o cliente." },
+  { icon: Award, t: "Condução por especialistas", d: "Os projetos são conduzidos por profissionais experientes em compras, negociação e gestão de fornecedores." },
+  { icon: Lock, t: "Confidencialidade institucional", d: "O trabalho começa sob NDA, com tratamento reservado das informações e comunicação executiva clara." },
+  { icon: Scale, t: "Abordagem independente", d: "Atuamos sem vínculos comerciais com fornecedores, alinhados às prioridades financeiras e operacionais do cliente." },
 ];
 
 function SobrePage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="By invitation · Quem somos"
-        title={<>A firma de procurement <span className="text-green">escolhida</span> por CFOs enterprise.</>}
-        description="Buy Group é a procurement transformation firm para companhias com P&L de R$ 1Bi+ que tratam compras como alavanca de margem — não como centro de custo."
-        identity={{ kind: "lockup", caption: "Procurement Transformation Firm" }}
+        eyebrow="Quem somos"
+        title={<>Compras e negociação como alavancas de <span className="text-green">margem e eficiência</span>.</>}
+        description="A Buy Group apoia grandes empresas na identificação de oportunidades, condução de negociações e validação de resultados com governança financeira."
+        identity={{ kind: "lockup", caption: "Consultoria em compras e negociação" }}
       />
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
@@ -42,22 +42,19 @@ function SobrePage() {
           </h2>
           <div className="mt-6 space-y-5 text-pretty text-muted-foreground">
             <p>
-              Em companhias enterprise, cada decisão de procurement é uma decisão
-              de board. Cada vendor selecionado expõe carreira. Cada negociação
-              mal conduzida vira nota de rodapé no resultado trimestral.
+              Em grandes empresas, decisões de compra afetam margem, risco e continuidade
+              operacional. Contratos relevantes exigem análise consistente, estratégia clara
+              e uma negociação bem conduzida.
             </p>
             <p>
-              A Buy Group existe para retirar essa exposição. Operamos como
-              extensão sênior da função de compras do cliente, com{" "}
-              <span className="font-semibold text-navy">garantia contratual de resultado</span>{" "}
-              e auditoria third-party em cada fase. O CFO assina o engajamento
-              sabendo o piso de saving e o limite de risco — antes de começar.
+              A Buy Group atua como extensão especializada da área de compras, com{" "}
+              <span className="font-semibold text-navy">remuneração vinculada ao resultado validado</span>{" "}
+              e critérios financeiros definidos antes do início do projeto.
             </p>
             <p>
-              Nosso modelo <span className="font-semibold text-navy">No Savings, No Fee</span> não
-              é desconto comercial: é a única forma de alinhar 100% nossos
-              incentivos com a margem do cliente. Se não capturamos saving
-              auditado, não há fee. Período.
+              Esse modelo alinha nossos incentivos à margem do cliente: os savings são
+              acompanhados e homologados conforme o baseline aprovado, com transparência
+              sobre premissas, riscos e resultados.
             </p>
           </div>
         </div>
@@ -67,9 +64,8 @@ function SobrePage() {
               <Quote className="h-6 w-6" />
             </div>
             <p className="mt-6 font-serif text-2xl leading-snug text-navy">
-              "Em 90 dias entregaram o que três consultorias tier-1 não
-              conseguiram em dois anos. O modelo de risco compartilhado mudou a
-              equação."
+              "A condução estruturada permitiu capturar oportunidades que estavam
+              represadas, preservando a operação e dando clareza ao resultado financeiro."
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">
               CFO · Grupo industrial · R$ 3.2Bi
@@ -81,7 +77,7 @@ function SobrePage() {
       <section className="border-t border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Operating principles</p>
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">Princípios de atuação</p>
             <h2 className="mt-4 font-serif text-3xl text-navy md:text-4xl">
               Quatro princípios que <span className="text-green">não negociamos</span>.
             </h2>
@@ -104,19 +100,19 @@ function SobrePage() {
         <div className="rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · 20min</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-green">Executive briefing · nível diretivo · 20min</p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
-                Currently accepting <span className="text-green">3</span> new engagements.
+                Uma conversa executiva para avaliar o potencial de economia.
               </h3>
               <p className="mt-3 max-w-xl text-white/75">
-                Sob NDA. Estimativa preliminar de saving entregue em até 5 dias úteis após o briefing.
+                Avaliamos o contexto, os riscos e os próximos passos. Sob NDA.
               </p>
             </div>
             <Link
               to="/contato"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
-              Agendar briefing <ArrowUpRight className="h-4 w-4" />
+              Agendar executive briefing <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

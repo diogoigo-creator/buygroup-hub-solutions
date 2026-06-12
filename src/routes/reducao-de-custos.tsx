@@ -7,9 +7,9 @@ export const Route = createFileRoute("/reducao-de-custos")({
   head: () => ({
     meta: [
       { title: "Redução de Custos — Categorias e potencial de economia | Buy Group" },
-      { name: "description", content: "Categorias endereçáveis de spend e faixas de saving observadas em 200+ engajamentos enterprise. Telecom, energia, logística, TI, facilities e mais." },
+      { name: "description", content: "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos." },
       { property: "og:title", content: "Redução de Custos · Categorias endereçáveis" },
-      { property: "og:description", content: "Onde encontramos saving e quanto cada categoria devolve ao P&L." },
+      { property: "og:description", content: "Onde encontramos economia e como cada categoria pode contribuir para a margem." },
       { property: "og:url", content: "/reducao-de-custos" },
     ],
     links: [{ rel: "canonical", href: "/reducao-de-custos" }],
@@ -18,18 +18,18 @@ export const Route = createFileRoute("/reducao-de-custos")({
 });
 
 const categorias = [
-  { icon: Wifi, t: "Telecom & Conectividade", r: "18–32%", d: "Voz, dados, mobile, links dedicados e cloud connectivity." },
-  { icon: Zap, t: "Energia & Utilities", r: "12–25%", d: "Mercado livre, gestão tarifária, gás natural e eficiência energética." },
-  { icon: Truck, t: "Logística & Frete", r: "10–22%", d: "Fretes, armazenagem, distribuição e operações logísticas." },
+  { icon: Wifi, t: "Telecomunicações", r: "18–32%", d: "Voz, dados, telefonia móvel e links dedicados." },
+  { icon: Zap, t: "Energia", r: "12–25%", d: "Mercado livre, gestão tarifária, gás natural e eficiência energética." },
+  { icon: Truck, t: "Logística", r: "10–22%", d: "Fretes, armazenagem, distribuição e operações logísticas." },
   { icon: Printer, t: "Outsourcing de Impressão", r: "20–40%", d: "Frota, outsourcing, gestão documental e print-on-demand." },
-  { icon: Laptop, t: "Tecnologia & SaaS", r: "15–30%", d: "Licenciamento, hardware, cloud (AWS/Azure/GCP) e contratos de software." },
-  { icon: Wrench, t: "Facilities & Manutenção", r: "14–28%", d: "Limpeza, segurança patrimonial, manutenção predial e jardinagem." },
-  { icon: Package, t: "Embalagens & Suprimentos", r: "8–20%", d: "Caixas, filmes, paletes, escritório e MRO indiretos." },
-  { icon: Plane, t: "Travel & Eventos Corporativos", r: "15–35%", d: "Aéreo, hospedagem, locação de veículos, TMC e eventos." },
+  { icon: Laptop, t: "Tecnologia", r: "15–30%", d: "Licenças, equipamentos, nuvem e contratos de software." },
+  { icon: Wrench, t: "Serviços Corporativos", r: "14–28%", d: "Limpeza, segurança, manutenção predial e serviços de apoio." },
+  { icon: Package, t: "Embalagens e Suprimentos", r: "8–20%", d: "Caixas, filmes, paletes, materiais de escritório e manutenção." },
+  { icon: Plane, t: "Viagens e Eventos", r: "15–35%", d: "Passagens, hospedagem, locação de veículos e eventos corporativos." },
   { icon: Shield, t: "Seguros Corporativos", r: "10–25%", d: "Patrimonial, frota, vida em grupo, D&O e responsabilidade civil." },
-  { icon: Banknote, t: "Serviços Financeiros & Bancários", r: "12–28%", d: "Tarifas bancárias, cartões corporativos, adquirência e câmbio." },
-  { icon: Boxes, t: "Matéria-prima & Insumos", r: "6–18%", d: "Strategic sourcing, should-cost modeling e leilões reversos." },
-  { icon: Recycle, t: "Resíduos & Sustentabilidade", r: "15–30%", d: "Gestão de resíduos, reciclagem, água e efluentes industriais." },
+  { icon: Banknote, t: "Serviços Financeiros", r: "12–28%", d: "Tarifas bancárias, cartões corporativos, adquirência e câmbio." },
+  { icon: Boxes, t: "Matérias-primas e Insumos", r: "6–18%", d: "Composição de custos, alternativas de fornecimento e negociações competitivas." },
+  { icon: Recycle, t: "Resíduos e Sustentabilidade", r: "15–30%", d: "Gestão de resíduos, reciclagem, água e efluentes industriais." },
 ];
 
 function ReducaoDeCustosPage() {
@@ -43,7 +43,7 @@ function ReducaoDeCustosPage() {
             <span className="text-green">Quanto cada categoria devolve ao P&amp;L.</span>
           </>
         }
-        description="As faixas indicam potenciais observados por categoria. O saving real depende da análise do spend, contratos e fornecedores e só avançamos após validação do caso com o cliente."
+        description="As faixas indicam potenciais observados por categoria. O saving real depende da análise das despesas, dos contratos e dos fornecedores, e o projeto só avança após a validação do caso com o cliente."
         identity={{ kind: "mark", intensity: "bold" }}
       />
 
@@ -70,10 +70,10 @@ function ReducaoDeCustosPage() {
           <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-white p-8 md:flex-row md:items-center md:p-10">
             <div>
               <p className="font-serif text-2xl text-navy">
-                Não vê sua categoria? <span className="text-green">Trabalhamos com 40+ verticais.</span>
+                Não vê sua categoria? <span className="text-green">Analisamos diferentes categorias estratégicas.</span>
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Spend Intelligence em 30 dias mapeia 90% do gasto e dimensiona o potencial real por categoria.
+                O mapeamento inicial organiza o volume negociável e dimensiona o potencial real por categoria.
               </p>
             </div>
             <Link
