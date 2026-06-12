@@ -39,7 +39,7 @@ const moat = [
   { icon: ShieldCheck, t: "Garantia baseada em resultado", d: "Único modelo do mercado com garantia contratual de resultado. Sem savings auditados, sem fee sem exceções." },
   { icon: Lock, t: "Confidencialidade absoluta", d: "NDA padrão antes do primeiro briefing. Cobertura de seguro corporativo em todos os engajamentos." },
   { icon: Award, t: "Atuação direta de especialistas", d: "Zero juniores em projeto. Cada engajamento é conduzido por sócios e diretores com 15+ anos em procurement enterprise." },
-  { icon: Scale, t: "Independência estrutural", d: "Zero relação comercial com fornecedores. Nosso único alinhamento é com o P&L do cliente." },
+  { icon: Scale, t: "Independência estrutural", d: "A Buy Group atua sem vínculos comerciais com fornecedores, garantindo recomendações alinhadas às prioridades financeiras e operacionais do cliente." },
 ];
 
 
