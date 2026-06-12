@@ -322,10 +322,10 @@ function CursosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Cursos in company"
-        title={<>Forme compradores que entregam <span className="text-green">saving</span>.</>}
-        description="Programas 100% customizados para a realidade, setor e maturidade da sua equipe."
-        identity={{ kind: "lockup", caption: "Executive Education" }}
+        eyebrow="Capacitação para empresas"
+        title={<>Prepare sua equipe para gerar <span className="text-green">economia com método</span>.</>}
+        description="Programas sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
+        identity={{ kind: "lockup", caption: "Educação executiva" }}
       />
 
       {/* Catálogo de cursos */}
@@ -435,7 +435,7 @@ function CursosPage() {
               Não tem certeza de qual curso sua equipe precisa?
             </h3>
             <p className="mt-2 max-w-2xl text-base text-white/75">
-              Oferecemos um diagnóstico gratuito para identificar as principais lacunas e recomendar o treinamento ideal.
+               Realizamos uma conversa inicial para identificar as principais lacunas e recomendar o treinamento mais adequado.
             </p>
           </div>
           <a
@@ -444,7 +444,7 @@ function CursosPage() {
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
-            Quero um diagnóstico gratuito
+             Falar sobre a capacitação
           </a>
         </div>
       </section>
@@ -551,7 +551,7 @@ function RequestSection({
         <div className="text-center">
           <h2 className="font-serif text-4xl text-white md:text-5xl">Solicite um treinamento para sua equipe</h2>
           <p className="mt-4 text-base text-white/70">
-            Preencha o formulário e entraremos em contato em até 4 horas úteis com uma proposta personalizada.
+             Preencha o formulário e nossa equipe entrará em contato para entender o contexto e preparar uma proposta.
           </p>
         </div>
 
@@ -560,7 +560,7 @@ function RequestSection({
             <div className="flex flex-col items-center gap-4 rounded-2xl border border-green/40 bg-green/10 p-10 text-center">
               <CheckCircle2 className="h-12 w-12 text-green" />
               <h3 className="font-serif text-2xl text-white">Solicitação recebida!</h3>
-              <p className="text-white/70">Entraremos em contato em até 4 horas úteis.</p>
+               <p className="text-white/70">Nossa equipe entrará em contato para dar continuidade à solicitação.</p>
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur">
