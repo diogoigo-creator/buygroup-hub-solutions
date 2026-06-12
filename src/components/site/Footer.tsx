@@ -52,9 +52,9 @@ export function Footer() {
           </h4>
           <ul className="mt-4 space-y-3 text-sm">
             <li>
-              <a href="mailto:contato@buygroup.com.br" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
+              <a href="mailto:atendimento@buygroup.com.br" className="inline-flex items-center gap-2.5 text-white/85 hover:text-green">
                 <Mail className="h-4 w-4 text-green/80" />
-                contato@buygroup.com.br
+                atendimento@buygroup.com.br
               </a>
             </li>
             <li>
