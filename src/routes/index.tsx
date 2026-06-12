@@ -185,7 +185,7 @@ function Index() {
               <span className="text-white/55"> Um único KPI: saving auditado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
-              Desenvolvida ao longo de anos de projetos enterprise. cut4more™ é o
+              Desenvolvida ao longo de anos de projetos enterprise. <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> é o
               único framework de procurement com garantia contratual de resultado e
               auditoria em cada fase.
             </p>
