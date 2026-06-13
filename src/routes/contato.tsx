@@ -7,8 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
+import { z } from "zod";
 
 export const Route = createFileRoute("/contato")({
+  validateSearch: z.object({ interesse: z.string().optional() }),
   head: () => ({
     meta: [
       { title: "Contato — Buy Group" },
@@ -27,6 +29,8 @@ export const Route = createFileRoute("/contato")({
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
+  const { interesse } = Route.useSearch();
+  const defaultInterest = interesse === "bpo" ? "BPO de Compras / Outsourcing" : undefined;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,20 +77,21 @@ function ContatoPage() {
               <Select
                 label="Interesse principal"
                 name="interesse"
+                defaultValue={defaultInterest}
                 options={[
-                  "Programa de Otimização de Custos",
-                  "Gestão de Compras",
-                  "Metodologia CUT4MORE™ completa",
-                  "Mapeamento de Oportunidades",
+                  "BPO de Compras / Outsourcing",
+                  "Redução de Custos por Performance",
+                  "Compras para Obras e CAPEX",
+                  "Diagnóstico da Área de Compras",
                   "Educação Executiva para empresas",
                   "Outro",
                 ]}
               />
-              <Field
-                label="Faturamento anual aproximado"
-                name="faturamento"
-                placeholder="Ex: R$ 50M"
-              />
+              <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
+                <Field label="Volume anual aproximado de compras" name="volume_compras" placeholder="Ex: R$ 50M" />
+                <Field label="Quantidade aproximada de compradores internos" name="compradores_internos" type="number" placeholder="Ex: 5" />
+              </div>
+              <Field label="Principal desafio atual em compras" name="desafio_compras" placeholder="Ex: sobrecarga operacional, contratos ou redução de custos" />
               <div className="grid gap-2">
                 <Label htmlFor="mensagem" className="text-sm font-normal text-muted-foreground">
                   Mensagem
@@ -183,7 +188,7 @@ function Field({
   );
 }
 
-function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
+function Select({ label, name, options, defaultValue }: { label: string; name: string; options: string[]; defaultValue?: string }) {
   return (
     <div className="grid gap-2">
       <Label htmlFor={name} className="text-sm font-normal text-muted-foreground">
@@ -192,6 +197,7 @@ function Select({ label, name, options }: { label: string; name: string; options
       <select
         id={name}
         name={name}
+        defaultValue={defaultValue}
         className="h-12 w-full rounded-lg border border-border bg-white px-4 text-sm text-navy outline-none transition-colors focus:border-green focus:ring-1 focus:ring-green/25"
       >
         {options.map((o) => (
