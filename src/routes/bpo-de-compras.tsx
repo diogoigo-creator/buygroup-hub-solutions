@@ -11,12 +11,11 @@ import {
   Gauge,
   Handshake,
   HardHat,
-  Network,
   RefreshCw,
   Search,
   ShieldCheck,
-  Users,
 } from "lucide-react";
+import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { Button } from "@/components/ui/button";
@@ -296,6 +295,6 @@ function BpoDeComprasPage() {
   );
 }
 
-function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return <p className={`text-xs uppercase tracking-[0.28em] ${light ? "text-green" : "text-navy/55"}`}>{children}</p>;
 }

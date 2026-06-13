@@ -49,14 +49,17 @@ const services = [
   },
   {
     icon: Users,
-    title: "Gestão de Compras",
-    body: "Apoiamos parte ou toda a operação de compras com processos claros, indicadores de desempenho e governança institucional.",
+    title: "Outsourcing e BPO de Compras",
+    body: "Apoiamos parte ou toda a operação de compras do cliente com uma célula externa estruturada, processos claros, SLA, indicadores, governança e foco em resultado financeiro.",
     bullets: [
       "Compras táticas e indiretas",
-      "Fluxos de compra e aprovação",
+      "Cotações e equalização de propostas",
+      "Negociação com fornecedores",
+      "Relatórios de savings",
       "SLA e indicadores de desempenho",
       "Equipe dedicada e experiente",
     ],
+    href: "/bpo-de-compras" as const,
   },
   {
     icon: GraduationCap,
@@ -153,6 +156,14 @@ function ServicosPage() {
                   </li>
                 ))}
               </ul>
+              {"href" in s && (
+                <Link
+                  to={s.href}
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-green"
+                >
+                  Conhecer BPO de Compras <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              )}
             </article>
           ))}
         </div>

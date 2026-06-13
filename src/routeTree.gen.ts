@@ -15,6 +15,7 @@ import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as BpoDeComprasRouteImport } from './routes/bpo-de-compras'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SobreRoute = SobreRouteImport.update({
@@ -47,6 +48,11 @@ const ContatoRoute = ContatoRouteImport.update({
   path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BpoDeComprasRoute = BpoDeComprasRouteImport.update({
+  id: '/bpo-de-compras',
+  path: '/bpo-de-compras',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,6 +61,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/bpo-de-compras'
     | '/contato'
     | '/cursos'
     | '/reducao-de-custos'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/bpo-de-compras'
     | '/contato'
     | '/cursos'
     | '/reducao-de-custos'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/bpo-de-compras'
     | '/contato'
     | '/cursos'
     | '/reducao-de-custos'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BpoDeComprasRoute: typeof BpoDeComprasRoute
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bpo-de-compras': {
+      id: '/bpo-de-compras'
+      path: '/bpo-de-compras'
+      fullPath: '/bpo-de-compras'
+      preLoaderRoute: typeof BpoDeComprasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BpoDeComprasRoute: BpoDeComprasRoute,
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
