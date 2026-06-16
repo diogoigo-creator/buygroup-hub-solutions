@@ -337,14 +337,14 @@ function CursosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Capacitação para empresas"
+        eyebrow="Buy Group Academy"
         title={
           <>
             Prepare sua equipe para gerar <span className="text-green">economia com método</span>.
           </>
         }
-        description="Programas sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
-        identity={{ kind: "lockup", caption: "Educação executiva" }}
+        description="Programas in-company sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
+        identity={{ kind: "lockup", caption: "Buy Group Academy" }}
       />
 
       {/* Catálogo de cursos */}
