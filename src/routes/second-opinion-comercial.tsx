@@ -67,9 +67,9 @@ const steps: { n: string; title: string; time: string; body: string }[] = [
   },
   {
     n: "04",
-    title: "Execução e fechamento",
-    time: "Conduzida pelo seu time",
-    body: "Seu time executa a rodada final com base no parecer — ou a Buy Group conduz se preferir. O saving capturado acima do preço original negociado é a base de cálculo do fee.",
+    title: "Negociação pela Buy Group",
+    time: "Conduzida por nós",
+    body: "A Buy Group assume a rodada final de negociação direta com o fornecedor para extrair o saving residual identificado. O delta capturado acima do preço já negociado pelo seu time é dividido: 50% fica com a empresa, 50% é a remuneração da Buy Group.",
   },
 ];
 
