@@ -144,9 +144,14 @@ function ContatoPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-12 w-full rounded-full px-7 font-semibold tracking-wide shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+                  disabled={submitting}
+                  className="h-12 w-full rounded-full px-7 font-semibold tracking-wide shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
                 >
-                  Agendar executive briefing
+                  {submitting ? (
+                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando…</>
+                  ) : (
+                    "Agendar executive briefing"
+                  )}
                 </Button>
                 <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">
                   <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0" />
