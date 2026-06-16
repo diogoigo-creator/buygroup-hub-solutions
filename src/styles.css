@@ -117,7 +117,11 @@
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
     -webkit-text-size-adjust: 100%;
+  }
+  :target {
+    scroll-margin-top: 7rem;
   }
   body {
     background-color: var(--color-background);

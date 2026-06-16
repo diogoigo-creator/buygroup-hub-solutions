@@ -27,7 +27,26 @@ export interface Service {
   complementares: ServiceSlug[];
   // Títulos exatos de cursos existentes em /cursos relacionados a este serviço.
   cursosRelacionados?: string[];
+  // Âncora padrão (sem #) usada por links que querem cair em conteúdo útil, e não no topo.
+  defaultAnchor?: string;
+  // Slug de "interesse" enviado ao /contato para pré-selecionar o assunto.
+  interesseSlug?: string;
 }
+
+// Mapeia o título exato do curso (como aparece em /cursos) para seu id de card.
+// Usado para construir links âncora /cursos#curso-<id> que rolam direto para o curso.
+export const COURSE_ID_BY_TITLE: Record<string, string> = {
+  "Estratégia de Compra e Análise de Gastos": "strategic-sourcing",
+  "Gestão de Compras na Prática": "gestao-compras-pratica",
+  "Compras Estratégicas para Gestores": "procurement-estrategico-gestores",
+  "Negociação Avançada com Fornecedores": "negociacao-avancada",
+  "IA Aplicada à Cadeia de Suprimentos": "ia-supply-chain",
+  "Gestão e Desenvolvimento de Fornecedores": "gestao-fornecedores",
+  "ESG Aplicado a Compras e à Cadeia de Suprimentos": "esg-compras",
+  "Gestão de Contratos para Compradores": "gestao-contratos",
+  "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação": "supply-chain-4",
+  "Redução de Custos Indiretos na Prática": "custos-indiretos",
+};
 
 export const SERVICES: Service[] = [
   {
@@ -46,6 +65,8 @@ export const SERVICES: Service[] = [
       "Redução de Custos Indiretos na Prática",
       "Negociação Avançada com Fornecedores",
     ],
+    defaultAnchor: "metodologia",
+    interesseSlug: "cost-optimization",
   },
   {
     slug: "inteligencia-de-gastos",
@@ -62,6 +83,8 @@ export const SERVICES: Service[] = [
       "Estratégia de Compra e Análise de Gastos",
       "IA Aplicada à Cadeia de Suprimentos",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "spend-intelligence",
   },
   {
     slug: "bpo-de-compras",
@@ -79,6 +102,8 @@ export const SERVICES: Service[] = [
       "Gestão de Contratos para Compradores",
       "Negociação Avançada com Fornecedores",
     ],
+    defaultAnchor: "o-que-operamos",
+    interesseSlug: "bpo",
   },
   {
     slug: "revisao-pre-fechamento",
@@ -96,6 +121,8 @@ export const SERVICES: Service[] = [
       "Negociação Avançada com Fornecedores",
       "Estratégia de Compra e Análise de Gastos",
     ],
+    defaultAnchor: "como-funciona",
+    interesseSlug: "second-opinion",
   },
   {
     slug: "gestao-de-fornecedores",
@@ -112,6 +139,8 @@ export const SERVICES: Service[] = [
       "Gestão e Desenvolvimento de Fornecedores",
       "ESG Aplicado a Compras e à Cadeia de Suprimentos",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "supplier-risk",
   },
   {
     slug: "maturidade-em-compras",
@@ -129,6 +158,8 @@ export const SERVICES: Service[] = [
       "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação",
       "Gestão de Compras na Prática",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "procurement-maturity",
   },
 ];
 

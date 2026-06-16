@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { z } from "zod";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
   Dialog,
@@ -28,6 +29,10 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/cursos")({
+  validateSearch: z.object({
+    curso: z.string().optional(),
+    solicitar: z.string().optional(),
+  }),
   head: () => ({
     meta: [
       { title: "Academy — capacitação para equipes de compras | Buy Group" },
@@ -316,9 +321,10 @@ function minParticipants(level: Level): number {
 }
 
 function CursosPage() {
+  const { curso, solicitar } = Route.useSearch();
   const [filter, setFilter] = useState<Filter>("Todos");
   const [detail, setDetail] = useState<Course | null>(null);
-  const [requestCourse, setRequestCourse] = useState<string>("");
+  const [requestCourse, setRequestCourse] = useState<string>(curso || solicitar || "");
 
   const visible = useMemo(
     () => (filter === "Todos" ? courses : courses.filter((c) => c.category === filter)),
@@ -332,6 +338,45 @@ function CursosPage() {
       document.getElementById("solicitar")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 50);
   }
+
+  // Reage a hash (#solicitar ou #curso-<id>) e a ?solicitar=<titulo> / ?curso=<titulo>.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash.replace(/^#/, "");
+
+    if (solicitar || hash === "solicitar") {
+      setFilter("Todos");
+      setTimeout(() => {
+        document.getElementById("solicitar")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 60);
+      return;
+    }
+
+    if (hash.startsWith("curso-")) {
+      const id = hash.slice("curso-".length);
+      const target = courses.find((c) => c.id === id);
+      if (target) {
+        setFilter("Todos");
+        setTimeout(() => {
+          document.getElementById(`curso-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setDetail(target);
+        }, 80);
+      }
+      return;
+    }
+
+    if (curso) {
+      const target = courses.find((c) => c.title === curso);
+      if (target) {
+        setFilter("Todos");
+        setTimeout(() => {
+          document.getElementById(`curso-${target.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setDetail(target);
+        }, 80);
+      }
+    }
+    // Roda apenas no mount / quando a query muda.
+  }, [curso, solicitar]);
 
   return (
     <SiteLayout>
@@ -434,7 +479,8 @@ function CursosPage() {
               return (
                 <article
                   key={c.id}
-                  className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 hover:border-green/60"
+                  id={`curso-${c.id}`}
+                  className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 scroll-mt-32 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span
@@ -616,7 +662,7 @@ function RequestSection({
   }
 
   return (
-    <section id="solicitar" className="bg-navy text-white">
+    <section id="solicitar" className="scroll-mt-24 bg-navy text-white">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="text-center">
           <h2 className="font-serif text-4xl text-white md:text-5xl">

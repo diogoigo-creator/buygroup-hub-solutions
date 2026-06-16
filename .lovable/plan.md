@@ -1,74 +1,68 @@
-Plano para tornar a navegação entre serviços e cursos mais fluida, usando apenas o que já existe no site. Nada novo será criado — apenas reorganização, conexão e destaque.
+# Corrigir navegação: cada clique leva ao conteúdo exato
 
-### Diagnóstico do estado atual
+Sem criar serviços, cursos, páginas ou ofertas. Apenas adicionar IDs/âncoras, scroll suave com offset, e usar parâmetros nos links que já existem.
 
-- As 6 páginas de serviço já têm `Breadcrumb` (topo) e `OutrosServicos` (antes do CTA), mas o usuário só consegue trocar de serviço chegando ao final da página ou voltando para `/servicos`.
-- `/cursos` tem 10 cursos categorizados (Compras Estratégicas, Negociação, IA e Tecnologia, Gestão, ESG) — nenhum serviço aponta para cursos relacionados existentes.
-- O header tem link "Academy", mas as páginas de serviço não conectam visualmente a oferta de capacitação.
-- O sub-nav âncora ("Quando faz sentido / Metodologia / …") é sticky logo abaixo do hero e funciona bem; o Breadcrumb fica acima dele, sem permitir troca rápida de serviço.
+## 1. IDs nos cards de curso (`src/routes/cursos.tsx`)
 
-### 1. Transformar o `Breadcrumb` em um trocador de serviço fluido
+- Em cada `<article>` do grid de cursos, adicionar `id={\`curso-${c.id}\`}` e `scroll-mt-24`.
+- Adicionar `useEffect` que lê `window.location.hash`:
+  - Se for `#solicitar` → rola para o formulário (já existe a seção `#solicitar`).
+  - Se for `#curso-<id>` → força `setFilter("Todos")` para garantir que o card esteja visível, rola até o card com `behavior: "smooth"` e abre o modal `setDetail(course)`.
+- Em `RequestSection`, também ler `?curso=<titulo>` via `Route.useSearch` (adicionar `validateSearch` no `createFileRoute`) e usar como `initialCourse` quando presente.
 
-Arquivo: `src/components/site/Breadcrumb.tsx`
+## 2. Mapa título → id de curso (`src/lib/services.ts`)
 
-- Manter a trilha `Serviços › {currentLabel}` à esquerda.
-- À direita, adicionar uma linha horizontal rolável (mobile) / pills (desktop) com os 6 serviços de `SERVICES` (de `src/lib/services.ts`), destacando o ativo (`bg-green/15 text-navy`) e linkando os demais com `<Link to={s.to}>`. Usa apenas os serviços já existentes.
-- Não vira sticky (o sub-nav âncora já é sticky e não pode competir). Fica abaixo do header, antes do hero.
-- Continua respeitando a identidade premium: tipografia uppercase tracking, sem ícones decorativos extras.
+- Exportar um objeto `COURSE_ID_BY_TITLE: Record<string, string>` com os IDs dos cursos existentes em `cursos.tsx`. Usado por `OutrosServicos` para montar `#curso-<id>` a partir do título já listado em `cursosRelacionados`.
+- Nenhum curso novo: o mapa apenas espelha os cursos atuais.
 
-Benefício: o visitante alterna entre serviços com 1 clique, no topo de qualquer página de serviço, sem rolar nem voltar para `/servicos`.
+## 3. Chips de “Capacitação relacionada” (`src/components/site/OutrosServicos.tsx`)
 
-### 2. Conectar serviços ↔ cursos existentes dentro do bloco `OutrosServicos`
+- Para cada título em `cursosRelacionados`, trocar `<Link to="/cursos">` por `<Link to="/cursos" hash={\`curso-${COURSE_ID_BY_TITLE[title]}\`}>` — leva direto ao card.
+- O botão geral “Ver Academy” continua sem hash (vai para o topo da Academy).
+- Botão “Agendar executive briefing”: passar `search={{ interesse: <slug do serviço atual> }}` para a página de contato.
 
-Arquivos: `src/lib/services.ts`, `src/components/site/OutrosServicos.tsx`
+## 4. Links “serviços relacionados” caem em conteúdo útil
 
-- Em `SERVICES`, adicionar um campo opcional `cursosRelacionados: string[]` com os **títulos exatos** dos cursos que já existem em `src/routes/cursos.tsx`. Mapeamento (somente cursos existentes):
-  - `otimizacao-de-custos` → "Estratégia de Compra e Análise de Gastos", "Redução de Custos Indiretos na Prática", "Negociação Avançada com Fornecedores"
-  - `inteligencia-de-gastos` → "Estratégia de Compra e Análise de Gastos", "IA Aplicada à Cadeia de Suprimentos"
-  - `bpo-de-compras` → "Gestão de Compras na Prática", "Gestão de Contratos para Compradores", "Negociação Avançada com Fornecedores"
-  - `revisao-pre-fechamento` → "Negociação Avançada com Fornecedores", "Estratégia de Compra e Análise de Gastos"
-  - `gestao-de-fornecedores` → "Gestão e Desenvolvimento de Fornecedores", "ESG Aplicado a Compras e à Cadeia de Suprimentos"
-  - `maturidade-em-compras` → "Compras Estratégicas para Gestores", "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação", "Gestão de Compras na Prática"
-- Em `OutrosServicos`, adicionar uma faixa final discreta "Capacitação relacionada" com os títulos dos cursos vinculados, cada um como `<Link to="/cursos">` (a página `/cursos` já tem filtros e detalhes; deep-link de curso individual não existe e não será criado). Texto auxiliar: "Conheça na Academy".
-- Visual: linha separada por `border-t border-border` dentro do mesmo container, sem novos cards pesados.
+- Adicionar campo opcional `defaultAnchor?: string` em cada `Service` (`src/lib/services.ts`), apontando para a seção mais relevante já existente em cada página:
+  - otimizacao-de-custos → `metodologia`
+  - bpo-de-compras → `o-que-operamos`
+  - inteligencia-de-gastos → `entregaveis`
+  - revisao-pre-fechamento → `como-funciona`
+  - gestao-de-fornecedores → `entregaveis`
+  - maturidade-em-compras → `entregaveis`
+- Em `OutrosServicos`, o `Link` do card vira `to={s.to} hash={s.defaultAnchor}`.
 
-Benefício: ao final de cada serviço, o visitante encontra (a) outros serviços e (b) cursos relacionados — sem inventar conteúdo, apenas reutilizando o que já existe.
+## 5. Pré-seleção de interesse no Contato (`src/routes/contato.tsx`)
 
-### 3. CTAs já existentes — melhor hierarquia no `OutrosServicos`
+- Expandir o `defaultInterest` para cobrir todos os valores já passados pelos botões “Agendar executive briefing” das páginas de serviço:
+  - `cost-optimization` → “Otimização de Custos”
+  - `spend-intelligence` → “Inteligência de Gastos”
+  - `bpo` → “BPO de Compras”
+  - `second-opinion` → “Revisão Pré-Fechamento”
+  - `supplier-risk` → “Gestão de Fornecedores”
+  - `procurement-maturity` → “Maturidade em Compras”
+  - `academy` → “Academy — capacitação para a equipe”
+- Garantir que o `<Select>` realmente respeita `defaultValue` (atributo já existe).
 
-Arquivo: `src/components/site/OutrosServicos.tsx`
+## 6. Scroll suave global e offset do header
 
-- Adicionar, ao final do bloco, uma linha única com dois CTAs já presentes no site:
-  - Primário (verde): "Agendar executive briefing" → `/contato`
-  - Secundário (outline): "Ver portfólio completo" → `/servicos` (já existe, apenas reposicionado para também aparecer no mobile, hoje está oculto em `sm:inline-flex`)
-- Remover o link duplicado escondido no topo do bloco e centralizar os CTAs no rodapé do componente, para que o visitante tenha sempre a próxima ação visível no fim da leitura.
+- Em `src/styles.css`, adicionar `html { scroll-behavior: smooth; }` e `:target { scroll-margin-top: 6rem; }` como fallback.
+- Confirmar `scroll-mt-32` nas seções âncora dos serviços (já existe) e `scroll-mt-24` nos cards da Academy. Funciona em desktop e mobile (header 64px + breadcrumb ~48px ≈ 112px < 128px).
 
-### 4. Mobile — header drawer já presente, pequenos ajustes
+## 7. Critério de validação manual
 
-Arquivo: `src/components/site/Header.tsx`
+- `/otimizacao-de-custos` → chip “Negociação Avançada com Fornecedores” abre `/cursos#curso-negociacao-avancada` rolado no card e com modal aberto.
+- Botão “Solicitar este curso” → rola até `#solicitar` com o curso já selecionado.
+- `/bpo-de-compras` → chip “Inteligência de Gastos” em Outros serviços abre `/inteligencia-de-gastos#entregaveis`.
+- “Agendar executive briefing” na página de BPO → `/contato` com “BPO de Compras” pré-selecionado.
+- Botões internos (“Ver o que entregamos”, “Conhecer modelos de atuação”, etc.) seguem com `href="#..."` e agora rolam suavemente até a seção certa.
 
-- No drawer mobile, adicionar (logo abaixo do botão "Executive briefing", que já existe) um link secundário discreto para `/servicos` chamado "Ver todos os serviços", reaproveitando o estilo de `Link` já existente. É um link interno para uma página existente — não é nova oferta.
-- Sem mudar a ordem dos itens principais nem adicionar novos destinos.
+## Arquivos alterados
 
-### 5. Página `/servicos` — pequeno realce de hierarquia
+- `src/lib/services.ts` — `COURSE_ID_BY_TITLE`, `defaultAnchor` por serviço.
+- `src/components/site/OutrosServicos.tsx` — `hash` nos chips de curso e nos cards de serviço; `interesse` no CTA de briefing.
+- `src/routes/cursos.tsx` — IDs nos cards, `scroll-mt`, leitura de `hash`/`?curso=`, abertura automática do modal.
+- `src/routes/contato.tsx` — `defaultInterest` expandido para todos os slugs já em uso.
+- `src/styles.css` — `scroll-behavior: smooth` e `scroll-margin-top` fallback.
 
-Arquivo: `src/routes/servicos.tsx`
-
-- Reordenar a seção "Por onde começar" para ficar **acima** do hero secundário visual (já está), mas reduzir `pt-20`/`pt-24` para `pt-14`/`pt-16` para que os 3 perfis de entrada apareçam mais rápido no fold.
-- Sem novos cards, sem novos textos.
-
-### Detalhes técnicos
-
-- Nenhum arquivo novo é criado.
-- Nenhuma rota nova, nenhum curso novo, nenhum serviço novo.
-- Tipos: estender `Service` em `src/lib/services.ts` com `cursosRelacionados?: string[]` (strings simples que correspondem a `title` em `courses` de `/cursos`).
-- Acessibilidade: o switcher do breadcrumb usa `<nav aria-label="Trocar de serviço">`; o item ativo recebe `aria-current="page"`.
-- Mobile: switcher rolável horizontalmente com `overflow-x-auto` + `snap-x`, sem barra de rolagem visível.
-- Performance: zero novas dependências, zero imagens novas, zero animações adicionais.
-
-### Critério de pronto
-
-- Em qualquer página de serviço, dá para ir para outro serviço em 1 clique no topo.
-- No final de qualquer serviço, aparecem (a) outros serviços e (b) cursos relacionados existentes + 2 CTAs já existentes.
-- Mobile: o drawer leva direto para `/servicos` e `/contato`.
-- Nenhum texto novo de oferta foi escrito — apenas labels de navegação ("Trocar de serviço", "Capacitação relacionada", "Ver todos os serviços", "Conheça na Academy").
+Nada de novo é criado: nenhum curso, serviço, página, oferta ou seção nova.
