@@ -8,6 +8,7 @@ const nav = [
   { to: "/reducao-de-custos", label: "Redução de Custos" },
   { to: "/bpo-de-compras", label: "BPO de Compras" },
   { to: "/servicos", label: "Serviços" },
+  { to: "/cursos", label: "Academy" },
 ] as const;
 
 export function Header() {
