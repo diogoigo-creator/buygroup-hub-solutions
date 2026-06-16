@@ -20,6 +20,8 @@ export const Route = createFileRoute("/contato")({
       { property: "og:title", content: "Contato Buy Group" },
       { property: "og:description", content: "Solicite um diagnóstico gratuito." },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/contato" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/contato" }],
   }),

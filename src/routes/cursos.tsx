@@ -48,6 +48,8 @@ export const Route = createFileRoute("/cursos")({
           "Capacitação prática para equipes que precisam gerar economia com método e governança.",
       },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/cursos" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/cursos" }],
   }),

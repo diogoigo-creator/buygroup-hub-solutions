@@ -18,6 +18,8 @@ export const Route = createFileRoute("/sobre")({
           "Compras como alavanca de margem, com abordagem independente e governança financeira.",
       },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/sobre" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/sobre" }],
   }),
