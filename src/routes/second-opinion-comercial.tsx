@@ -29,13 +29,13 @@ export const Route = createFileRoute("/second-opinion-comercial")({
       {
         name: "description",
         content:
-          "Revisão independente de propostas comerciais já negociadas pelo seu time. Identificamos saving residual antes do fechamento. Retorno em 48h. Fee apenas sobre saving capturado.",
+          "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.",
       },
       { property: "og:title", content: "Second Opinion Comercial | Buy Group" },
       {
         property: "og:description",
         content:
-          "Validação independente pré-fechamento. Extraímos saving residual de propostas já negociadas, sob NDA, com retorno em 48 horas.",
+          "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
       },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/second-opinion-comercial" },
     ],
@@ -67,9 +67,9 @@ const steps: { n: string; title: string; time: string; body: string }[] = [
   },
   {
     n: "04",
-    title: "Execução e fechamento",
-    time: "Conduzida pelo seu time",
-    body: "Seu time executa a rodada final com base no parecer — ou a Buy Group conduz se preferir. O saving capturado acima do preço original negociado é a base de cálculo do fee.",
+    title: "Negociação pela Buy Group",
+    time: "Conduzida por nós",
+    body: "A Buy Group assume a rodada final de negociação direta com o fornecedor para extrair o saving residual identificado. O delta capturado acima do preço já negociado pelo seu time é dividido: 50% fica com a empresa, 50% é a remuneração da Buy Group.",
   },
 ];
 
@@ -80,8 +80,8 @@ const included: { icon: ComponentType<{ className?: string }>; title: string }[]
   { icon: Target, title: "Recomendação de táticas e argumentos de negociação" },
   { icon: Gauge, title: "Estimativa do piso de aceitação do fornecedor" },
   { icon: ClipboardCheck, title: "Parecer escrito entregue em até 48h" },
-  { icon: MessageSquare, title: "Suporte na rodada final de negociação se necessário" },
-  { icon: BadgeCheck, title: "Registro do delta capturado para validação do fee" },
+  { icon: MessageSquare, title: "Condução da rodada final de negociação pela Buy Group" },
+  { icon: BadgeCheck, title: "Registro do delta capturado para cálculo da divisão 50/50" },
 ];
 
 const audiences = [
@@ -96,18 +96,18 @@ const audiences = [
 const commercial: { icon: ComponentType<{ className?: string }>; title: string; body: string }[] = [
   {
     icon: CircleDollarSign,
-    title: "Fee sobre saving capturado",
-    body: "Remuneração calculada sobre o delta entre o preço que seu time havia negociado e o preço final após a revisão. Sem saving adicional capturado, sem fee.",
+    title: "50% da economia gerada",
+    body: "Sem taxa fixa, sem upfront, sem mensalidade. A remuneração é 50% sobre o saving adicional capturado pela negociação conduzida pela Buy Group. Sem economia, sem custo para você.",
   },
   {
     icon: Sparkles,
     title: "Saving mínimo para acionamento",
-    body: "O serviço é indicado para propostas onde o saving potencial estimado supera R$ 50.000. Abaixo desse valor, a relação custo-benefício da revisão não se justifica.",
+    body: "Indicado para propostas em que o saving potencial estimado supera R$ 50.000. Abaixo desse valor, a relação custo-benefício da revisão não se justifica.",
   },
   {
     icon: Lock,
     title: "Confidencialidade total",
-    body: "O fornecedor não sabe que a revisão foi feita. Sua equipe recebe o parecer e conduz a rodada final como se fosse própria.",
+    body: "A revisão e a negociação acontecem sob NDA. A Buy Group conduz a rodada final em alinhamento com seu time, sem expor decisões internas.",
   },
 ];
 
@@ -168,8 +168,8 @@ function SecondOpinionPage() {
               </Button>
             </div>
             <p className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs uppercase tracking-[0.17em] text-white/50">
-              <ShieldCheck className="h-3.5 w-3.5 text-green" /> Sob NDA · Retorno em 48h · Fee
-              sobre saving capturado
+              <ShieldCheck className="h-3.5 w-3.5 text-green" /> Sob NDA · Retorno em 48h · 50% da
+              economia gerada · Negociação pela Buy Group
             </p>
           </div>
         </div>
@@ -389,7 +389,7 @@ function SecondOpinionPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/50">
-                  Fee calculado sobre os R$ 280k capturados
+                  Remuneração de 50% sobre os R$ 280k capturados — negociação conduzida pela Buy Group
                 </p>
               </div>
             </div>
@@ -410,8 +410,8 @@ function SecondOpinionPage() {
                 Tem uma proposta prestes a ser fechada?
               </h2>
               <p className="mt-5 max-w-2xl text-muted-foreground">
-                Envie para revisão. Retorno em até 48 horas. Fee apenas se houver saving adicional
-                capturado.
+                Envie para revisão. Retorno em até 48 horas. A Buy Group conduz a negociação final
+                e a remuneração é de 50% sobre a economia gerada — sem taxa fixa.
               </p>
             </div>
             <div className="flex flex-col items-start gap-3 lg:items-end">
