@@ -206,7 +206,7 @@ function SobrePage() {
               to="/contato"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
-              Agendar executive briefing <ArrowUpRight className="h-4 w-4" />
+              Falar com especialista <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

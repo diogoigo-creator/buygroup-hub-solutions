@@ -215,7 +215,7 @@ function ReducaoDeCustosPage() {
               to="/contato"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-transform hover:-translate-y-0.5"
             >
-              Agendar executive briefing
+              Falar com especialista
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

@@ -104,14 +104,14 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="hero-cinematic-glow pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-20 pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-16 lg:pt-16">
+        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 pb-16 pt-16 sm:pb-20 sm:pt-24 lg:grid-cols-12 lg:gap-10 lg:px-10 lg:pb-16 lg:pt-16">
           <div className="lg:col-span-11">
             <div className="hero-editorial hero-delay-1 inline-flex items-center gap-3 border-l-2 border-green px-3 py-1 text-xs uppercase tracking-[0.32em] text-white/75">
               <Sparkles className="h-3.5 w-3.5 text-green" />
               PERFORMANCE EM COMPRAS
             </div>
 
-            <h1 className="mt-9 max-w-5xl text-balance font-serif text-5xl font-medium leading-[0.98] tracking-[-0.035em] text-white md:text-6xl lg:text-[5rem]">
+            <h1 className="mt-7 max-w-5xl text-balance font-serif text-[2.125rem] font-medium leading-[1.04] tracking-[-0.03em] text-white sm:mt-9 sm:text-5xl sm:leading-[0.98] sm:tracking-[-0.035em] md:text-6xl lg:text-[5rem]">
               <span className="hero-editorial hero-delay-2 block">
                 Encontramos oportunidades que os líderes
               </span>
@@ -125,12 +125,12 @@ function Index() {
               estratégicas e transformamos despesas em margem com governança.
             </p>
 
-            <div className="hero-editorial hero-delay-5 mt-9 flex flex-wrap items-center gap-4">
+            <div className="hero-editorial hero-delay-5 mt-8 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
                 to="/contato"
-                className="group inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
-                Agendar executive briefing
+                Falar com especialista
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
             </div>
@@ -367,7 +367,7 @@ function Index() {
                 to="/contato"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
               >
-                Agendar executive briefing
+                Falar com especialista
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">

@@ -114,7 +114,7 @@ export function OutrosServicos({
             className="inline-flex items-center justify-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             <Rocket className="h-4 w-4" />
-            Agendar executive briefing
+            Falar com especialista
           </Link>
           <Link
             to="/servicos"
