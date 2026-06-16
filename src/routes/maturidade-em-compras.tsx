@@ -168,7 +168,7 @@ function ProcurementMaturityPage() {
         </div>
       </nav>
 
-      <section id="dimensoes" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <section id="dimensoes" className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
           <Eyebrow>Dimensões avaliadas</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -185,7 +185,7 @@ function ProcurementMaturityPage() {
         </div>
       </section>
 
-      <section id="entregaveis" className="scroll-mt-32 border-y border-border bg-secondary/35">
+      <section id="entregaveis" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Entregáveis</Eyebrow>
@@ -206,7 +206,7 @@ function ProcurementMaturityPage() {
 
       <section
         id="como-funciona"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <Eyebrow>Como funciona</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -233,7 +233,7 @@ function ProcurementMaturityPage() {
 
       <section
         id="para-quem"
-        className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
       >
         <div className="lg:col-span-6">
           <Eyebrow>Para quem é indicado</Eyebrow>

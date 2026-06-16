@@ -203,7 +203,7 @@ function SecondOpinionPage() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section id="como-funciona" className="scroll-mt-24 border-y border-border bg-secondary/35">
+      <section id="como-funciona" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Fluxo</Eyebrow>

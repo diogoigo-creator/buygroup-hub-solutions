@@ -10,7 +10,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ currentLabel }: BreadcrumbProps) {
   return (
-    <div className="sticky top-[64px] z-30 border-b border-border/60 bg-secondary/80 backdrop-blur supports-[backdrop-filter]:bg-secondary/60">
+    <div className="sticky top-[var(--header-h)] z-30 border-b border-border/60 bg-secondary/80 backdrop-blur supports-[backdrop-filter]:bg-secondary/60">
       <div className="mx-auto max-w-7xl px-6 py-3 lg:px-10">
         <nav
           aria-label="Trilha de navegação"
