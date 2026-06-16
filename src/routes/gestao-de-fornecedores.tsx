@@ -19,6 +19,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
+import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gestao-de-fornecedores")({
   head: () => {

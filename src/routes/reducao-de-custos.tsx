@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => {
