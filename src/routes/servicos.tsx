@@ -42,6 +42,8 @@ type EntryRoute =
   | "/cost-optimization"
   | "/bpo-de-compras"
   | "/cursos"
+  | "/supplier-risk"
+  | "/procurement-maturity"
   | "/contato";
 
 const entryProfiles: {
@@ -123,8 +125,7 @@ const portfolio: {
     description:
       "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade.",
     fit: "Para empresas com base de fornecedores estratégica e risco operacional relevante.",
-    to: "/contato",
-    interesse: "servicos-complementares",
+    to: "/supplier-risk",
   },
   {
     badge: "Complementar",
@@ -133,8 +134,7 @@ const portfolio: {
     description:
       "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira.",
     fit: "Para CPOs e CFOs preparando um plano de evolução de 12 a 24 meses.",
-    to: "/contato",
-    interesse: "servicos-complementares",
+    to: "/procurement-maturity",
   },
 ];
 

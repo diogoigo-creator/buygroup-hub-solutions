@@ -55,6 +55,16 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/supplier-risk" className="text-white/85 hover:text-green">
+                Supplier Risk & Governance
+              </Link>
+            </li>
+            <li>
+              <Link to="/procurement-maturity" className="text-white/85 hover:text-green">
+                Procurement Maturity
+              </Link>
+            </li>
+            <li>
               <Link to="/reducao-de-custos" className="text-white/85 hover:text-green">
                 Onde atuamos
               </Link>
