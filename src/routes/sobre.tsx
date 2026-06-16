@@ -3,27 +3,53 @@ import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale, Building2, MapPin, Layers } from "lucide-react";
 
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
+
 export const Route = createFileRoute("/sobre")({
-  head: () => ({
-    meta: [
-      { title: "Sobre a Buy Group — Compras estratégicas" },
-      {
-        name: "description",
-        content:
-          "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado.",
-      },
-      { property: "og:title", content: "Sobre a Buy Group" },
-      {
-        property: "og:description",
-        content:
-          "Compras como alavanca de margem, com abordagem independente e governança financeira.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/sobre" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/sobre" }],
-  }),
+  head: () => {
+    const title = "Sobre a Buy Group — Compras estratégicas";
+    const description =
+      "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado.";
+    const url = `${SITE_URL}/sobre`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Sobre a Buy Group" },
+        {
+          property: "og:description",
+          content: "Compras como alavanca de margem, com abordagem independente e governança financeira.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            url,
+            name: title,
+            description,
+            about: { "@id": `${SITE_URL}/#organization` },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Sobre", path: "/sobre" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: SobrePage,
 });
 

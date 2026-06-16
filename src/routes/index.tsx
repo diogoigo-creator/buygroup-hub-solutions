@@ -13,26 +13,44 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import heroImg from "@/assets/hero-boardroom.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Buy Group — Economia em compras com governança" },
-      {
-        name: "description",
-        content:
-          "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.",
-      },
-      { property: "og:title", content: "Buy Group — Compras estratégicas e margem real" },
-      {
-        property: "og:description",
-        content:
-          "Economia em compras, negociações estratégicas e savings validados com governança financeira.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/" }],
-  }),
+  head: () => {
+    const title = "Buy Group — Economia em compras com governança";
+    const description =
+      "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.";
+    const url = "https://buygroup-hub-solutions.lovable.app/";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Buy Group — Compras estratégicas e margem real" },
+        {
+          property: "og:description",
+          content: "Economia em compras, negociações estratégicas e savings validados com governança financeira.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "@id": `${SITE_URL}/#service`,
+            name: "Buy Group",
+            url: SITE_URL,
+            description,
+            areaServed: { "@type": "Country", name: "Brasil" },
+            priceRange: "$$$",
+            provider: { "@id": `${SITE_URL}/#organization` },
+          }),
+        },
+      ],
+    };
+  },
   component: Index,
 });
 
