@@ -22,25 +22,51 @@ import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/bpo-de-compras")({
-  head: () => ({
-    meta: [
-      { title: "BPO de Compras para empresas — Buy Group" },
-      {
-        name: "description",
-        content:
-          "BPO de Compras com governança, SLA, inteligência de mercado e foco em savings homologados para empresas de médio e grande porte.",
-      },
-      { property: "og:title", content: "BPO de Compras com foco em performance — Buy Group" },
-      {
-        property: "og:description",
-        content: "Uma célula externa de compras orientada a governança, savings e margem capturada.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/bpo-de-compras" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/bpo-de-compras" }],
-  }),
+  head: () => {
+    const title = "BPO de Compras para empresas — Buy Group";
+    const description =
+      "BPO de Compras com governança, SLA, inteligência de mercado e foco em savings homologados para empresas de médio e grande porte.";
+    const url = "https://buygroup-hub-solutions.lovable.app/bpo-de-compras";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "BPO de Compras com foco em performance — Buy Group" },
+        {
+          property: "og:description",
+          content: "Uma célula externa de compras orientada a governança, savings e margem capturada.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "BPO de Compras",
+              serviceType: "Business Process Outsourcing — Compras",
+              description,
+              path: "/bpo-de-compras",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "BPO de Compras", path: "/bpo-de-compras" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: BpoDeComprasPage,
 });
 
