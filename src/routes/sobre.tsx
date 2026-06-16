@@ -193,7 +193,7 @@ function SobrePage() {
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-green">
-                Executive briefing · nível diretivo · 20min
+                Conversa executiva · nível diretivo · 20min
               </p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Uma conversa executiva para avaliar o potencial de economia.

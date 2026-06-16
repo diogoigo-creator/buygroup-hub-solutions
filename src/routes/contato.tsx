@@ -75,7 +75,7 @@ function ContatoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Executive briefing · nível diretivo · 20min"
+        eyebrow="Conversa executiva · nível diretivo · 20min"
         title={
           <>
             Agende uma conversa <span className="text-green">executiva sob NDA</span>.
@@ -121,7 +121,7 @@ function ContatoPage() {
                   "Gestão de Fornecedores",
                   "Maturidade em Compras",
                   "Academy — capacitação para a equipe",
-                  "Ainda não sei — quero um executive briefing",
+                  "Ainda não sei — quero um conversa executiva",
                 ]}
               />
               <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
@@ -152,7 +152,7 @@ function ContatoPage() {
                   {submitting ? (
                     <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando…</>
                   ) : (
-                    "Agendar executive briefing"
+                    "Agendar conversa executiva"
                   )}
                 </Button>
                 <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">

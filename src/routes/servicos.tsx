@@ -264,7 +264,7 @@ function ServicosPage() {
           <div className="pointer-events-none absolute -right-28 -top-28 h-80 w-80 rounded-full bg-green/25 blur-3xl" />
           <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-green">Executive briefing</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-green">Conversa executiva</p>
               <h3 className="mt-4 max-w-2xl text-balance font-serif text-3xl md:text-4xl">
                 Não sabe qual produto é o certo para o seu momento?
               </h3>
