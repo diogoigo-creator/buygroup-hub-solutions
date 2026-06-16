@@ -1,15 +1,20 @@
-We will update the office address throughout the application to the official Belo Horizonte location provided: **R. Rio Grande do Norte, 1436 - Sala 813 - Savassi, Belo Horizonte - MG, 30130-138**.
+## Problema
 
-This replaces previous placeholder/Santos references to ensure high-fidelity institutional information.
+A rota `/sobre` existe e funciona, mas o link não aparece na navegação principal (`src/components/site/Header.tsx`). Só está no footer.
 
-### 1. Update Contact Page (`src/routes/contato.tsx`)
-- Display the complete structured address in the sidebar box (Street, Room, Neighborhood, City, State, ZIP) next to the MapPin icon.
+## Mudança
 
-### 2. Update About Page (`src/routes/sobre.tsx`)
-- Change the "Sede" card in the statistics section to **Belo Horizonte · MG**.
+Em `src/components/site/Header.tsx`, adicionar `{ to: "/sobre", label: "Sobre" }` ao array `nav` (linhas 6-12), posicionado antes de "Academy":
 
-### 3. Update Footer (`src/components/site/Footer.tsx`)
-- Update the footer location to **Belo Horizonte · MG · Brasil**.
+```ts
+const nav = [
+  { to: "/", label: "Início" },
+  { to: "/reducao-de-custos", label: "Onde Atuamos" },
+  { to: "/bpo-de-compras", label: "BPO de Compras" },
+  { to: "/servicos", label: "Serviços" },
+  { to: "/sobre", label: "Sobre" },
+  { to: "/cursos", label: "Academy" },
+] as const;
+```
 
-### 4. Update Organization SEO Schema (`src/routes/__root.tsx`)
-- Enrich the JSON-LD `@type: Organization` structured data with the full official address (streetAddress, addressLocality, addressRegion, postalCode).
+Isso fará "Sobre" aparecer tanto no menu desktop quanto no drawer mobile (ambos iteram sobre o mesmo array).
