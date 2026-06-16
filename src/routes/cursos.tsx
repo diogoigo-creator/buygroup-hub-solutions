@@ -272,9 +272,9 @@ const courses: Course[] = [
     topics: [
       "Indústria 4.0 e impacto na cadeia de suprimentos",
       "Automação de processos em compras e logística",
-      "IoT aplicado à cadeia de suprimentos",
+      "Internet das Coisas aplicada à cadeia de suprimentos",
       "Dados e análises na cadeia de suprimentos",
-      "Blockchain para rastreabilidade",
+      "Tecnologias de registro distribuído para rastreabilidade",
       "Plano de transformação digital em compras",
     ],
   },
