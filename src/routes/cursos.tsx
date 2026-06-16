@@ -312,6 +312,10 @@ type Filter = (typeof filters)[number];
 
 const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
+function minParticipants(level: Level): number {
+  return level === "Avançado" ? 4 : 8;
+}
+
 function CursosPage() {
   const [filter, setFilter] = useState<Filter>("Todos");
   const [detail, setDetail] = useState<Course | null>(null);
