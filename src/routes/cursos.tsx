@@ -587,6 +587,9 @@ function RequestSection({
             Preencha o formulário e nossa equipe entrará em contato para entender o contexto e
             preparar uma proposta.
           </p>
+          <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/45">
+            Turmas a partir de 4 (executivo) ou 8 participantes, conforme o programa
+          </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-[640px]">
