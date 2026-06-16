@@ -29,13 +29,13 @@ export const Route = createFileRoute("/second-opinion-comercial")({
       {
         name: "description",
         content:
-          "Revisão independente de propostas comerciais já negociadas pelo seu time. Identificamos saving residual antes do fechamento. Retorno em 48h. Fee apenas sobre saving capturado.",
+          "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.",
       },
       { property: "og:title", content: "Second Opinion Comercial | Buy Group" },
       {
         property: "og:description",
         content:
-          "Validação independente pré-fechamento. Extraímos saving residual de propostas já negociadas, sob NDA, com retorno em 48 horas.",
+          "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
       },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/second-opinion-comercial" },
     ],
