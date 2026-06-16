@@ -175,7 +175,7 @@ function CostOptimizationPage() {
               ["metodologia", "Metodologia"],
               ["incluido", "O que está incluído"],
               ["para-quem", "Para quem"],
-              ["case", "Estudo de caso"],
+              ["modelos", "Modelos de engajamento"],
               ["modelos", "Modelos de engajamento"],
             ].map(([id, label]) => (
               <li key={id}>
@@ -294,58 +294,7 @@ function CostOptimizationPage() {
         </ul>
       </section>
 
-      {/* CASE STUDY */}
-      <section id="case" className="scroll-mt-32 border-y border-border bg-secondary/35">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
-              <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
-                ESTUDO DE CASO · CONFIDENCIAL
-              </p>
-              <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-                R$ 12MM capturados em <span className="text-green">90 dias</span>.
-              </h2>
-              <p className="mt-6 text-pretty text-muted-foreground">
-                Grupo industrial brasileiro, com faturamento de R$ 3,2 bilhões e volume anual de
-                compras de R$ 380 milhões. Resultado validado pelo comitê de auditoria.
-              </p>
-              <Link
-                to="/contato"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-green"
-              >
-                Solicitar case completo (sob NDA) <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
-                {[
-                  { k: "Saving capturado", v: "12,4%", s: "sobre o volume anual analisado" },
-                  { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
-                  { k: "ROI do projeto", v: "9,3x", s: "sobre o investimento na Buy Group" },
-                ].map((c) => (
-                  <div key={c.k} className="bg-white p-8">
-                    <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      {c.k}
-                    </p>
-                    <p className="mt-4 font-serif text-4xl text-navy">{c.v}</p>
-                    <p className="mt-2 text-xs text-muted-foreground">{c.s}</p>
-                  </div>
-                ))}
-              </div>
-              <figure className="mt-6 rounded-2xl border border-border bg-white p-8">
-                <blockquote className="font-serif text-2xl leading-snug text-navy">
-                  "Em 90 dias, savings que permaneciam não capturados havia dois anos foram
-                  destravados com governança financeira, risco compartilhado e validação do
-                  resultado."
-                </blockquote>
-                <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  CFO · Grupo industrial · R$ 3.2Bi faturamento
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section
         id="modelos"
