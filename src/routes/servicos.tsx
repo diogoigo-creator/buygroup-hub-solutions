@@ -23,7 +23,7 @@ export const Route = createFileRoute("/servicos")({
       {
         name: "description",
         content:
-          "Portfólio de produtos da Buy Group: Cost Optimization Program, BPO de Compras, Spend Intelligence, Academy e serviços complementares.",
+          "Portfólio de produtos da Buy Group: Otimização de Custos, BPO de Compras, Inteligência de Gastos, Academy e serviços complementares.",
       },
       { property: "og:title", content: "Portfólio Buy Group" },
       {
@@ -39,13 +39,13 @@ export const Route = createFileRoute("/servicos")({
 });
 
 type EntryRoute =
-  | "/spend-intelligence"
-  | "/cost-optimization"
+  | "/inteligencia-de-gastos"
+  | "/otimizacao-de-custos"
   | "/bpo-de-compras"
   | "/cursos"
-  | "/supplier-risk"
-  | "/procurement-maturity"
-  | "/second-opinion-comercial"
+  | "/gestao-de-fornecedores"
+  | "/maturidade-em-compras"
+  | "/revisao-pre-fechamento"
   | "/contato";
 
 const entryProfiles: {
@@ -58,14 +58,14 @@ const entryProfiles: {
   {
     icon: Compass,
     question: "Não sei onde estou perdendo",
-    product: "Spend Intelligence",
-    to: "/spend-intelligence",
+    product: "Inteligência de Gastos",
+    to: "/inteligencia-de-gastos",
   },
   {
     icon: Target,
     question: "Sei onde estou perdendo, preciso executar",
-    product: "Cost Optimization Program",
-    to: "/cost-optimization",
+    product: "Otimização de Custos",
+    to: "/otimizacao-de-custos",
   },
   {
     icon: RotateCw,
