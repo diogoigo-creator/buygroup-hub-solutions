@@ -31,13 +31,13 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 export const Route = createFileRoute("/cursos")({
   head: () => ({
     meta: [
-      { title: "Cursos para equipes de compras — Buy Group" },
+      { title: "Academy — capacitação para equipes de compras | Buy Group" },
       {
         name: "description",
         content:
-          "Programas sob medida de estratégia de compra, negociação, IA aplicada, ESG e gestão de compras para equipes de grandes empresas.",
+          "Buy Group Academy: programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.",
       },
-      { property: "og:title", content: "Cursos para equipes de compras — Buy Group" },
+      { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
       {
         property: "og:description",
         content:
@@ -159,7 +159,7 @@ const courses: Course[] = [
     level: "Avançado",
     topics: [
       "Compras como função estratégica do negócio",
-      "Balanced Scorecard aplicado a compras",
+      "Painel estratégico de indicadores (BSC) aplicado a compras",
       "Desenho do modelo de atuação de compras",
       "Gestão de times e desenvolvimento de equipes",
       "Governança, compliance e políticas de compras",
@@ -197,7 +197,7 @@ const courses: Course[] = [
     level: "Intermediário",
     topics: [
       "Fundamentos de IA aplicados à cadeia de suprimentos",
-      "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA",
+      "Ferramentas de IA aplicadas a compras (assistentes generativos e painéis com IA)",
       "Previsão de demanda na prática",
       "Gestão de fornecedores orientada por dados",
       "Automação de processos de compras",
@@ -218,7 +218,7 @@ const courses: Course[] = [
     topics: [
       "Segmentação e classificação de fornecedores",
       "Homologação e qualificação de novos fornecedores",
-      "Scorecard de avaliação de desempenho",
+      "Painel de avaliação de desempenho de fornecedores",
       "Planos de desenvolvimento e melhoria contínua",
       "Gestão de risco na base fornecedora",
       "Relacionamentos estratégicos e parcerias",
@@ -272,9 +272,9 @@ const courses: Course[] = [
     topics: [
       "Indústria 4.0 e impacto na cadeia de suprimentos",
       "Automação de processos em compras e logística",
-      "IoT aplicado à cadeia de suprimentos",
+      "Internet das Coisas aplicada à cadeia de suprimentos",
       "Dados e análises na cadeia de suprimentos",
-      "Blockchain para rastreabilidade",
+      "Tecnologias de registro distribuído para rastreabilidade",
       "Plano de transformação digital em compras",
     ],
   },
@@ -312,6 +312,10 @@ type Filter = (typeof filters)[number];
 
 const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
 
+function minParticipants(level: Level): number {
+  return level === "Avançado" ? 4 : 8;
+}
+
 function CursosPage() {
   const [filter, setFilter] = useState<Filter>("Todos");
   const [detail, setDetail] = useState<Course | null>(null);
@@ -333,14 +337,14 @@ function CursosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Capacitação para empresas"
+        eyebrow="Buy Group Academy"
         title={
           <>
             Prepare sua equipe para gerar <span className="text-green">economia com método</span>.
           </>
         }
-        description="Programas sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
-        identity={{ kind: "lockup", caption: "Educação executiva" }}
+        description="Programas in-company sob medida para a realidade, o setor e o nível de maturidade da sua equipe."
+        identity={{ kind: "lockup", caption: "Buy Group Academy" }}
       />
 
       {/* Catálogo de cursos */}
@@ -351,7 +355,11 @@ function CursosPage() {
               Cursos disponíveis para sua equipe
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Todos os cursos são adaptados à realidade, setor e nível de maturidade da sua equipe.
+              Todos os programas são adaptados à realidade, setor e nível de maturidade da sua equipe.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              <span className="font-medium text-navy">Tamanho mínimo de turma:</span> programas
+              executivos (nível Avançado) a partir de 4 participantes. Demais programas, mínimo de 8.
             </p>
           </div>
 
@@ -415,7 +423,7 @@ function CursosPage() {
                       <Clock className="h-3.5 w-3.5" /> {c.hours}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
-                      <Users className="h-3.5 w-3.5" /> A partir de 8 participantes
+                      <Users className="h-3.5 w-3.5" /> A partir de {minParticipants(c.level)} participantes
                     </span>
                   </div>
 
@@ -506,7 +514,7 @@ function CursosPage() {
                   <Clock className="h-4 w-4" /> {detail.hours}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Users className="h-4 w-4" /> A partir de 8 participantes
+                  <Users className="h-4 w-4" /> A partir de {minParticipants(detail.level)} participantes
                 </span>
               </div>
               <div className="mt-4">
@@ -579,6 +587,9 @@ function RequestSection({
             Preencha o formulário e nossa equipe entrará em contato para entender o contexto e
             preparar uma proposta.
           </p>
+          <p className="mt-2 text-xs uppercase tracking-[0.16em] text-white/45">
+            Turmas a partir de 4 (executivo) ou 8 participantes, conforme o programa
+          </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-[640px]">
@@ -632,6 +643,7 @@ function RequestSection({
                 name="tamanho"
                 defaultValue="8 a 15 pessoas"
                 options={[
+                  "4 a 7 pessoas (programa executivo)",
                   "8 a 15 pessoas",
                   "16 a 30 pessoas",
                   "31 a 50 pessoas",

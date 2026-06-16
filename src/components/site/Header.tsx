@@ -8,6 +8,7 @@ const nav = [
   { to: "/reducao-de-custos", label: "Redução de Custos" },
   { to: "/bpo-de-compras", label: "BPO de Compras" },
   { to: "/servicos", label: "Serviços" },
+  { to: "/cursos", label: "Academy" },
 ] as const;
 
 export function Header() {
@@ -71,11 +72,6 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li>
-              <span className="flex cursor-default items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium text-muted-foreground/60">
-                Cases <span className="text-[8px] uppercase tracking-wider text-green">Em breve</span>
-              </span>
-            </li>
           </ul>
         </nav>
 
@@ -146,10 +142,6 @@ export function Header() {
                   </Link>
                 </li>
               ))}
-              <li className="flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-muted-foreground/60">
-                <span>Cases</span>
-                <span className="text-[9px] uppercase tracking-wider text-green">Em breve</span>
-              </li>
             </ul>
             <Link
               to="/contato"

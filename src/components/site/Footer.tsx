@@ -51,7 +51,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/cursos" className="text-white/85 hover:text-green">
-                Cursos para empresas
+                Academy
               </Link>
             </li>
             <li>
