@@ -111,7 +111,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           areaServed: "BR",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "R. Rio Grande do Norte, 1436 - Sala 813 - Savassi",
             addressLocality: "Belo Horizonte",
+            addressRegion: "MG",
+            postalCode: "30130-138",
             addressCountry: "BR",
           },
           contactPoint: {

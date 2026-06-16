@@ -76,9 +76,12 @@ export function Footer() {
                 atendimento@buygroup.com.br
               </a>
             </li>
-            <li className="inline-flex items-center gap-2.5 text-white/65">
-              <MapPin className="h-4 w-4 text-green/80" />
-              Santos · SP · Brasil
+            <li className="flex items-start gap-2.5 text-white/65">
+              <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-green/80" />
+              <span className="leading-relaxed">
+                R. Rio Grande do Norte, 1436 — Sala 813<br />
+                Savassi, Belo Horizonte — MG · 30130-138
+              </span>
             </li>
           </ul>
           <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
