@@ -176,7 +176,6 @@ function CostOptimizationPage() {
               ["incluido", "O que está incluído"],
               ["para-quem", "Para quem"],
               ["modelos", "Modelos de engajamento"],
-              ["modelos", "Modelos de engajamento"],
             ].map(([id, label]) => (
               <li key={id}>
                 <a
