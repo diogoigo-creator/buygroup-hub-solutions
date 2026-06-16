@@ -9,17 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupplierRiskRouteImport } from './routes/supplier-risk'
 import { Route as SpendIntelligenceRouteImport } from './routes/spend-intelligence'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
+import { Route as ProcurementMaturityRouteImport } from './routes/procurement-maturity'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as CostOptimizationRouteImport } from './routes/cost-optimization'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BpoDeComprasRouteImport } from './routes/bpo-de-compras'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SupplierRiskRoute = SupplierRiskRouteImport.update({
+  id: '/supplier-risk',
+  path: '/supplier-risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SpendIntelligenceRoute = SpendIntelligenceRouteImport.update({
   id: '/spend-intelligence',
   path: '/spend-intelligence',
@@ -43,6 +50,11 @@ const ServicosRoute = ServicosRouteImport.update({
 const ReducaoDeCustosRoute = ReducaoDeCustosRouteImport.update({
   id: '/reducao-de-custos',
   path: '/reducao-de-custos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcurementMaturityRoute = ProcurementMaturityRouteImport.update({
+  id: '/procurement-maturity',
+  path: '/procurement-maturity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CursosRoute = CursosRouteImport.update({
@@ -77,11 +89,13 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,11 +103,13 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -102,11 +118,13 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -116,11 +134,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cost-optimization'
     | '/cursos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/spend-intelligence'
+    | '/supplier-risk'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -128,11 +148,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cost-optimization'
     | '/cursos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/spend-intelligence'
+    | '/supplier-risk'
   id:
     | '__root__'
     | '/'
@@ -140,11 +162,13 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cost-optimization'
     | '/cursos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
     | '/spend-intelligence'
+    | '/supplier-risk'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -153,15 +177,24 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   CostOptimizationRoute: typeof CostOptimizationRoute
   CursosRoute: typeof CursosRoute
+  ProcurementMaturityRoute: typeof ProcurementMaturityRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
   ServicosRoute: typeof ServicosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   SpendIntelligenceRoute: typeof SpendIntelligenceRoute
+  SupplierRiskRoute: typeof SupplierRiskRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/supplier-risk': {
+      id: '/supplier-risk'
+      path: '/supplier-risk'
+      fullPath: '/supplier-risk'
+      preLoaderRoute: typeof SupplierRiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/spend-intelligence': {
       id: '/spend-intelligence'
       path: '/spend-intelligence'
@@ -195,6 +228,13 @@ declare module '@tanstack/react-router' {
       path: '/reducao-de-custos'
       fullPath: '/reducao-de-custos'
       preLoaderRoute: typeof ReducaoDeCustosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/procurement-maturity': {
+      id: '/procurement-maturity'
+      path: '/procurement-maturity'
+      fullPath: '/procurement-maturity'
+      preLoaderRoute: typeof ProcurementMaturityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cursos': {
@@ -241,11 +281,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   CostOptimizationRoute: CostOptimizationRoute,
   CursosRoute: CursosRoute,
+  ProcurementMaturityRoute: ProcurementMaturityRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
   ServicosRoute: ServicosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   SpendIntelligenceRoute: SpendIntelligenceRoute,
+  SupplierRiskRoute: SupplierRiskRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
