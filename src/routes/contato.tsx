@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -72,7 +71,6 @@ function ContatoPage() {
                 <Field label="Nome" name="nome" required />
                 <Field label="Empresa" name="empresa" required />
                 <Field label="E-mail corporativo" name="email" type="email" required />
-                <Field label="Telefone" name="telefone" type="tel" />
               </div>
               <Select
                 label="Interesse principal"
@@ -136,7 +134,7 @@ function ContatoPage() {
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <MapPin className="h-4 w-4 text-green" />
-                Belo Horizonte · Brasil
+                Santos · SP · Brasil
               </li>
             </ul>
           </div>
@@ -153,7 +151,6 @@ function ContatoPage() {
         </aside>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

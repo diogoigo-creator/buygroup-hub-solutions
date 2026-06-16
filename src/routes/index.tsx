@@ -10,7 +10,6 @@ import {
   Building2,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import heroImg from "@/assets/hero-boardroom.jpg";
 
 export const Route = createFileRoute("/")({
@@ -378,7 +377,6 @@ function Index() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

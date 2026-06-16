@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
-import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale } from "lucide-react";
+import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale, Building2, MapPin, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -129,6 +128,64 @@ function SobrePage() {
         </div>
       </section>
 
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+              Liderança
+            </p>
+            <h2 className="mt-4 font-serif text-3xl text-navy md:text-4xl">
+              Quem conduz os <span className="text-green">engajamentos</span>.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            <article className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:col-span-1">
+              <div className="flex items-start gap-5">
+                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-secondary text-xl font-semibold tracking-wider text-navy">
+                  DM
+                </div>
+                <div>
+                  <h3 className="font-serif text-2xl text-navy">Diogo Igor Silva Moraes</h3>
+                  <p className="mt-1 text-sm font-medium text-green">Head de Supply Chain</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    Atuação em compras e cadeia de suprimentos em projetos de alta complexidade,
+                    com foco em margem, governança e resultado validado.
+                  </p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-navy/55">
+                    Aviação · Construção · Mineração · Hospitalar · Indústria · Agronegócio
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+            <div className="flex items-center gap-4 bg-white p-7">
+              <Building2 className="h-6 w-6 text-green" />
+              <div>
+                <p className="font-serif text-3xl text-navy">2013</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Ano de fundação</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 bg-white p-7">
+              <MapPin className="h-6 w-6 text-green" />
+              <div>
+                <p className="font-serif text-3xl text-navy">Santos · SP</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Sede</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 bg-white p-7">
+              <Layers className="h-6 w-6 text-green" />
+              <div>
+                <p className="font-serif text-3xl text-navy">6 setores</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Setores atendidos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="rounded-3xl bg-navy p-10 text-white md:p-14">
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
@@ -153,7 +210,6 @@ function SobrePage() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

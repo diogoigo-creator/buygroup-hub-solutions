@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
@@ -26,7 +26,6 @@ import {
   Lock,
   type LucideIcon,
 } from "lucide-react";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 export const Route = createFileRoute("/cursos")({
   head: () => ({
@@ -310,7 +309,7 @@ const filters = [
 ] as const;
 type Filter = (typeof filters)[number];
 
-const WHATSAPP_URL = "https://wa.me/5511940000000?text=Quero%20um%20diagn%C3%B3stico%20gratuito";
+
 
 function minParticipants(level: Level): number {
   return level === "Avançado" ? 4 : 8;
@@ -470,14 +469,12 @@ function CursosPage() {
               treinamento mais adequado.
             </p>
           </div>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contato"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             Falar sobre a capacitação
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -542,7 +539,6 @@ function CursosPage() {
         </DialogContent>
       </Dialog>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

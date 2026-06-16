@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/bpo-de-compras")({
@@ -138,7 +137,31 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <nav aria-label="Sumário da página" className="sticky top-16 z-30 border-b border-border bg-white/90 backdrop-blur">
+        <div className="mx-auto max-w-7xl overflow-x-auto px-6 lg:px-10">
+          <ul className="flex min-w-max items-center gap-1 py-3 text-xs font-medium text-muted-foreground sm:text-sm">
+            {[
+              ["quando-faz-sentido", "Quando faz sentido"],
+              ["o-que-operamos", "O que operamos"],
+              ["modelos-de-atuacao", "Modelos de atuação"],
+              ["modelos-comerciais", "Modelos comerciais"],
+              ["para-quem-e-indicado", "Para quem é indicado"],
+              ["bpo-vs-buy-group", "BPO vs. Buy Group"],
+            ].map(([id, label]) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className="rounded-full px-3 py-1.5 transition-colors hover:bg-secondary hover:text-navy"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      <section id="quando-faz-sentido" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Eyebrow>Quando faz sentido</Eyebrow>
@@ -162,7 +185,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-secondary/35">
+      <section id="o-que-operamos" className="scroll-mt-32 border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Escopo operacional</Eyebrow>
@@ -205,7 +228,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section id="modelos-de-atuacao" className="scroll-mt-24 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <section id="modelos-de-atuacao" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <Eyebrow>Arquitetura da operação</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">Modelos de atuação</h2>
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -219,7 +242,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-secondary/35">
+      <section id="modelos-comerciais" className="scroll-mt-32 border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Estrutura de contratação</Eyebrow>
@@ -239,7 +262,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
+      <section id="para-quem-e-indicado" className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
         <div className="lg:col-span-6">
           <Eyebrow>Perfil de operação</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">Indicado para empresas que precisam de mais capacidade de compras sem aumentar complexidade interna</h2>
@@ -253,7 +276,7 @@ function BpoDeComprasPage() {
         </ul>
       </section>
 
-      <section className="bg-navy text-white">
+      <section id="bpo-vs-buy-group" className="scroll-mt-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <Eyebrow light>BPO tradicional vs. Buy Group</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">Uma operação conectada ao resultado financeiro</h2>
@@ -290,7 +313,6 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }
