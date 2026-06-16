@@ -33,6 +33,7 @@ export const Route = createFileRoute("/contato")({
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const { interesse } = Route.useSearch();
   const interestMap: Record<string, string> = {
     "cost-optimization": "Otimização de Custos",
@@ -45,10 +46,31 @@ function ContatoPage() {
   };
   const defaultInterest = interesse ? interestMap[interesse] : undefined;
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      nome: String(fd.get("nome") ?? "").trim(),
+      empresa: String(fd.get("empresa") ?? "").trim(),
+      email: String(fd.get("email") ?? "").trim(),
+      interesse: String(fd.get("interesse") ?? "").trim() || null,
+      volume_compras: String(fd.get("volume_compras") ?? "").trim() || null,
+      compradores_internos: String(fd.get("compradores_internos") ?? "").trim() || null,
+      desafio_compras: String(fd.get("desafio_compras") ?? "").trim() || null,
+      mensagem: String(fd.get("mensagem") ?? "").trim() || null,
+    };
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+    setSubmitting(false);
+    if (error) {
+      console.error("[contato] insert failed", error);
+      toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
+      return;
+    }
     setSent(true);
   }
+
 
   return (
     <SiteLayout>
