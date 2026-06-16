@@ -643,6 +643,7 @@ function RequestSection({
                 name="tamanho"
                 defaultValue="8 a 15 pessoas"
                 options={[
+                  "4 a 7 pessoas (programa executivo)",
                   "8 a 15 pessoas",
                   "16 a 30 pessoas",
                   "31 a 50 pessoas",
