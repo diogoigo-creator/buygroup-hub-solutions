@@ -143,8 +143,8 @@ const portfolio: {
     icon: ScanSearch,
     title: "Second Opinion Comercial",
     description:
-      "Revisão independente de propostas já negociadas pelo seu time. Fee apenas sobre saving capturado. Retorno em 48h.",
-    fit: "Para times internos ativos que querem validar propostas relevantes antes do fechamento.",
+      "Revisão independente de propostas comerciais com negociação direta pela Buy Group. Remuneração de 50% sobre a economia gerada.",
+    fit: "Para times internos ativos que querem validar e capturar saving residual antes do fechamento.",
     to: "/second-opinion-comercial",
   },
 ];
