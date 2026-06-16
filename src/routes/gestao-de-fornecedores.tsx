@@ -16,25 +16,27 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/gestao-de-fornecedores")({
   head: () => ({
     meta: [
-      { title: "Supplier Risk & Governance | Buy Group" },
+      { title: "Gestão de Fornecedores | Buy Group" },
       {
         name: "description",
         content:
           "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.",
       },
-      { property: "og:title", content: "Supplier Risk & Governance | Buy Group" },
+      { property: "og:title", content: "Gestão de Fornecedores | Buy Group" },
       {
         property: "og:description",
         content: "Governança estruturada para fornecedores críticos, sob NDA.",
       },
-      { property: "og:url", content: "/supplier-risk" },
+      { property: "og:url", content: "/gestao-de-fornecedores" },
     ],
-    links: [{ rel: "canonical", href: "/supplier-risk" }],
+    links: [{ rel: "canonical", href: "/gestao-de-fornecedores" }],
   }),
   component: SupplierRiskPage,
 });
@@ -91,6 +93,7 @@ const audiences = [
 function SupplierRiskPage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="Gestão de Fornecedores" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
@@ -164,7 +167,7 @@ function SupplierRiskPage() {
           <div className="lg:col-span-5">
             <Eyebrow>Quando faz sentido</Eyebrow>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Quando o programa de Supplier Risk faz sentido
+              Quando a Gestão de Fornecedores faz sentido
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
               Falha de fornecedor crítico custa mais do que qualquer saving. Estruturamos a
@@ -251,6 +254,8 @@ function SupplierRiskPage() {
           ))}
         </ul>
       </section>
+
+      <OutrosServicos currentSlug="gestao-de-fornecedores" />
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/45 p-9 md:p-14">

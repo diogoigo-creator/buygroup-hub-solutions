@@ -19,25 +19,27 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/maturidade-em-compras")({
   head: () => ({
     meta: [
-      { title: "Procurement Maturity Assessment | Buy Group" },
+      { title: "Maturidade em Compras | Buy Group" },
       {
         name: "description",
         content:
           "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.",
       },
-      { property: "og:title", content: "Procurement Maturity Assessment | Buy Group" },
+      { property: "og:title", content: "Maturidade em Compras | Buy Group" },
       {
         property: "og:description",
         content: "Benchmark, gap analysis e plano de evolução de compras com business case.",
       },
-      { property: "og:url", content: "/procurement-maturity" },
+      { property: "og:url", content: "/maturidade-em-compras" },
     ],
-    links: [{ rel: "canonical", href: "/procurement-maturity" }],
+    links: [{ rel: "canonical", href: "/maturidade-em-compras" }],
   }),
   component: ProcurementMaturityPage,
 });
@@ -96,6 +98,7 @@ const audiences = [
 function ProcurementMaturityPage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="Maturidade em Compras" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
@@ -247,6 +250,8 @@ function ProcurementMaturityPage() {
           ))}
         </ul>
       </section>
+
+      <OutrosServicos currentSlug="maturidade-em-compras" />
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/45 p-9 md:p-14">
