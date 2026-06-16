@@ -389,7 +389,7 @@ function SecondOpinionPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/50">
-                  Fee calculado sobre os R$ 280k capturados
+                  Remuneração de 50% sobre os R$ 280k capturados — negociação conduzida pela Buy Group
                 </p>
               </div>
             </div>
