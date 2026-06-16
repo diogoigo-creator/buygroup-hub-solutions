@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/bpo-de-compras")({
@@ -290,7 +289,6 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

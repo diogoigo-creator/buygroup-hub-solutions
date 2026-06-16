@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -153,7 +152,6 @@ function ContatoPage() {
         </aside>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

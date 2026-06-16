@@ -15,7 +15,6 @@ import {
   Recycle,
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => ({
@@ -175,7 +174,6 @@ function ReducaoDeCustosPage() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

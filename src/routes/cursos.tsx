@@ -26,7 +26,6 @@ import {
   Lock,
   type LucideIcon,
 } from "lucide-react";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 export const Route = createFileRoute("/cursos")({
   head: () => ({
@@ -542,7 +541,6 @@ function CursosPage() {
         </DialogContent>
       </Dialog>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }

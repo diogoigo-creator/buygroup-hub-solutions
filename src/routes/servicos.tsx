@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import {
   TrendingDown,
   Users,
@@ -196,7 +195,6 @@ function ServicosPage() {
         </div>
       </section>
 
-      <WhatsAppFab />
     </SiteLayout>
   );
 }
