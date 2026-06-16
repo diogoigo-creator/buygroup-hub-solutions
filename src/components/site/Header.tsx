@@ -4,11 +4,9 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/buy-group-logo.png";
 
 const nav = [
-  { to: "/", label: "Início" },
-  { to: "/reducao-de-custos", label: "Onde Atuamos" },
-  { to: "/bpo-de-compras", label: "BPO de Compras" },
-  { to: "/servicos", label: "Serviços" },
   { to: "/sobre", label: "Sobre" },
+  { to: "/servicos", label: "Serviços" },
+  { to: "/reducao-de-custos", label: "Onde Atuamos" },
   { to: "/cursos", label: "Academy" },
 ] as const;
 

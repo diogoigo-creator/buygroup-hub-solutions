@@ -35,13 +35,23 @@ export function Footer() {
               </Link>
             </li>
             <li>
-               <Link to="/bpo-de-compras" className="text-white/85 hover:text-green">
-                 BPO de Compras
-               </Link>
-             </li>
-             <li>
               <Link to="/servicos" className="text-white/85 hover:text-green">
                 Serviços
+              </Link>
+            </li>
+            <li>
+              <Link to="/cost-optimization" className="text-white/85 hover:text-green">
+                Cost Optimization Program
+              </Link>
+            </li>
+            <li>
+              <Link to="/spend-intelligence" className="text-white/85 hover:text-green">
+                Spend Intelligence
+              </Link>
+            </li>
+            <li>
+              <Link to="/bpo-de-compras" className="text-white/85 hover:text-green">
+                BPO de Compras
               </Link>
             </li>
             <li>

@@ -1,31 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
-  TrendingDown,
-  Users,
-  GraduationCap,
-  FileSearch,
-  Handshake,
-  BarChart3,
-  Check,
   ArrowUpRight,
+  BarChart3,
+  Compass,
+  GraduationCap,
+  Handshake,
+  Rocket,
+  RotateCw,
   ShieldCheck,
+  Sparkles,
+  Target,
+  TrendingDown,
 } from "lucide-react";
+import type { ComponentType } from "react";
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços de compras estratégicas — Buy Group" },
+      { title: "Portfólio Buy Group — Por onde começar" },
       {
         name: "description",
         content:
-          "Projetos completos de compras estratégicas, da análise à negociação, com foco em economia, margem e governança financeira.",
+          "Portfólio de produtos da Buy Group: Cost Optimization Program, BPO de Compras, Spend Intelligence, Academy e serviços complementares.",
       },
-      { property: "og:title", content: "Serviços Buy Group" },
+      { property: "og:title", content: "Portfólio Buy Group" },
       {
         property: "og:description",
         content:
-          "Atuação da análise à negociação em contratos, fornecedores e categorias estratégicas.",
+          "Cada produto é desenhado para um momento diferente da maturidade de compras. Escolha o ponto de entrada certo.",
       },
       { property: "og:url", content: "/servicos" },
     ],
@@ -34,72 +37,104 @@ export const Route = createFileRoute("/servicos")({
   component: ServicosPage,
 });
 
-const services = [
+type EntryRoute =
+  | "/spend-intelligence"
+  | "/cost-optimization"
+  | "/bpo-de-compras"
+  | "/cursos"
+  | "/contato";
+
+const entryProfiles: {
+  icon: ComponentType<{ className?: string }>;
+  question: string;
+  product: string;
+  to: EntryRoute;
+  interesse?: string;
+}[] = [
   {
+    icon: Compass,
+    question: "Não sei onde estou perdendo",
+    product: "Spend Intelligence",
+    to: "/spend-intelligence",
+  },
+  {
+    icon: Target,
+    question: "Sei onde estou perdendo, preciso executar",
+    product: "Cost Optimization Program",
+    to: "/cost-optimization",
+  },
+  {
+    icon: RotateCw,
+    question: "Preciso de operação contínua de compras",
+    product: "BPO de Compras",
+    to: "/bpo-de-compras",
+  },
+];
+
+const portfolio: {
+  badge: string;
+  title: string;
+  description: string;
+  fit: string;
+  icon: ComponentType<{ className?: string }>;
+  to: EntryRoute;
+  interesse?: string;
+}[] = [
+  {
+    badge: "Produto principal",
     icon: TrendingDown,
-    title: "Programa de Otimização de Custos",
-    body: "Projeto estruturado para identificar, negociar e validar economia sobre o volume de compras analisado, com remuneração vinculada ao resultado.",
-    bullets: [
-      "Mapeamento de oportunidades",
-      "Renegociação conduzida por especialistas",
-      "Estratégia de compra competitiva",
-      "Relatórios para decisão executiva",
-    ],
+    title: "Cost Optimization Program",
+    description:
+      "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados.",
+    fit: "Para empresas que sabem onde perdem margem e precisam executar com governança.",
+    to: "/cost-optimization",
   },
   {
-    icon: Users,
-    title: "Outsourcing e BPO de Compras",
-    body: "Apoiamos parte ou toda a operação de compras do cliente com uma célula externa estruturada, processos claros, SLA, indicadores, governança e foco em resultado financeiro.",
-    bullets: [
-      "Compras táticas e indiretas",
-      "Cotações e equalização de propostas",
-      "Negociação com fornecedores",
-      "Relatórios de savings",
-      "SLA e indicadores de desempenho",
-      "Equipe dedicada e experiente",
-    ],
-    href: "/bpo-de-compras" as const,
-  },
-  {
-    icon: GraduationCap,
-    title: "Educação Executiva",
-    body: "Programas sob medida para lideranças e equipes de compras de grandes empresas, com aplicação prática e confidencialidade.",
-    bullets: [
-      "Estratégia de compra avançada",
-      "Negociação com simulações reais",
-      "Análise e indicadores de compras",
-      "Governança e conformidade",
-    ],
-  },
-  {
-    icon: FileSearch,
-    title: "Mapeamento de Oportunidades",
-    body: "Análise das despesas para organizar categorias, construir um baseline confiável e priorizar oportunidades de economia.",
-    bullets: [
-      "Taxonomia UNSPSC adaptada",
-      "Painéis executivos interativos",
-      "Identificação de oportunidades por categoria",
-    ],
-  },
-  {
+    badge: "Operação contínua",
     icon: Handshake,
-    title: "Risco e Governança de Fornecedores",
-    body: "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade operacional.",
-    bullets: [
-      "Critérios ESG e conformidade",
-      "Gestão estruturada de fornecedores",
-      "Avaliação de desempenho documentada",
-    ],
+    title: "BPO de Compras",
+    description:
+      "Célula externa de compras orientada a SLA, savings e governança financeira.",
+    fit: "Para operações que precisam comprar melhor sem aumentar estrutura interna.",
+    to: "/bpo-de-compras",
   },
   {
+    badge: "Ponto de entrada",
+    icon: Sparkles,
+    title: "Spend Intelligence",
+    description:
+      "Classificação forense de 24 meses de gasto, baseline auditável e quick wins em 30 dias.",
+    fit: "Para empresas que nunca fizeram um mapeamento formal de spend.",
+    to: "/spend-intelligence",
+  },
+  {
+    badge: "Capacitação",
+    icon: GraduationCap,
+    title: "Academy",
+    description:
+      "Educação executiva para lideranças e equipes de compras, com simulações e casos reais.",
+    fit: "Para times que querem evoluir negociação, análise e governança internamente.",
+    to: "/cursos",
+  },
+  {
+    badge: "Complementar",
+    icon: ShieldCheck,
+    title: "Supplier Risk & Governance",
+    description:
+      "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade.",
+    fit: "Para empresas com base de fornecedores estratégica e risco operacional relevante.",
+    to: "/contato",
+    interesse: "servicos-complementares",
+  },
+  {
+    badge: "Complementar",
     icon: BarChart3,
-    title: "Diagnóstico da Área de Compras",
-    body: "Avaliação da área frente a referências de mercado, com plano priorizado e justificativa financeira para a decisão.",
-    bullets: [
-      "Pessoas, processos e tecnologia",
-      "Plano de evolução de 12 a 24 meses",
-      "Oportunidades de curto prazo",
-    ],
+    title: "Procurement Maturity Assessment",
+    description:
+      "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira.",
+    fit: "Para CPOs e CFOs preparando um plano de evolução de 12 a 24 meses.",
+    to: "/contato",
+    interesse: "servicos-complementares",
   },
 ];
 
@@ -107,94 +142,128 @@ function ServicosPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Metodologia CUT4MORE™"
+        eyebrow="Portfólio Buy Group"
         title={
           <>
-            Serviços para encontrar economia onde sua empresa já compra&nbsp; e transformar negociação
-            em <span className="text-green">margem real</span>.
+            Como a Buy Group atua. Escolha o ponto de entrada{" "}
+            <span className="text-green">certo para o seu momento</span>.
           </>
         }
-        description="Atuamos da análise à negociação em contratos, fornecedores, categorias e projetos estratégicos de grandes empresas."
+        description="Cada produto é desenhado para um momento diferente da maturidade de compras. Alguns clientes começam pelo assessment. Outros chegam com urgência de saving. Outros precisam de operação contínua."
         identity={{
-          kind: "lockup",
-          slogan: { primary: "Mais que comprar. É comprar", accent: "bem." },
+          kind: "slogan",
+          lines: [[{ text: "É comprar" }, { text: " bem.", accent: true }]],
         }}
       />
 
+      {/* POR ONDE COMEÇAR */}
+      <section className="mx-auto max-w-7xl px-6 pt-20 lg:px-10 lg:pt-24">
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Por onde começar</p>
+          <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
+            Três perfis de entrada
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {entryProfiles.map((p) => (
+            <Link
+              key={p.product}
+              to={p.to}
+              className="group relative flex flex-col rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy">
+                <p.icon className="h-6 w-6" />
+              </div>
+              <p className="mt-7 font-serif text-2xl leading-snug text-navy">
+                "{p.question}"
+              </p>
+              <p className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                Produto recomendado
+              </p>
+              <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-navy group-hover:text-green">
+                {p.product}{" "}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* PORTFOLIO COMPLETO */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((s) => (
+        <div className="max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Portfólio completo</p>
+          <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
+            Todos os produtos da Buy Group
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {portfolio.map((s) => (
             <article
               key={s.title}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-green/40 hover:shadow-[var(--shadow-soft)]"
+              className="group flex flex-col rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-green/40 hover:shadow-[var(--shadow-soft)]"
             >
-              {/* Decorative hover glow */}
-              <div className="absolute -right-24 -top-24 h-48 w-48 rounded-full bg-green/5 blur-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none" />
-
-              <div className="relative flex h-14 w-14 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy transition-all duration-300 group-hover:scale-105 shadow-sm">
-                <s.icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-105" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <span className="rounded-full bg-secondary px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-navy/70">
+                  {s.badge}
+                </span>
               </div>
-
-              <h2 className="mt-8 font-serif text-2xl text-navy transition-colors duration-300 group-hover:text-navy-soft flex items-center justify-between gap-2">
-                <span>{s.title}</span>
-                <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-1 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 text-green shrink-0" />
-              </h2>
-
-              <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground/90 flex-grow">
-                {s.body}
+              <h3 className="mt-6 font-serif text-2xl text-navy">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
+              <p className="mt-5 border-t border-border/60 pt-4 text-xs text-navy/70">
+                <span className="font-semibold uppercase tracking-[0.18em] text-navy/55">
+                  Para quem:{" "}
+                </span>
+                {s.fit}
               </p>
-
-              <ul className="mt-8 space-y-3 border-t border-border/50 pt-6 text-sm">
-                {s.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="flex gap-2.5 text-navy/85 transition-transform duration-300 hover:translate-x-1"
-                  >
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green transition-transform duration-300 group-hover:scale-110" />
-                    <span className="text-[13px] leading-snug text-navy/80">{b}</span>
-                  </li>
-                ))}
-              </ul>
-              {"href" in s && (
+              {s.interesse ? (
                 <Link
-                  to={s.href}
+                  to={s.to}
+                  search={{ interesse: s.interesse }}
                   className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-green"
                 >
-                  Conhecer BPO de Compras <ArrowUpRight className="h-4 w-4" />
+                  Ver mais <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              ) : (
+                <Link
+                  to={s.to}
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-green"
+                >
+                  Ver mais <ArrowUpRight className="h-4 w-4" />
                 </Link>
               )}
             </article>
           ))}
         </div>
+      </section>
 
-        <div className="mt-16 rounded-3xl bg-navy p-10 text-white md:p-14">
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+        <div className="relative overflow-hidden rounded-3xl bg-navy p-10 text-white md:p-14">
+          <div className="pointer-events-none absolute -right-28 -top-28 h-80 w-80 rounded-full bg-green/25 blur-3xl" />
+          <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-green">
-                Executive briefing · nível diretivo · 20min
-              </p>
-              <h3 className="mt-4 font-serif text-3xl md:text-4xl">
-                Como iniciamos um engajamento.
+              <p className="text-xs uppercase tracking-[0.28em] text-green">Executive briefing</p>
+              <h3 className="mt-4 max-w-2xl text-balance font-serif text-3xl md:text-4xl">
+                Não sabe qual produto é o certo para o seu momento?
               </h3>
-              <p className="mt-3 max-w-xl text-white/75">
-                Uma conversa executiva para avaliar o potencial de economia, os riscos e os próximos
-                passos. Sob NDA.
-              </p>
-              <p className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/55">
-                <ShieldCheck className="h-3 w-3 text-green" />
-                Remuneração vinculada ao resultado validado
+              <p className="mt-4 max-w-xl text-white/75">
+                Em 20 minutos, sob NDA, indicamos o ponto de entrada mais adequado ao seu cenário de
+                compras.
               </p>
             </div>
             <Link
               to="/contato"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
-              Agendar executive briefing <ArrowUpRight className="h-4 w-4" />
+              <Rocket className="h-4 w-4" /> Agendar conversa de 20 minutos
             </Link>
           </div>
         </div>
       </section>
-
     </SiteLayout>
   );
 }
