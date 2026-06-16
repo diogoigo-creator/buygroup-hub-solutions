@@ -1,54 +1,67 @@
-## 1. Menu — renomear "Cursos" para "Academy"
+# Plano de implementação
 
-`src/components/site/Header.tsx`
-- Trocar `{ to: "/cursos", label: "Cursos" }` por `{ to: "/cursos", label: "Academy" }`
-- Rota e arquivo `/cursos` permanecem (evita quebra de links/SEO). Apenas o rótulo muda.
+Ordem de execução: 4 → 1 → 2 → 3.
 
-`src/components/site/Footer.tsx`
-- Atualizar o link de "Cursos" para "Academy" (mesmo destino `/cursos`).
+## Prompt 4 — Correções globais de credibilidade
 
-`src/routes/cursos.tsx`
-- Atualizar título da página/hero e meta tags: "Academy — capacitação para equipes de compras (Buy Group)".
-- Trocar a expressão "Educação executiva" do eyebrow por "Buy Group Academy".
+**Telefone/WhatsApp** — Você optou por não publicar telefone. Em vez de substituir, vamos **remover** todas as referências:
+- Excluir o componente `src/components/site/WhatsAppFab.tsx` e todas as suas importações/usos (`/sobre`, `/contato`, `/servicos`, `/bpo-de-compras`, `/reducao-de-custos`, `/cursos`, `/index`).
+- Em `src/routes/cursos.tsx`, remover a constante `WHATSAPP_URL` e o botão "Falar no WhatsApp" do formulário, mantendo apenas o CTA principal por e‑mail/contato.
+- Remover o campo "Telefone" do formulário de `/contato` (já que não pediremos telefone do lead também não é coerente exibir).
 
-## 2. Mínimo de participantes — ajuste por nível
+**Localização → Santos · SP · Brasil**
+- `src/components/site/Footer.tsx` linha 81: `Belo Horizonte · Brasil` → `Santos · SP · Brasil`.
+- `src/routes/contato.tsx` linha 139: idem.
 
-Pesquisa de mercado (Facio, IBEF, CR Basso, FDC, Insper in-company): programas operacionais/táticos rodam com turmas de 8 a 20; workshops e imersões executivas (C-level / diretoria) costumam aceitar turmas reduzidas de 4 a 8. Para refletir esse padrão na Buy Group Academy:
+**Dados de credibilidade**
+- Os valores divergentes (R$ 2.1Bi+ e 200+ engajamentos) **não existem mais no código** — foi feita varredura completa. Os únicos números públicos hoje são `R$ 1,4 bi+` e `23 grandes empresas atendidas` em `src/routes/index.tsx` (linhas 39–40). Nada a fazer aqui além de confirmar.
 
-| Nível do programa | Mínimo de participantes |
-|---|---|
-| Iniciante / Intermediário | **8 participantes** |
-| Avançado (executivo) | **4 participantes** |
+**Tradução "Currently accepting…"**
+- A frase em inglês **não está presente** no código atual (varredura em todas as rotas). Nada a alterar. Se aparecer em algum lugar não óbvio que você esteja vendo na preview, me indique a página.
 
-Aplicação:
-- Card de curso: substituir o texto fixo "A partir de 8 participantes" por valor derivado do `level` (`>= Avançado` → 4, demais → 8).
-- Nota explícita abaixo da intro do catálogo: "Programas executivos (nível Avançado) a partir de 4 participantes. Demais programas, mínimo de 8."
-- Formulário de solicitação (#solicitar): adicionar microcopy "Turmas a partir de 4 (executivo) ou 8 participantes, conforme o programa."
+**Badge "Edit with Lovable"**
+- Acionar `publish_settings--set_badge_visibility` com `hide_badge: true`. Requer plano Pro+ — se o plano atual não permitir, a chamada falha e te informo.
 
-Único curso impactado pelo mínimo reduzido hoje: **Compras Estratégicas para Gestores** (Avançado). Outros podem ser promovidos a Avançado no futuro sem mudar a lógica.
+## Prompt 1 — Página /sobre: seção "Quem conduz os engajamentos"
 
-## 3. Revisão de termos em inglês
+Conforme sua resposta, **um único card** (não temos sócio), inserido logo após a grade "Quatro princípios que não negociamos" (após linha 130 do `sobre.tsx`).
 
-Regra: manter siglas técnicas consagradas do mercado de compras (BATNA, ZOPA, TCO, RFI, RFQ, RFP, SLA, P2P, ESG, KPI). Traduzir/substituir produtos e jargões em inglês que têm equivalente claro em português.
+Conteúdo do card:
+- Avatar circular cinza com iniciais **DM** (placeholder, sem foto real).
+- Nome: **Diogo Igor Silva Moraes**
+- Cargo: **Head de Supply Chain**
+- Setores: **Aviação · Construção · Mineração · Hospitalar · Indústria · Agronegócio**
 
-Edições nos `topics` dos cursos:
+Abaixo do card, faixa horizontal com três dados institucionais:
+- **2013** — Ano de fundação
+- **Santos · SP** — Sede
+- **6 setores** — Setores atendidos (derivado da lista de setores do Diogo; se preferir outro número, ajustamos)
 
-- **IA Aplicada à Cadeia de Suprimentos**
-  - "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA" → "Ferramentas de IA aplicadas a compras (assistentes generativos e painéis com IA)"
-- **Compras Estratégicas para Gestores**
-  - "Balanced Scorecard aplicado a compras" → "Painel estratégico de indicadores (BSC) aplicado a compras"
-- **Gestão e Desenvolvimento de Fornecedores**
-  - "Scorecard de avaliação de desempenho" → "Painel de avaliação de desempenho de fornecedores"
-- **Cadeia de Suprimentos 4.0 — Tecnologia e Inovação**
-  - "IoT aplicado à cadeia de suprimentos" → "Internet das Coisas aplicada à cadeia de suprimentos"
-  - "Blockchain para rastreabilidade" → "Tecnologias de registro distribuído para rastreabilidade"
+Layout: card centralizado (largura média), faixa de stats em 3 colunas com bordas finas no tom do site. Sem texto institucional genérico.
 
-Mantidos (siglas consagradas): TCO, BATNA, ZOPA, RFI/RFQ/RFP, P2P, ESG, SLA.
+## Prompt 2 — Renomear "Redução de Custos" → "Onde Atuamos"
 
-## 4. Verificação
+- `src/components/site/Header.tsx` linha 8: label do item do `nav` (rota `/reducao-de-custos` inalterada).
+- `src/components/site/Footer.tsx` linha 49: trocar texto do link "Redução de custos" → "Onde atuamos".
+- Nenhum outro texto da página `/reducao-de-custos` é alterado.
 
-- `/` → header mostra "Academy".
-- `/cursos` → hero "Buy Group Academy", nota de mínimo de participantes visível, card do curso Avançado mostrando "A partir de 4 participantes", demais "A partir de 8".
-- Nenhum termo em inglês acima nos `topics`.
-- Footer com "Academy" linkando para `/cursos`.
-- Sem mudanças em outras rotas.
+## Prompt 3 — Página /bpo-de-compras: sumário de navegação interna
+
+- Inserir uma barra horizontal sticky-discreta logo abaixo do hero e antes da seção "Quando faz sentido", com âncoras para:
+  - Quando faz sentido → `#quando-faz-sentido`
+  - O que operamos → `#o-que-operamos`
+  - Modelos de atuação → `#modelos-de-atuacao`
+  - Modelos comerciais → `#modelos-comerciais`
+  - Para quem é indicado → `#para-quem-e-indicado`
+  - BPO vs. Buy Group → `#bpo-vs-buy-group`
+- Adicionar `id` correspondente em cada `<section>` de destino no `bpo-de-compras.tsx`.
+- Scroll suave via CSS (`scroll-behavior: smooth` já é padrão do projeto; caso contrário, garantir em `html`).
+- Compensar a altura do header sticky com `scroll-margin-top` nas sections.
+- Nenhum conteúdo das seções é alterado.
+
+## Detalhes técnicos
+
+- Arquivos editados: `Header.tsx`, `Footer.tsx`, `contato.tsx`, `sobre.tsx`, `bpo-de-compras.tsx`, `cursos.tsx`, `index.tsx`, `servicos.tsx`, `reducao-de-custos.tsx` (remoção de `WhatsAppFab`).
+- Arquivo removido: `src/components/site/WhatsAppFab.tsx`.
+- Sem mudanças de rota nem de schema/back-end.
+- Após implementar: tirar screenshot das páginas afetadas para QA visual.
