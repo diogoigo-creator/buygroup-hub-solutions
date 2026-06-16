@@ -1,6 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
+import { Check, ChevronDown, ChevronRight } from "lucide-react";
 import { SERVICES, type ServiceSlug } from "@/lib/services";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface BreadcrumbProps {
   currentLabel: string;
@@ -10,54 +18,66 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ currentLabel, currentSlug }: BreadcrumbProps) {
   return (
-    <div className="sticky top-[64px] z-30 border-b border-border/60 bg-secondary/80 backdrop-blur supports-[backdrop-filter]:bg-secondary/60">
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-3 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-10">
+    <div className="sticky top-[64px] z-30 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-6 py-2.5 lg:px-10">
         <nav
           aria-label="Trilha de navegação"
-          className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em]"
+          className="flex min-w-0 items-center gap-1.5 text-[11px] uppercase tracking-[0.18em]"
         >
           <Link
             to="/servicos"
-            className="font-medium text-navy/70 transition-colors hover:text-green"
+            className="shrink-0 font-medium text-muted-foreground transition-colors hover:text-green"
           >
             Serviços
           </Link>
-          <ChevronRight className="h-3 w-3 text-navy/35" aria-hidden />
-          <span aria-current="page" className="text-navy/55">
+          <ChevronRight className="h-3 w-3 shrink-0 text-navy/30" aria-hidden />
+          <span aria-current="page" className="truncate text-navy">
             {currentLabel}
           </span>
         </nav>
 
         {currentSlug ? (
-          <nav
-            aria-label="Trocar de serviço"
-            className="-mx-6 overflow-x-auto px-6 lg:mx-0 lg:px-0"
-          >
-            <ul className="flex min-w-max items-center gap-1.5 lg:justify-end">
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              aria-label="Trocar de serviço"
+              className="group inline-flex shrink-0 items-center gap-1.5 rounded-full border border-navy/15 bg-white/70 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy transition-colors hover:border-green hover:text-green focus:outline-none focus-visible:border-green data-[state=open]:border-green data-[state=open]:text-green"
+            >
+              <span className="hidden sm:inline">Trocar serviço</span>
+              <span className="sm:hidden">Serviços</span>
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-data-[state=open]:rotate-180" aria-hidden />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              sideOffset={8}
+              className="w-72 rounded-xl border-border bg-white p-1.5 shadow-[var(--shadow-soft)]"
+            >
+              <DropdownMenuLabel className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Portfólio de serviços
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator className="my-1" />
               {SERVICES.map((s) => {
                 const active = s.slug === currentSlug;
                 return (
-                  <li key={s.slug} className="snap-start">
-                    {active ? (
-                      <span
-                        aria-current="page"
-                        className="inline-flex items-center rounded-full bg-green/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-navy"
-                      >
-                        {s.label}
-                      </span>
-                    ) : (
-                      <Link
-                        to={s.to}
-                        className="inline-flex items-center rounded-full border border-transparent px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-navy/60 transition-colors hover:border-navy/15 hover:bg-white hover:text-navy"
-                      >
-                        {s.label}
-                      </Link>
-                    )}
-                  </li>
+                  <DropdownMenuItem key={s.slug} asChild className="rounded-lg p-0 focus:bg-transparent">
+                    <Link
+                      to={s.to}
+                      className={
+                        active
+                          ? "flex w-full items-center justify-between gap-3 rounded-lg bg-green/10 px-2.5 py-2 text-sm font-medium text-navy"
+                          : "flex w-full items-center justify-between gap-3 rounded-lg px-2.5 py-2 text-sm font-medium text-navy transition-colors hover:bg-secondary"
+                      }
+                      aria-current={active ? "page" : undefined}
+                    >
+                      <span className="truncate">{s.label}</span>
+                      {active ? (
+                        <Check className="h-4 w-4 shrink-0 text-green" aria-hidden />
+                      ) : null}
+                    </Link>
+                  </DropdownMenuItem>
                 );
               })}
-            </ul>
-          </nav>
+            </DropdownMenuContent>
+          </DropdownMenu>
         ) : null}
       </div>
     </div>
