@@ -31,13 +31,13 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 export const Route = createFileRoute("/cursos")({
   head: () => ({
     meta: [
-      { title: "Cursos para equipes de compras — Buy Group" },
+      { title: "Academy — capacitação para equipes de compras | Buy Group" },
       {
         name: "description",
         content:
-          "Programas sob medida de estratégia de compra, negociação, IA aplicada, ESG e gestão de compras para equipes de grandes empresas.",
+          "Buy Group Academy: programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.",
       },
-      { property: "og:title", content: "Cursos para equipes de compras — Buy Group" },
+      { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
       {
         property: "og:description",
         content:
