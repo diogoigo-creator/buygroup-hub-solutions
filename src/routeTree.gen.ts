@@ -14,6 +14,7 @@ import { Route as SpendIntelligenceRouteImport } from './routes/spend-intelligen
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SecondOpinionComercialRouteImport } from './routes/second-opinion-comercial'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as ProcurementMaturityRouteImport } from './routes/procurement-maturity'
 import { Route as CursosRouteImport } from './routes/cursos'
@@ -45,6 +46,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecondOpinionComercialRoute = SecondOpinionComercialRouteImport.update({
+  id: '/second-opinion-comercial',
+  path: '/second-opinion-comercial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReducaoDeCustosRoute = ReducaoDeCustosRouteImport.update({
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/cursos': typeof CursosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/cursos': typeof CursosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/cursos': typeof CursosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   CursosRoute: typeof CursosRoute
   ProcurementMaturityRoute: typeof ProcurementMaturityRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
+  SecondOpinionComercialRoute: typeof SecondOpinionComercialRoute
   ServicosRoute: typeof ServicosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/servicos'
       fullPath: '/servicos'
       preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/second-opinion-comercial': {
+      id: '/second-opinion-comercial'
+      path: '/second-opinion-comercial'
+      fullPath: '/second-opinion-comercial'
+      preLoaderRoute: typeof SecondOpinionComercialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reducao-de-custos': {
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   CursosRoute: CursosRoute,
   ProcurementMaturityRoute: ProcurementMaturityRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
+  SecondOpinionComercialRoute: SecondOpinionComercialRoute,
   ServicosRoute: ServicosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,

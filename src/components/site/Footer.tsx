@@ -65,6 +65,17 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link
+                to="/second-opinion-comercial"
+                className="inline-flex items-center gap-2 text-white/85 hover:text-green"
+              >
+                Second Opinion Comercial
+                <span className="rounded-full bg-green px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-navy">
+                  Novo
+                </span>
+              </Link>
+            </li>
+            <li>
               <Link to="/reducao-de-custos" className="text-white/85 hover:text-green">
                 Onde atuamos
               </Link>
