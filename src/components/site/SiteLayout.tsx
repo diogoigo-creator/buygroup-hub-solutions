@@ -10,8 +10,11 @@ import { SectionWatermark } from "./SectionWatermark";
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <a href="#conteudo-principal" className="skip-to-main">
+        Ir para o conteúdo principal
+      </a>
       <Header />
-      <main className="relative flex-1 overflow-hidden">
+      <main id="conteudo-principal" className="relative flex-1 overflow-hidden" tabIndex={-1}>
         {/* Decorative watermarks — dark mark visible on light sections, light mark visible on dark sections */}
         <SectionWatermark variant="right" tone="dark" className="top-[40vh]" />
         <SectionWatermark variant="left" tone="dark" className="top-[120vh]" />
@@ -25,6 +28,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     </div>
   );
 }
+
 
 type Identity =
   | { kind: "mark"; intensity?: "default" | "bold" }
