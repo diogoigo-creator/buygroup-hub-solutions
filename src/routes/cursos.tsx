@@ -644,12 +644,14 @@ function RequestSection({
   onCourseChange: (v: string) => void;
 }) {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const courseOptions = [...courses.map((c) => c.title), "Mais de um curso / Programa completo"];
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
     const fd = new FormData(e.currentTarget);
     const required = ["nome", "empresa", "cargo", "email", "telefone"];
     const next: Record<string, string> = {};
@@ -660,8 +662,32 @@ function RequestSection({
     const email = (fd.get("email") as string | null)?.trim() ?? "";
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "E-mail inválido.";
     setErrors(next);
-    if (Object.keys(next).length === 0) setSent(true);
+    if (Object.keys(next).length > 0) return;
+
+    setSubmitting(true);
+    const { supabase } = await import("@/integrations/supabase/client");
+    const { toast } = await import("sonner");
+    const payload = {
+      nome: String(fd.get("nome") ?? "").trim(),
+      empresa: String(fd.get("empresa") ?? "").trim(),
+      cargo: String(fd.get("cargo") ?? "").trim(),
+      email: String(fd.get("email") ?? "").trim(),
+      telefone: String(fd.get("telefone") ?? "").trim(),
+      curso: String(fd.get("curso") ?? "").trim() || null,
+      tamanho: String(fd.get("tamanho") ?? "").trim() || null,
+      formato: String(fd.get("formato") ?? "").trim() || null,
+      mensagem: String(fd.get("mensagem") ?? "").trim() || null,
+    };
+    const { error } = await supabase.from("course_signups").insert(payload);
+    setSubmitting(false);
+    if (error) {
+      console.error("[cursos] insert failed", error);
+      toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
+      return;
+    }
+    setSent(true);
   }
+
 
   return (
     <section id="solicitar" className="scroll-mt-24 bg-navy text-white">
