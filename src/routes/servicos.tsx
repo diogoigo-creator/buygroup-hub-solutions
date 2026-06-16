@@ -167,7 +167,7 @@ function ServicosPage() {
       />
 
       {/* POR ONDE COMEÇAR */}
-      <section className="mx-auto max-w-7xl px-6 pt-20 lg:px-10 lg:pt-24">
+      <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-10 lg:pt-16">
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Por onde começar</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">

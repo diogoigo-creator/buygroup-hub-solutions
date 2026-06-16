@@ -25,6 +25,8 @@ export interface Service {
   isNew?: boolean;
   // Slugs complementares em ordem de prioridade (até 3 serão mostrados em "Outros serviços").
   complementares: ServiceSlug[];
+  // Títulos exatos de cursos existentes em /cursos relacionados a este serviço.
+  cursosRelacionados?: string[];
 }
 
 export const SERVICES: Service[] = [
@@ -39,6 +41,11 @@ export const SERVICES: Service[] = [
       "bpo-de-compras",
       "inteligencia-de-gastos",
     ],
+    cursosRelacionados: [
+      "Estratégia de Compra e Análise de Gastos",
+      "Redução de Custos Indiretos na Prática",
+      "Negociação Avançada com Fornecedores",
+    ],
   },
   {
     slug: "inteligencia-de-gastos",
@@ -51,6 +58,10 @@ export const SERVICES: Service[] = [
       "maturidade-em-compras",
       "gestao-de-fornecedores",
     ],
+    cursosRelacionados: [
+      "Estratégia de Compra e Análise de Gastos",
+      "IA Aplicada à Cadeia de Suprimentos",
+    ],
   },
   {
     slug: "bpo-de-compras",
@@ -62,6 +73,11 @@ export const SERVICES: Service[] = [
       "otimizacao-de-custos",
       "gestao-de-fornecedores",
       "inteligencia-de-gastos",
+    ],
+    cursosRelacionados: [
+      "Gestão de Compras na Prática",
+      "Gestão de Contratos para Compradores",
+      "Negociação Avançada com Fornecedores",
     ],
   },
   {
@@ -76,6 +92,10 @@ export const SERVICES: Service[] = [
       "bpo-de-compras",
       "gestao-de-fornecedores",
     ],
+    cursosRelacionados: [
+      "Negociação Avançada com Fornecedores",
+      "Estratégia de Compra e Análise de Gastos",
+    ],
   },
   {
     slug: "gestao-de-fornecedores",
@@ -88,6 +108,10 @@ export const SERVICES: Service[] = [
       "maturidade-em-compras",
       "inteligencia-de-gastos",
     ],
+    cursosRelacionados: [
+      "Gestão e Desenvolvimento de Fornecedores",
+      "ESG Aplicado a Compras e à Cadeia de Suprimentos",
+    ],
   },
   {
     slug: "maturidade-em-compras",
@@ -99,6 +123,11 @@ export const SERVICES: Service[] = [
       "inteligencia-de-gastos",
       "gestao-de-fornecedores",
       "otimizacao-de-custos",
+    ],
+    cursosRelacionados: [
+      "Compras Estratégicas para Gestores",
+      "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação",
+      "Gestão de Compras na Prática",
     ],
   },
 ];

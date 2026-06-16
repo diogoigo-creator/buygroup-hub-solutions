@@ -103,7 +103,7 @@ const audiences = [
 function SpendIntelligencePage() {
   return (
     <SiteLayout>
-      <Breadcrumb currentLabel="Inteligência de Gastos" />
+      <Breadcrumb currentLabel="Inteligência de Gastos" currentSlug="inteligencia-de-gastos" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
