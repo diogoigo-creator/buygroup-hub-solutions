@@ -218,7 +218,7 @@ const courses: Course[] = [
     topics: [
       "Segmentação e classificação de fornecedores",
       "Homologação e qualificação de novos fornecedores",
-      "Scorecard de avaliação de desempenho",
+      "Painel de avaliação de desempenho de fornecedores",
       "Planos de desenvolvimento e melhoria contínua",
       "Gestão de risco na base fornecedora",
       "Relacionamentos estratégicos e parcerias",
