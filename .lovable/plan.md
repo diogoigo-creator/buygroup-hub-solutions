@@ -26,16 +26,17 @@ Implementar os achados da auditoria em ondas, do mais crítico ao mais baixo. Ca
 8. **Select "Interesse principal"** com `<option value="">Selecione...</option>` + `required`.
 9. **Skip-to-main link** em `__root.tsx`.
 
-### Onda 3 — Médio
+### Onda 3 — Médio ✅
 
-10. Remover "Executive briefing" em inglês do Header.
-11. Adicionar `autocomplete` nos inputs dos forms (name, email, organization, tel).
-12. Title tags consistentes ("{Página} — Buy Group").
-13. Token `--whatsapp` — usar no botão flutuante ou remover.
-14. Placeholder com contraste ≥ 3:1.
-15. Subnav/Breadcrumb nas páginas que faltam (revisão, redução).
-16. Padding intermediário no hero da home.
-17. Unificar família tipográfica (decidir serif OU sans, não mix conflitante).
+10. ✅ "Executive briefing" substituído por "Falar com especialista" no Header (desktop + drawer).
+11. ✅ `autocomplete` (name/email/organization/organization-title/tel/off) nos forms de contato e cursos.
+12. ✅ Title tags normalizadas para "{Página} — Buy Group" (em-dash) em 8 rotas.
+13. ✅ Botão WhatsApp em `revisao-pre-fechamento` agora usa token `--whatsapp` (bg-whatsapp).
+14. ✅ Placeholders elevados de `text-muted-foreground/70` → `text-muted-foreground` e `white/40` → `white/60`.
+15. ✅ Breadcrumb em `reducao-de-custos`. (Sobre permanece sem breadcrumb: parent "Serviços" não se aplica.)
+16. Pendente — padding intermediário no hero da home (impacto baixo, deixado para Onda 4).
+17. ✅ Família tipográfica já unificada (Outfit para `--font-serif` e `--font-sans` em `styles.css`).
+
 
 ### Onda 4 — Baixo
 
