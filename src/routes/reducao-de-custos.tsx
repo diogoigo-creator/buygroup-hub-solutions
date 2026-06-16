@@ -152,7 +152,50 @@ function ReducaoDeCustosPage() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-white p-8 md:flex-row md:items-center md:p-10">
+          {/* Conexão com serviços existentes */}
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            <Link
+              to="/inteligencia-de-gastos"
+              className="group flex flex-col rounded-2xl border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
+            >
+              <p className="text-[11px] uppercase tracking-[0.22em] text-navy/55">1. Mapear</p>
+              <h3 className="mt-3 font-serif text-xl text-navy">Inteligência de Gastos</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Classificação forense de 24 meses de gasto e baseline auditável para enxergar o que é endereçável em cada categoria.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-navy group-hover:text-green">
+                Conhecer <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </Link>
+            <Link
+              to="/otimizacao-de-custos"
+              className="group flex flex-col rounded-2xl border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
+            >
+              <p className="text-[11px] uppercase tracking-[0.22em] text-navy/55">2. Capturar</p>
+              <h3 className="mt-3 font-serif text-xl text-navy">Otimização de Custos</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-navy group-hover:text-green">
+                Conhecer <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </Link>
+            <Link
+              to="/revisao-pre-fechamento"
+              className="group flex flex-col rounded-2xl border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
+            >
+              <p className="text-[11px] uppercase tracking-[0.22em] text-navy/55">3. Validar</p>
+              <h3 className="mt-3 font-serif text-xl text-navy">Revisão Pré-Fechamento</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Revisão independente de propostas já negociadas, com captura de saving residual antes do fechamento.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-navy group-hover:text-green">
+                Conhecer <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-white p-8 md:flex-row md:items-center md:p-10">
             <div>
               <p className="font-serif text-2xl text-navy">
                 Não vê sua categoria?{" "}
@@ -167,7 +210,7 @@ function ReducaoDeCustosPage() {
               to="/contato"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-transform hover:-translate-y-0.5"
             >
-              Solicitar diagnóstico de compras
+              Agendar executive briefing
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

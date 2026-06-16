@@ -383,6 +383,49 @@ function CursosPage() {
             })}
           </div>
 
+          {/* Destaque para alta gestão (usa apenas cursos existentes) */}
+          {filter === "Todos" ? (
+            <div className="mt-10 rounded-2xl border border-navy/15 bg-navy text-white p-6 sm:p-8">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-green">Para gestores e alta gestão</p>
+                  <p className="mt-2 font-serif text-2xl leading-snug">
+                    Programas executivos voltados a líderes de compras, CFOs e diretores.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setFilter("Gestão")}
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-green px-5 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                >
+                  Ver trilha de Gestão
+                </button>
+              </div>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {courses
+                  .filter((c) =>
+                    [
+                      "procurement-estrategico-gestores",
+                      "custos-indiretos",
+                      "negociacao-avancada",
+                      "gestao-contratos",
+                    ].includes(c.id),
+                  )
+                  .map((c) => (
+                    <li key={c.id}>
+                      <button
+                        type="button"
+                        onClick={() => setDetail(c)}
+                        className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-green hover:text-green"
+                      >
+                        {c.title}
+                      </button>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ) : null}
+
           {/* Grid */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((c) => {

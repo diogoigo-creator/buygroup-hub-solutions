@@ -77,12 +77,14 @@ function ContatoPage() {
                 name="interesse"
                 defaultValue={defaultInterest}
                 options={[
-                  "BPO de Compras / Outsourcing",
-                  "Redução de Custos por Performance",
-                  "Compras para Obras e CAPEX",
-                  "Diagnóstico da Área de Compras",
-                  "Educação Executiva para empresas",
-                  "Outro",
+                  "Otimização de Custos",
+                  "BPO de Compras",
+                  "Inteligência de Gastos",
+                  "Revisão Pré-Fechamento",
+                  "Gestão de Fornecedores",
+                  "Maturidade em Compras",
+                  "Academy — capacitação para a equipe",
+                  "Ainda não sei — quero um executive briefing",
                 ]}
               />
               <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
