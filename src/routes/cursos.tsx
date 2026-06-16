@@ -355,7 +355,11 @@ function CursosPage() {
               Cursos disponíveis para sua equipe
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Todos os cursos são adaptados à realidade, setor e nível de maturidade da sua equipe.
+              Todos os programas são adaptados à realidade, setor e nível de maturidade da sua equipe.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              <span className="font-medium text-navy">Tamanho mínimo de turma:</span> programas
+              executivos (nível Avançado) a partir de 4 participantes. Demais programas, mínimo de 8.
             </p>
           </div>
 
