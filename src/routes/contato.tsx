@@ -111,6 +111,7 @@ function ContatoPage() {
               <Select
                 label="Interesse principal"
                 name="interesse"
+                required
                 defaultValue={defaultInterest}
                 options={[
                   "Otimização de Custos",
