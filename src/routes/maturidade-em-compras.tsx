@@ -26,13 +26,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/maturidade-em-compras")({
   head: () => ({
     meta: [
-      { title: "Maturidade em Compras | Buy Group" },
+      { title: "Maturidade em Compras — Buy Group" },
       {
         name: "description",
         content:
           "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.",
       },
-      { property: "og:title", content: "Maturidade em Compras | Buy Group" },
+      { property: "og:title", content: "Maturidade em Compras — Buy Group" },
       {
         property: "og:description",
         content: "Benchmark, gap analysis e plano de evolução de compras com business case.",

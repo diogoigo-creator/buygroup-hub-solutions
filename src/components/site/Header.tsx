@@ -79,7 +79,7 @@ export function Header() {
             to="/contato"
             className="group inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-[13px] font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_14px_30px_-12px_rgba(15,23,42,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
           >
-            Executive briefing
+            Falar com especialista
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -147,7 +147,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-3 flex items-center justify-center gap-1.5 rounded-2xl bg-navy px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)]"
             >
-              Executive briefing
+              Falar com especialista
               <ArrowUpRight className="h-4 w-4" />
             </Link>
             <Link

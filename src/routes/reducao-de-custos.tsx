@@ -15,11 +15,12 @@ import {
   Recycle,
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
 
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => ({
     meta: [
-      { title: "Redução de Custos — Categorias e potencial de economia | Buy Group" },
+      { title: "Redução de Custos — Categorias e potencial de economia — Buy Group" },
       {
         name: "description",
         content:
@@ -128,6 +129,8 @@ function ReducaoDeCustosPage() {
         description="As faixas indicam potenciais observados por categoria. O saving real depende da análise das despesas, dos contratos e dos fornecedores, e o projeto só avança após a validação do caso com o cliente."
         identity={{ kind: "mark", intensity: "bold" }}
       />
+      <Breadcrumb currentLabel="Redução de Custos" />
+
 
       <section className="border-t border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">

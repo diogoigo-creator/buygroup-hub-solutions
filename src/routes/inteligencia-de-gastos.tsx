@@ -24,13 +24,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/inteligencia-de-gastos")({
   head: () => ({
     meta: [
-      { title: "Inteligência de Gastos · Assessment | Buy Group" },
+      { title: "Inteligência de Gastos · Assessment — Buy Group" },
       {
         name: "description",
         content:
           "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
       },
-      { property: "og:title", content: "Inteligência de Gastos | Buy Group" },
+      { property: "og:title", content: "Inteligência de Gastos — Buy Group" },
       {
         property: "og:description",
         content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",

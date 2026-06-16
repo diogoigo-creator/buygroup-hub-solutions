@@ -24,13 +24,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/bpo-de-compras")({
   head: () => ({
     meta: [
-      { title: "BPO de Compras para empresas | Buy Group" },
+      { title: "BPO de Compras para empresas — Buy Group" },
       {
         name: "description",
         content:
           "BPO de Compras com governança, SLA, inteligência de mercado e foco em savings homologados para empresas de médio e grande porte.",
       },
-      { property: "og:title", content: "BPO de Compras com foco em performance | Buy Group" },
+      { property: "og:title", content: "BPO de Compras com foco em performance — Buy Group" },
       {
         property: "og:description",
         content: "Uma célula externa de compras orientada a governança, savings e margem capturada.",

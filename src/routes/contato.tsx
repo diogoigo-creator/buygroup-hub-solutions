@@ -137,7 +137,8 @@ function ContatoPage() {
                   id="mensagem"
                   name="mensagem"
                   rows={5}
-                  className="min-h-32 resize-y rounded-lg border-border bg-white px-4 py-3 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground/70 focus-visible:border-green focus-visible:ring-green/25"
+                  autoComplete="off"
+                  className="min-h-32 resize-y rounded-lg border-border bg-white px-4 py-3 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground focus-visible:border-green focus-visible:ring-green/25"
                   placeholder="Conte brevemente o contexto e o que você espera de um parceiro."
                 />
               </div>
@@ -203,6 +204,14 @@ function ContatoPage() {
   );
 }
 
+const autoCompleteMap: Record<string, string> = {
+  nome: "name",
+  email: "email",
+  empresa: "organization",
+  telefone: "tel",
+  cargo: "organization-title",
+};
+
 function Field({
   label,
   name,
@@ -227,7 +236,8 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="h-12 rounded-lg border-border bg-white px-4 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground/70 focus-visible:border-green focus-visible:ring-green/25"
+        autoComplete={autoCompleteMap[name] ?? "off"}
+        className="h-12 rounded-lg border-border bg-white px-4 text-sm text-navy shadow-none transition-colors placeholder:text-muted-foreground focus-visible:border-green focus-visible:ring-green/25"
       />
     </div>
   );

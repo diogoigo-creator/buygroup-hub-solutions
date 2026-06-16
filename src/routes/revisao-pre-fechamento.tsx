@@ -27,13 +27,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/revisao-pre-fechamento")({
   head: () => ({
     meta: [
-      { title: "Revisão Pré-Fechamento de Propostas | Buy Group" },
+      { title: "Revisão Pré-Fechamento de Propostas — Buy Group" },
       {
         name: "description",
         content:
           "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.",
       },
-      { property: "og:title", content: "Revisão Pré-Fechamento | Buy Group" },
+      { property: "og:title", content: "Revisão Pré-Fechamento — Buy Group" },
       {
         property: "og:description",
         content:
@@ -427,14 +427,14 @@ function SecondOpinionPage() {
               </Button>
               <Button
                 asChild
-                variant="outline"
                 size="lg"
-                className="h-12 rounded-full border-navy/20 bg-transparent px-7 text-navy hover:bg-navy/5"
+                className="h-12 rounded-full bg-whatsapp px-7 text-white hover:bg-whatsapp/90"
               >
                 <a
                   href="https://wa.me/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Falar com a Buy Group pelo WhatsApp"
                 >
                   <MessageSquare className="h-4 w-4" /> Falar pelo WhatsApp
                 </a>
