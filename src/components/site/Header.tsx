@@ -72,11 +72,6 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li>
-              <span className="flex cursor-default items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium text-muted-foreground/60">
-                Cases <span className="text-[8px] uppercase tracking-wider text-green">Em breve</span>
-              </span>
-            </li>
           </ul>
         </nav>
 
