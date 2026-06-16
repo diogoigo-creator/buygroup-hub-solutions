@@ -147,7 +147,7 @@ function CostOptimizationPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "cost-optimization" }}>
-                  Agendar executive briefing <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -197,7 +197,7 @@ function CostOptimizationPage() {
 
       <section
         id="quando-faz-sentido"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -223,7 +223,7 @@ function CostOptimizationPage() {
 
       <section
         id="metodologia"
-        className="scroll-mt-32 border-y border-border bg-secondary/35"
+        className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35"
       >
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
@@ -258,7 +258,7 @@ function CostOptimizationPage() {
 
       <section
         id="incluido"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <div className="max-w-3xl">
           <Eyebrow>Escopo do programa</Eyebrow>
@@ -278,7 +278,7 @@ function CostOptimizationPage() {
 
       <section
         id="para-quem"
-        className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
       >
         <div className="lg:col-span-6">
           <Eyebrow>Perfil de empresa</Eyebrow>
@@ -302,7 +302,7 @@ function CostOptimizationPage() {
 
       <section
         id="modelos"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <Eyebrow>Estrutura de contratação</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -343,7 +343,7 @@ function CostOptimizationPage() {
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
                 <Link to="/contato" search={{ interesse: "cost-optimization" }}>
-                  Agendar executive briefing <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">

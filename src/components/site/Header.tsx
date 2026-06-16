@@ -109,7 +109,7 @@ export function Header() {
         aria-hidden={!open}
       >
         <div
-          className={`fixed inset-x-0 top-[64px] bottom-0 bg-navy/20 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`fixed inset-x-0 top-[var(--header-h)] bottom-0 bg-navy/20 backdrop-blur-sm transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setOpen(false)}

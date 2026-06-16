@@ -125,7 +125,7 @@ function SpendIntelligencePage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "spend-intelligence" }}>
-                  Solicitar assessment <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -173,7 +173,7 @@ function SpendIntelligencePage() {
         </div>
       </nav>
 
-      <section id="problema" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <section id="problema" className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
           <Eyebrow>Problema que resolvemos</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -210,7 +210,7 @@ function SpendIntelligencePage() {
 
       <section
         id="entregaveis"
-        className="scroll-mt-32 border-y border-border bg-secondary/35"
+        className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35"
       >
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
@@ -232,7 +232,7 @@ function SpendIntelligencePage() {
 
       <section
         id="como-funciona"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <Eyebrow>Como funciona</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -259,7 +259,7 @@ function SpendIntelligencePage() {
 
       <section
         id="para-quem"
-        className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
       >
         <div className="lg:col-span-6">
           <Eyebrow>Para quem é indicado</Eyebrow>
@@ -279,7 +279,7 @@ function SpendIntelligencePage() {
         </ul>
       </section>
 
-      <section id="relacao" className="scroll-mt-32 border-y border-border bg-secondary/35">
+      <section id="relacao" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             <div>
@@ -328,7 +328,7 @@ function SpendIntelligencePage() {
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
                 <Link to="/contato" search={{ interesse: "spend-intelligence" }}>
-                  Solicitar assessment <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">

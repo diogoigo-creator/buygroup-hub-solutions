@@ -10,8 +10,11 @@ import { SectionWatermark } from "./SectionWatermark";
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <a href="#conteudo-principal" className="skip-to-main">
+        Ir para o conteúdo principal
+      </a>
       <Header />
-      <main className="relative flex-1 overflow-hidden">
+      <main id="conteudo-principal" className="relative flex-1 overflow-hidden" tabIndex={-1}>
         {/* Decorative watermarks — dark mark visible on light sections, light mark visible on dark sections */}
         <SectionWatermark variant="right" tone="dark" className="top-[40vh]" />
         <SectionWatermark variant="left" tone="dark" className="top-[120vh]" />
@@ -26,6 +29,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
+
 type Identity =
   | { kind: "mark"; intensity?: "default" | "bold" }
   | { kind: "lockup"; caption?: string; slogan?: { primary: string; accent?: string } }
@@ -36,11 +40,13 @@ export function PageHero({
   title,
   description,
   identity = { kind: "mark" },
+  cta,
 }: {
   eyebrow: string;
   title: ReactNode;
   description?: string;
   identity?: Identity;
+  cta?: ReactNode;
 }) {
   return (
     <section className="relative flex overflow-hidden bg-navy text-white lg:min-h-[72svh] lg:items-center">
@@ -64,7 +70,7 @@ export function PageHero({
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/10" />
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-20 lg:px-10 lg:pb-16 lg:pt-14">
         <div className="flex items-center gap-3">
-          <span className="h-px w-10 bg-green" />
+          <span className="h-px w-10 bg-green" aria-hidden="true" />
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/65">{eyebrow}</p>
         </div>
         <h1 className="mt-6 max-w-3xl text-balance font-serif text-4xl leading-[1.05] text-white md:text-6xl lg:text-[3.75rem]">
@@ -73,7 +79,9 @@ export function PageHero({
         {description && (
           <p className="mt-6 max-w-xl text-pretty text-base text-white/70 lg:text-lg">{description}</p>
         )}
+        {cta && <div className="mt-8 flex flex-wrap items-center gap-3">{cta}</div>}
       </div>
     </section>
   );
 }
+

@@ -163,7 +163,7 @@ function SupplierRiskPage() {
 
       <section
         id="quando-faz-sentido"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -188,7 +188,7 @@ function SupplierRiskPage() {
 
       <section
         id="entregaveis"
-        className="scroll-mt-32 border-y border-border bg-secondary/35"
+        className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35"
       >
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
@@ -210,7 +210,7 @@ function SupplierRiskPage() {
 
       <section
         id="como-funciona"
-        className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28"
       >
         <Eyebrow>Como funciona</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
@@ -237,7 +237,7 @@ function SupplierRiskPage() {
 
       <section
         id="para-quem"
-        className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
+        className="scroll-mt-[var(--scroll-anchor)] mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28"
       >
         <div className="lg:col-span-6">
           <Eyebrow>Para quem é indicado</Eyebrow>

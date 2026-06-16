@@ -111,6 +111,7 @@ function ContatoPage() {
               <Select
                 label="Interesse principal"
                 name="interesse"
+                required
                 defaultValue={defaultInterest}
                 options={[
                   "Otimização de Custos",
@@ -232,22 +233,25 @@ function Field({
   );
 }
 
-function Select({ label, name, options, defaultValue }: { label: string; name: string; options: string[]; defaultValue?: string }) {
+function Select({ label, name, options, defaultValue, required }: { label: string; name: string; options: string[]; defaultValue?: string; required?: boolean }) {
   return (
     <div className="grid gap-2">
       <Label htmlFor={name} className="text-sm font-normal text-muted-foreground">
-        {label}
+        {label} {required && <span className="text-green">*</span>}
       </Label>
       <select
         id={name}
         name={name}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue ?? ""}
+        required={required}
         className="h-12 w-full rounded-lg border border-border bg-white px-4 text-sm text-navy outline-none transition-colors focus:border-green focus:ring-1 focus:ring-green/25"
       >
+        <option value="" disabled>Selecione uma opção…</option>
         {options.map((o) => (
-          <option key={o}>{o}</option>
+          <option key={o} value={o}>{o}</option>
         ))}
       </select>
     </div>
   );
 }
+

@@ -71,12 +71,17 @@
 :root {
   --radius: 0.75rem;
 
+  /* Sticky offsets — keep header height + breadcrumb in sync with anchor scroll */
+  --header-h: 64px;
+  --scroll-anchor: 8rem; /* header + breadcrumb + breathing room */
+
   /* Navy & Gold — private-banking palette */
   --navy: oklch(0.21 0.06 264); /* #0F1B3C deep navy */
   --navy-soft: oklch(0.28 0.05 264); /* deeper navy surface */
   --green: oklch(0.75 0.13 86); /* #D4AF37 institutional gold */
   --green-soft: oklch(0.94 0.05 88); /* soft champagne */
   --whatsapp: oklch(0.72 0.19 145);
+
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.21 0.04 256);
@@ -117,12 +122,33 @@
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 7rem;
+    scroll-padding-top: var(--scroll-anchor);
     -webkit-text-size-adjust: 100%;
   }
   :target {
-    scroll-margin-top: 7rem;
+    scroll-margin-top: var(--scroll-anchor);
   }
+  /* Accessible skip link */
+  .skip-to-main {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    z-index: 100;
+    transform: translateY(-150%);
+    background: var(--navy);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+  .skip-to-main:focus {
+    transform: translateY(0);
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);

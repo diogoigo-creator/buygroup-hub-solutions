@@ -156,7 +156,7 @@ function SecondOpinionPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "second-opinion" }}>
-                  Solicitar revisão de proposta <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -203,7 +203,7 @@ function SecondOpinionPage() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section id="como-funciona" className="scroll-mt-24 border-y border-border bg-secondary/35">
+      <section id="como-funciona" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Fluxo</Eyebrow>
@@ -422,7 +422,7 @@ function SecondOpinionPage() {
             <div className="flex flex-col items-start gap-3 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
                 <Link to="/contato" search={{ interesse: "second-opinion" }}>
-                  Solicitar revisão agora <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button

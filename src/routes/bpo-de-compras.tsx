@@ -120,7 +120,7 @@ function BpoDeComprasPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "bpo" }}>
-                  Agendar conversa sobre BPO de Compras <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -166,7 +166,7 @@ function BpoDeComprasPage() {
         </div>
       </nav>
 
-      <section id="quando-faz-sentido" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <section id="quando-faz-sentido" className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Eyebrow>Quando faz sentido</Eyebrow>
@@ -190,7 +190,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section id="o-que-operamos" className="scroll-mt-32 border-y border-border bg-secondary/35">
+      <section id="o-que-operamos" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Escopo operacional</Eyebrow>
@@ -233,7 +233,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section id="modelos-de-atuacao" className="scroll-mt-32 mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+      <section id="modelos-de-atuacao" className="scroll-mt-[var(--scroll-anchor)] mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <Eyebrow>Arquitetura da operação</Eyebrow>
         <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">Modelos de atuação</h2>
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -247,7 +247,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section id="modelos-comerciais" className="scroll-mt-32 border-y border-border bg-secondary/35">
+      <section id="modelos-comerciais" className="scroll-mt-[var(--scroll-anchor)] border-y border-border bg-secondary/35">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <Eyebrow>Estrutura de contratação</Eyebrow>
@@ -267,7 +267,7 @@ function BpoDeComprasPage() {
         </div>
       </section>
 
-      <section id="para-quem-e-indicado" className="scroll-mt-32 mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
+      <section id="para-quem-e-indicado" className="scroll-mt-[var(--scroll-anchor)] mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
         <div className="lg:col-span-6">
           <Eyebrow>Perfil de operação</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">Indicado para empresas que precisam de mais capacidade de compras sem aumentar complexidade interna</h2>
@@ -281,7 +281,7 @@ function BpoDeComprasPage() {
         </ul>
       </section>
 
-      <section id="bpo-vs-buy-group" className="scroll-mt-32 bg-navy text-white">
+      <section id="bpo-vs-buy-group" className="scroll-mt-[var(--scroll-anchor)] bg-navy text-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
           <Eyebrow light>BPO tradicional vs. Buy Group</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">Uma operação conectada ao resultado financeiro</h2>
@@ -312,7 +312,7 @@ function BpoDeComprasPage() {
             </div>
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
-                <Link to="/contato" search={{ interesse: "bpo" }}>Agendar conversa sobre BPO de Compras <ArrowUpRight /></Link>
+                <Link to="/contato" search={{ interesse: "bpo" }}>Falar com especialista <ArrowUpRight /></Link>
               </Button>
               <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Conversa sob NDA · Nível diretivo · Diagnóstico inicial</p>
             </div>
