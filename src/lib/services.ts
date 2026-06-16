@@ -25,6 +25,8 @@ export interface Service {
   isNew?: boolean;
   // Slugs complementares em ordem de prioridade (até 3 serão mostrados em "Outros serviços").
   complementares: ServiceSlug[];
+  // Títulos exatos de cursos existentes em /cursos relacionados a este serviço.
+  cursosRelacionados?: string[];
 }
 
 export const SERVICES: Service[] = [
