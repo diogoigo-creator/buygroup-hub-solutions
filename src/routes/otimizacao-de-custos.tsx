@@ -18,26 +18,28 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/otimizacao-de-custos")({
   head: () => ({
     meta: [
-      { title: "Cost Optimization Program · CUT4MORE™ | Buy Group" },
+      { title: "Otimização de Custos · CUT4MORE™ | Buy Group" },
       {
         name: "description",
         content:
           "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.",
       },
-      { property: "og:title", content: "Cost Optimization Program | Buy Group" },
+      { property: "og:title", content: "Otimização de Custos | Buy Group" },
       {
         property: "og:description",
         content:
           "Capturamos economia que sua empresa já deveria ter, com governança e resultado validado.",
       },
-      { property: "og:url", content: "/cost-optimization" },
+      { property: "og:url", content: "/otimizacao-de-custos" },
     ],
-    links: [{ rel: "canonical", href: "/cost-optimization" }],
+    links: [{ rel: "canonical", href: "/otimizacao-de-custos" }],
   }),
   component: CostOptimizationPage,
 });
