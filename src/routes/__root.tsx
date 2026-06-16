@@ -103,9 +103,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": "https://buygroup-hub-solutions.lovable.app/#organization",
           name: "Buy Group",
           legalName: "Buy Group Consultoria",
           url: "https://buygroup-hub-solutions.lovable.app",
+          logo: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg",
           description:
             "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem e governança financeira.",
           slogan: "Mais que comprar. É comprar bem.",
