@@ -479,7 +479,8 @@ function CursosPage() {
               return (
                 <article
                   key={c.id}
-                  className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 hover:border-green/60"
+                  id={`curso-${c.id}`}
+                  className="group card-lift flex flex-col rounded-2xl border border-border bg-white p-6 scroll-mt-32 hover:border-green/60"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span
