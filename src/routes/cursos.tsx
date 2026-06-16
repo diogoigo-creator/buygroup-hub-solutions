@@ -159,7 +159,7 @@ const courses: Course[] = [
     level: "Avançado",
     topics: [
       "Compras como função estratégica do negócio",
-      "Balanced Scorecard aplicado a compras",
+      "Painel estratégico de indicadores (BSC) aplicado a compras",
       "Desenho do modelo de atuação de compras",
       "Gestão de times e desenvolvimento de equipes",
       "Governança, compliance e políticas de compras",
