@@ -81,7 +81,7 @@ const phases = [
 ];
 
 const included = [
-  { icon: Database, title: "Spend Intelligence dos últimos 24 meses" },
+  { icon: Database, title: "Inteligência de Gastos dos últimos 24 meses" },
   { icon: FileSearch, title: "Classificação UNSPSC adaptada" },
   { icon: ClipboardCheck, title: "Baseline oficial auditável" },
   { icon: Target, title: "Estratégia por categoria" },
@@ -123,6 +123,7 @@ const engagementModels = [
 function CostOptimizationPage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="Otimização de Custos" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
@@ -198,7 +199,7 @@ function CostOptimizationPage() {
           <div className="lg:col-span-5">
             <Eyebrow>Quando faz sentido</Eyebrow>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              Quando o Cost Optimization Program faz sentido
+              Quando a Otimização de Custos faz sentido
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
               O programa é desenhado para empresas que sabem — ou desconfiam — que estão deixando
@@ -319,6 +320,8 @@ function CostOptimizationPage() {
           ))}
         </div>
       </section>
+
+      <OutrosServicos currentSlug="otimizacao-de-custos" />
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/45 p-9 md:p-14">

@@ -9,20 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupplierRiskRouteImport } from './routes/supplier-risk'
+import { Route as SpendIntelligenceRouteImport } from './routes/spend-intelligence'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SecondOpinionComercialRouteImport } from './routes/second-opinion-comercial'
 import { Route as RevisaoPreFechamentoRouteImport } from './routes/revisao-pre-fechamento'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
+import { Route as ProcurementMaturityRouteImport } from './routes/procurement-maturity'
 import { Route as OtimizacaoDeCustosRouteImport } from './routes/otimizacao-de-custos'
 import { Route as MaturidadeEmComprasRouteImport } from './routes/maturidade-em-compras'
 import { Route as InteligenciaDeGastosRouteImport } from './routes/inteligencia-de-gastos'
 import { Route as GestaoDeFornecedoresRouteImport } from './routes/gestao-de-fornecedores'
 import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as CostOptimizationRouteImport } from './routes/cost-optimization'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BpoDeComprasRouteImport } from './routes/bpo-de-compras'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SupplierRiskRoute = SupplierRiskRouteImport.update({
+  id: '/supplier-risk',
+  path: '/supplier-risk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpendIntelligenceRoute = SpendIntelligenceRouteImport.update({
+  id: '/spend-intelligence',
+  path: '/spend-intelligence',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -38,6 +53,11 @@ const ServicosRoute = ServicosRouteImport.update({
   path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SecondOpinionComercialRoute = SecondOpinionComercialRouteImport.update({
+  id: '/second-opinion-comercial',
+  path: '/second-opinion-comercial',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RevisaoPreFechamentoRoute = RevisaoPreFechamentoRouteImport.update({
   id: '/revisao-pre-fechamento',
   path: '/revisao-pre-fechamento',
@@ -46,6 +66,11 @@ const RevisaoPreFechamentoRoute = RevisaoPreFechamentoRouteImport.update({
 const ReducaoDeCustosRoute = ReducaoDeCustosRouteImport.update({
   id: '/reducao-de-custos',
   path: '/reducao-de-custos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcurementMaturityRoute = ProcurementMaturityRouteImport.update({
+  id: '/procurement-maturity',
+  path: '/procurement-maturity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OtimizacaoDeCustosRoute = OtimizacaoDeCustosRouteImport.update({
@@ -73,6 +98,11 @@ const CursosRoute = CursosRouteImport.update({
   path: '/cursos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CostOptimizationRoute = CostOptimizationRouteImport.update({
+  id: '/cost-optimization',
+  path: '/cost-optimization',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -93,47 +123,62 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
+  '/second-opinion-comercial': typeof SecondOpinionComercialRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
+  '/supplier-risk': typeof SupplierRiskRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,66 +186,100 @@ export interface FileRouteTypes {
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
     | '/otimizacao-de-custos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
+    | '/supplier-risk'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
     | '/otimizacao-de-custos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
+    | '/supplier-risk'
   id:
     | '__root__'
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
     | '/otimizacao-de-custos'
+    | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
+    | '/second-opinion-comercial'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
+    | '/supplier-risk'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BpoDeComprasRoute: typeof BpoDeComprasRoute
   ContatoRoute: typeof ContatoRoute
+  CostOptimizationRoute: typeof CostOptimizationRoute
   CursosRoute: typeof CursosRoute
   GestaoDeFornecedoresRoute: typeof GestaoDeFornecedoresRoute
   InteligenciaDeGastosRoute: typeof InteligenciaDeGastosRoute
   MaturidadeEmComprasRoute: typeof MaturidadeEmComprasRoute
   OtimizacaoDeCustosRoute: typeof OtimizacaoDeCustosRoute
+  ProcurementMaturityRoute: typeof ProcurementMaturityRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
   RevisaoPreFechamentoRoute: typeof RevisaoPreFechamentoRoute
+  SecondOpinionComercialRoute: typeof SecondOpinionComercialRoute
   ServicosRoute: typeof ServicosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  SpendIntelligenceRoute: typeof SpendIntelligenceRoute
+  SupplierRiskRoute: typeof SupplierRiskRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/supplier-risk': {
+      id: '/supplier-risk'
+      path: '/supplier-risk'
+      fullPath: '/supplier-risk'
+      preLoaderRoute: typeof SupplierRiskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spend-intelligence': {
+      id: '/spend-intelligence'
+      path: '/spend-intelligence'
+      fullPath: '/spend-intelligence'
+      preLoaderRoute: typeof SpendIntelligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -222,6 +301,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/second-opinion-comercial': {
+      id: '/second-opinion-comercial'
+      path: '/second-opinion-comercial'
+      fullPath: '/second-opinion-comercial'
+      preLoaderRoute: typeof SecondOpinionComercialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/revisao-pre-fechamento': {
       id: '/revisao-pre-fechamento'
       path: '/revisao-pre-fechamento'
@@ -234,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/reducao-de-custos'
       fullPath: '/reducao-de-custos'
       preLoaderRoute: typeof ReducaoDeCustosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/procurement-maturity': {
+      id: '/procurement-maturity'
+      path: '/procurement-maturity'
+      fullPath: '/procurement-maturity'
+      preLoaderRoute: typeof ProcurementMaturityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/otimizacao-de-custos': {
@@ -271,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cost-optimization': {
+      id: '/cost-optimization'
+      path: '/cost-optimization'
+      fullPath: '/cost-optimization'
+      preLoaderRoute: typeof CostOptimizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contato': {
       id: '/contato'
       path: '/contato'
@@ -299,16 +399,21 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BpoDeComprasRoute: BpoDeComprasRoute,
   ContatoRoute: ContatoRoute,
+  CostOptimizationRoute: CostOptimizationRoute,
   CursosRoute: CursosRoute,
   GestaoDeFornecedoresRoute: GestaoDeFornecedoresRoute,
   InteligenciaDeGastosRoute: InteligenciaDeGastosRoute,
   MaturidadeEmComprasRoute: MaturidadeEmComprasRoute,
   OtimizacaoDeCustosRoute: OtimizacaoDeCustosRoute,
+  ProcurementMaturityRoute: ProcurementMaturityRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
   RevisaoPreFechamentoRoute: RevisaoPreFechamentoRoute,
+  SecondOpinionComercialRoute: SecondOpinionComercialRoute,
   ServicosRoute: ServicosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  SpendIntelligenceRoute: SpendIntelligenceRoute,
+  SupplierRiskRoute: SupplierRiskRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
