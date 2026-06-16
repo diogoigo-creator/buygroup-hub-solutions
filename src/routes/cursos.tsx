@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { z } from "zod";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
   Dialog,
@@ -28,6 +29,10 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/cursos")({
+  validateSearch: z.object({
+    curso: z.string().optional(),
+    solicitar: z.string().optional(),
+  }),
   head: () => ({
     meta: [
       { title: "Academy — capacitação para equipes de compras | Buy Group" },
