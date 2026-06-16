@@ -198,6 +198,12 @@
   .text-pretty {
     text-wrap: pretty;
   }
+  /* Números tabulares para estatísticas alinhadas */
+  .font-tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+  }
+
 
   /* Premium card hover — subtle lift + shadow */
   .card-lift {

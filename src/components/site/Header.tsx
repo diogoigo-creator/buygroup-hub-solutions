@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/buy-group-logo.png";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 const nav = [
   { to: "/sobre", label: "Sobre" },
@@ -13,6 +14,7 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -27,6 +29,9 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useFocusTrap(drawerRef, open, () => setOpen(false));
+
 
   return (
     <header
@@ -115,6 +120,10 @@ export function Header() {
           onClick={() => setOpen(false)}
         />
         <div
+          ref={drawerRef}
+          role="dialog"
+          aria-modal={open || undefined}
+          aria-label="Menu de navegação"
           className={`absolute inset-x-3 top-full mt-2 origin-top rounded-3xl border border-border/70 bg-white/95 p-3 shadow-[0_24px_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur-2xl transition-all duration-300 ${
             open ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
           }`}

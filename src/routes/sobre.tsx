@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale, Building2, MapPin, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/sobre")({
@@ -63,6 +64,9 @@ function SobrePage() {
         description="A Buy Group apoia grandes empresas na identificação de oportunidades, condução de negociações e validação de resultados com governança financeira."
         identity={{ kind: "lockup", caption: "Consultoria em compras e negociação" }}
       />
+      <Breadcrumb currentLabel="Sobre" parent={{ to: "/", label: "Início" }} />
+
+
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
         <div className="lg:col-span-7">

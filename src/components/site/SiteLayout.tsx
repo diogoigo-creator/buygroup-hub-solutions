@@ -68,7 +68,7 @@ export function PageHero({
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-white/10" />
-      <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-20 lg:px-10 lg:pb-16 lg:pt-14">
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 pt-16 sm:pb-16 sm:pt-20 lg:px-10 lg:pb-16 lg:pt-14">
         <div className="flex items-center gap-3">
           <span className="h-px w-10 bg-green" aria-hidden="true" />
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-white/65">{eyebrow}</p>

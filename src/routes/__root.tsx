@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           contactPoint: {
             "@type": "ContactPoint",
-            contactType: "Executive briefing",
+            contactType: "Atendimento executivo",
             email: "atendimento@buygroup.com.br",
             availableLanguage: ["Portuguese"],
           },

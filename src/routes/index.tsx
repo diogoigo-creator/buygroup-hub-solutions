@@ -149,10 +149,10 @@ function Index() {
           {credibility.map((m, index) => (
             <div
               key={m.label}
-              className="credibility-reveal bg-navy px-6 py-12 lg:px-10"
+              className="credibility-reveal bg-navy px-5 py-9 sm:px-6 sm:py-12 lg:px-10"
               style={{ animationDelay: `${0.18 + index * 0.12}s` }}
             >
-              <p className="credibility-value font-serif text-4xl text-green lg:text-5xl">
+              <p className="credibility-value font-tabular font-serif text-3xl text-green sm:text-4xl lg:text-5xl">
                 {m.value}
               </p>
               <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
