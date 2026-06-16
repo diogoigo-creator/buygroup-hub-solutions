@@ -96,18 +96,18 @@ const audiences = [
 const commercial: { icon: ComponentType<{ className?: string }>; title: string; body: string }[] = [
   {
     icon: CircleDollarSign,
-    title: "Fee sobre saving capturado",
-    body: "Remuneração calculada sobre o delta entre o preço que seu time havia negociado e o preço final após a revisão. Sem saving adicional capturado, sem fee.",
+    title: "50% da economia gerada",
+    body: "Sem taxa fixa, sem upfront, sem mensalidade. A remuneração é 50% sobre o saving adicional capturado pela negociação conduzida pela Buy Group. Sem economia, sem custo para você.",
   },
   {
     icon: Sparkles,
     title: "Saving mínimo para acionamento",
-    body: "O serviço é indicado para propostas onde o saving potencial estimado supera R$ 50.000. Abaixo desse valor, a relação custo-benefício da revisão não se justifica.",
+    body: "Indicado para propostas em que o saving potencial estimado supera R$ 50.000. Abaixo desse valor, a relação custo-benefício da revisão não se justifica.",
   },
   {
     icon: Lock,
     title: "Confidencialidade total",
-    body: "O fornecedor não sabe que a revisão foi feita. Sua equipe recebe o parecer e conduz a rodada final como se fosse própria.",
+    body: "A revisão e a negociação acontecem sob NDA. A Buy Group conduz a rodada final em alinhamento com seu time, sem expor decisões internas.",
   },
 ];
 
