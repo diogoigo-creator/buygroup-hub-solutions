@@ -29,7 +29,16 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   const [sent, setSent] = useState(false);
   const { interesse } = Route.useSearch();
-  const defaultInterest = interesse === "bpo" ? "BPO de Compras / Outsourcing" : undefined;
+  const interestMap: Record<string, string> = {
+    "cost-optimization": "Otimização de Custos",
+    "spend-intelligence": "Inteligência de Gastos",
+    "bpo": "BPO de Compras",
+    "second-opinion": "Revisão Pré-Fechamento",
+    "supplier-risk": "Gestão de Fornecedores",
+    "procurement-maturity": "Maturidade em Compras",
+    "academy": "Academy — capacitação para a equipe",
+  };
+  const defaultInterest = interesse ? interestMap[interesse] : undefined;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
