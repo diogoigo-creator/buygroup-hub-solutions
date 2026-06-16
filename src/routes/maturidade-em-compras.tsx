@@ -37,9 +37,11 @@ export const Route = createFileRoute("/maturidade-em-compras")({
         property: "og:description",
         content: "Benchmark, gap analysis e plano de evolução de compras com business case.",
       },
-      { property: "og:url", content: "/maturidade-em-compras" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/maturidade-em-compras" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras" }],
   }),
   component: ProcurementMaturityPage,
 });

@@ -35,9 +35,11 @@ export const Route = createFileRoute("/bpo-de-compras")({
         property: "og:description",
         content: "Uma célula externa de compras orientada a governança, savings e margem capturada.",
       },
-      { property: "og:url", content: "/bpo-de-compras" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/bpo-de-compras" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/bpo-de-compras" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/bpo-de-compras" }],
   }),
   component: BpoDeComprasPage,
 });

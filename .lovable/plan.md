@@ -1,13 +1,63 @@
-# Remover a lista de serviços acima dos banners
+## Plano de correções UX/UI — ordem de prioridade
 
-A barra fixa logo abaixo do header das páginas de serviço mostra hoje todos os serviços em pílulas (Otimização de Custos, Inteligência de Gastos, BPO de Compras, etc.). Vou remover esse seletor.
+Implementar os achados da auditoria em ondas, do mais crítico ao mais baixo. Cada onda é um commit lógico, verificável antes de seguir adiante.
 
-## Mudança
+### Onda 1 — Crítico (bloqueia publicação)
 
-`src/components/site/Breadcrumb.tsx`
-- Apagar o bloco `{currentSlug ? <nav aria-label="Trocar de serviço"> ... </nav> : null}` que renderiza as pílulas com todos os serviços.
-- Manter apenas a trilha "Serviços › {currentLabel}".
-- Manter a barra sticky abaixo do header (sem alterar comportamento de scroll).
-- A prop `currentSlug` continua aceita (para não quebrar as páginas que já a passam), mas deixa de ser usada.
+1. **Formulário de contato funcional** (`src/routes/contato.tsx`)
+   - Habilitar Lovable Cloud.
+   - Criar tabela `contact_submissions` (name, email, company, interest, message, created_at) com RLS: `INSERT` para `anon`, `SELECT` apenas `service_role`.
+   - Substituir `setSent(true)` por insert via cliente Supabase; manter estado de loading/erro.
+   - Mesma correção em `src/routes/cursos.tsx` (form de inscrição → tabela `course_signups`).
 
-Nada mais é alterado: páginas de serviço, links, âncoras, cursos e contato seguem iguais.
+2. **`og:image` padrão** 
+   - Gerar 1 imagem 1200×630 com a identidade Buy Group (logo + tagline em fundo escuro).
+   - Adicionar `og:image` + `twitter:image` apenas nas rotas-folha (nunca em `__root.tsx`).
+
+3. **Canonicals e `og:url` absolutos**
+   - Trocar `/contato`, `/cursos`, etc. por `https://buygroup-hub-solutions.lovable.app/...` em todas as rotas-folha.
+
+### Onda 2 — Alto
+
+4. **Padronizar CTAs** — definir 2 rótulos canônicos ("Falar com especialista" primário, "Conhecer metodologia" secundário) e aplicar em todas as 6 páginas de serviço + home.
+5. **`PageHero` aceita slot `cta?: ReactNode`** e usar nas 6 páginas de serviço (hoje não usam `PageHero`).
+6. **Footer com colunas de navegação** (Serviços, Empresa, Contato) em `src/components/site/Footer.tsx`.
+7. **Variável CSS `--header-h`** em `styles.css`; consumir em `scroll-mt`, `top-` do breadcrumb sticky e `scroll-padding-top`.
+8. **Select "Interesse principal"** com `<option value="">Selecione...</option>` + `required`.
+9. **Skip-to-main link** em `__root.tsx`.
+
+### Onda 3 — Médio
+
+10. Remover "Executive briefing" em inglês do Header.
+11. Adicionar `autocomplete` nos inputs dos forms (name, email, organization, tel).
+12. Title tags consistentes ("{Página} — Buy Group").
+13. Token `--whatsapp` — usar no botão flutuante ou remover.
+14. Placeholder com contraste ≥ 3:1.
+15. Subnav/Breadcrumb nas páginas que faltam (revisão, redução).
+16. Padding intermediário no hero da home.
+17. Unificar família tipográfica (decidir serif OU sans, não mix conflitante).
+
+### Onda 4 — Baixo
+
+18. `aria-hidden` em ícones decorativos.
+19. `aria-label` em botões ícone-only.
+20. Focus trap no drawer mobile.
+21. Campo telefone opcional no form de contato.
+22. Glossário/tooltip em jargões.
+23. Fontes para stats numéricos.
+24. Breadcrumb em `sobre.tsx` e `reducao-de-custos.tsx`.
+
+### Verificação por onda
+- Build limpo.
+- Onda 1: testar submit do form (insert chega na tabela), inspecionar `<head>` de `/contato`, `/cursos`, `/sobre` no preview.
+- Onda 2: comparar visualmente as 6 páginas de serviço; conferir scroll de âncoras.
+- Ondas 3-4: lint visual + a11y rápido no preview.
+
+### Detalhes técnicos
+- Cloud: tabelas com `GRANT INSERT ON ... TO anon` + `GRANT ALL ... TO service_role`; RLS policy `INSERT WITH CHECK (true)` para captação pública.
+- `og:image` apenas em rotas-folha (regra TanStack: root concatena em todas).
+- `head()` retorna `meta` array (title dentro de `meta`, não top-level).
+- Canonicals em `links` apenas nas folhas.
+
+### Pergunta antes de começar
+Posso habilitar **Lovable Cloud** agora para destravar os forms da Onda 1? (Sem ele, item 1 fica bloqueado e seguimos só com itens 2 e 3 do Crítico.)

@@ -28,6 +28,8 @@ export const Route = createFileRoute("/")({
           "Economia em compras, negociações estratégicas e savings validados com governança financeira.",
       },
       { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/" }],
   }),

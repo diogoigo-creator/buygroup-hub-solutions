@@ -31,9 +31,11 @@ export const Route = createFileRoute("/servicos")({
         content:
           "Cada produto é desenhado para um momento diferente da maturidade de compras. Escolha o ponto de entrada certo.",
       },
-      { property: "og:url", content: "/servicos" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/servicos" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/servicos" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/servicos" }],
   }),
   component: ServicosPage,
 });

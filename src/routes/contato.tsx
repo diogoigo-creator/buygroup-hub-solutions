@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
+import { Mail, MapPin, CheckCircle2, Lock, Loader2 } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+
 
 export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
@@ -19,15 +22,18 @@ export const Route = createFileRoute("/contato")({
       },
       { property: "og:title", content: "Contato Buy Group" },
       { property: "og:description", content: "Solicite um diagnóstico gratuito." },
-      { property: "og:url", content: "/contato" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/contato" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/contato" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/contato" }],
   }),
   component: ContatoPage,
 });
 
 function ContatoPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const { interesse } = Route.useSearch();
   const interestMap: Record<string, string> = {
     "cost-optimization": "Otimização de Custos",
@@ -40,10 +46,31 @@ function ContatoPage() {
   };
   const defaultInterest = interesse ? interestMap[interesse] : undefined;
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      nome: String(fd.get("nome") ?? "").trim(),
+      empresa: String(fd.get("empresa") ?? "").trim(),
+      email: String(fd.get("email") ?? "").trim(),
+      interesse: String(fd.get("interesse") ?? "").trim() || null,
+      volume_compras: String(fd.get("volume_compras") ?? "").trim() || null,
+      compradores_internos: String(fd.get("compradores_internos") ?? "").trim() || null,
+      desafio_compras: String(fd.get("desafio_compras") ?? "").trim() || null,
+      mensagem: String(fd.get("mensagem") ?? "").trim() || null,
+    };
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+    setSubmitting(false);
+    if (error) {
+      console.error("[contato] insert failed", error);
+      toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
+      return;
+    }
     setSent(true);
   }
+
 
   return (
     <SiteLayout>
@@ -117,9 +144,14 @@ function ContatoPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-12 w-full rounded-full px-7 font-semibold tracking-wide shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 sm:w-auto"
+                  disabled={submitting}
+                  className="h-12 w-full rounded-full px-7 font-semibold tracking-wide shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
                 >
-                  Agendar executive briefing
+                  {submitting ? (
+                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando…</>
+                  ) : (
+                    "Agendar executive briefing"
+                  )}
                 </Button>
                 <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">
                   <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0" />

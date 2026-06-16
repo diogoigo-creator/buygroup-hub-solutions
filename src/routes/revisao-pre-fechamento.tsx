@@ -39,9 +39,11 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
         content:
           "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
       },
-      { property: "og:url", content: "/revisao-pre-fechamento" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento" },
+      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
+      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
     ],
-    links: [{ rel: "canonical", href: "/revisao-pre-fechamento" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento" }],
   }),
   component: SecondOpinionPage,
 });
