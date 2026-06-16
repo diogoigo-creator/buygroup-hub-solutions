@@ -17,25 +17,27 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/inteligencia-de-gastos")({
   head: () => ({
     meta: [
-      { title: "Spend Intelligence · Assessment | Buy Group" },
+      { title: "Inteligência de Gastos · Assessment | Buy Group" },
       {
         name: "description",
         content:
           "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
       },
-      { property: "og:title", content: "Spend Intelligence | Buy Group" },
+      { property: "og:title", content: "Inteligência de Gastos | Buy Group" },
       {
         property: "og:description",
         content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",
       },
-      { property: "og:url", content: "/spend-intelligence" },
+      { property: "og:url", content: "/inteligencia-de-gastos" },
     ],
-    links: [{ rel: "canonical", href: "/spend-intelligence" }],
+    links: [{ rel: "canonical", href: "/inteligencia-de-gastos" }],
   }),
   component: SpendIntelligencePage,
 });
@@ -101,6 +103,7 @@ const audiences = [
 function SpendIntelligencePage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="Inteligência de Gastos" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
@@ -178,7 +181,7 @@ function SpendIntelligencePage() {
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           <article className="rounded-2xl border border-border bg-white p-8 lg:p-10">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Sem Spend Intelligence
+              Sem Inteligência de Gastos
             </p>
             <h3 className="mt-4 font-serif text-2xl text-navy">Decisão por percepção</h3>
             <ul className="mt-6 space-y-3 text-sm">
@@ -190,7 +193,7 @@ function SpendIntelligencePage() {
             </ul>
           </article>
           <article className="rounded-2xl border border-green/40 bg-secondary/40 p-8 lg:p-10">
-            <p className="text-xs uppercase tracking-[0.22em] text-green">Com Spend Intelligence</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-green">Com Inteligência de Gastos</p>
             <h3 className="mt-4 font-serif text-2xl text-navy">Decisão por dado auditável</h3>
             <ul className="mt-6 space-y-3 text-sm">
               {withIt.map((item) => (
@@ -280,7 +283,7 @@ function SpendIntelligencePage() {
             <div>
               <Eyebrow>Relação com outros serviços</Eyebrow>
               <p className="mt-5 max-w-3xl font-serif text-2xl leading-snug text-navy md:text-3xl">
-                O Spend Intelligence é o ponto de partida natural para o Cost Optimization Program e
+                A Inteligência de Gastos é o ponto de partida natural para a Otimização de Custos e
                 para o BPO de Compras. Empresas que começam pelo assessment chegam ao projeto de
                 saving com baseline validado, priorizações claras e tempo de execução{" "}
                 <span className="text-green">40% menor</span>.
@@ -288,10 +291,10 @@ function SpendIntelligencePage() {
             </div>
             <div className="flex flex-col gap-3">
               <Link
-                to="/cost-optimization"
+                to="/otimizacao-de-custos"
                 className="inline-flex items-center justify-between gap-4 rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-navy transition-colors hover:border-green hover:text-green"
               >
-                Ver Cost Optimization Program <ArrowUpRight className="h-4 w-4" />
+                Ver Otimização de Custos <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/bpo-de-compras"
@@ -303,6 +306,8 @@ function SpendIntelligencePage() {
           </div>
         </div>
       </section>
+
+      <OutrosServicos currentSlug="inteligencia-de-gastos" />
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/45 p-9 md:p-14">
