@@ -80,8 +80,8 @@ const included: { icon: ComponentType<{ className?: string }>; title: string }[]
   { icon: Target, title: "Recomendação de táticas e argumentos de negociação" },
   { icon: Gauge, title: "Estimativa do piso de aceitação do fornecedor" },
   { icon: ClipboardCheck, title: "Parecer escrito entregue em até 48h" },
-  { icon: MessageSquare, title: "Suporte na rodada final de negociação se necessário" },
-  { icon: BadgeCheck, title: "Registro do delta capturado para validação do fee" },
+  { icon: MessageSquare, title: "Condução da rodada final de negociação pela Buy Group" },
+  { icon: BadgeCheck, title: "Registro do delta capturado para cálculo da divisão 50/50" },
 ];
 
 const audiences = [
