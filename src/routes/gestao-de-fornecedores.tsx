@@ -19,27 +19,54 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
+import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gestao-de-fornecedores")({
-  head: () => ({
-    meta: [
-      { title: "Gestão de Fornecedores — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.",
-      },
-      { property: "og:title", content: "Gestão de Fornecedores — Buy Group" },
-      {
-        property: "og:description",
-        content: "Governança estruturada para fornecedores críticos, sob NDA.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores" }],
-  }),
+  head: () => {
+    const title = "Gestão de Fornecedores — Buy Group";
+    const description =
+      "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.";
+    const url = "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Gestão de Fornecedores — Buy Group" },
+        {
+          property: "og:description",
+          content: "Governança estruturada para fornecedores críticos, sob NDA.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "Gestão de Fornecedores",
+              serviceType: "Supplier risk & relationship management",
+              description,
+              path: "/gestao-de-fornecedores",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "Gestão de Fornecedores", path: "/gestao-de-fornecedores" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: SupplierRiskPage,
 });
 

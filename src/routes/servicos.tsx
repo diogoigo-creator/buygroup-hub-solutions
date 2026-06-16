@@ -15,28 +15,67 @@ import {
   TrendingDown,
 } from "lucide-react";
 import type { ComponentType } from "react";
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/servicos")({
-  head: () => ({
-    meta: [
-      { title: "Portfólio Buy Group — Por onde começar" },
-      {
-        name: "description",
-        content:
-          "Portfólio de produtos da Buy Group: Otimização de Custos, BPO de Compras, Inteligência de Gastos, Academy e serviços complementares.",
-      },
-      { property: "og:title", content: "Portfólio Buy Group" },
-      {
-        property: "og:description",
-        content:
-          "Cada produto é desenhado para um momento diferente da maturidade de compras. Escolha o ponto de entrada certo.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/servicos" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/servicos" }],
-  }),
+  head: () => {
+    const title = "Portfólio Buy Group — Por onde começar";
+    const description =
+      "Portfólio de produtos da Buy Group: Otimização de Custos, BPO de Compras, Inteligência de Gastos, Academy e serviços complementares.";
+    const url = `${SITE_URL}/servicos`;
+    const items: { name: string; path: string }[] = [
+      { name: "Otimização de Custos", path: "/otimizacao-de-custos" },
+      { name: "BPO de Compras", path: "/bpo-de-compras" },
+      { name: "Inteligência de Gastos", path: "/inteligencia-de-gastos" },
+      { name: "Buy Group Academy", path: "/cursos" },
+      { name: "Gestão de Fornecedores", path: "/gestao-de-fornecedores" },
+      { name: "Maturidade em Compras", path: "/maturidade-em-compras" },
+      { name: "Revisão Pré-Fechamento", path: "/revisao-pre-fechamento" },
+    ];
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Portfólio Buy Group" },
+        {
+          property: "og:description",
+          content: "Cada produto é desenhado para um momento diferente da maturidade de compras. Escolha o ponto de entrada certo.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            url,
+            name: title,
+            description,
+            hasPart: items.map((it) => ({
+              "@type": "Service",
+              name: it.name,
+              url: `${SITE_URL}${it.path}`,
+              provider: { "@id": `${SITE_URL}/#organization` },
+            })),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: ServicosPage,
 });
 

@@ -27,32 +27,66 @@ import {
   Lock,
   type LucideIcon,
 } from "lucide-react";
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/cursos")({
   validateSearch: z.object({
     curso: z.string().optional(),
     solicitar: z.string().optional(),
   }),
-  head: () => ({
-    meta: [
-      { title: "Academy — capacitação para equipes de compras — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Buy Group Academy: programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.",
-      },
-      { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
-      {
-        property: "og:description",
-        content:
-          "Capacitação prática para equipes que precisam gerar economia com método e governança.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/cursos" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/cursos" }],
-  }),
+  head: () => {
+    const title = "Buy Group Academy — capacitação para compras";
+    const description =
+      "Programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.";
+    const url = `${SITE_URL}/cursos`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
+        {
+          property: "og:description",
+          content: "Capacitação prática para equipes que precisam gerar economia com método e governança.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Buy Group Academy — cursos in-company",
+            itemListElement: courses.map((c, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Course",
+                name: c.title,
+                description: c.description,
+                provider: { "@id": `${SITE_URL}/#organization` },
+                educationalLevel: c.level,
+                timeRequired: c.hours,
+              },
+            })),
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Academy", path: "/cursos" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: CursosPage,
 });
 

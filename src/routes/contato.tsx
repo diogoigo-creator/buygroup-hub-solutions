@@ -9,25 +9,62 @@ import { Mail, MapPin, CheckCircle2, Lock, Loader2 } from "lucide-react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 
 export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
-  head: () => ({
-    meta: [
-      { title: "Contato — Buy Group" },
-      {
-        name: "description",
-        content: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.",
-      },
-      { property: "og:title", content: "Contato Buy Group" },
-      { property: "og:description", content: "Solicite um diagnóstico gratuito." },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/contato" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/contato" }],
-  }),
+  head: () => {
+    const title = "Contato — Buy Group";
+    const description = "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.";
+    const url = `${SITE_URL}/contato`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Contato Buy Group" },
+        { property: "og:description", content: "Solicite um diagnóstico gratuito." },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url,
+            name: title,
+            description,
+            mainEntity: {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "Buy Group",
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Atendimento executivo",
+                email: "atendimento@buygroup.com.br",
+                availableLanguage: ["Portuguese"],
+                areaServed: "BR",
+              },
+            },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Contato", path: "/contato" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: ContatoPage,
 });
 

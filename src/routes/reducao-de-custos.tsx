@@ -16,27 +16,42 @@ import {
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { SOCIAL_META, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/reducao-de-custos")({
-  head: () => ({
-    meta: [
-      { title: "Redução de Custos — Categorias e potencial de economia — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.",
-      },
-      { property: "og:title", content: "Redução de Custos · Categorias endereçáveis" },
-      {
-        property: "og:description",
-        content: "Onde encontramos economia e como cada categoria pode contribuir para a margem.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/reducao-de-custos" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/reducao-de-custos" }],
-  }),
+  head: () => {
+    const title = "Redução de Custos em Compras — Buy Group";
+    const description =
+      "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.";
+    const url = "https://buygroup-hub-solutions.lovable.app/reducao-de-custos";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Redução de Custos · Categorias endereçáveis" },
+        {
+          property: "og:description",
+          content: "Onde encontramos economia e como cada categoria pode contribuir para a margem.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Redução de Custos", path: "/reducao-de-custos" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: ReducaoDeCustosPage,
 });
 

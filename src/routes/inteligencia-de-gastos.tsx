@@ -20,27 +20,54 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
+import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/inteligencia-de-gastos")({
-  head: () => ({
-    meta: [
-      { title: "Inteligência de Gastos · Assessment — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.",
-      },
-      { property: "og:title", content: "Inteligência de Gastos — Buy Group" },
-      {
-        property: "og:description",
-        content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos" }],
-  }),
+  head: () => {
+    const title = "Inteligência de Gastos · Assessment — Buy Group";
+    const description =
+      "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.";
+    const url = "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Inteligência de Gastos — Buy Group" },
+        {
+          property: "og:description",
+          content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "Inteligência de Gastos",
+              serviceType: "Spend analytics & assessment",
+              description,
+              path: "/inteligencia-de-gastos",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "Inteligência de Gastos", path: "/inteligencia-de-gastos" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: SpendIntelligencePage,
 });
 

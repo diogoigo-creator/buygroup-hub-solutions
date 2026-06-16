@@ -1,50 +1,63 @@
-## Onda 4 — Baixo + ajustes residuais
+## Diagnóstico (rotas públicas)
 
-Conjunto final de refinamentos de acessibilidade, microcópia e consistência tipográfica/espacial. Todos itens de baixo impacto isolado, mas que juntos elevam o padrão.
+Auditei `__root.tsx` + todas as 12 rotas indexáveis (home, sobre, servicos, 7 serviços, cursos, contato) e as 5 rotas em inglês (todas redirect 301 + noindex, OK).
 
-### A. Acessibilidade
+**O que já está correto**
+- Title + description únicos por rota
+- `og:title` / `og:description` / `og:url` / `og:image` por leaf
+- `canonical` por leaf
+- `og:type=website`, `og:site_name`, `og:locale=pt_BR`, `twitter:card=summary_large_image` no root
+- Organization JSON-LD no root
+- Sitemap.xml dinâmico cobrindo as 12 rotas
 
-1. **`aria-hidden` em ícones decorativos** acompanhados de texto: revisar `Footer` (já parcial), `Header` (logo, CTA), cards de serviços, página `sobre.tsx` (ShieldCheck, Award, Lock, Scale, Building2, MapPin, Layers, Quote), `index.tsx` (Sparkles, ArrowUpRight, Lock, TrendingUp etc.). Padrão: ícone Lucide ao lado de label → `aria-hidden="true"`.
+**Lacunas a corrigir**
+1. **`twitter:image` ausente** em quase todas as rotas (só `index.tsx` tem). Twitter não herda `og:image` quando há card.
+2. **Sem JSON-LD por página** — falta Service nos 7 serviços, Course/ItemList em `/cursos`, ContactPage em `/contato`, AboutPage em `/sobre`, WebSite (com SearchAction não — sem busca) ou WebPage no root.
+3. **Sem `BreadcrumbList` JSON-LD** nas rotas internas (já existe breadcrumb visual via `Breadcrumb.tsx`).
+4. **Títulos longos demais (>60 chars)** em:
+   - `cursos.tsx` — "Academy — capacitação para equipes de compras — Buy Group" (62)
+   - `reducao-de-custos.tsx` — "Redução de Custos — Categorias e potencial de economia — Buy Group" (66)
+   - `revisao-pre-fechamento.tsx` — "Revisão Pré-Fechamento de Propostas — Buy Group" (47, OK) ✅
+5. **`og:type` por leaf** — todas herdam "website" do root (correto p/ páginas institucionais), nada a mudar.
+6. **`og:image:alt` ausente** — acessibilidade do preview social.
+7. **Root carrega `og:title`/`og:description` duplicando o da home** — pode permanecer como fallback, sem ação.
 
-2. **`aria-label` em botões/links ícone-only**: o botão WhatsApp em `revisao-pre-fechamento.tsx` já tem; auditar restante (botão de fechar dialog em `cursos`, ícones de social se existirem).
+## Plano de ajustes
 
-3. **Focus trap no drawer mobile** (`Header.tsx`): quando `open=true`, capturar Tab/Shift+Tab dentro do drawer, devolver foco ao botão hamburger ao fechar, e fechar com `Esc`.
+### A. Padronizar metadados por rota (12 arquivos)
+Para cada leaf (`index`, `sobre`, `servicos`, `bpo-de-compras`, `otimizacao-de-custos`, `inteligencia-de-gastos`, `gestao-de-fornecedores`, `maturidade-em-compras`, `revisao-pre-fechamento`, `reducao-de-custos`, `cursos`, `contato`) garantir o conjunto completo:
+- `title` (≤60), `description` (≤160)
+- `og:title`, `og:description`, `og:url`, `og:image`, `og:image:alt`
+- `twitter:title`, `twitter:description`, `twitter:image`
+- `link rel=canonical`
 
-### B. Conteúdo do form
+Encurtar os 2 títulos acima:
+- Cursos → "Buy Group Academy — capacitação para compras" (≈48)
+- Redução de Custos → "Redução de Custos em Compras — Buy Group" (≈42)
 
-4. **Campo "Telefone (opcional)"** em `contato.tsx`: novo `Field` com `type="tel"`, `autoComplete="tel"`, não obrigatório. Adicionar coluna `telefone TEXT` na tabela `contact_submissions` via migration.
+### B. JSON-LD por rota
+Adicionar em `scripts: [{ type: "application/ld+json", children: ... }]`:
 
-5. **Remover "Executive briefing" em inglês** nos eyebrows restantes (otimizacao/bpo/maturidade/gestao/servicos/sobre/contato/index): substituir por "Conversa executiva · 20min" (PT consistente). Botão submit em `contato.tsx` linha 155: "Agendar executive briefing" → "Agendar conversa executiva".
+- **`/` (home)**: `WebSite` (name, url, inLanguage pt-BR) + `ProfessionalService` resumido.
+- **`/sobre`**: `AboutPage` + `Organization` referenciada.
+- **`/servicos`**: `CollectionPage` com `hasPart` listando os 7 serviços.
+- **7 páginas de serviço**: `Service` (`serviceType`, `provider: Organization`, `areaServed: BR`, `name`, `description`, `url`).
+- **`/cursos`**: `ItemList` de `Course` (10 cursos do array `courses`, com `name`, `description`, `provider: Buy Group`).
+- **`/contato`**: `ContactPage` + `ContactPoint` (email + telefone se houver).
+- **Todas as rotas internas (não-home)**: `BreadcrumbList` refletindo a hierarquia já mostrada no breadcrumb visual.
 
-### C. Tipografia e espaçamento
+### C. Sitemap
+Sem mudança estrutural — já cobre as 12 rotas. Apenas confirmar que nenhum redirect (cost-optimization etc.) está listado (já não está).
 
-6. **Stats numéricos** (`index.tsx` credibility, `sobre.tsx`): aplicar `font-feature-settings: "tnum" 1, "lnum" 1` (tabular numbers) via classe utilitária `.font-tabular` em `styles.css`, garantindo alinhamento visual de "R$ 1,4 bi+", "23", "8,7x".
+### D. Robots / preview cache
+Após mudanças, lembrar o usuário que crawlers (LinkedIn/WhatsApp/Twitter) usam cache do preview anterior e precisam ser revalidados nos respectivos debuggers para refletir as novas tags.
 
-7. **Hero de páginas internas** (`PageHero` em `SiteLayout.tsx`): reduzir `pt-20` mobile → `pt-16` para combinar com Breadcrumb sticky e evitar excesso vertical.
+## Verificação
+- `bun run build` (automático)
+- Inspeção de `view-source:` de 3 rotas-amostra (home, um serviço, contato) no preview para confirmar tags e JSON-LD válido.
+- Validar JSON-LD em https://validator.schema.org (manual — apontar para o usuário).
 
-8. **Padding intermediário no hero da home** (item 16 da Onda 3 pendente): seções subsequentes na home — credibility, framework — reduzir `py-20`/`py-24` mobile → `py-14 sm:py-20` para densidade adequada.
-
-9. **`<address>` no Footer mobile**: ajustar `text-sm leading-relaxed` para evitar quebras estranhas em "atendimento@buygroup.com.br" (já é shrink-0 com gap-2.5, ok — mas adicionar `break-words` no link).
-
-### D. Conteúdo complementar
-
-10. **Glossário/tooltip em jargões** (NDA, BPO, RFI/RFQ/RFP, TCO, Kraljic, SLA): criar `src/components/site/Term.tsx` com Tooltip do shadcn que envolve a sigla. Aplicar pontualmente em pontos de primeira menção em `index.tsx`, `bpo-de-compras.tsx`, `cursos.tsx`. Não exagerar — só primeira aparição por página.
-
-11. **Breadcrumb em `sobre.tsx`**: a Breadcrumb atual referencia "Serviços" como parent. Plano: parametrizar `Breadcrumb` para aceitar `parent={{ to, label }}` opcional, default mantendo Serviços. Para `sobre`, usar `parent={{ to: "/", label: "Início" }}`.
-
-### Detalhes técnicos
-- Focus trap: hook `useFocusTrap(ref, active)` em `src/hooks/use-focus-trap.ts`, KeyboardEvent listener para Tab/Shift+Tab + Esc.
-- Coluna `telefone`: migration `ALTER TABLE public.contact_submissions ADD COLUMN telefone TEXT`. RLS/GRANTs herdados.
-- Tooltip: usar `@/components/ui/tooltip` (Radix), wrap em `TooltipProvider` no `__root.tsx` se ainda não estiver.
-- Tabular numbers: `.font-tabular { font-variant-numeric: tabular-nums lining-nums; }` em `@layer utilities`.
-
-### Verificação
-- Mobile (390×844): home, /contato, /sobre, /cursos, /reducao-de-custos, /bpo-de-compras.
-- Drawer: abrir, navegar com Tab, pressionar Esc, conferir foco devolvido.
-- Form contato: enviar com novo campo telefone preenchido e vazio.
-- Lighthouse a11y rápido no preview.
-
-### Fora de escopo (intencional)
-- Refactor visual maior (já abordado nas Ondas 1–3).
-- Mudança de paleta ou tipografia base.
-- Cursos: glossário só na primeira menção; não vamos anotar toda ocorrência.
+## Fora de escopo
+- Não vou trocar o domínio canônico (`buygroup-hub-solutions.lovable.app`) — quando o domínio final for definido, atualizar `BASE_URL`/canonicals em uma passada única.
+- Não vou gerar `og:image` específico por rota (custo de imagegen alto; a imagem genérica atual está OK).
+- Não vou adicionar `hreflang` (site é só pt-BR; rotas em inglês são redirects).
