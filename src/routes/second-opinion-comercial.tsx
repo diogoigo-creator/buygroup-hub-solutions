@@ -410,8 +410,8 @@ function SecondOpinionPage() {
                 Tem uma proposta prestes a ser fechada?
               </h2>
               <p className="mt-5 max-w-2xl text-muted-foreground">
-                Envie para revisão. Retorno em até 48 horas. Fee apenas se houver saving adicional
-                capturado.
+                Envie para revisão. Retorno em até 48 horas. A Buy Group conduz a negociação final
+                e a remuneração é de 50% sobre a economia gerada — sem taxa fixa.
               </p>
             </div>
             <div className="flex flex-col items-start gap-3 lg:items-end">
