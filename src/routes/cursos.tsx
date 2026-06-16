@@ -662,7 +662,7 @@ function RequestSection({
   }
 
   return (
-    <section id="solicitar" className="bg-navy text-white">
+    <section id="solicitar" className="scroll-mt-24 bg-navy text-white">
       <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="text-center">
           <h2 className="font-serif text-4xl text-white md:text-5xl">
