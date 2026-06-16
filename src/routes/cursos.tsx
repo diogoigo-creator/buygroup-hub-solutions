@@ -800,9 +800,10 @@ function RequestSection({
 
               <button
                 type="submit"
-                className="w-full rounded-full bg-green px-6 py-3.5 text-base font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+                disabled={submitting}
+                className="w-full rounded-full bg-green px-6 py-3.5 text-base font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5 disabled:opacity-60"
               >
-                Enviar solicitação
+                {submitting ? "Enviando…" : "Enviar solicitação"}
               </button>
 
               <p className="flex items-center justify-center gap-2 text-xs text-white/55">
