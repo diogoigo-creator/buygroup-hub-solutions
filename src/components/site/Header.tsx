@@ -150,6 +150,13 @@ export function Header() {
               Executive briefing
               <ArrowUpRight className="h-4 w-4" />
             </Link>
+            <Link
+              to="/servicos"
+              onClick={() => setOpen(false)}
+              className="mt-2 flex items-center justify-center gap-1.5 rounded-2xl border border-border/70 px-5 py-3 text-sm font-medium text-navy/80 transition-colors hover:bg-secondary"
+            >
+              Ver todos os serviços
+            </Link>
           </nav>
         </div>
       </div>
