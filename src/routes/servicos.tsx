@@ -8,6 +8,7 @@ import {
   Handshake,
   Rocket,
   RotateCw,
+  ScanSearch,
   ShieldCheck,
   Sparkles,
   Target,
@@ -44,6 +45,7 @@ type EntryRoute =
   | "/cursos"
   | "/supplier-risk"
   | "/procurement-maturity"
+  | "/second-opinion-comercial"
   | "/contato";
 
 const entryProfiles: {
@@ -136,6 +138,15 @@ const portfolio: {
     fit: "Para CPOs e CFOs preparando um plano de evolução de 12 a 24 meses.",
     to: "/procurement-maturity",
   },
+  {
+    badge: "Novo",
+    icon: ScanSearch,
+    title: "Second Opinion Comercial",
+    description:
+      "Revisão independente de propostas já negociadas pelo seu time. Fee apenas sobre saving capturado. Retorno em 48h.",
+    fit: "Para times internos ativos que querem validar propostas relevantes antes do fechamento.",
+    to: "/second-opinion-comercial",
+  },
 ];
 
 function ServicosPage() {
@@ -207,7 +218,13 @@ function ServicosPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy">
                   <s.icon className="h-5 w-5" />
                 </div>
-                <span className="rounded-full bg-secondary px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-navy/70">
+                <span
+                  className={`rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.2em] ${
+                    s.badge === "Novo"
+                      ? "bg-green font-semibold text-navy"
+                      : "bg-secondary text-navy/70"
+                  }`}
+                >
                   {s.badge}
                 </span>
               </div>
