@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, GraduationCap, Rocket } from "lucide-react";
-import { getOutros, SERVICE_BY_SLUG, type ServiceSlug } from "@/lib/services";
+import { getOutros, SERVICE_BY_SLUG, COURSE_ID_BY_TITLE, type ServiceSlug } from "@/lib/services";
 
 interface OutrosServicosProps {
   currentSlug: ServiceSlug;
@@ -53,6 +53,7 @@ export function OutrosServicos({
               </p>
               <Link
                 to={s.to}
+                hash={s.defaultAnchor}
                 className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-navy/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy transition-colors group-hover:border-green group-hover:text-green"
                 aria-label={`Conhecer ${s.label}`}
               >
@@ -88,16 +89,20 @@ export function OutrosServicos({
               </Link>
             </div>
             <ul className="mt-5 flex flex-wrap gap-2">
-              {cursos.map((title) => (
-                <li key={title}>
-                  <Link
-                    to="/cursos"
-                    className="inline-flex items-center rounded-full border border-navy/15 bg-white px-3 py-1.5 text-xs font-medium text-navy transition-colors hover:border-green hover:text-green"
-                  >
-                    {title}
-                  </Link>
-                </li>
-              ))}
+              {cursos.map((title) => {
+                const courseId = COURSE_ID_BY_TITLE[title];
+                return (
+                  <li key={title}>
+                    <Link
+                      to="/cursos"
+                      hash={courseId ? `curso-${courseId}` : undefined}
+                      className="inline-flex items-center rounded-full border border-navy/15 bg-white px-3 py-1.5 text-xs font-medium text-navy transition-colors hover:border-green hover:text-green"
+                    >
+                      {title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ) : null}
@@ -105,6 +110,7 @@ export function OutrosServicos({
         <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
           <Link
             to="/contato"
+            search={SERVICE_BY_SLUG[currentSlug]?.interesseSlug ? { interesse: SERVICE_BY_SLUG[currentSlug].interesseSlug } : undefined}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             <Rocket className="h-4 w-4" />
