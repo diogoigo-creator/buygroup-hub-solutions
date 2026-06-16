@@ -19,7 +19,7 @@ import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => ({
     meta: [
-      { title: "Redução de Custos — Categorias e potencial de economia | Buy Group" },
+      { title: "Redução de Custos — Categorias e potencial de economia — Buy Group" },
       {
         name: "description",
         content:

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/cursos")({
   }),
   head: () => ({
     meta: [
-      { title: "Academy — capacitação para equipes de compras | Buy Group" },
+      { title: "Academy — capacitação para equipes de compras — Buy Group" },
       {
         name: "description",
         content:
@@ -793,8 +793,9 @@ function RequestSection({
                   id="mensagem"
                   name="mensagem"
                   rows={4}
+                  autoComplete="off"
                   placeholder="Conte-nos sobre os desafios da sua equipe ou objetivos do treinamento"
-                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green"
+                  className="mt-2 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/60 outline-none transition focus:border-green"
                 />
               </div>
 
@@ -817,6 +818,14 @@ function RequestSection({
     </section>
   );
 }
+
+const cursosAutoComplete: Record<string, string> = {
+  nome: "name",
+  email: "email",
+  empresa: "organization",
+  cargo: "organization-title",
+  telefone: "tel",
+};
 
 function FormField({
   label,
@@ -844,7 +853,8 @@ function FormField({
         type={type}
         placeholder={placeholder}
         aria-invalid={!!error}
-        className={`mt-2 w-full rounded-lg border bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-green ${
+        autoComplete={cursosAutoComplete[name] ?? "off"}
+        className={`mt-2 w-full rounded-lg border bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/60 outline-none transition focus:border-green ${
           error ? "border-destructive" : "border-white/10"
         }`}
       />

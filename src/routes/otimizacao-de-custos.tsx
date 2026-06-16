@@ -25,13 +25,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/otimizacao-de-custos")({
   head: () => ({
     meta: [
-      { title: "Otimização de Custos · CUT4MORE™ | Buy Group" },
+      { title: "Otimização de Custos · CUT4MORE™ — Buy Group" },
       {
         name: "description",
         content:
           "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.",
       },
-      { property: "og:title", content: "Otimização de Custos | Buy Group" },
+      { property: "og:title", content: "Otimização de Custos — Buy Group" },
       {
         property: "og:description",
         content:

@@ -23,13 +23,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/gestao-de-fornecedores")({
   head: () => ({
     meta: [
-      { title: "Gestão de Fornecedores | Buy Group" },
+      { title: "Gestão de Fornecedores — Buy Group" },
       {
         name: "description",
         content:
           "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.",
       },
-      { property: "og:title", content: "Gestão de Fornecedores | Buy Group" },
+      { property: "og:title", content: "Gestão de Fornecedores — Buy Group" },
       {
         property: "og:description",
         content: "Governança estruturada para fornecedores críticos, sob NDA.",
