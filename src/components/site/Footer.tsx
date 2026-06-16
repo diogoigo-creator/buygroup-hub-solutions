@@ -46,7 +46,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/reducao-de-custos" className="text-white/85 hover:text-green">
-                Redução de custos
+                Onde atuamos
               </Link>
             </li>
             <li>
@@ -78,7 +78,7 @@ export function Footer() {
             </li>
             <li className="inline-flex items-center gap-2.5 text-white/65">
               <MapPin className="h-4 w-4 text-green/80" />
-              Belo Horizonte · Brasil
+              Santos · SP · Brasil
             </li>
           </ul>
           <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/45">
