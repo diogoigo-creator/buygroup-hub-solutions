@@ -321,9 +321,10 @@ function minParticipants(level: Level): number {
 }
 
 function CursosPage() {
+  const { curso, solicitar } = Route.useSearch();
   const [filter, setFilter] = useState<Filter>("Todos");
   const [detail, setDetail] = useState<Course | null>(null);
-  const [requestCourse, setRequestCourse] = useState<string>("");
+  const [requestCourse, setRequestCourse] = useState<string>(curso || solicitar || "");
 
   const visible = useMemo(
     () => (filter === "Todos" ? courses : courses.filter((c) => c.category === filter)),
@@ -337,6 +338,45 @@ function CursosPage() {
       document.getElementById("solicitar")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 50);
   }
+
+  // Reage a hash (#solicitar ou #curso-<id>) e a ?solicitar=<titulo> / ?curso=<titulo>.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash.replace(/^#/, "");
+
+    if (solicitar || hash === "solicitar") {
+      setFilter("Todos");
+      setTimeout(() => {
+        document.getElementById("solicitar")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 60);
+      return;
+    }
+
+    if (hash.startsWith("curso-")) {
+      const id = hash.slice("curso-".length);
+      const target = courses.find((c) => c.id === id);
+      if (target) {
+        setFilter("Todos");
+        setTimeout(() => {
+          document.getElementById(`curso-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setDetail(target);
+        }, 80);
+      }
+      return;
+    }
+
+    if (curso) {
+      const target = courses.find((c) => c.title === curso);
+      if (target) {
+        setFilter("Todos");
+        setTimeout(() => {
+          document.getElementById(`curso-${target.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setDetail(target);
+        }, 80);
+      }
+    }
+    // Roda apenas no mount / quando a query muda.
+  }, [curso, solicitar]);
 
   return (
     <SiteLayout>
