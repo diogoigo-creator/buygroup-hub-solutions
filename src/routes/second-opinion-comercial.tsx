@@ -168,8 +168,8 @@ function SecondOpinionPage() {
               </Button>
             </div>
             <p className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs uppercase tracking-[0.17em] text-white/50">
-              <ShieldCheck className="h-3.5 w-3.5 text-green" /> Sob NDA · Retorno em 48h · Fee
-              sobre saving capturado
+              <ShieldCheck className="h-3.5 w-3.5 text-green" /> Sob NDA · Retorno em 48h · 50% da
+              economia gerada · Negociação pela Buy Group
             </p>
           </div>
         </div>
