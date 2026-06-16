@@ -514,7 +514,7 @@ function CursosPage() {
                   <Clock className="h-4 w-4" /> {detail.hours}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Users className="h-4 w-4" /> A partir de 8 participantes
+                  <Users className="h-4 w-4" /> A partir de {minParticipants(detail.level)} participantes
                 </span>
               </div>
               <div className="mt-4">
