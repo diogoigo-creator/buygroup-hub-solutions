@@ -19,7 +19,7 @@ import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/spend-intelligence")({
+export const Route = createFileRoute("/inteligencia-de-gastos")({
   head: () => ({
     meta: [
       { title: "Spend Intelligence · Assessment | Buy Group" },

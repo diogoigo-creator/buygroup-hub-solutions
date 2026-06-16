@@ -1,0 +1,128 @@
+// Fonte única dos serviços principais da Buy Group.
+// Usado por OutrosServicos, Breadcrumb labels, /servicos, Header e Footer.
+
+export type ServiceSlug =
+  | "otimizacao-de-custos"
+  | "inteligencia-de-gastos"
+  | "bpo-de-compras"
+  | "revisao-pre-fechamento"
+  | "gestao-de-fornecedores"
+  | "maturidade-em-compras";
+
+export type ServiceRoute =
+  | "/otimizacao-de-custos"
+  | "/inteligencia-de-gastos"
+  | "/bpo-de-compras"
+  | "/revisao-pre-fechamento"
+  | "/gestao-de-fornecedores"
+  | "/maturidade-em-compras";
+
+export interface Service {
+  slug: ServiceSlug;
+  to: ServiceRoute;
+  label: string;
+  oneLiner: string;
+  isNew?: boolean;
+  // Slugs complementares em ordem de prioridade (até 3 serão mostrados em "Outros serviços").
+  complementares: ServiceSlug[];
+}
+
+export const SERVICES: Service[] = [
+  {
+    slug: "otimizacao-de-custos",
+    to: "/otimizacao-de-custos",
+    label: "Otimização de Custos",
+    oneLiner:
+      "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados.",
+    complementares: [
+      "revisao-pre-fechamento",
+      "bpo-de-compras",
+      "inteligencia-de-gastos",
+    ],
+  },
+  {
+    slug: "inteligencia-de-gastos",
+    to: "/inteligencia-de-gastos",
+    label: "Inteligência de Gastos",
+    oneLiner:
+      "Classificação forense de 24 meses de gasto, baseline auditável e quick wins em 30 dias.",
+    complementares: [
+      "otimizacao-de-custos",
+      "maturidade-em-compras",
+      "gestao-de-fornecedores",
+    ],
+  },
+  {
+    slug: "bpo-de-compras",
+    to: "/bpo-de-compras",
+    label: "BPO de Compras",
+    oneLiner:
+      "Célula externa de compras orientada a SLA, savings e governança financeira.",
+    complementares: [
+      "otimizacao-de-custos",
+      "gestao-de-fornecedores",
+      "inteligencia-de-gastos",
+    ],
+  },
+  {
+    slug: "revisao-pre-fechamento",
+    to: "/revisao-pre-fechamento",
+    label: "Revisão Pré-Fechamento",
+    oneLiner:
+      "Revisão independente de propostas já negociadas. A Buy Group conduz a rodada final e divide 50/50 o saving capturado.",
+    isNew: true,
+    complementares: [
+      "otimizacao-de-custos",
+      "bpo-de-compras",
+      "gestao-de-fornecedores",
+    ],
+  },
+  {
+    slug: "gestao-de-fornecedores",
+    to: "/gestao-de-fornecedores",
+    label: "Gestão de Fornecedores",
+    oneLiner:
+      "Homologação, segmentação e governança de fornecedores críticos sob a ótica de risco e continuidade.",
+    complementares: [
+      "bpo-de-compras",
+      "maturidade-em-compras",
+      "inteligencia-de-gastos",
+    ],
+  },
+  {
+    slug: "maturidade-em-compras",
+    to: "/maturidade-em-compras",
+    label: "Maturidade em Compras",
+    oneLiner:
+      "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e business case.",
+    complementares: [
+      "inteligencia-de-gastos",
+      "gestao-de-fornecedores",
+      "otimizacao-de-custos",
+    ],
+  },
+];
+
+export const SERVICE_BY_SLUG: Record<ServiceSlug, Service> = SERVICES.reduce(
+  (acc, s) => {
+    acc[s.slug] = s;
+    return acc;
+  },
+  {} as Record<ServiceSlug, Service>,
+);
+
+export function getOutros(currentSlug: ServiceSlug, max = 3): Service[] {
+  const current = SERVICE_BY_SLUG[currentSlug];
+  const ordered = current
+    ? current.complementares
+        .map((s) => SERVICE_BY_SLUG[s])
+        .filter((s): s is Service => Boolean(s) && s.slug !== currentSlug)
+    : [];
+  const fallback = SERVICES.filter((s) => s.slug !== currentSlug);
+  const merged: Service[] = [];
+  for (const s of [...ordered, ...fallback]) {
+    if (!merged.find((m) => m.slug === s.slug)) merged.push(s);
+    if (merged.length >= max) break;
+  }
+  return merged;
+}

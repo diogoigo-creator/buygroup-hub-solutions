@@ -18,7 +18,7 @@ import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/supplier-risk")({
+export const Route = createFileRoute("/gestao-de-fornecedores")({
   head: () => ({
     meta: [
       { title: "Supplier Risk & Governance | Buy Group" },

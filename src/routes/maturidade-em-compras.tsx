@@ -21,7 +21,7 @@ import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/procurement-maturity")({
+export const Route = createFileRoute("/maturidade-em-compras")({
   head: () => ({
     meta: [
       { title: "Procurement Maturity Assessment | Buy Group" },

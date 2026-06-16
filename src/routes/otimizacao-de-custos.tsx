@@ -20,7 +20,7 @@ import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/cost-optimization")({
+export const Route = createFileRoute("/otimizacao-de-custos")({
   head: () => ({
     meta: [
       { title: "Cost Optimization Program · CUT4MORE™ | Buy Group" },

@@ -22,7 +22,7 @@ import type { ComponentType, ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/second-opinion-comercial")({
+export const Route = createFileRoute("/revisao-pre-fechamento")({
   head: () => ({
     meta: [
       { title: "Second Opinion Comercial | Buy Group" },
