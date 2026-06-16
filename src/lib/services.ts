@@ -65,6 +65,8 @@ export const SERVICES: Service[] = [
       "Redução de Custos Indiretos na Prática",
       "Negociação Avançada com Fornecedores",
     ],
+    defaultAnchor: "metodologia",
+    interesseSlug: "cost-optimization",
   },
   {
     slug: "inteligencia-de-gastos",
@@ -81,6 +83,8 @@ export const SERVICES: Service[] = [
       "Estratégia de Compra e Análise de Gastos",
       "IA Aplicada à Cadeia de Suprimentos",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "spend-intelligence",
   },
   {
     slug: "bpo-de-compras",
@@ -98,6 +102,8 @@ export const SERVICES: Service[] = [
       "Gestão de Contratos para Compradores",
       "Negociação Avançada com Fornecedores",
     ],
+    defaultAnchor: "o-que-operamos",
+    interesseSlug: "bpo",
   },
   {
     slug: "revisao-pre-fechamento",
@@ -115,6 +121,8 @@ export const SERVICES: Service[] = [
       "Negociação Avançada com Fornecedores",
       "Estratégia de Compra e Análise de Gastos",
     ],
+    defaultAnchor: "como-funciona",
+    interesseSlug: "second-opinion",
   },
   {
     slug: "gestao-de-fornecedores",
@@ -131,6 +139,8 @@ export const SERVICES: Service[] = [
       "Gestão e Desenvolvimento de Fornecedores",
       "ESG Aplicado a Compras e à Cadeia de Suprimentos",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "supplier-risk",
   },
   {
     slug: "maturidade-em-compras",
@@ -148,6 +158,8 @@ export const SERVICES: Service[] = [
       "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação",
       "Gestão de Compras na Prática",
     ],
+    defaultAnchor: "entregaveis",
+    interesseSlug: "procurement-maturity",
   },
 ];
 
