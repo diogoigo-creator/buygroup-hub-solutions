@@ -23,26 +23,51 @@ import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/otimizacao-de-custos")({
-  head: () => ({
-    meta: [
-      { title: "Otimização de Custos · CUT4MORE™ — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.",
-      },
-      { property: "og:title", content: "Otimização de Custos — Buy Group" },
-      {
-        property: "og:description",
-        content:
-          "Capturamos economia que sua empresa já deveria ter, com governança e resultado validado.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos" }],
-  }),
+  head: () => {
+    const title = "Otimização de Custos · CUT4MORE™ — Buy Group";
+    const description =
+      "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.";
+    const url = "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Otimização de Custos — Buy Group" },
+        {
+          property: "og:description",
+          content: "Capturamos economia que sua empresa já deveria ter, com governança e resultado validado.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "Otimização de Custos (CUT4MORE™)",
+              serviceType: "Cost optimization & strategic sourcing",
+              description,
+              path: "/otimizacao-de-custos",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "Otimização de Custos", path: "/otimizacao-de-custos" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: CostOptimizationPage,
 });
 

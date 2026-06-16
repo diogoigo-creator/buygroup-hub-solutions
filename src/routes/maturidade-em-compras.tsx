@@ -24,25 +24,51 @@ import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/maturidade-em-compras")({
-  head: () => ({
-    meta: [
-      { title: "Maturidade em Compras — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.",
-      },
-      { property: "og:title", content: "Maturidade em Compras — Buy Group" },
-      {
-        property: "og:description",
-        content: "Benchmark, gap analysis e plano de evolução de compras com business case.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras" }],
-  }),
+  head: () => {
+    const title = "Maturidade em Compras — Buy Group";
+    const description =
+      "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.";
+    const url = "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Maturidade em Compras — Buy Group" },
+        {
+          property: "og:description",
+          content: "Benchmark, gap analysis e plano de evolução de compras com business case.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "Diagnóstico de Maturidade em Compras",
+              serviceType: "Procurement maturity assessment",
+              description,
+              path: "/maturidade-em-compras",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "Maturidade em Compras", path: "/maturidade-em-compras" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: ProcurementMaturityPage,
 });
 

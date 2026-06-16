@@ -25,26 +25,55 @@ import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/revisao-pre-fechamento")({
-  head: () => ({
-    meta: [
-      { title: "Revisão Pré-Fechamento de Propostas — Buy Group" },
-      {
-        name: "description",
-        content:
-          "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.",
-      },
-      { property: "og:title", content: "Revisão Pré-Fechamento — Buy Group" },
-      {
-        property: "og:description",
-        content:
-          "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
-      },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento" },
-      { property: "og:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-      { property: "twitter:image", content: "https://buygroup-hub-solutions.lovable.app/og-buygroup.jpg" },
-    ],
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento" }],
-  }),
+  head: () => {
+    const title = "Revisão Pré-Fechamento de Propostas — Buy Group";
+    const description =
+      "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.";
+    const url = "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: "Revisão Pré-Fechamento — Buy Group" },
+        {
+          property: "og:description",
+          content:
+            "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
+        },
+        { property: "og:url", content: url },
+        ...SOCIAL_META,
+        { name: "twitter:title", content: "Revisão Pré-Fechamento — Buy Group" },
+        {
+          name: "twitter:description",
+          content: "Saving residual de propostas já negociadas, sob NDA. Retorno em 48h.",
+        },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            serviceJsonLd({
+              name: "Revisão Pré-Fechamento de Propostas",
+              serviceType: "Independent commercial proposal review",
+              description,
+              path: "/revisao-pre-fechamento",
+            }),
+          ),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Início", path: "/" },
+              { name: "Serviços", path: "/servicos" },
+              { name: "Revisão Pré-Fechamento", path: "/revisao-pre-fechamento" },
+            ]),
+          ),
+        },
+      ],
+    };
+  },
   component: SecondOpinionPage,
 });
 
