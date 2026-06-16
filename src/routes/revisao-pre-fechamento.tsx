@@ -20,28 +20,28 @@ import {
 } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/revisao-pre-fechamento")({
   head: () => ({
     meta: [
-      { title: "Second Opinion Comercial | Buy Group" },
+      { title: "Revisão Pré-Fechamento de Propostas | Buy Group" },
       {
         name: "description",
         content:
           "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.",
       },
-      { property: "og:title", content: "Second Opinion Comercial | Buy Group" },
+      { property: "og:title", content: "Revisão Pré-Fechamento | Buy Group" },
       {
         property: "og:description",
         content:
           "Validação independente pré-fechamento. A Buy Group negocia e extrai o saving residual de propostas já negociadas, sob NDA. Remuneração de 50% sobre a economia gerada.",
       },
-      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/second-opinion-comercial" },
+      { property: "og:url", content: "/revisao-pre-fechamento" },
     ],
-    links: [
-      { rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/second-opinion-comercial" },
-    ],
+    links: [{ rel: "canonical", href: "/revisao-pre-fechamento" }],
   }),
   component: SecondOpinionPage,
 });
@@ -132,6 +132,7 @@ const reasons: { icon: ComponentType<{ className?: string }>; title: string; bod
 function SecondOpinionPage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="Revisão Pré-Fechamento" />
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
@@ -191,7 +192,7 @@ function SecondOpinionPage() {
               resultado é um acordo que parece bom — mas deixa saving na mesa.
             </p>
             <p className="mt-6 border-l-2 border-green pl-6 font-serif text-2xl leading-snug text-navy md:text-3xl">
-              O Second Opinion Comercial coloca um especialista sênior entre a proposta negociada e
+              A Revisão Pré-Fechamento coloca um especialista sênior entre a proposta negociada e
               a assinatura do contrato. Não para refazer o trabalho do seu time — para extrair o que
               ainda é possível capturar.
             </p>
@@ -293,7 +294,7 @@ function SecondOpinionPage() {
                 atuamos como intermediários entre você e o fornecedor sem sua autorização.
               </p>
               <p className="border-l-2 border-green pl-6 font-serif text-xl leading-snug text-navy md:text-2xl">
-                O Second Opinion Comercial é uma camada de inteligência independente — seu time
+                A Revisão Pré-Fechamento é uma camada de inteligência independente — seu time
                 continua no controle da relação com o fornecedor.
               </p>
             </div>
@@ -332,7 +333,7 @@ function SecondOpinionPage() {
         <div className="max-w-3xl">
           <Eyebrow>Por que funciona</Eyebrow>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-            Três razões pelas quais o Second Opinion captura saving residual
+            Três razões pelas quais a Revisão Pré-Fechamento captura saving residual
           </h2>
         </div>
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
@@ -396,6 +397,8 @@ function SecondOpinionPage() {
           </div>
         </div>
       </section>
+
+      <OutrosServicos currentSlug="revisao-pre-fechamento" />
 
       {/* CTA FINAL */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
