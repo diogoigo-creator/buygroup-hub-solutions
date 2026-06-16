@@ -5,7 +5,7 @@ export const Route = createFileRoute("/supplier-risk")({
     throw redirect({ to: "/gestao-de-fornecedores" });
   },
   head: () => ({
-    links: [{ rel: "canonical", href: "/gestao-de-fornecedores" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores" }],
     meta: [{ name: "robots", content: "noindex, follow" }],
   }),
 });

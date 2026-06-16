@@ -17,9 +17,9 @@ export const Route = createFileRoute("/sobre")({
         content:
           "Compras como alavanca de margem, com abordagem independente e governança financeira.",
       },
-      { property: "og:url", content: "/sobre" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/sobre" },
     ],
-    links: [{ rel: "canonical", href: "/sobre" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/sobre" }],
   }),
   component: SobrePage,
 });

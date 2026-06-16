@@ -30,9 +30,9 @@ export const Route = createFileRoute("/reducao-de-custos")({
         property: "og:description",
         content: "Onde encontramos economia e como cada categoria pode contribuir para a margem.",
       },
-      { property: "og:url", content: "/reducao-de-custos" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/reducao-de-custos" },
     ],
-    links: [{ rel: "canonical", href: "/reducao-de-custos" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/reducao-de-custos" }],
   }),
   component: ReducaoDeCustosPage,
 });

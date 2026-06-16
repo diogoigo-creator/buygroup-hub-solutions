@@ -19,9 +19,9 @@ export const Route = createFileRoute("/contato")({
       },
       { property: "og:title", content: "Contato Buy Group" },
       { property: "og:description", content: "Solicite um diagnóstico gratuito." },
-      { property: "og:url", content: "/contato" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/contato" },
     ],
-    links: [{ rel: "canonical", href: "/contato" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/contato" }],
   }),
   component: ContatoPage,
 });

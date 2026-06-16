@@ -35,9 +35,9 @@ export const Route = createFileRoute("/inteligencia-de-gastos")({
         property: "og:description",
         content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",
       },
-      { property: "og:url", content: "/inteligencia-de-gastos" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos" },
     ],
-    links: [{ rel: "canonical", href: "/inteligencia-de-gastos" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos" }],
   }),
   component: SpendIntelligencePage,
 });

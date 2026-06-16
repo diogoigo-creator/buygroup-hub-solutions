@@ -37,9 +37,9 @@ export const Route = createFileRoute("/otimizacao-de-custos")({
         content:
           "Capturamos economia que sua empresa já deveria ter, com governança e resultado validado.",
       },
-      { property: "og:url", content: "/otimizacao-de-custos" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos" },
     ],
-    links: [{ rel: "canonical", href: "/otimizacao-de-custos" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos" }],
   }),
   component: CostOptimizationPage,
 });

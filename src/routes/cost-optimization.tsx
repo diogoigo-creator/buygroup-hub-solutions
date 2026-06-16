@@ -5,7 +5,7 @@ export const Route = createFileRoute("/cost-optimization")({
     throw redirect({ to: "/otimizacao-de-custos" });
   },
   head: () => ({
-    links: [{ rel: "canonical", href: "/otimizacao-de-custos" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos" }],
     meta: [{ name: "robots", content: "noindex, follow" }],
   }),
 });

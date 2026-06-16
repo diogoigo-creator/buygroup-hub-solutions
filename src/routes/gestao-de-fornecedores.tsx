@@ -34,9 +34,9 @@ export const Route = createFileRoute("/gestao-de-fornecedores")({
         property: "og:description",
         content: "Governança estruturada para fornecedores críticos, sob NDA.",
       },
-      { property: "og:url", content: "/gestao-de-fornecedores" },
+      { property: "og:url", content: "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores" },
     ],
-    links: [{ rel: "canonical", href: "/gestao-de-fornecedores" }],
+    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores" }],
   }),
   component: SupplierRiskPage,
 });
