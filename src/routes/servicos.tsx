@@ -15,6 +15,7 @@ import {
   TrendingDown,
 } from "lucide-react";
 import type { ComponentType } from "react";
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/servicos")({
   head: () => {

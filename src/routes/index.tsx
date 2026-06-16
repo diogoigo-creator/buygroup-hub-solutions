@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroImg from "@/assets/hero-boardroom.jpg";
+import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => {
