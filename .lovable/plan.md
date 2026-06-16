@@ -1,60 +1,54 @@
-# Plano — BPO de Compras Buy Group
+## 1. Menu — renomear "Cursos" para "Academy"
 
-## 1. Reorganizar a navegação institucional
-- Atualizar o menu desktop e mobile para: **Início, Redução de Custos, BPO de Compras, Serviços, Cases e Executive Briefing**.
-- Manter **Executive Briefing** como CTA destacado apontando para `/contato`.
-- Remover **Cursos** do menu principal, preservando a rota `/cursos` e seu acesso pelo rodapé.
-- Manter **Sobre** acessível pelo rodapé, sem ocupar o menu principal.
-- Exibir **Cases** como item futuro, sem criar rota ou direcionamento enganoso nesta etapa; aplicar estado não interativo com indicação discreta de “em breve”.
-- Ajustar densidade, espaçamento e comportamento responsivo para acomodar a nova hierarquia sem comprometer o visual premium.
+`src/components/site/Header.tsx`
+- Trocar `{ to: "/cursos", label: "Cursos" }` por `{ to: "/cursos", label: "Academy" }`
+- Rota e arquivo `/cursos` permanecem (evita quebra de links/SEO). Apenas o rótulo muda.
 
-## 2. Criar a página `/bpo-de-compras`
-- Criar uma rota completa, responsiva e com metadados próprios de SEO para BPO de Compras.
-- Construir a hero com:
-  - título, subtítulo e microcopy fornecidos;
-  - CTA principal para `/contato`, levando o contexto de interesse em BPO;
-  - CTA secundário para navegação interna até “Modelos de atuação”;
-  - linguagem visual navy/dourado, tipografia editorial e identidade gráfica já usadas pela Buy Group.
-- Evitar qualquer associação com terceirização barata ou mera alocação de profissionais; apresentar a oferta como **célula externa de compras**, extensão estratégica e orientada a resultado financeiro.
+`src/components/site/Footer.tsx`
+- Atualizar o link de "Cursos" para "Academy" (mesmo destino `/cursos`).
 
-## 3. Estruturar a narrativa comercial da página BPO
-Implementar as seções solicitadas na sequência:
-1. **Quando o BPO de Compras faz sentido** — contexto executivo e oito sinais operacionais.
-2. **O que podemos operar pelo cliente** — oito frentes de serviço em uma grade clara e escaneável.
-3. **BPO com mentalidade de performance** — bloco editorial de diferenciação, com destaque para margem e saving.
-4. **Modelos de atuação** — BPO Operacional, Squad Estratégico e Compras por Projeto/CAPEX.
-5. **Modelos comerciais flexíveis** — fee mensal, fee + success fee e projeto fechado.
-6. **Para quem é indicado** — perfil de empresa e situações de maior aderência.
-7. **BPO tradicional vs. BPO Buy Group** — comparação semântica e responsiva, legível também em telas pequenas.
-8. **CTA executivo final** — mensagem, botão e microcopy exatamente alinhados ao briefing.
+`src/routes/cursos.tsx`
+- Atualizar título da página/hero e meta tags: "Academy — capacitação para equipes de compras (Buy Group)".
+- Trocar a expressão "Educação executiva" do eyebrow por "Buy Group Academy".
 
-## 4. Atualizar a página Serviços
-- Substituir **Gestão de Compras** por **Outsourcing e BPO de Compras**.
-- Aplicar o novo texto e os seis bullets fornecidos.
-- Adicionar o botão **Conhecer BPO de Compras**, apontando para `/bpo-de-compras`, sem alterar o restante do portfólio.
-- Adaptar o card para comportar o CTA sem quebrar a consistência visual da grade.
+## 2. Mínimo de participantes — ajuste por nível
 
-## 5. Atualizar o formulário de contato
-- Substituir as opções de “Interesse principal” pela nova lista estratégica, incluindo BPO, performance, CAPEX, diagnóstico e educação executiva.
-- Adicionar os campos:
-  - volume anual aproximado de compras;
-  - quantidade aproximada de compradores internos;
-  - principal desafio atual em compras.
-- Quando o contato vier da página BPO, pré-selecionar **BPO de Compras / Outsourcing** por parâmetro de busca, mantendo o formulário utilizável em acessos diretos.
-- Preservar a estrutura atual de envio local e a linguagem de confidencialidade, sem adicionar backend não solicitado.
+Pesquisa de mercado (Facio, IBEF, CR Basso, FDC, Insper in-company): programas operacionais/táticos rodam com turmas de 8 a 20; workshops e imersões executivas (C-level / diretoria) costumam aceitar turmas reduzidas de 4 a 8. Para refletir esse padrão na Buy Group Academy:
 
-## 6. Ajustar rodapé e acessos secundários
-- Adicionar **BPO de Compras** à navegação do rodapé.
-- Manter **Cursos para empresas** no rodapé como acesso secundário.
-- Preservar Sobre, Redução de Custos, Serviços e Contato.
+| Nível do programa | Mínimo de participantes |
+|---|---|
+| Iniciante / Intermediário | **8 participantes** |
+| Avançado (executivo) | **4 participantes** |
 
-## 7. Validação
-- Verificar a nova rota, links, âncoras e pré-seleção do formulário.
-- Validar menu, hero, grids, tabela comparativa e formulário em desktop e mobile.
-- Confirmar hierarquia de títulos, metadados, contraste, foco de teclado e ausência de overflow.
+Aplicação:
+- Card de curso: substituir o texto fixo "A partir de 8 participantes" por valor derivado do `level` (`>= Avançado` → 4, demais → 8).
+- Nota explícita abaixo da intro do catálogo: "Programas executivos (nível Avançado) a partir de 4 participantes. Demais programas, mínimo de 8."
+- Formulário de solicitação (#solicitar): adicionar microcopy "Turmas a partir de 4 (executivo) ou 8 participantes, conforme o programa."
 
-## Direção técnica
-- Reutilizar `SiteLayout`, componentes de botão, tokens semânticos e padrões já existentes.
-- Criar a rota antes de adicionar links tipados para ela.
-- Usar dados estruturados em arrays para cards e comparações, mantendo o arquivo organizado.
-- Não criar banco de dados, autenticação ou nova lógica de envio nesta etapa.
+Único curso impactado pelo mínimo reduzido hoje: **Compras Estratégicas para Gestores** (Avançado). Outros podem ser promovidos a Avançado no futuro sem mudar a lógica.
+
+## 3. Revisão de termos em inglês
+
+Regra: manter siglas técnicas consagradas do mercado de compras (BATNA, ZOPA, TCO, RFI, RFQ, RFP, SLA, P2P, ESG, KPI). Traduzir/substituir produtos e jargões em inglês que têm equivalente claro em português.
+
+Edições nos `topics` dos cursos:
+
+- **IA Aplicada à Cadeia de Suprimentos**
+  - "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA" → "Ferramentas de IA aplicadas a compras (assistentes generativos e painéis com IA)"
+- **Compras Estratégicas para Gestores**
+  - "Balanced Scorecard aplicado a compras" → "Painel estratégico de indicadores (BSC) aplicado a compras"
+- **Gestão e Desenvolvimento de Fornecedores**
+  - "Scorecard de avaliação de desempenho" → "Painel de avaliação de desempenho de fornecedores"
+- **Cadeia de Suprimentos 4.0 — Tecnologia e Inovação**
+  - "IoT aplicado à cadeia de suprimentos" → "Internet das Coisas aplicada à cadeia de suprimentos"
+  - "Blockchain para rastreabilidade" → "Tecnologias de registro distribuído para rastreabilidade"
+
+Mantidos (siglas consagradas): TCO, BATNA, ZOPA, RFI/RFQ/RFP, P2P, ESG, SLA.
+
+## 4. Verificação
+
+- `/` → header mostra "Academy".
+- `/cursos` → hero "Buy Group Academy", nota de mínimo de participantes visível, card do curso Avançado mostrando "A partir de 4 participantes", demais "A partir de 8".
+- Nenhum termo em inglês acima nos `topics`.
+- Footer com "Academy" linkando para `/cursos`.
+- Sem mudanças em outras rotas.
