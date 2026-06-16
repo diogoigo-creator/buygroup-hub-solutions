@@ -162,8 +162,7 @@ function ServicosPage() {
         }
         description="Cada produto é desenhado para um momento diferente da maturidade de compras. Alguns clientes começam pelo assessment. Outros chegam com urgência de saving. Outros precisam de operação contínua."
         identity={{
-          kind: "slogan",
-          lines: [[{ text: "É comprar" }, { text: " bem.", accent: true }]],
+          kind: "lockup",
         }}
       />
 
