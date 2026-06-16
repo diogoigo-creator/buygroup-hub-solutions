@@ -332,7 +332,7 @@ function CostOptimizationPage() {
           <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-green/20 blur-3xl" />
           <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Executive briefing</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Conversa executiva</p>
               <h2 className="mt-4 max-w-3xl text-balance font-serif text-4xl text-navy md:text-5xl">
                 Avalie o potencial de saving da sua empresa
               </h2>

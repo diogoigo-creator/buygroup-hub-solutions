@@ -55,6 +55,7 @@ function ContatoPage() {
       nome: String(fd.get("nome") ?? "").trim(),
       empresa: String(fd.get("empresa") ?? "").trim(),
       email: String(fd.get("email") ?? "").trim(),
+      telefone: String(fd.get("telefone") ?? "").trim() || null,
       interesse: String(fd.get("interesse") ?? "").trim() || null,
       volume_compras: String(fd.get("volume_compras") ?? "").trim() || null,
       compradores_internos: String(fd.get("compradores_internos") ?? "").trim() || null,
@@ -75,7 +76,7 @@ function ContatoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Executive briefing · nível diretivo · 20min"
+        eyebrow="Conversa executiva · nível diretivo · 20min"
         title={
           <>
             Agende uma conversa <span className="text-green">executiva sob NDA</span>.
@@ -107,6 +108,7 @@ function ContatoPage() {
                 <Field label="Nome" name="nome" required />
                 <Field label="Empresa" name="empresa" required />
                 <Field label="E-mail corporativo" name="email" type="email" required />
+                <Field label="Telefone (opcional)" name="telefone" type="tel" placeholder="(11) 99999-9999" />
               </div>
               <Select
                 label="Interesse principal"
@@ -121,7 +123,7 @@ function ContatoPage() {
                   "Gestão de Fornecedores",
                   "Maturidade em Compras",
                   "Academy — capacitação para a equipe",
-                  "Ainda não sei — quero um executive briefing",
+                  "Ainda não sei — quero uma conversa executiva",
                 ]}
               />
               <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
@@ -152,7 +154,7 @@ function ContatoPage() {
                   {submitting ? (
                     <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando…</>
                   ) : (
-                    "Agendar executive briefing"
+                    "Agendar conversa executiva"
                   )}
                 </Button>
                 <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">

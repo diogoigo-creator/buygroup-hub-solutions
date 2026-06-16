@@ -149,10 +149,10 @@ function Index() {
           {credibility.map((m, index) => (
             <div
               key={m.label}
-              className="credibility-reveal bg-navy px-6 py-12 lg:px-10"
+              className="credibility-reveal bg-navy px-5 py-9 sm:px-6 sm:py-12 lg:px-10"
               style={{ animationDelay: `${0.18 + index * 0.12}s` }}
             >
-              <p className="credibility-value font-serif text-4xl text-green lg:text-5xl">
+              <p className="credibility-value font-tabular font-serif text-3xl text-green sm:text-4xl lg:text-5xl">
                 {m.value}
               </p>
               <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
@@ -191,7 +191,7 @@ function Index() {
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
-                  <p className="mt-4 font-serif text-4xl text-navy">{c.v}</p>
+                  <p className="mt-4 font-tabular font-serif text-4xl text-navy">{c.v}</p>
                   <p className="mt-2 text-xs text-muted-foreground">{c.s}</p>
                 </div>
               ))}
@@ -215,7 +215,7 @@ function Index() {
       <section className="relative overflow-hidden bg-navy text-white">
         <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">
               Metodologia CUT4MORE™
@@ -234,7 +234,7 @@ function Index() {
           <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
             {framework.map((step) => (
               <li key={step.n} className="bg-navy p-8 lg:p-10">
-                <span className="font-serif text-4xl text-green">{step.n}</span>
+                <span className="font-tabular font-serif text-4xl text-green">{step.n}</span>
                 <p className="mt-6 font-serif text-xl text-white">{step.t}</p>
                 <p className="mt-3 text-sm leading-relaxed text-white/65">{step.d}</p>
               </li>

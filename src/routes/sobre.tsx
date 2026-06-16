@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale, Building2, MapPin, Layers } from "lucide-react";
 
 export const Route = createFileRoute("/sobre")({
@@ -63,6 +64,9 @@ function SobrePage() {
         description="A Buy Group apoia grandes empresas na identificação de oportunidades, condução de negociações e validação de resultados com governança financeira."
         identity={{ kind: "lockup", caption: "Consultoria em compras e negociação" }}
       />
+      <Breadcrumb currentLabel="Sobre" parent={{ to: "/", label: "Início" }} />
+
+
 
       <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
         <div className="lg:col-span-7">
@@ -164,23 +168,23 @@ function SobrePage() {
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
             <div className="flex items-center gap-4 bg-white p-7">
-              <Building2 className="h-6 w-6 text-green" />
+              <Building2 className="h-6 w-6 text-green" aria-hidden="true" />
               <div>
-                <p className="font-serif text-3xl text-navy">2013</p>
+                <p className="font-tabular font-serif text-3xl text-navy">2013</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Ano de fundação</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-white p-7">
-              <MapPin className="h-6 w-6 text-green" />
+              <MapPin className="h-6 w-6 text-green" aria-hidden="true" />
               <div>
                 <p className="font-serif text-3xl text-navy">Belo Horizonte · MG</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Sede</p>
               </div>
             </div>
             <div className="flex items-center gap-4 bg-white p-7">
-              <Layers className="h-6 w-6 text-green" />
+              <Layers className="h-6 w-6 text-green" aria-hidden="true" />
               <div>
-                <p className="font-serif text-3xl text-navy">6 setores</p>
+                <p className="font-tabular font-serif text-3xl text-navy">6 setores</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Setores atendidos</p>
               </div>
             </div>
@@ -193,7 +197,7 @@ function SobrePage() {
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-green">
-                Executive briefing · nível diretivo · 20min
+                Conversa executiva · nível diretivo · 20min
               </p>
               <h3 className="mt-4 font-serif text-3xl md:text-4xl">
                 Uma conversa executiva para avaliar o potencial de economia.

@@ -1,64 +1,50 @@
-## Plano de correções UX/UI — ordem de prioridade
+## Onda 4 — Baixo + ajustes residuais
 
-Implementar os achados da auditoria em ondas, do mais crítico ao mais baixo. Cada onda é um commit lógico, verificável antes de seguir adiante.
+Conjunto final de refinamentos de acessibilidade, microcópia e consistência tipográfica/espacial. Todos itens de baixo impacto isolado, mas que juntos elevam o padrão.
 
-### Onda 1 — Crítico (bloqueia publicação)
+### A. Acessibilidade
 
-1. **Formulário de contato funcional** (`src/routes/contato.tsx`)
-   - Habilitar Lovable Cloud.
-   - Criar tabela `contact_submissions` (name, email, company, interest, message, created_at) com RLS: `INSERT` para `anon`, `SELECT` apenas `service_role`.
-   - Substituir `setSent(true)` por insert via cliente Supabase; manter estado de loading/erro.
-   - Mesma correção em `src/routes/cursos.tsx` (form de inscrição → tabela `course_signups`).
+1. **`aria-hidden` em ícones decorativos** acompanhados de texto: revisar `Footer` (já parcial), `Header` (logo, CTA), cards de serviços, página `sobre.tsx` (ShieldCheck, Award, Lock, Scale, Building2, MapPin, Layers, Quote), `index.tsx` (Sparkles, ArrowUpRight, Lock, TrendingUp etc.). Padrão: ícone Lucide ao lado de label → `aria-hidden="true"`.
 
-2. **`og:image` padrão** 
-   - Gerar 1 imagem 1200×630 com a identidade Buy Group (logo + tagline em fundo escuro).
-   - Adicionar `og:image` + `twitter:image` apenas nas rotas-folha (nunca em `__root.tsx`).
+2. **`aria-label` em botões/links ícone-only**: o botão WhatsApp em `revisao-pre-fechamento.tsx` já tem; auditar restante (botão de fechar dialog em `cursos`, ícones de social se existirem).
 
-3. **Canonicals e `og:url` absolutos**
-   - Trocar `/contato`, `/cursos`, etc. por `https://buygroup-hub-solutions.lovable.app/...` em todas as rotas-folha.
+3. **Focus trap no drawer mobile** (`Header.tsx`): quando `open=true`, capturar Tab/Shift+Tab dentro do drawer, devolver foco ao botão hamburger ao fechar, e fechar com `Esc`.
 
-### Onda 2 — Alto
+### B. Conteúdo do form
 
-4. **Padronizar CTAs** — definir 2 rótulos canônicos ("Falar com especialista" primário, "Conhecer metodologia" secundário) e aplicar em todas as 6 páginas de serviço + home.
-5. **`PageHero` aceita slot `cta?: ReactNode`** e usar nas 6 páginas de serviço (hoje não usam `PageHero`).
-6. **Footer com colunas de navegação** (Serviços, Empresa, Contato) em `src/components/site/Footer.tsx`.
-7. **Variável CSS `--header-h`** em `styles.css`; consumir em `scroll-mt`, `top-` do breadcrumb sticky e `scroll-padding-top`.
-8. **Select "Interesse principal"** com `<option value="">Selecione...</option>` + `required`.
-9. **Skip-to-main link** em `__root.tsx`.
+4. **Campo "Telefone (opcional)"** em `contato.tsx`: novo `Field` com `type="tel"`, `autoComplete="tel"`, não obrigatório. Adicionar coluna `telefone TEXT` na tabela `contact_submissions` via migration.
 
-### Onda 3 — Médio ✅
+5. **Remover "Executive briefing" em inglês** nos eyebrows restantes (otimizacao/bpo/maturidade/gestao/servicos/sobre/contato/index): substituir por "Conversa executiva · 20min" (PT consistente). Botão submit em `contato.tsx` linha 155: "Agendar executive briefing" → "Agendar conversa executiva".
 
-10. ✅ "Executive briefing" substituído por "Falar com especialista" no Header (desktop + drawer).
-11. ✅ `autocomplete` (name/email/organization/organization-title/tel/off) nos forms de contato e cursos.
-12. ✅ Title tags normalizadas para "{Página} — Buy Group" (em-dash) em 8 rotas.
-13. ✅ Botão WhatsApp em `revisao-pre-fechamento` agora usa token `--whatsapp` (bg-whatsapp).
-14. ✅ Placeholders elevados de `text-muted-foreground/70` → `text-muted-foreground` e `white/40` → `white/60`.
-15. ✅ Breadcrumb em `reducao-de-custos`. (Sobre permanece sem breadcrumb: parent "Serviços" não se aplica.)
-16. Pendente — padding intermediário no hero da home (impacto baixo, deixado para Onda 4).
-17. ✅ Família tipográfica já unificada (Outfit para `--font-serif` e `--font-sans` em `styles.css`).
+### C. Tipografia e espaçamento
 
+6. **Stats numéricos** (`index.tsx` credibility, `sobre.tsx`): aplicar `font-feature-settings: "tnum" 1, "lnum" 1` (tabular numbers) via classe utilitária `.font-tabular` em `styles.css`, garantindo alinhamento visual de "R$ 1,4 bi+", "23", "8,7x".
 
-### Onda 4 — Baixo
+7. **Hero de páginas internas** (`PageHero` em `SiteLayout.tsx`): reduzir `pt-20` mobile → `pt-16` para combinar com Breadcrumb sticky e evitar excesso vertical.
 
-18. `aria-hidden` em ícones decorativos.
-19. `aria-label` em botões ícone-only.
-20. Focus trap no drawer mobile.
-21. Campo telefone opcional no form de contato.
-22. Glossário/tooltip em jargões.
-23. Fontes para stats numéricos.
-24. Breadcrumb em `sobre.tsx` e `reducao-de-custos.tsx`.
+8. **Padding intermediário no hero da home** (item 16 da Onda 3 pendente): seções subsequentes na home — credibility, framework — reduzir `py-20`/`py-24` mobile → `py-14 sm:py-20` para densidade adequada.
 
-### Verificação por onda
-- Build limpo.
-- Onda 1: testar submit do form (insert chega na tabela), inspecionar `<head>` de `/contato`, `/cursos`, `/sobre` no preview.
-- Onda 2: comparar visualmente as 6 páginas de serviço; conferir scroll de âncoras.
-- Ondas 3-4: lint visual + a11y rápido no preview.
+9. **`<address>` no Footer mobile**: ajustar `text-sm leading-relaxed` para evitar quebras estranhas em "atendimento@buygroup.com.br" (já é shrink-0 com gap-2.5, ok — mas adicionar `break-words` no link).
+
+### D. Conteúdo complementar
+
+10. **Glossário/tooltip em jargões** (NDA, BPO, RFI/RFQ/RFP, TCO, Kraljic, SLA): criar `src/components/site/Term.tsx` com Tooltip do shadcn que envolve a sigla. Aplicar pontualmente em pontos de primeira menção em `index.tsx`, `bpo-de-compras.tsx`, `cursos.tsx`. Não exagerar — só primeira aparição por página.
+
+11. **Breadcrumb em `sobre.tsx`**: a Breadcrumb atual referencia "Serviços" como parent. Plano: parametrizar `Breadcrumb` para aceitar `parent={{ to, label }}` opcional, default mantendo Serviços. Para `sobre`, usar `parent={{ to: "/", label: "Início" }}`.
 
 ### Detalhes técnicos
-- Cloud: tabelas com `GRANT INSERT ON ... TO anon` + `GRANT ALL ... TO service_role`; RLS policy `INSERT WITH CHECK (true)` para captação pública.
-- `og:image` apenas em rotas-folha (regra TanStack: root concatena em todas).
-- `head()` retorna `meta` array (title dentro de `meta`, não top-level).
-- Canonicals em `links` apenas nas folhas.
+- Focus trap: hook `useFocusTrap(ref, active)` em `src/hooks/use-focus-trap.ts`, KeyboardEvent listener para Tab/Shift+Tab + Esc.
+- Coluna `telefone`: migration `ALTER TABLE public.contact_submissions ADD COLUMN telefone TEXT`. RLS/GRANTs herdados.
+- Tooltip: usar `@/components/ui/tooltip` (Radix), wrap em `TooltipProvider` no `__root.tsx` se ainda não estiver.
+- Tabular numbers: `.font-tabular { font-variant-numeric: tabular-nums lining-nums; }` em `@layer utilities`.
 
-### Pergunta antes de começar
-Posso habilitar **Lovable Cloud** agora para destravar os forms da Onda 1? (Sem ele, item 1 fica bloqueado e seguimos só com itens 2 e 3 do Crítico.)
+### Verificação
+- Mobile (390×844): home, /contato, /sobre, /cursos, /reducao-de-custos, /bpo-de-compras.
+- Drawer: abrir, navegar com Tab, pressionar Esc, conferir foco devolvido.
+- Form contato: enviar com novo campo telefone preenchido e vazio.
+- Lighthouse a11y rápido no preview.
+
+### Fora de escopo (intencional)
+- Refactor visual maior (já abordado nas Ondas 1–3).
+- Mudança de paleta ou tipografia base.
+- Cursos: glossário só na primeira menção; não vamos anotar toda ocorrência.
