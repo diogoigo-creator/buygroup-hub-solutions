@@ -197,7 +197,7 @@ const courses: Course[] = [
     level: "Intermediário",
     topics: [
       "Fundamentos de IA aplicados à cadeia de suprimentos",
-      "Ferramentas disponíveis hoje: ChatGPT, Copilot, Power BI com IA",
+      "Ferramentas de IA aplicadas a compras (assistentes generativos e painéis com IA)",
       "Previsão de demanda na prática",
       "Gestão de fornecedores orientada por dados",
       "Automação de processos de compras",
