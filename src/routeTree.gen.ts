@@ -9,15 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SpendIntelligenceRouteImport } from './routes/spend-intelligence'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as CostOptimizationRouteImport } from './routes/cost-optimization'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BpoDeComprasRouteImport } from './routes/bpo-de-compras'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SpendIntelligenceRoute = SpendIntelligenceRouteImport.update({
+  id: '/spend-intelligence',
+  path: '/spend-intelligence',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -43,6 +50,11 @@ const CursosRoute = CursosRouteImport.update({
   path: '/cursos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CostOptimizationRoute = CostOptimizationRouteImport.update({
+  id: '/cost-optimization',
+  path: '/cost-optimization',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
@@ -63,32 +75,38 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/bpo-de-compras': typeof BpoDeComprasRoute
   '/contato': typeof ContatoRoute
+  '/cost-optimization': typeof CostOptimizationRoute
   '/cursos': typeof CursosRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/servicos': typeof ServicosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/spend-intelligence': typeof SpendIntelligenceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -96,46 +114,61 @@ export interface FileRouteTypes {
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
   id:
     | '__root__'
     | '/'
     | '/bpo-de-compras'
     | '/contato'
+    | '/cost-optimization'
     | '/cursos'
     | '/reducao-de-custos'
     | '/servicos'
     | '/sitemap.xml'
     | '/sobre'
+    | '/spend-intelligence'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BpoDeComprasRoute: typeof BpoDeComprasRoute
   ContatoRoute: typeof ContatoRoute
+  CostOptimizationRoute: typeof CostOptimizationRoute
   CursosRoute: typeof CursosRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
   ServicosRoute: typeof ServicosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  SpendIntelligenceRoute: typeof SpendIntelligenceRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/spend-intelligence': {
+      id: '/spend-intelligence'
+      path: '/spend-intelligence'
+      fullPath: '/spend-intelligence'
+      preLoaderRoute: typeof SpendIntelligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -171,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cost-optimization': {
+      id: '/cost-optimization'
+      path: '/cost-optimization'
+      fullPath: '/cost-optimization'
+      preLoaderRoute: typeof CostOptimizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contato': {
       id: '/contato'
       path: '/contato'
@@ -199,11 +239,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BpoDeComprasRoute: BpoDeComprasRoute,
   ContatoRoute: ContatoRoute,
+  CostOptimizationRoute: CostOptimizationRoute,
   CursosRoute: CursosRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
   ServicosRoute: ServicosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  SpendIntelligenceRoute: SpendIntelligenceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

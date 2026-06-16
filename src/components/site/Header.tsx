@@ -4,11 +4,9 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/buy-group-logo.png";
 
 const nav = [
-  { to: "/", label: "Início" },
-  { to: "/reducao-de-custos", label: "Onde Atuamos" },
-  { to: "/bpo-de-compras", label: "BPO de Compras" },
-  { to: "/servicos", label: "Serviços" },
   { to: "/sobre", label: "Sobre" },
+  { to: "/servicos", label: "Serviços" },
+  { to: "/reducao-de-custos", label: "Onde Atuamos" },
   { to: "/cursos", label: "Academy" },
 ] as const;
 
@@ -55,7 +53,7 @@ export function Header() {
                   to={n.to}
                   className="group relative block rounded-full px-4 py-2 text-[13px] font-medium text-muted-foreground transition-colors duration-300 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
                   activeProps={{ className: "!text-navy" }}
-                  activeOptions={{ exact: n.to === "/" }}
+                  activeOptions={{ exact: false }}
                 >
                   {({ isActive }) => (
                     <>
@@ -136,7 +134,7 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     className="flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-navy"
                     activeProps={{ className: "!text-navy bg-secondary" }}
-                    activeOptions={{ exact: n.to === "/" }}
+                    activeOptions={{ exact: false }}
                   >
                     <span>{n.label}</span>
                     <ArrowUpRight className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100" />
