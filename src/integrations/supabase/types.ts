@@ -14,7 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          compradores_internos: string | null
+          created_at: string
+          desafio_compras: string | null
+          email: string
+          empresa: string
+          id: string
+          interesse: string | null
+          mensagem: string | null
+          nome: string
+          volume_compras: string | null
+        }
+        Insert: {
+          compradores_internos?: string | null
+          created_at?: string
+          desafio_compras?: string | null
+          email: string
+          empresa: string
+          id?: string
+          interesse?: string | null
+          mensagem?: string | null
+          nome: string
+          volume_compras?: string | null
+        }
+        Update: {
+          compradores_internos?: string | null
+          created_at?: string
+          desafio_compras?: string | null
+          email?: string
+          empresa?: string
+          id?: string
+          interesse?: string | null
+          mensagem?: string | null
+          nome?: string
+          volume_compras?: string | null
+        }
+        Relationships: []
+      }
+      course_signups: {
+        Row: {
+          cargo: string
+          created_at: string
+          curso: string | null
+          email: string
+          empresa: string
+          formato: string | null
+          id: string
+          mensagem: string | null
+          nome: string
+          tamanho: string | null
+          telefone: string
+        }
+        Insert: {
+          cargo: string
+          created_at?: string
+          curso?: string | null
+          email: string
+          empresa: string
+          formato?: string | null
+          id?: string
+          mensagem?: string | null
+          nome: string
+          tamanho?: string | null
+          telefone: string
+        }
+        Update: {
+          cargo?: string
+          created_at?: string
+          curso?: string | null
+          email?: string
+          empresa?: string
+          formato?: string | null
+          id?: string
+          mensagem?: string | null
+          nome?: string
+          tamanho?: string | null
+          telefone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
