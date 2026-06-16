@@ -142,10 +142,6 @@ export function Header() {
                   </Link>
                 </li>
               ))}
-              <li className="flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-muted-foreground/60">
-                <span>Cases</span>
-                <span className="text-[9px] uppercase tracking-wider text-green">Em breve</span>
-              </li>
             </ul>
             <Link
               to="/contato"
