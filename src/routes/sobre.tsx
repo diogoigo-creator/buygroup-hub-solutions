@@ -171,7 +171,7 @@ function SobrePage() {
             <div className="flex items-center gap-4 bg-white p-7">
               <MapPin className="h-6 w-6 text-green" />
               <div>
-                <p className="font-serif text-3xl text-navy">Santos · SP</p>
+                <p className="font-serif text-3xl text-navy">Belo Horizonte · MG</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Sede</p>
               </div>
             </div>
