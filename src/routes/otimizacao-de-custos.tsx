@@ -147,7 +147,7 @@ function CostOptimizationPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "cost-optimization" }}>
-                  Agendar executive briefing <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -343,7 +343,7 @@ function CostOptimizationPage() {
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
                 <Link to="/contato" search={{ interesse: "cost-optimization" }}>
-                  Agendar executive briefing <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">

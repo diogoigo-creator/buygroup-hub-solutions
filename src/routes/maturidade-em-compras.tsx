@@ -122,7 +122,7 @@ function ProcurementMaturityPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
                 <Link to="/contato" search={{ interesse: "procurement-maturity" }}>
-                  Solicitar diagnóstico <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <Button
@@ -271,7 +271,7 @@ function ProcurementMaturityPage() {
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
                 <Link to="/contato" search={{ interesse: "procurement-maturity" }}>
-                  Solicitar diagnóstico <ArrowUpRight />
+                  Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">
