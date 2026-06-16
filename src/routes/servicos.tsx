@@ -23,7 +23,7 @@ export const Route = createFileRoute("/servicos")({
       {
         name: "description",
         content:
-          "Portfólio de produtos da Buy Group: Cost Optimization Program, BPO de Compras, Spend Intelligence, Academy e serviços complementares.",
+          "Portfólio de produtos da Buy Group: Otimização de Custos, BPO de Compras, Inteligência de Gastos, Academy e serviços complementares.",
       },
       { property: "og:title", content: "Portfólio Buy Group" },
       {
@@ -39,13 +39,13 @@ export const Route = createFileRoute("/servicos")({
 });
 
 type EntryRoute =
-  | "/spend-intelligence"
-  | "/cost-optimization"
+  | "/inteligencia-de-gastos"
+  | "/otimizacao-de-custos"
   | "/bpo-de-compras"
   | "/cursos"
-  | "/supplier-risk"
-  | "/procurement-maturity"
-  | "/second-opinion-comercial"
+  | "/gestao-de-fornecedores"
+  | "/maturidade-em-compras"
+  | "/revisao-pre-fechamento"
   | "/contato";
 
 const entryProfiles: {
@@ -58,14 +58,14 @@ const entryProfiles: {
   {
     icon: Compass,
     question: "Não sei onde estou perdendo",
-    product: "Spend Intelligence",
-    to: "/spend-intelligence",
+    product: "Inteligência de Gastos",
+    to: "/inteligencia-de-gastos",
   },
   {
     icon: Target,
     question: "Sei onde estou perdendo, preciso executar",
-    product: "Cost Optimization Program",
-    to: "/cost-optimization",
+    product: "Otimização de Custos",
+    to: "/otimizacao-de-custos",
   },
   {
     icon: RotateCw,
@@ -87,11 +87,11 @@ const portfolio: {
   {
     badge: "Produto principal",
     icon: TrendingDown,
-    title: "Cost Optimization Program",
+    title: "Otimização de Custos",
     description:
       "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados.",
     fit: "Para empresas que sabem onde perdem margem e precisam executar com governança.",
-    to: "/cost-optimization",
+    to: "/otimizacao-de-custos",
   },
   {
     badge: "Operação contínua",
@@ -105,11 +105,11 @@ const portfolio: {
   {
     badge: "Ponto de entrada",
     icon: Sparkles,
-    title: "Spend Intelligence",
+    title: "Inteligência de Gastos",
     description:
       "Classificação forense de 24 meses de gasto, baseline auditável e quick wins em 30 dias.",
     fit: "Para empresas que nunca fizeram um mapeamento formal de spend.",
-    to: "/spend-intelligence",
+    to: "/inteligencia-de-gastos",
   },
   {
     badge: "Capacitação",
@@ -123,29 +123,29 @@ const portfolio: {
   {
     badge: "Complementar",
     icon: ShieldCheck,
-    title: "Supplier Risk & Governance",
+    title: "Gestão de Fornecedores",
     description:
       "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco e continuidade.",
     fit: "Para empresas com base de fornecedores estratégica e risco operacional relevante.",
-    to: "/supplier-risk",
+    to: "/gestao-de-fornecedores",
   },
   {
     badge: "Complementar",
     icon: BarChart3,
-    title: "Procurement Maturity Assessment",
+    title: "Maturidade em Compras",
     description:
       "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira.",
     fit: "Para CPOs e CFOs preparando um plano de evolução de 12 a 24 meses.",
-    to: "/procurement-maturity",
+    to: "/maturidade-em-compras",
   },
   {
     badge: "Novo",
     icon: ScanSearch,
-    title: "Second Opinion Comercial",
+    title: "Revisão Pré-Fechamento",
     description:
       "Revisão independente de propostas comerciais com negociação direta pela Buy Group. Remuneração de 50% sobre a economia gerada.",
     fit: "Para times internos ativos que querem validar e capturar saving residual antes do fechamento.",
-    to: "/second-opinion-comercial",
+    to: "/revisao-pre-fechamento",
   },
 ];
 

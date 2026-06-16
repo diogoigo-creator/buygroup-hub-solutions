@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Breadcrumb } from "@/components/site/Breadcrumb";
+import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/bpo-de-compras")({
@@ -95,6 +97,7 @@ const comparison = [
 function BpoDeComprasPage() {
   return (
     <SiteLayout>
+      <Breadcrumb currentLabel="BPO de Compras" />
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white/10" />
@@ -293,6 +296,8 @@ function BpoDeComprasPage() {
           </div>
         </div>
       </section>
+
+      <OutrosServicos currentSlug="bpo-de-compras" />
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-secondary/45 p-9 md:p-14">

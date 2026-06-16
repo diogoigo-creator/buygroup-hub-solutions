@@ -40,13 +40,13 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/cost-optimization" className="text-white/85 hover:text-green">
-                Cost Optimization Program
+              <Link to="/otimizacao-de-custos" className="text-white/85 hover:text-green">
+                Otimização de Custos
               </Link>
             </li>
             <li>
-              <Link to="/spend-intelligence" className="text-white/85 hover:text-green">
-                Spend Intelligence
+              <Link to="/inteligencia-de-gastos" className="text-white/85 hover:text-green">
+                Inteligência de Gastos
               </Link>
             </li>
             <li>
@@ -55,24 +55,24 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/supplier-risk" className="text-white/85 hover:text-green">
-                Supplier Risk & Governance
-              </Link>
-            </li>
-            <li>
-              <Link to="/procurement-maturity" className="text-white/85 hover:text-green">
-                Procurement Maturity
-              </Link>
-            </li>
-            <li>
               <Link
-                to="/second-opinion-comercial"
+                to="/revisao-pre-fechamento"
                 className="inline-flex items-center gap-2 text-white/85 hover:text-green"
               >
-                Second Opinion Comercial
+                Revisão Pré-Fechamento
                 <span className="rounded-full bg-green px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-navy">
                   Novo
                 </span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/gestao-de-fornecedores" className="text-white/85 hover:text-green">
+                Gestão de Fornecedores
+              </Link>
+            </li>
+            <li>
+              <Link to="/maturidade-em-compras" className="text-white/85 hover:text-green">
+                Maturidade em Compras
               </Link>
             </li>
             <li>
