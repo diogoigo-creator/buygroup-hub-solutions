@@ -240,8 +240,38 @@ function ServicosPage() {
         </div>
       </section>
 
+      {/* BANNER METODOLOGIA */}
+      <section className="mx-auto mt-16 max-w-7xl px-6 lg:px-10">
+        <Link
+          to="/metodologia"
+          className="group relative block overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-navy to-navy-soft p-8 text-white transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_22px_60px_-20px_rgba(15,23,42,0.45)] lg:p-10"
+        >
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-green/20 blur-3xl" />
+          <div className="relative grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+            <div>
+              <p className="text-[0.7rem] uppercase tracking-[0.32em] text-green">
+                Como atuamos · Metodologia proprietária
+              </p>
+              <h3 className="mt-3 font-serif text-2xl leading-snug md:text-3xl">
+                Todos os produtos são entregues pela{" "}
+                <span className="text-green">CUT4MORE™</span> — 4 fases auditáveis, do baseline ao
+                saving homologado.
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm text-white/70">
+                Atividades-chave, entregáveis e métricas esperadas em cada fase.
+              </p>
+            </div>
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform group-hover:-translate-y-0.5">
+              Ver metodologia
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* PORTFOLIO COMPLETO */}
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Portfólio completo</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">

@@ -1,36 +1,28 @@
-Hoje a home tem duas seções tratando da CUT4MORE™ em sequência:
+Como especialista em posicionamento de marcas de consultorias premium e estruturação de portais corporativos Classe A, defendo fortemente a **Criação de uma Rota Dedicada `/metodologia` (Opção A)**.
 
-1. **Bloco overview** — badge "Metodologia proprietária", título e 4 cards curtos (ícone + nº + título + descrição curta).
-2. **Bloco "Como funciona"** — eyebrow, título, intro e 4 cards detalhados (cabeçalho com ícone/nº/título/descrição + atividades-chave + métricas).
+### Por que a Opção A (Página própria `/metodologia`) é o padrão de alto nível?
+1. **Posicionamento de Autoridade**: Consultorias de elite (McKinsey, Bain, BCG, Oliver Wyman) não misturam "Metodologia proprietária" (o *Como*) com "Portfólio de Serviços" (o *O Quê*). Ter uma página exclusiva para o método demonstra robustez institucional e propriedade intelectual valiosa (CUT4MORE™).
+2. **Foco do Usuário**: A página `/servicos` hoje está perfeita como um "menu de soluções" rápido para ajudar o lead a escolher o ponto de entrada ideal. Se colocarmos toda a densidade das 4 fases com atividades e métricas lá, a página ficará muito longa, confundindo o lead que busca apenas saber quais serviços atendem a sua dor.
+3. **SEO e Compartilhamento**: Uma página `/metodologia` própria terá suas próprias tags de SEO (`title`, `description`, `og:image`) focadas em termos de eficiência operacional e governança em compras, indexando individualmente nos motores de busca.
 
-Os 4 títulos de fases, ícones e descrições curtas se repetem entre os dois blocos.
+---
 
-## Proposta: fundir em uma única seção
+### O Plano de Execução (caso decida pela Opção A)
 
-Manter **um único bloco** "Metodologia CUT4MORE™" combinando o melhor dos dois, sem duplicação:
+1. **Criar a nova Rota `/metodologia` (`src/routes/metodologia.tsx`)**:
+   - Um layout editorial sofisticado.
+   - Cabeçalho de alto padrão (Hero) focado na Metodologia CUT4MORE™.
+   - Bloco interativo detalhado com as 4 Fases (descrição, atividades e as métricas).
+   - Um CTA premium no final direcionando para o agendamento de conversa.
 
-- **Cabeçalho (vindo do overview, fundo navy)**:
-  - Badge "Metodologia proprietária CUT4MORE™"
-  - Título: "Uma metodologia estruturada em quatro fases. Da análise ao resultado validado."
-  - Parágrafo introdutório existente.
+2. **Integração Inteligente nas outras páginas**:
+   - **Na Home**: O botão do bloco navy apontará para `/metodologia` ("Conheça o detalhe da metodologia →").
+   - **Na página de Serviços (`/servicos`)**: Adicionar um banner elegante e sutil ou card entre o "Por onde começar" e o "Portfólio completo" dizendo: *"Nossa atuação é regida por um método rigoroso de 4 fases. Conheça a metodologia CUT4MORE™ →"*
+   - **No Header e Footer**: Incluir o link "Metodologia" ou "Como Atuamos" no menu principal para facilitar o acesso de qualquer lugar.
 
-- **Mini-índice das 4 fases (novo, enxuto)**: tira horizontal com `01 → 02 → 03 → 04`, cada item com ícone + título curto, servindo como visão geral rápida e âncora visual. Sem descrição curta (que era redundante com a longa).
+---
 
-- **Blocos detalhados (vindos de "Como funciona")**: os 4 cards atuais com descrição completa, atividades-chave e métricas esperadas — fundo claro para contraste, como já está.
+### Se você ainda preferir a Opção B (Tudo dentro de `/servicos`)
+- Adaptaremos a página `/servicos` criando uma seção secundária nela, logo abaixo do portfólio de produtos, para acomodar os 4 cards de fase.
 
-- **Rodapé da seção**: disclaimer das faixas de métricas (já existe).
-
-A seção "Como funciona" deixa de existir como bloco separado; vira a parte detalhada da seção CUT4MORE™.
-
-## O que é removido
-
-- A lista de 4 cards curtos do overview (linha conectora, watermark do número, descrição curta) — substituída pela tira horizontal enxuta e pelos cards detalhados que já entregam essa informação melhor.
-- O heading e a intro duplicada do bloco "Como funciona" (mantemos apenas o do overview, no topo).
-
-## Detalhes técnicos
-
-- Arquivo: `src/routes/index.tsx`.
-- Remover o `<ol>` de cards curtos atual dentro do bloco navy `{/* PROCUREMAX FRAMEWORK */}`, substituindo-o pela tira horizontal compacta (ícone + nº + título).
-- Eliminar o cabeçalho da seção `{/* COMO FUNCIONA — CUT4MORE EM DETALHE */}` (eyebrow + h2 + parágrafo) e renomear o comentário para `{/* CUT4MORE — DETALHE POR FASE */}`. Manter os 4 `<article>` detalhados e o disclaimer.
-- O dataset `framework` deixa de ser usado e pode ser removido; manter apenas `frameworkDetail`. A tira horizontal lê de `frameworkDetail` (já tem ícone, nº e título).
-- Sem mudanças em rotas, SEO, dados ou backend.
+**Qual caminho você gostaria de seguir?** Assim que aprovar a proposta da página própria `/metodologia` (Opção A), iniciarei o desenvolvimento imediatamente.

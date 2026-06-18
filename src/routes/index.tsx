@@ -67,79 +67,11 @@ const credibility = [
 ];
 
 
-const frameworkDetail = [
-  {
-    n: "01",
-    icon: Search,
-    t: "Mapeamento de Oportunidades",
-    d: "Diagnóstico estruturado de despesas, contratos e fornecedores. Construímos um baseline financeiro auditável e priorizamos as categorias com maior potencial de captura no curto e médio prazo.",
-    activities: [
-      "Análise de spend dos últimos 12 meses",
-      "Revisão de contratos vigentes e cláusulas críticas",
-      "Entrevistas com stakeholders e áreas usuárias",
-      "Benchmarking de preços e condições de mercado",
-      "Matriz de priorização por impacto x esforço",
-    ],
-    metrics: [
-      { v: "100%", l: "do spend endereçável mapeado" },
-      { v: "5–12", l: "categorias priorizadas" },
-      { v: "≤ 3 sem.", l: "para baseline aprovado" },
-    ],
-  },
-  {
-    n: "02",
-    icon: Compass,
-    t: "Estratégia de Compra",
-    d: "Decomposição da estrutura de custos por categoria e desenho de estratégia de fornecimento — competitiva, de parceria ou híbrida — alinhada ao risco operacional e ao apetite de margem do cliente.",
-    activities: [
-      "Should-cost analysis por categoria",
-      "Mapeamento de fornecedores alternativos qualificados",
-      "Definição de lotes e modelagem de cenários",
-      "Estruturação de RFI / RFP",
-      "Validação técnica com áreas usuárias",
-    ],
-    metrics: [
-      { v: "3–8", l: "fornecedores qualificados por categoria" },
-      { v: "2–4", l: "cenários de negociação por contrato" },
-      { v: "30–50%", l: "de redução no ciclo de sourcing" },
-    ],
-  },
-  {
-    n: "03",
-    icon: Handshake,
-    t: "Condução da Negociação",
-    d: "Negociação direta com fornecedores conduzida por especialistas seniores, preservando SLA, qualidade e continuidade. Atuamos como extensão da área de compras, sob NDA e sob autoridade definida com o cliente.",
-    activities: [
-      "Rodadas de negociação estruturadas",
-      "Leilões reversos quando aplicável",
-      "Contraproposta técnica e comercial",
-      "Redação de adendos e instrumentos contratuais",
-      "Governança de aprovação interna",
-    ],
-    metrics: [
-      { v: "8%–22%", l: "de saving médio por categoria" },
-      { v: "90%", l: "de fornecedores estratégicos preservados" },
-      { v: "< 60 dias", l: "para renegociação concluída" },
-    ],
-  },
-  {
-    n: "04",
-    icon: CheckCircle2,
-    t: "Validação dos Savings",
-    d: "Homologação financeira dos resultados frente ao baseline aprovado, com rastreabilidade contábil e validação pelo controller e auditoria do cliente. A remuneração da Buy Group é vinculada ao saving validado.",
-    activities: [
-      "Reconciliação de notas fiscais vs. preços novos",
-      "Dashboard de captura mensal",
-      "Relatório executivo para CFO e comitê",
-      "Validação por controller e auditoria",
-      "Ajustes de carve-out e tratamento de exceções",
-    ],
-    metrics: [
-      { v: "100%", l: "dos savings com lastro documental" },
-      { v: "8,7x", l: "ROI médio dos projetos" },
-      { v: "< 90 dias", l: "de payback" },
-    ],
-  },
+const frameworkOverview = [
+  { n: "01", icon: Search, t: "Mapeamento de Oportunidades" },
+  { n: "02", icon: Compass, t: "Estratégia de Compra" },
+  { n: "03", icon: Handshake, t: "Condução da Negociação" },
+  { n: "04", icon: CheckCircle2, t: "Validação dos Savings" },
 ];
 
 
@@ -312,7 +244,7 @@ function Index() {
           </div>
 
           <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-4">
-            {frameworkDetail.map((step, idx) => (
+            {frameworkOverview.map((step, idx) => (
               <li
                 key={step.n}
                 className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md transition-all duration-300 hover:border-green/40 hover:bg-green/10"
@@ -326,109 +258,27 @@ function Index() {
                     {step.t}
                   </p>
                 </div>
-                {idx < frameworkDetail.length - 1 && (
+                {idx < frameworkOverview.length - 1 && (
                   <ArrowUpRight className="hidden h-3.5 w-3.5 shrink-0 text-green/40 lg:block" />
                 )}
               </li>
             ))}
           </ol>
 
-        </div>
-      </section>
-
-      {/* CUT4MORE — DETALHE POR FASE */}
-      <section className="border-y border-border bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
-              Detalhe por fase
-            </p>
-            <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              O que acontece em cada fase{" "}
-              <span className="text-green">e o que esperar em métricas.</span>
-            </h2>
-            <p className="mt-6 max-w-2xl text-pretty text-muted-foreground">
-              Cada fase tem entregáveis, atividades-chave e indicadores próprios — tornando o
-              processo auditável de ponta a ponta, do baseline ao saving homologado.
+          <div className="mt-12 flex flex-wrap items-center gap-4 lg:mt-14">
+            <Link
+              to="/metodologia"
+              className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+            >
+              Ver metodologia em detalhe
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+            </Link>
+            <p className="text-xs uppercase tracking-[0.22em] text-white/45">
+              Atividades, entregáveis e métricas por fase
             </p>
           </div>
-
-          <div className="mt-14 space-y-6 lg:mt-16 lg:space-y-8">
-
-            {frameworkDetail.map((phase) => (
-              <article
-                key={phase.n}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-white p-8 transition-all duration-500 hover:-translate-y-0.5 hover:border-green/40 hover:shadow-[0_22px_50px_-20px_rgba(15,23,42,0.18)] lg:p-12"
-              >
-                <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-green/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-                  {/* Header column */}
-                  <header className="lg:col-span-4">
-                    <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-green/20 bg-gradient-to-br from-green/20 to-green/5 text-navy shadow-sm">
-                        <phase.icon className="h-6 w-6" />
-                      </div>
-                      <span className="font-tabular font-serif text-4xl text-green/90">
-                        {phase.n}
-                      </span>
-                    </div>
-                    <h3 className="mt-6 font-serif text-2xl leading-snug text-navy md:text-3xl">
-                      {phase.t}
-                    </h3>
-                    <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
-                      {phase.d}
-                    </p>
-                  </header>
-
-                  {/* Activities */}
-                  <div className="lg:col-span-4">
-                    <p className="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55">
-                      Atividades-chave
-                    </p>
-                    <ul className="mt-5 space-y-3">
-                      {phase.activities.map((act) => (
-                        <li
-                          key={act}
-                          className="flex items-start gap-3 text-sm leading-relaxed text-navy/80"
-                        >
-                          <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-green" />
-                          <span>{act}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="lg:col-span-4">
-                    <p className="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55">
-                      Métricas esperadas
-                    </p>
-                    <dl className="mt-5 grid gap-4">
-                      {phase.metrics.map((m) => (
-                        <div
-                          key={m.l}
-                          className="rounded-2xl border border-border bg-secondary/40 p-5"
-                        >
-                          <dt className="font-tabular font-serif text-3xl text-navy">{m.v}</dt>
-                          <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">
-                            {m.l}
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <p className="mt-10 text-xs leading-relaxed text-muted-foreground lg:mt-12">
-            Faixas de métricas baseadas no histórico agregado de projetos da Buy Group. Resultados
-            individuais variam conforme categoria, maturidade da função de compras e escopo
-            contratado.
-          </p>
         </div>
+
       </section>
 
       {/* DIFFERENTIATION MOAT */}
