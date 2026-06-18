@@ -210,7 +210,7 @@ function SobrePage() {
             <div className="flex items-center gap-4 bg-white p-7">
               <Layers className="h-6 w-6 text-green" aria-hidden="true" />
               <div>
-                <p className="font-tabular font-serif text-3xl text-navy">6 setores</p>
+                <p className="font-tabular font-serif text-3xl text-navy">14 setores</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Setores atendidos</p>
               </div>
             </div>
