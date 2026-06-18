@@ -82,7 +82,7 @@ export function Header() {
 
         <div className="hidden md:flex">
           <Link
-            to="/contato"
+            to="/contato" hash="form"
             className="group inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-[13px] font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_14px_30px_-12px_rgba(15,23,42,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
           >
             Falar com especialista
@@ -153,7 +153,7 @@ export function Header() {
               ))}
             </ul>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               onClick={() => setOpen(false)}
               className="mt-3 flex items-center justify-center gap-1.5 rounded-2xl bg-navy px-5 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)]"
             >

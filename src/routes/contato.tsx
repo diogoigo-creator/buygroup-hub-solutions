@@ -126,7 +126,7 @@ function ContatoPage() {
         }}
       />
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
+      <section id="form" className="scroll-mt-24 mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.4fr_1fr] lg:px-10 lg:py-24">
         <div>
           {sent ? (
             <div className="flex flex-col items-start gap-4 rounded-2xl border border-green/40 bg-green/10 p-10">

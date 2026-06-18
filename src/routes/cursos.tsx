@@ -595,7 +595,7 @@ function CursosPage() {
             </p>
           </div>
           <Link
-            to="/contato"
+            to="/contato" hash="form"
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >
             Falar sobre a capacitação

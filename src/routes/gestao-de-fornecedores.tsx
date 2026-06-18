@@ -141,7 +141,7 @@ function SupplierRiskPage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
-                <Link to="/contato" search={{ interesse: "supplier-risk" }}>
+                <Link to="/contato" hash="form" search={{ interesse: "supplier-risk" }}>
                   Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
@@ -302,7 +302,7 @@ function SupplierRiskPage() {
             </div>
             <div className="flex flex-col items-start gap-4 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
-                <Link to="/contato" search={{ interesse: "supplier-risk" }}>
+                <Link to="/contato" hash="form" search={{ interesse: "supplier-risk" }}>
                   Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>

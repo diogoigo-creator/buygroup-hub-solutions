@@ -171,7 +171,7 @@ function MetodologiaPage() {
         cta={
           <>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
             >
               Aplicar a metodologia ao meu cenário
@@ -345,7 +345,7 @@ function MetodologiaPage() {
               </p>
             </div>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
               <Rocket className="h-4 w-4" /> Agendar conversa de 20 minutos

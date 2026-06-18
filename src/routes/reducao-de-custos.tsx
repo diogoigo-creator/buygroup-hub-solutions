@@ -227,7 +227,7 @@ function ReducaoDeCustosPage() {
               </p>
             </div>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-transform hover:-translate-y-0.5"
             >
               Falar com especialista
