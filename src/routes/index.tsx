@@ -8,6 +8,10 @@ import {
   TrendingUp,
   Scale,
   Building2,
+  Search,
+  Compass,
+  Handshake,
+  CheckCircle2,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroImg from "@/assets/hero-boardroom.jpg";
