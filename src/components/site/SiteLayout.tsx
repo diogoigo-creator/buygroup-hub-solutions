@@ -62,7 +62,7 @@ export function PageHero({
       <div className="hidden lg:contents">
         {identity.kind === "mark" && <MarkOrbit intensity={identity.intensity} />}
         {identity.kind === "lockup" && (
-          <FullLockup caption={identity.caption} slogan={identity.slogan} />
+          <FullLockup caption={identity.caption} subCaption={identity.subCaption} slogan={identity.slogan} />
         )}
         {identity.kind === "slogan" && <KineticSlogan lines={identity.lines} />}
       </div>
