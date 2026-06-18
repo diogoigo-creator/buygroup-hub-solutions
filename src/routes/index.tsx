@@ -259,23 +259,18 @@ function Index() {
           </div>
 
           <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-4">
-            {frameworkOverview.map((step, idx) => (
+            {frameworkOverview.map((step) => (
               <li
                 key={step.n}
-                className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md transition-all duration-300 hover:border-green/40 hover:bg-green/10"
+                className="group relative flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-6 text-center backdrop-blur-md transition-all duration-300 hover:border-green/40 hover:bg-green/10"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-green/20 bg-gradient-to-br from-green/25 to-green/5 text-green">
                   <step.icon className="h-5 w-5" />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <span className="font-tabular font-serif text-xs text-green/80">{step.n}</span>
-                  <p className="mt-0.5 truncate font-serif text-sm leading-snug text-white">
-                    {step.t}
-                  </p>
-                </div>
-                {idx < frameworkOverview.length - 1 && (
-                  <ArrowUpRight className="hidden h-3.5 w-3.5 shrink-0 text-green/40 lg:block" />
-                )}
+                <span className="font-tabular font-serif text-xs text-green/80">{step.n}</span>
+                <p className="font-serif text-sm leading-snug text-white">
+                  {step.t}
+                </p>
               </li>
             ))}
           </ol>
@@ -313,7 +308,7 @@ function Index() {
           {moat.map((d) => (
             <div
               key={d.t}
-              className="group relative overflow-hidden rounded-3xl border border-border/80 bg-white p-8 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12)] lg:p-10"
+              className="group relative flex flex-col items-center overflow-hidden rounded-3xl border border-border/80 bg-white p-8 text-center transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-green/40 hover:shadow-[0_22px_50px_-16px_oklch(0.21_0.06_264_/_0.12)] lg:p-10"
             >
               <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-green/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_8px_20px_-8px_rgba(212,175,55,0.4)]">
@@ -386,8 +381,8 @@ function Index() {
                   d: "background dos sócios em projetos globais e indústria",
                 },
               ].map((c) => (
-                <div key={c.t} className="rounded-2xl border border-border bg-white p-6 text-center flex flex-col items-center justify-center">
-                  <c.icon className="h-5 w-5 text-green" />
+                <div key={c.t} className="flex flex-col items-center justify-center rounded-2xl border border-border bg-white p-6 text-center">
+                  <c.icon className="mx-auto h-5 w-5 text-green" />
                   <p className="mt-5 font-serif text-2xl text-navy">{c.t}</p>
                   <p className="mt-2 text-sm leading-snug text-muted-foreground">{c.d}</p>
                 </div>

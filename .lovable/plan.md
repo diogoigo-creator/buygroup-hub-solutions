@@ -1,75 +1,23 @@
-## Contexto
+## Padronizar alinhamento dos cards (homepage)
 
-O site não tem um tema global escuro/claro alternável — tem **superfícies** com fundos diferentes na mesma página (Header claro, Footer/Hero escuros). Vou padronizar com **tokens semânticos** para que a logo escolha a cor sozinha conforme a superfície onde estiver.
+Aplicar centralização e alinhamento consistente em todos os blocos de cards de `src/routes/index.tsx`, mantendo o mesmo padrão já usado nos cards de credibilidade e do estudo de caso.
 
-## Mudanças
+### Cards a ajustar
 
-### 1. Tokens em `src/styles.css`
+1. **Framework CUT4MORE™ (4 etapas — linhas 261-281)**
+   - Hoje: ícone à esquerda + texto à direita (layout horizontal).
+   - Mudar para: layout vertical centralizado — ícone no topo, número e título centralizados abaixo (`flex-col items-center text-center`), removendo a seta lateral.
 
-Adicionar dois tokens semânticos (entre o `@theme inline` e o `:root`):
+2. **Moat / "Por que Buy Group" (4 cards — linhas 312-326)**
+   - Hoje: ícone, título e descrição alinhados à esquerda.
+   - Mudar para: ícone, título e descrição centralizados (`text-center`, ícone com `mx-auto`, conteúdo em `flex flex-col items-center`).
 
-```css
-:root {
-  /* Cor da logomarca por superfície. Default: superfície clara → preto. */
-  --logo: oklch(0.15 0.02 256);   /* preto/quase-preto, casa com --foreground */
-}
+3. **Team Credentials (3 cards — linhas 388-394)**
+   - Já estão centralizados; apenas garantir o ícone com `mx-auto` para alinhamento perfeito com texto.
 
-/* Qualquer superfície marcada como "escura" inverte automaticamente */
-.surface-dark {
-  --logo: oklch(1 0 0);            /* branco puro */
-}
-```
+4. **Credibility matrix e mini-cards do estudo de caso**
+   - Já estão centralizados — nenhuma mudança.
 
-E registrar como cor Tailwind dentro do `@theme inline` existente:
-```css
---color-logo: var(--logo);
-```
+### Resultado
 
-Isso libera as utilities `text-logo`, `bg-logo`, etc.
-
-### 2. Componente `BuyGroupLogo`
-
-Trocar a cor passada pela página por uma cor herdada do token. O componente passa a renderizar com `text-logo` por padrão (ou aceita `className` se alguém quiser sobrescrever):
-
-```tsx
-<svg ... className={cn("text-logo", className)} fill="currentColor" ...>
-```
-
-### 3. Marcar as superfícies escuras
-
-- `Footer.tsx` (`<footer class="bg-navy ...">`) → adicionar `surface-dark`
-- `FullLockup.tsx` wrapper → o hero já vive sobre fundo escuro; adicionar `surface-dark` no `<div>` raiz do lockup
-- `Header.tsx` → **não** recebe `surface-dark` (fica preto sobre branco automaticamente)
-
-### 4. Limpeza nos usos
-
-Remover `text-white` / `text-navy` específicos dos 3 call-sites — passa a ser automático:
-
-```tsx
-// Header
-<BuyGroupLogo className="h-8 w-auto shrink-0 sm:h-9" />
-
-// Footer (dentro de um wrapper com classe surface-dark)
-<BuyGroupLogo className="h-7 w-auto" />
-
-// FullLockup (wrapper raiz com surface-dark)
-<BuyGroupLogo className="h-auto w-[220px] sm:w-[300px] lg:w-[380px] ..." />
-```
-
-### 5. Bônus — suporte futuro a tema escuro global
-
-O `@custom-variant dark` já existe em `styles.css`. Adicionar também:
-```css
-.dark {
-  --logo: oklch(1 0 0);
-}
-```
-
-Assim, se um dia o site ganhar toggle dark/light global (classe `.dark` no `<html>`), a logo já acompanha sem mais nenhuma alteração.
-
-## Arquivos afetados
-- `src/styles.css` — adicionar tokens `--logo` + `--color-logo` + regra `.surface-dark` + regra `.dark`
-- `src/components/site/BuyGroupLogo.tsx` — default `text-logo`
-- `src/components/site/Header.tsx`, `Footer.tsx`, `hero-identities/FullLockup.tsx` — adicionar `surface-dark` nos wrappers escuros e remover `text-navy`/`text-white` da logo
-
-Posso aplicar?
+Todos os grids de cards da home seguirão o mesmo padrão: ícone no topo centralizado, título centralizado, descrição centralizada — visual consistente em toda a página.
