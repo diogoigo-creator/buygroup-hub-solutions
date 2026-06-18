@@ -244,7 +244,7 @@ function Index() {
           </div>
 
           <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-4">
-            {frameworkDetail.map((step, idx) => (
+            {frameworkOverview.map((step, idx) => (
               <li
                 key={step.n}
                 className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md transition-all duration-300 hover:border-green/40 hover:bg-green/10"
@@ -258,14 +258,27 @@ function Index() {
                     {step.t}
                   </p>
                 </div>
-                {idx < frameworkDetail.length - 1 && (
+                {idx < frameworkOverview.length - 1 && (
                   <ArrowUpRight className="hidden h-3.5 w-3.5 shrink-0 text-green/40 lg:block" />
                 )}
               </li>
             ))}
           </ol>
 
+          <div className="mt-12 flex flex-wrap items-center gap-4 lg:mt-14">
+            <Link
+              to="/metodologia"
+              className="group inline-flex items-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
+            >
+              Ver metodologia em detalhe
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
+            </Link>
+            <p className="text-xs uppercase tracking-[0.22em] text-white/45">
+              Atividades, entregáveis e métricas por fase
+            </p>
+          </div>
         </div>
+
       </section>
 
       {/* CUT4MORE — DETALHE POR FASE */}
