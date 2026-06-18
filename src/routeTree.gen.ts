@@ -19,6 +19,7 @@ import { Route as RevisaoPreFechamentoRouteImport } from './routes/revisao-pre-f
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as ProcurementMaturityRouteImport } from './routes/procurement-maturity'
 import { Route as OtimizacaoDeCustosRouteImport } from './routes/otimizacao-de-custos'
+import { Route as MetodologiaRouteImport } from './routes/metodologia'
 import { Route as MaturidadeEmComprasRouteImport } from './routes/maturidade-em-compras'
 import { Route as InteligenciaDeGastosRouteImport } from './routes/inteligencia-de-gastos'
 import { Route as GestaoDeFornecedoresRouteImport } from './routes/gestao-de-fornecedores'
@@ -78,6 +79,11 @@ const OtimizacaoDeCustosRoute = OtimizacaoDeCustosRouteImport.update({
   path: '/otimizacao-de-custos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MetodologiaRoute = MetodologiaRouteImport.update({
+  id: '/metodologia',
+  path: '/metodologia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MaturidadeEmComprasRoute = MaturidadeEmComprasRouteImport.update({
   id: '/maturidade-em-compras',
   path: '/maturidade-em-compras',
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
+  '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
+  '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/gestao-de-fornecedores': typeof GestaoDeFornecedoresRoute
   '/inteligencia-de-gastos': typeof InteligenciaDeGastosRoute
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
+  '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
+    | '/metodologia'
     | '/otimizacao-de-custos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
+    | '/metodologia'
     | '/otimizacao-de-custos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
@@ -231,6 +242,7 @@ export interface FileRouteTypes {
     | '/gestao-de-fornecedores'
     | '/inteligencia-de-gastos'
     | '/maturidade-em-compras'
+    | '/metodologia'
     | '/otimizacao-de-custos'
     | '/procurement-maturity'
     | '/reducao-de-custos'
@@ -252,6 +264,7 @@ export interface RootRouteChildren {
   GestaoDeFornecedoresRoute: typeof GestaoDeFornecedoresRoute
   InteligenciaDeGastosRoute: typeof InteligenciaDeGastosRoute
   MaturidadeEmComprasRoute: typeof MaturidadeEmComprasRoute
+  MetodologiaRoute: typeof MetodologiaRoute
   OtimizacaoDeCustosRoute: typeof OtimizacaoDeCustosRoute
   ProcurementMaturityRoute: typeof ProcurementMaturityRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
@@ -336,6 +349,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtimizacaoDeCustosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/metodologia': {
+      id: '/metodologia'
+      path: '/metodologia'
+      fullPath: '/metodologia'
+      preLoaderRoute: typeof MetodologiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/maturidade-em-compras': {
       id: '/maturidade-em-compras'
       path: '/maturidade-em-compras'
@@ -404,6 +424,7 @@ const rootRouteChildren: RootRouteChildren = {
   GestaoDeFornecedoresRoute: GestaoDeFornecedoresRoute,
   InteligenciaDeGastosRoute: InteligenciaDeGastosRoute,
   MaturidadeEmComprasRoute: MaturidadeEmComprasRoute,
+  MetodologiaRoute: MetodologiaRoute,
   OtimizacaoDeCustosRoute: OtimizacaoDeCustosRoute,
   ProcurementMaturityRoute: ProcurementMaturityRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
