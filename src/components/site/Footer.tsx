@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin } from "lucide-react";
-import logo from "@/assets/buy-group-logo-white.png";
+import logo from "@/assets/buy-group-logo-white.svg";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
