@@ -72,7 +72,7 @@ const credibility = [
   { value: "R$ 1,4 bi+", label: "Em volume de compras analisado" },
   { value: "23", label: "Grandes empresas atendidas" },
   { value: "8,7x", label: "ROI médio nos projetos" },
-  { value: "100%", label: "Remuneração vinculada ao resultado validado" },
+  { value: "100%", label: "Remuneração vinculada ao resultado\u00A0" },
 ];
 
 
