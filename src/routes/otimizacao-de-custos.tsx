@@ -112,7 +112,7 @@ const phases = [
 
 const included = [
   { icon: Database, title: "Inteligência de Gastos dos últimos 24 meses" },
-  { icon: FileSearch, title: "Classificação UNSPSC adaptada" },
+  { icon: FileSearch, title: "Classificação inteligente de compras por setor" },
   { icon: ClipboardCheck, title: "Baseline oficial auditável" },
   { icon: Target, title: "Estratégia por categoria" },
   { icon: Handshake, title: "Condução de RFQ e negociação" },

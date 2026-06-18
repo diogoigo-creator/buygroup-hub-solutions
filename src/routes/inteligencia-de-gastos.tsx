@@ -82,7 +82,7 @@ const without = [
 
 const withIt = [
   "90% do gasto classificado em 30 dias",
-  "Taxonomia UNSPSC adaptada ao setor",
+  "Classificação de despesas customizada por setor",
   "Mapa de fornecedores por categoria",
   "Quick wins priorizados por ROI",
   "Baseline oficial aprovado pelo cliente",
@@ -91,7 +91,7 @@ const withIt = [
 
 const deliverables = [
   { icon: Map, title: "Mapa de spend por categoria e fornecedor" },
-  { icon: Layers, title: "Classificação UNSPSC adaptada ao setor" },
+  { icon: Layers, title: "Classificação inteligente de compras adaptada ao setor" },
   { icon: FileSearch, title: "Identificação de sobreposições e contratos duplicados" },
   { icon: Target, title: "Ranking de oportunidades por potencial de saving" },
   { icon: ShieldCheck, title: "Baseline oficial auditável por third-party" },
