@@ -213,7 +213,7 @@ function Index() {
                 { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
                 { k: "ROI do projeto", v: "9,3x", s: "sobre o investimento na Buy Group" },
               ].map((c) => (
-                <div key={c.k} className="bg-white p-8">
+                <div key={c.k} className="bg-white p-8 text-center flex flex-col items-center justify-center">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
                   <p className="mt-4 font-tabular font-serif text-4xl text-navy">{c.v}</p>
                   <p className="mt-2 text-xs text-muted-foreground">{c.s}</p>
