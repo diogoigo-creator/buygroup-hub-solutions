@@ -123,7 +123,7 @@ function Index() {
 
             <h1 className="mt-7 max-w-5xl text-balance font-serif text-[2.125rem] font-medium leading-[1.04] tracking-[-0.03em] text-white sm:mt-9 sm:text-5xl sm:leading-[0.98] sm:tracking-[-0.035em] md:text-6xl lg:text-[5rem]">
               <span className="hero-editorial hero-delay-2 block">
-                Encontramos oportunidades que os líderes
+                Encontramos oportunidades que os líderes{" "}
               </span>
               <span className="hero-editorial hero-delay-3 block text-white/65">
                 ainda não conseguem enxergar.
@@ -172,8 +172,9 @@ function Index() {
       </section>
 
       {/* CASE STUDY HERO */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <section className="relative overflow-hidden mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
+        <SectionWatermark variant="right" tone="dark" />
+        <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
               ESTUDO DE CASO · CONFIDENCIAL
@@ -390,7 +391,7 @@ function Index() {
           <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.32em] text-green">
-                EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN
+                BRIEFING EXECUTIVO · NÍVEL DIRETIVO · 20 MIN
               </p>
               <h2 className="mt-4 text-balance font-serif text-4xl md:text-5xl">
                 Avalie o potencial de economia, os riscos e os próximos passos.

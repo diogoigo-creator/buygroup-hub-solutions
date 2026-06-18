@@ -1,29 +1,18 @@
-## Correções restantes
+## Correções na home (`src/routes/index.tsx`)
 
-Dos 6 itens enviados, 4 já estavam aplicados no código. Faltam apenas 2 ajustes pontuais.
+**1. Espaço no H1 (linha 126)**
+A frase está dividida em dois `<span className="block">`. Embora cada um seja bloco, vou garantir o espaçamento textual adicionando um espaço final em "líderes " — corrige qualquer junção visual em renderizações que recolham os blocos.
 
-### 1. Remover botão WhatsApp órfão em Revisão Pré-Fechamento
+**2. Label do briefing executivo (linha 393)**
+Trocar `EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN` por `BRIEFING EXECUTIVO · NÍVEL DIRETIVO · 20 MIN`. Mantém classes e estilo.
 
-**Arquivo:** `src/routes/revisao-pre-fechamento.tsx` (linhas ~458–471)
+**3. Marca d'água na seção do estudo de caso (linhas 175–221)**
+Adicionar o componente já existente `SectionWatermark` (de `@/components/site/SectionWatermark`) dentro da seção que contém R$ 12MM, 12,4% e 9,3x, posicionado à direita com opacidade baixa.
 
-Existe um botão "Falar pelo WhatsApp" apontando para `https://wa.me/` (link vazio). Como decidimos não exibir WhatsApp em nenhum lugar do site, esse botão inteiro será removido. O CTA "Falar com especialista" ao lado é mantido.
+Observação importante: no código atual, essa seção tem **fundo claro** (não escuro como mencionado). Para respeitar o padrão visual coerente com o fundo, vou usar `tone="dark"` (marca escura sutil sobre fundo claro, opacidade ~4%, igual às demais seções claras). Se a intenção for realmente usar a marca branca (`buy-group-mark-white`), me avise e troco para `tone="light"`.
 
-Também removerei a importação não utilizada de `MessageSquare` no topo do arquivo, se ela só era usada nesse botão.
+Mudanças:
+- Tornar a `<section>` `relative overflow-hidden` para conter a marca d'água absoluta.
+- Inserir `<SectionWatermark variant="right" tone="dark" />` como primeiro filho da section.
 
-### 2. Atualizar meta description da página /servicos
-
-**Arquivo:** `src/routes/servicos.tsx` (linha ~23)
-
-Substituir a `description` atual por exatamente:
-
-> "Programas estruturados de redução de custos em compras indiretas, BPO, inteligência de gastos e governança financeira para grandes empresas."
-
-Esse texto alimenta as tags `<meta name="description">`, `twitter:description` e o `description` do JSON-LD via a constante `description` já existente — uma única alteração propaga para todas.
-
-### Itens já em conformidade (não serão tocados)
-
-- Nenhuma ocorrência de `+55 11 4000-0000`, `wa.me/5511940000000`, "São Paulo", "By invitation", "Currently accepting", "Investment-grade", "Procurement Transformation Firm" ou "UNSPSC" no código.
-- Header (`src/components/site/Header.tsx`) já idêntico em todas as páginas com a ordem e o CTA pedidos.
-- Endereço de Belo Horizonte/Savassi/CEP 30130-138 já é o único endereço no site.
-
-Nenhuma outra alteração de texto, layout, cor ou estrutura será feita.
+Nada mais será alterado.
