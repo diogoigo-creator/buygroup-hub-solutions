@@ -13,12 +13,12 @@ export function FullLockup({
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-10 lg:translate-x-0"
+      className="surface-dark pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-10 lg:translate-x-0"
     >
       <div className="relative flex flex-col items-center gap-5">
         <div className="relative">
           <BuyGroupLogo
-            className="h-auto w-[220px] select-none animate-lockup-reveal text-white sm:w-[300px] lg:w-[380px]"
+            className="h-auto w-[220px] select-none animate-lockup-reveal sm:w-[300px] lg:w-[380px]"
           />
           <span className="absolute inset-x-2 -bottom-2 block h-px origin-left bg-green animate-lockup-underline" />
         </div>
