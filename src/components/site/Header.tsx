@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import logo from "@/assets/buy-group-logo.svg";
+import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 const nav = [

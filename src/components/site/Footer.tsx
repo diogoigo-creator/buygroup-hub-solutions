@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin } from "lucide-react";
-import logo from "@/assets/buy-group-logo-white.svg";
+import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
@@ -25,7 +25,7 @@ export function Footer() {
     <footer className="bg-navy text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr] lg:gap-10 lg:px-10 lg:py-16">
         <div className="space-y-5">
-          <img src={logo} alt="Buy Group" className="h-7 w-auto" />
+          <BuyGroupLogo className="h-7 w-auto text-white" />
           <p className="max-w-xs text-sm leading-relaxed text-white/65">
             Consultoria executiva de compras e negociação. Economia com método, governança
             financeira e resultado validado.

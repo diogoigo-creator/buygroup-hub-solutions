@@ -1,4 +1,4 @@
-import logoWhite from "@/assets/buy-group-logo-white.svg";
+import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 
 export function FullLockup({
   caption,
@@ -17,10 +17,8 @@ export function FullLockup({
     >
       <div className="relative flex flex-col items-center gap-5">
         <div className="relative">
-          <img
-            src={logoWhite}
-            alt=""
-            className="h-auto w-[220px] select-none animate-lockup-reveal sm:w-[300px] lg:w-[380px]"
+          <BuyGroupLogo
+            className="h-auto w-[220px] select-none animate-lockup-reveal text-white sm:w-[300px] lg:w-[380px]"
           />
           <span className="absolute inset-x-2 -bottom-2 block h-px origin-left bg-green animate-lockup-underline" />
         </div>
