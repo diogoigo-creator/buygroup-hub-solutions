@@ -1,4 +1,4 @@
-import logoWhite from "@/assets/buy-group-logo-white.png";
+import logoWhite from "@/assets/buy-group-logo-white.svg";
 
 export function FullLockup({
   caption,
