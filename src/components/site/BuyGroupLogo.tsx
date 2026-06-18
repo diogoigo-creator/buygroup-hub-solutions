@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1461.327305 342.083193" role="img" aria-label="buygroup">
-<g transform="translate(-60.989958,506.738930) scale(0.100000,-0.100000)"
-fill="#ffffff" stroke="none">
+export function BuyGroupLogo({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1461.327305 342.083193"
+      role="img"
+      aria-label="Buy Group"
+      className={className}
+    >
+      <g transform="translate(-60.989958,506.738930) scale(0.100000,-0.100000)"
+fill="currentColor" stroke="none">
 <path d="M1650 5060 c-240 -5 -327 -10 -365 -22 -275 -85 -472 -252 -586 -498
 -87 -188 -89 -213 -89 -1197 0 -909 3 -955 75 -1118 7 -16 15 -37 19 -45 11
 -30 72 -130 94 -155 12 -14 22 -27 22 -30 0 -58 293 -252 455 -301 l90 -27
@@ -81,4 +89,6 @@ m720 -976 c186 -92 276 -252 276 -488 0 -119 -6 -143 -70 -276 -91 -190 -381
 -5 -435 3 -516 -2 -547 -90 -626 -150 -136 -404 -106 -483 57 l-26 52 -6 470
 c-4 269 -10 474 -16 480 -9 10 -239 18 -271 9z"/>
 </g>
-</svg>
+    </svg>
+  );
+}

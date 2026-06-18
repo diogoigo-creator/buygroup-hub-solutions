@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import logo from "@/assets/buy-group-logo.svg";
+import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 const nav = [
@@ -59,7 +59,7 @@ export function Header() {
           className="flex items-center gap-3 transition-opacity hover:opacity-80"
           aria-label="Buy Group — início"
         >
-          <img src={logo} alt="Buy Group" className="h-9 w-auto" />
+          <BuyGroupLogo className="h-8 w-auto shrink-0 text-navy sm:h-9" />
         </Link>
 
         <nav className="hidden md:flex">

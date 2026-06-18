@@ -1,24 +1,54 @@
-## Problema
+## Objetivo
 
-As logos atuais (`src/assets/buy-group-logo.webp` e `buy-group-logo-white.webp`) estão em **311×72 px**. Como são exibidas em até 380px de largura no banner e em telas Retina (2x/3x DPI) o navegador precisa de 760–1140 px reais, o resultado fica visivelmente serrilhado.
+Logo SVG totalmente responsiva e que **herda a cor do contexto**: preta sobre fundos claros, branca sobre fundos escuros — sem manter dois arquivos coloridos.
 
-## O que vou fazer
+## Mudanças
 
-1. **Gerar a versão em alta resolução** (1600×370, ~5x maior) da logo **Buy Group** com IA, recriando fielmente:
-   - Símbolo: carrinho/sacola estilizado em laranja-âmbar (cor atual da marca)
-   - Wordmark: "BUY GROUP" em sans-serif geométrica bold
-   - Fundo transparente (PNG)
-2. **Gerar a variante branca** (mesma logo em branco puro sobre fundo transparente) para uso em headers/footers escuros.
-3. **Salvar como PNG transparente** em `src/assets/`:
-   - `src/assets/buy-group-logo.png` (substitui a webp)
-   - `src/assets/buy-group-logo-white.png` (substitui a webp)
-4. **Atualizar os 3 imports** em:
-   - `src/components/site/Header.tsx`
-   - `src/components/site/Footer.tsx`
-   - `src/components/site/hero-identities/FullLockup.tsx`
-5. **Adicionar `loading="eager"` e `decoding="async"`** onde fizer sentido, e garantir que o `<img>` use a renderização nítida (sem upscale forçado além do natural).
-6. **Remover os arquivos .webp antigos** após confirmação visual.
+### 1. Novo componente `src/components/site/BuyGroupLogo.tsx`
+Componente React que retorna o SVG **inline** com `fill="currentColor"`. Aceita `className` para tamanho e cor:
 
-## Observação
+```tsx
+export function BuyGroupLogo({ className }: { className?: string }) {
+  return (
+    <svg xmlns="..." viewBox="0 0 1584 672" fill="currentColor" role="img" aria-label="Buy Group" className={className}>
+      <g transform="...">...paths...</g>
+    </svg>
+  );
+}
+```
 
-A recriação por IA pode ter pequenas variações de detalhes finos em relação à logo original. Se notar qualquer divergência, o ideal a longo prazo é você me enviar o **arquivo vetorial original (SVG)** — aí a logo fica perfeita em qualquer tamanho sem nenhuma regeração. Posso seguir agora com a regeração?
+A cor passa a ser controlada via `text-*` no Tailwind (currentColor), o tamanho via `w-*` / `h-*`. Proporção preservada automaticamente pelo `viewBox`.
+
+### 2. Substituir os 3 usos atuais
+
+**`Header.tsx`** (fundo claro → preto, com fallback para quando rolado):
+```tsx
+<BuyGroupLogo className="h-7 w-auto text-foreground sm:h-8" />
+```
+
+**`Footer.tsx`** (fundo navy → branco):
+```tsx
+<BuyGroupLogo className="h-7 w-auto text-white" />
+```
+
+**`FullLockup.tsx`** (hero escuro → branco, com tamanhos responsivos atuais preservados):
+```tsx
+<BuyGroupLogo className="w-[220px] sm:w-[300px] lg:w-[380px] h-auto text-white animate-lockup-reveal select-none" />
+```
+
+### 3. Responsividade
+
+- O SVG já é vetorial — não há perda em nenhuma DPI.
+- Mantenho os breakpoints já existentes (`sm:` / `lg:`).
+- `w-auto` + `h-*` (ou vice-versa) preserva a proporção 1584:672 do `viewBox` em todos os tamanhos.
+- Adiciono `shrink-0` no Header para impedir distorção quando o menu mobile espreme o layout.
+
+### 4. Limpeza
+- Remover `src/assets/buy-group-logo.svg` e `src/assets/buy-group-logo-white.svg` (substituídos pelo componente inline — uma única fonte de verdade).
+
+## Arquivos afetados
+- **novo:** `src/components/site/BuyGroupLogo.tsx`
+- **editar:** `src/components/site/Header.tsx`, `src/components/site/Footer.tsx`, `src/components/site/hero-identities/FullLockup.tsx`
+- **remover:** `src/assets/buy-group-logo.svg`, `src/assets/buy-group-logo-white.svg`
+
+Posso seguir?
