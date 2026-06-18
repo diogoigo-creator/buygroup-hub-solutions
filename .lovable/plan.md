@@ -1,22 +1,51 @@
-Propomos as seguintes melhorias para valorizar e destacar visualmente a seção da Metodologia **CUT4MORE™**:
+Adicionar uma nova seção **"Como funciona — CUT4MORE™ em detalhe"** logo após o bloco atual de fases (visão geral) na página inicial (`src/routes/index.tsx`).
 
-1. **Design Conectado de Fluxo (Sequential Flow)**:
-   - Em telas maiores (desktop), adicionaremos uma linha conectora sutil ligando as fases (01 → 02 → 03 → 04) para enfatizar o aspecto de processo/passo a passo estruturado.
-   
-2. **Estilização Premium dos Cards**:
-   - Transformar a lista simples de cards em componentes interativos com:
-     - Efeito de hover suave (elevação e borda iluminada em tom verde-esmeralda/dourado).
-     - Fundo dos cards ligeiramente translúcido (`backdrop-blur-md`) com gradiente muito sutil para dar profundidade de "glassmorphism".
-     - Adição de ícones delicados e conceituais para cada uma das quatro fases (ex: Lupa/Gráficos para Mapeamento, Alvo/Estratégia para Estratégia, Apertos de mão/Escudo para Negociação, Medalha/Check para Validação).
+## Estrutura da seção
 
-3. **Tipografia e Badges**:
-   - Tornar o marcador de etapa ("01", "02", etc.) mais elegante, talvez com uma tipografia serifada sofisticada em tamanho maior e opacidade ajustada, funcionando quase como marca d'água no fundo do card.
-   - Adicionar uma badge exclusiva com design refinado no início da seção para coroar a metodologia como propriedade intelectual/marca registrada exclusiva da Buy Group.
+Cabeçalho:
+- Eyebrow: "Como funciona"
+- Título: "CUT4MORE™ em detalhe. O que acontece em cada fase e o que esperar em métricas."
+- Parágrafo curto contextualizando que cada fase tem entregáveis, atividades e indicadores próprios.
 
----
+Conteúdo: 4 blocos verticais (um por fase), cada um com layout em 12 colunas no desktop e empilhado no mobile:
 
-### Detalhes Técnicos
+```text
+┌──────────────────────────────────────────────────────────────┐
+│ [01] Mapeamento de Oportunidades                             │
+│ ─────────────────────────────────────────────────────────── │
+│  Descrição detalhada      │  Atividades-chave  │  Métricas   │
+│  (2-3 frases)             │  • bullet          │  KPI 1: x%  │
+│                           │  • bullet          │  KPI 2: x   │
+└──────────────────────────────────────────────────────────────┘
+```
 
-- **Arquivo a ser alterado**: `src/routes/index.tsx`
-- **Componentes**: Utilizar ícones da biblioteca `lucide-react` (já importada no projeto, ex: `TrendingUp`, `Compass`, `Handshake`, `CheckCircle2` ou similares).
-- **CSS / Tailwind**: Uso de classes utilitárias modernas do Tailwind v4 (`bg-navy/80`, `border-white/10`, `hover:border-green/30`, etc.) garantindo responsividade perfeita para mobile.
+## Conteúdo proposto por fase
+
+**01 · Mapeamento de Oportunidades**
+- Descrição: Diagnóstico estruturado de despesas, contratos e fornecedores. Construímos um baseline financeiro auditável e priorizamos as categorias com maior potencial de captura no curto e médio prazo.
+- Atividades: análise de spend (12 meses), revisão de contratos vigentes, entrevistas com stakeholders, benchmarking de preços, matriz de priorização por impacto x esforço.
+- Métricas esperadas: 100% do spend endereçável mapeado · 5 a 12 categorias priorizadas · baseline aprovado em até 3 semanas.
+
+**02 · Estratégia de Compra**
+- Descrição: Decomposição da estrutura de custos por categoria e desenho de estratégia de fornecimento — competitiva, de parceria ou hibrída — alinhada ao risco operacional e ao apetite de margem do cliente.
+- Atividades: should-cost analysis, mapeamento de fornecedores alternativos, definição de lotes, modelagem de cenários, RFI/RFP, validação técnica com áreas usuárias.
+- Métricas esperadas: 3 a 8 fornecedores qualificados por categoria · 2 a 4 cenários de negociação por contrato · 30-50% de redução no tempo de ciclo do sourcing.
+
+**03 · Condução da Negociação**
+- Descrição: Negociação direta com fornecedores conduzida por especialistas seniores, preservando SLA, qualidade e continuidade. Atuamos como extensão da área de compras, sob NDA e sob autoridade definida com o cliente.
+- Atividades: rodadas estruturadas, leilões reversos quando aplicável, contraproposta técnica, redação de adendos contratuais, governança de aprovação.
+- Métricas esperadas: 8% a 22% de saving médio por categoria · 90% de fornecedores estratégicos preservados · contratos renegociados em < 60 dias.
+
+**04 · Validação dos Savings**
+- Descrição: Homologação financeira dos resultados frente ao baseline aprovado, com rastreabilidade contábil e validação pelo controller / auditoria do cliente. Remuneração da Buy Group vinculada ao saving validado.
+- Atividades: reconciliação de notas fiscais x preços novos, dashboard de captura mensal, relatório executivo, validação pelo CFO/comitê, ajustes de carve-out.
+- Métricas esperadas: 100% dos savings com lastro documental · ROI médio 8,7x · payback < 90 dias.
+
+## Detalhes técnicos
+
+- Arquivo: `src/routes/index.tsx`.
+- Inserção: nova `<section>` imediatamente após `{/* PROCUREMAX FRAMEWORK */}` e antes de `{/* DIFFERENTIATION MOAT */}`.
+- Fundo branco/`bg-background` para contraste com a seção navy anterior; tokens semânticos do design system existente (`text-navy`, `text-green`, `bg-secondary/40`, `border-border`).
+- Ícones reaproveitam os 4 já importados (`Search`, `Compass`, `Handshake`, `CheckCircle2`).
+- Componente nativo (sem novos arquivos), seguindo padrão dos outros blocos da home.
+- Sem mudanças de rota, dados, SEO ou backend.
