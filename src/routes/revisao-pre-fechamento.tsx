@@ -133,8 +133,8 @@ const commercial: { icon: ComponentType<{ className?: string }>; title: string; 
   },
   {
     icon: Sparkles,
-    title: "Saving mínimo para acionamento",
-    body: "Indicado para propostas em que o saving potencial estimado supera R$ 50.000. Abaixo desse valor, a relação custo-benefício da revisão não se justifica.",
+    title: "Valor mínimo para análise\n\n\n",
+    body: "\n\n\nRecomendado para demandas com valor superior a R$ 50.000, onde há maior potencial de ganho financeiro, eficiência na negociação e justificativa para uma revisão técnica e comercial mais aprofundada.",
   },
   {
     icon: Lock,
