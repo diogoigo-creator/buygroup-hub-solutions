@@ -10,28 +10,28 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/outfit-regular.ttf") format("truetype");
+    src: url("./assets/outfit-regular.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url("./assets/outfit-medium.ttf") format("truetype");
+    src: url("./assets/outfit-medium.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url("./assets/outfit-semibold.ttf") format("truetype");
+    src: url("./assets/outfit-semibold.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("./assets/outfit-bold.ttf") format("truetype");
+    src: url("./assets/outfit-bold.woff2") format("woff2");
   }
 }
 
