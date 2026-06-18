@@ -1,21 +1,20 @@
-## Diagnóstico
+I will update the About page (sobre) to display the slogan "Mais que comprar. É comprar bem." below the existing caption "Consultoria em compras e negociação" using the same elegant, uppercase sans-serif styling with wide letter spacing.
 
-Cinco rotas de serviço estão marcadas com `<meta name="robots" content="noindex, follow">`, bloqueando a indexação pelos buscadores:
+### Proposed Changes
 
-- `src/routes/cost-optimization.tsx`
-- `src/routes/procurement-maturity.tsx`
-- `src/routes/spend-intelligence.tsx`
-- `src/routes/second-opinion-comercial.tsx`
-- `src/routes/supplier-risk.tsx`
+1. **Update `src/components/site/SiteLayout.tsx`**:
+   - Extend the `Identity` type for the `lockup` kind to accept an optional `subCaption?: string` property.
+   - Pass `subCaption` down to the `<FullLockup />` component inside `PageHero`.
 
-O `public/robots.txt` está correto (`Allow: /`) e o `__root.tsx` não tem noindex global. O problema está apenas nessas 5 páginas.
+2. **Update `src/components/site/hero-identities/FullLockup.tsx`**:
+   - Add the `subCaption` prop.
+   - If present, render the `subCaption` below the existing `caption` with the same uppercase, tracking-widest, premium styling.
 
-> Observação: a URL `preview--*.lovable.app` exige login do Lovable e não é indexável por design. Para testar SEO real, é preciso publicar (gera `*.lovable.app` público) ou conectar domínio próprio.
+3. **Update `src/routes/sobre.tsx`**:
+   - Pass `subCaption: "Mais que comprar. É comprar bem."` in the `identity` prop of `PageHero`.
 
-## Alteração
+### Technical Details
 
-Remover a linha `meta: [{ name: "robots", content: "noindex, follow" }],` do `head()` de cada uma das 5 rotas acima, preservando todo o restante (title, description, og:*, canonical, JSON-LD).
-
-## Resultado esperado
-
-Após publicar, as 5 páginas de serviço passam a ser indexáveis pelo Google e demais buscadores.
+The new text will share the exact same style class:
+`animate-fade-up text-[10px] uppercase tracking-[0.32em] text-white/55`
+We will set an appropriate `animationDelay` (e.g. `animate-delay-500`) on the subCaption so that it animates smoothly right after the main caption, maintaining the premium, polished feel of the site.

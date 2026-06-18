@@ -32,7 +32,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 type Identity =
   | { kind: "mark"; intensity?: "default" | "bold" }
-  | { kind: "lockup"; caption?: string; slogan?: { primary: string; accent?: string } }
+  | { kind: "lockup"; caption?: string; subCaption?: string; slogan?: { primary: string; accent?: string } }
   | { kind: "slogan"; lines: { text: string; accent?: boolean }[][] };
 
 export function PageHero({
@@ -62,7 +62,7 @@ export function PageHero({
       <div className="hidden lg:contents">
         {identity.kind === "mark" && <MarkOrbit intensity={identity.intensity} />}
         {identity.kind === "lockup" && (
-          <FullLockup caption={identity.caption} slogan={identity.slogan} />
+          <FullLockup caption={identity.caption} subCaption={identity.subCaption} slogan={identity.slogan} />
         )}
         {identity.kind === "slogan" && <KineticSlogan lines={identity.lines} />}
       </div>

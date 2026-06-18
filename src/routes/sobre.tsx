@@ -88,7 +88,7 @@ function SobrePage() {
           </>
         }
         description="A Buy Group apoia grandes empresas na identificação de oportunidades, condução de negociações e validação de resultados com governança financeira."
-        identity={{ kind: "lockup", caption: "Consultoria em compras e negociação" }}
+        identity={{ kind: "lockup", caption: "Consultoria em compras e negociação", subCaption: "Mais que comprar. É comprar bem." }}
       />
       <Breadcrumb currentLabel="Sobre" parent={{ to: "/", label: "Início" }} />
 

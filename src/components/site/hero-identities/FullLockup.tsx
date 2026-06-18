@@ -2,9 +2,11 @@ import logoWhite from "@/assets/buy-group-logo-white.webp";
 
 export function FullLockup({
   caption,
+  subCaption,
   slogan,
 }: {
   caption?: string;
+  subCaption?: string;
   /** Optional full slogan displayed below the lockup, separated by a divider, with animation. */
   slogan?: { primary: string; accent?: string };
 }) {
@@ -26,6 +28,12 @@ export function FullLockup({
         {caption && (
           <p className="animate-fade-up animate-delay-300 text-[10px] uppercase tracking-[0.32em] text-white/55">
             {caption}
+          </p>
+        )}
+
+        {subCaption && (
+          <p className="animate-fade-up animate-delay-500 -mt-2 text-[10px] uppercase tracking-[0.32em] text-white/55">
+            {subCaption}
           </p>
         )}
 
