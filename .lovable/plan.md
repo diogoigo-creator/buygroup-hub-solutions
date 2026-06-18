@@ -1,24 +1,29 @@
-# Plano para Substituição da Taxonomia UNSPSC
+## Correções restantes
 
-O objetivo é substituir o termo técnico "Taxonomia UNSPSC" (ou "Classificação UNSPSC") por uma frase de negócios mais clara e intuitiva para o cliente final, mantendo o tom profissional e corporativo da Buy Group.
+Dos 6 itens enviados, 4 já estavam aplicados no código. Faltam apenas 2 ajustes pontuais.
 
-## Opções sugeridas para substituição:
-1. **"Classificação inteligente de compras por categoria"** (Foco em dados e clareza)
-2. **"Taxonomia de despesas customizada por setor"** (Mantém a ideia de taxonomia mas foca na personalização)
-3. **"Classificação inteligente de despesas por setor"** (Mais abrangente)
-4. **"Estrutura de compras proprietária adaptada ao setor"** (Foco em metodologia exclusiva)
+### 1. Remover botão WhatsApp órfão em Revisão Pré-Fechamento
 
-*Por padrão, usaremos a opção **"Classificação inteligente de despesas por setor"** ou similar para maior clareza comercial.*
+**Arquivo:** `src/routes/revisao-pre-fechamento.tsx` (linhas ~458–471)
 
-## Arquivos a serem alterados:
+Existe um botão "Falar pelo WhatsApp" apontando para `https://wa.me/` (link vazio). Como decidimos não exibir WhatsApp em nenhum lugar do site, esse botão inteiro será removido. O CTA "Falar com especialista" ao lado é mantido.
 
-1. **`src/routes/inteligencia-de-gastos.tsx`**:
-   - Linha 85: Alterar `"Taxonomia UNSPSC adaptada ao setor"` para `"Classificação de despesas customizada por setor"`.
-   - Linha 94: Alterar `"Classificação UNSPSC adaptada ao setor"` para `"Classificação inteligente de compras adaptada ao setor"`.
+Também removerei a importação não utilizada de `MessageSquare` no topo do arquivo, se ela só era usada nesse botão.
 
-2. **`src/routes/otimizacao-de-custos.tsx`**:
-   - Linha 115: Alterar `"Classificação UNSPSC adaptada"` para `"Classificação inteligente de compras por setor"`.
+### 2. Atualizar meta description da página /servicos
 
----
-### Detalhes Técnicos
-Substituição direta de strings simples no código React/TypeScript. Nenhuma alteração de layout, dependências ou componentes será necessária.
+**Arquivo:** `src/routes/servicos.tsx` (linha ~23)
+
+Substituir a `description` atual por exatamente:
+
+> "Programas estruturados de redução de custos em compras indiretas, BPO, inteligência de gastos e governança financeira para grandes empresas."
+
+Esse texto alimenta as tags `<meta name="description">`, `twitter:description` e o `description` do JSON-LD via a constante `description` já existente — uma única alteração propaga para todas.
+
+### Itens já em conformidade (não serão tocados)
+
+- Nenhuma ocorrência de `+55 11 4000-0000`, `wa.me/5511940000000`, "São Paulo", "By invitation", "Currently accepting", "Investment-grade", "Procurement Transformation Firm" ou "UNSPSC" no código.
+- Header (`src/components/site/Header.tsx`) já idêntico em todas as páginas com a ordem e o CTA pedidos.
+- Endereço de Belo Horizonte/Savassi/CEP 30130-138 já é o único endereço no site.
+
+Nenhuma outra alteração de texto, layout, cor ou estrutura será feita.
