@@ -490,4 +490,28 @@
     animation: underline-draw 0.8s cubic-bezier(0.65, 0, 0.35, 1) both;
     transform-origin: left center;
   }
+
+  /* Mobile perf: kill infinite/heavy animations to protect INP, LCP, FCP.
+     Visual identity preserved on desktop (>=768px). */
+  @media (max-width: 767px) {
+    .hero-cinematic-image,
+    .hero-cinematic-light,
+    .hero-cinematic-glow,
+    .animate-mark-bob,
+    .animate-mark-float,
+    .animate-mark-spin-slow,
+    .animate-mark-pulse-ring,
+    .animate-orbit-cw,
+    .animate-orbit-ccw {
+      animation: none !important;
+      will-change: auto !important;
+    }
+    /* Hero text reveal: render instantly on mobile (no blur, no delay) */
+    .hero-editorial {
+      animation: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+    }
+  }
 }
