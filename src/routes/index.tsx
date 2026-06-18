@@ -138,7 +138,7 @@ function Index() {
 
             <div className="hero-editorial hero-delay-5 mt-8 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
-                to="/contato"
+                to="/contato" hash="form"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
               >
                 Falar com especialista
@@ -187,7 +187,7 @@ function Index() {
               Grupo industrial brasileiro. Faturamento de R$ 3,2 bilhões.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R$ 380 milhões em compras indiretas mapeadas e validadas pelo comitê de auditoria.
             </p>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-green"
             >
               Solicitar case completo (sob NDA) <ArrowUpRight className="h-4 w-4" />
@@ -405,7 +405,7 @@ function Index() {
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
               <Link
-                to="/contato"
+                to="/contato" hash="form"
                 className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
               >
                 Falar com especialista

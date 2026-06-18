@@ -343,7 +343,7 @@ function ServicosPage() {
               </p>
             </div>
             <Link
-              to="/contato"
+              to="/contato" hash="form"
               className="inline-flex w-fit items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold tracking-wide text-navy shadow-[var(--shadow-green)]"
             >
               <Rocket className="h-4 w-4" /> Agendar conversa de 20 minutos

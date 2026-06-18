@@ -185,7 +185,7 @@ function SecondOpinionPage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7 font-semibold">
-                <Link to="/contato" search={{ interesse: "second-opinion" }}>
+                <Link to="/contato" hash="form" search={{ interesse: "second-opinion" }}>
                   Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
@@ -451,7 +451,7 @@ function SecondOpinionPage() {
             </div>
             <div className="flex flex-col items-start gap-3 lg:items-end">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
-                <Link to="/contato" search={{ interesse: "second-opinion" }}>
+                <Link to="/contato" hash="form" search={{ interesse: "second-opinion" }}>
                   Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>

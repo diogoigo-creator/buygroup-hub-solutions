@@ -109,7 +109,7 @@ export function OutrosServicos({
 
         <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
           <Link
-            to="/contato"
+            to="/contato" hash="form"
             search={SERVICE_BY_SLUG[currentSlug]?.interesseSlug ? { interesse: SERVICE_BY_SLUG[currentSlug].interesseSlug } : undefined}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-green px-6 py-3 text-sm font-semibold text-navy shadow-[var(--shadow-green)] transition-transform hover:-translate-y-0.5"
           >

@@ -1,19 +1,45 @@
-## Diagnóstico
+## Problema
 
-Confirmei no código atual de `src/routes/index.tsx`:
+Todos os links/CTAs "Falar com especialista", "Solicitar diagnóstico", etc. apontam para `/contato` (raiz da página). Como `/contato` começa com o `PageHero` (banner), o usuário cai no topo e precisa rolar até o formulário.
 
-- **Linha 127**: `Encontramos oportunidades que os líderes{" "}` — com espaço, e os dois `<span>` são `block` (cada um em sua linha).
-- **Linha 395**: `BRIEFING EXECUTIVO · NÍVEL DIRETIVO · 20 MIN` — já em português.
+## Solução
 
-Ou seja, as duas correções **estão no código-fonte**. O que você está vendo na tela é provavelmente:
+Usar âncora `#form` nos links para a página rolar direto até o formulário.
 
-1. Cache do navegador / preview não atualizado, ou
-2. Você está olhando para a versão **publicada** (publish anterior), e não para o preview atual.
+### Passo 1 — `src/routes/contato.tsx`
+- Adicionar `id="form"` na `<section>` que contém o formulário (linha 129).
+- Adicionar `scroll-mt-24` (Tailwind) para compensar o header fixo e não cortar o título do formulário.
 
-## Plano
+### Passo 2 — Adicionar `hash="form"` em todos os `Link to="/contato"` do site
 
-1. Rodar o Playwright contra o preview local (`http://localhost:8080`) e tirar screenshots do H1 e da seção de briefing, para provar o que está sendo de fato renderizado pelo build atual.
-2. Se as screenshots mostrarem o texto correto → é cache; recomendo Ctrl+Shift+R no preview e, em seguida, republicar o site para propagar.
-3. Se as screenshots mostrarem o texto colado / em inglês → investigar outro componente / CSS que esteja sobrescrevendo (improvável, mas vou checar `text-balance`, animações e qualquer regra global que possa afetar o `display: block`).
+Arquivos a atualizar (todos os CTAs `<Link to="/contato" ...>`):
 
-Nada será alterado até confirmarmos o estado real do render.
+- `src/components/site/Header.tsx` (2 ocorrências — desktop + mobile CTA)
+- `src/components/site/OutrosServicos.tsx`
+- `src/routes/index.tsx` (3 ocorrências)
+- `src/routes/sobre.tsx`
+- `src/routes/servicos.tsx`
+- `src/routes/metodologia.tsx` (2)
+- `src/routes/reducao-de-custos.tsx`
+- `src/routes/cursos.tsx`
+- `src/routes/otimizacao-de-custos.tsx` (2)
+- `src/routes/bpo-de-compras.tsx` (2)
+- `src/routes/inteligencia-de-gastos.tsx` (2)
+- `src/routes/revisao-pre-fechamento.tsx` (2)
+- `src/routes/maturidade-em-compras.tsx` (2)
+- `src/routes/gestao-de-fornecedores.tsx` (2)
+
+Em cada um, adicionar a prop `hash="form"`:
+```tsx
+<Link to="/contato" hash="form" search={{ interesse: "..." }}>
+```
+
+Para os Links da home/header/CTAs sem `search`, fica:
+```tsx
+<Link to="/contato" hash="form">
+```
+
+### Resultado
+Ao clicar em qualquer CTA "Falar com especialista", o navegador navega para `/contato#form` e rola automaticamente até o formulário, pulando o banner.
+
+Nada mais será alterado — banner, layout e textos permanecem iguais.
