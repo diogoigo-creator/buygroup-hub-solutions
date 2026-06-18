@@ -121,8 +121,7 @@ function ContatoPage() {
         }
         description="Uma conversa para avaliar o potencial de economia, os riscos e os próximos passos a partir do perfil de compras da sua empresa."
         identity={{
-          kind: "slogan",
-          lines: [[{ text: "É comprar" }, { text: " bem.", accent: true }]],
+          kind: "mark",
         }}
       />
 
