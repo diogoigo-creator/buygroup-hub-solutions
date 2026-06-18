@@ -1,45 +1,23 @@
-## Problema
+## Análise — Página Academy e links dos cursos
 
-Todos os links/CTAs "Falar com especialista", "Solicitar diagnóstico", etc. apontam para `/contato` (raiz da página). Como `/contato` começa com o `PageHero` (banner), o usuário cai no topo e precisa rolar até o formulário.
+Tudo verificado e **funcionando**. Resumo da auditoria:
 
-## Solução
+### Página `/cursos` (`src/routes/cursos.tsx`)
+- 10 cursos definidos (ids: `strategic-sourcing`, `gestao-compras-pratica`, `procurement-estrategico-gestores`, `negociacao-avancada`, `ia-supply-chain`, `gestao-fornecedores`, `esg-compras`, `gestao-contratos`, `supply-chain-4`, `custos-indiretos`).
+- Cada card tem dois CTAs: **"Ver conteúdo"** abre modal com programa do curso; **"Solicitar este curso"** rola até o formulário e pré-seleciona o curso.
+- `useEffect` (linhas 379–415) responde a:
+  - `#solicitar` → rola até formulário.
+  - `#curso-<id>` → rola até o card + abre o modal.
+  - `?curso=<titulo>` / `?solicitar=<titulo>` → idem.
+- Filtros por categoria, destaque para gestão e CTA "Falar sobre a capacitação" (`/contato#form`) — todos consistentes.
 
-Usar âncora `#form` nos links para a página rolar direto até o formulário.
+### Links externos para cursos (`src/components/site/OutrosServicos.tsx`)
+- Cada serviço (`/otimizacao-de-custos`, `/inteligencia-de-gastos`, etc.) exibe pílulas dos cursos relacionados.
+- Cada pílula é um `<Link to="/cursos" hash={"curso-" + id}>` que abre o curso correto via deep-link.
+- O mapeamento `COURSE_ID_BY_TITLE` em `src/lib/services.ts` foi conferido linha a linha contra os ids reais em `cursos.tsx` — **100% consistente**, sem títulos órfãos.
+- Header e Footer apontam para `/cursos` (label "Academy") corretamente.
 
-### Passo 1 — `src/routes/contato.tsx`
-- Adicionar `id="form"` na `<section>` que contém o formulário (linha 129).
-- Adicionar `scroll-mt-24` (Tailwind) para compensar o header fixo e não cortar o título do formulário.
+### Conclusão
+Não encontrei nada quebrado: a página Academy funciona, os deep-links dos cursos abrem o card e o modal certos, e o CTA do contato vai direto ao formulário.
 
-### Passo 2 — Adicionar `hash="form"` em todos os `Link to="/contato"` do site
-
-Arquivos a atualizar (todos os CTAs `<Link to="/contato" ...>`):
-
-- `src/components/site/Header.tsx` (2 ocorrências — desktop + mobile CTA)
-- `src/components/site/OutrosServicos.tsx`
-- `src/routes/index.tsx` (3 ocorrências)
-- `src/routes/sobre.tsx`
-- `src/routes/servicos.tsx`
-- `src/routes/metodologia.tsx` (2)
-- `src/routes/reducao-de-custos.tsx`
-- `src/routes/cursos.tsx`
-- `src/routes/otimizacao-de-custos.tsx` (2)
-- `src/routes/bpo-de-compras.tsx` (2)
-- `src/routes/inteligencia-de-gastos.tsx` (2)
-- `src/routes/revisao-pre-fechamento.tsx` (2)
-- `src/routes/maturidade-em-compras.tsx` (2)
-- `src/routes/gestao-de-fornecedores.tsx` (2)
-
-Em cada um, adicionar a prop `hash="form"`:
-```tsx
-<Link to="/contato" hash="form" search={{ interesse: "..." }}>
-```
-
-Para os Links da home/header/CTAs sem `search`, fica:
-```tsx
-<Link to="/contato" hash="form">
-```
-
-### Resultado
-Ao clicar em qualquer CTA "Falar com especialista", o navegador navega para `/contato#form` e rola automaticamente até o formulário, pulando o banner.
-
-Nada mais será alterado — banner, layout e textos permanecem iguais.
+Se você está vendo algo específico que não funciona (curso que não abre, link que volta ao topo, título errado), me diga **qual curso e a partir de qual página** — abro o caso pontual. Caso contrário, nada a alterar.
