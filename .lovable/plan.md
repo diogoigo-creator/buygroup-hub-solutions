@@ -1,18 +1,18 @@
-## Correções na home (`src/routes/index.tsx`)
+## Verificação: todos os itens já estão aplicados
 
-**1. Espaço no H1 (linha 126)**
-A frase está dividida em dois `<span className="block">`. Embora cada um seja bloco, vou garantir o espaçamento textual adicionando um espaço final em "líderes " — corrige qualquer junção visual em renderizações que recolham os blocos.
+Investigando `src/routes/contato.tsx`, `src/routes/reducao-de-custos.tsx` e `src/components/site/Header.tsx`, confirmei que as 6 correções solicitadas **já estão no código**. Nada precisa ser alterado.
 
-**2. Label do briefing executivo (linha 393)**
-Trocar `EXECUTIVE BRIEFING · NÍVEL DIRETIVO · 20MIN` por `BRIEFING EXECUTIVO · NÍVEL DIRETIVO · 20 MIN`. Mantém classes e estilo.
+| # | Item | Status |
+|---|---|---|
+| 1 | Telefone/WhatsApp no /contato (aside + rodapé) | ✅ Já removidos. Aside mostra apenas e-mail + endereço; rodapé (Footer) não contém telefone nem `wa.me`. |
+| 2 | Cidade no /contato | ✅ Já é "Savassi, Belo Horizonte — MG" no aside (linha 223) e no Footer (linha 83). Não há "São Paulo" no site. |
+| 3 | "Currently accepting 3 new engagements…" | ✅ Não existe no /contato. |
+| 4 | Números "R$ 2,1Bi+" / "200+ engagements" | ✅ Não existem no /contato. A página não tem bloco de credenciais com esses números. |
+| 5 | `wa.me/5511940000000` em /reducao-de-custos | ✅ Não existe na página. |
+| 6 | Menu Sobre / Serviços / Metodologia / Onde Atuamos / Academy + CTA "Falar com especialista" | ✅ Já é o conteúdo do `Header.tsx` global, usado por todas as páginas via `SiteLayout`. |
 
-**3. Marca d'água na seção do estudo de caso (linhas 175–221)**
-Adicionar o componente já existente `SectionWatermark` (de `@/components/site/SectionWatermark`) dentro da seção que contém R$ 12MM, 12,4% e 9,3x, posicionado à direita com opacidade baixa.
+### Observação sobre o e-mail
+O prompt menciona `contato@buygroup.com.br`, mas o site usa `atendimento@buygroup.com.br` (consistente em todas as páginas). Como você não pediu para trocar — apenas para "manter" — vou manter `atendimento@`. Se quiser padronizar para `contato@`, me confirme e altero em todo o site (contato, footer, JSON-LD).
 
-Observação importante: no código atual, essa seção tem **fundo claro** (não escuro como mencionado). Para respeitar o padrão visual coerente com o fundo, vou usar `tone="dark"` (marca escura sutil sobre fundo claro, opacidade ~4%, igual às demais seções claras). Se a intenção for realmente usar a marca branca (`buy-group-mark-white`), me avise e troco para `tone="light"`.
-
-Mudanças:
-- Tornar a `<section>` `relative overflow-hidden` para conter a marca d'água absoluta.
-- Inserir `<SectionWatermark variant="right" tone="dark" />` como primeiro filho da section.
-
-Nada mais será alterado.
+### Próximo passo
+Nada a alterar. Se quiser que eu force alguma mudança mesmo assim (ex.: trocar e-mail para `contato@`), me diga qual.
