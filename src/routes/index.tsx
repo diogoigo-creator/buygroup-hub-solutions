@@ -243,31 +243,67 @@ function Index() {
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-green/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
           <div className="max-w-3xl">
-            <p className="font-sans text-xs uppercase tracking-[0.28em] text-green">
-              Metodologia CUT4MORE™
-            </p>
-            <h2 className="mt-4 text-balance font-serif text-4xl text-white md:text-5xl">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-green/30 bg-green/5 px-4 py-1.5 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-green shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
+              <p className="font-sans text-[0.7rem] uppercase tracking-[0.32em] text-green">
+                Metodologia proprietária CUT4MORE™
+              </p>
+            </div>
+            <h2 className="mt-6 text-balance font-serif text-4xl text-white md:text-5xl">
               Uma metodologia estruturada em quatro fases.
               <span className="text-white/55"> Da análise ao resultado validado.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-white/70">
               Desenvolvida a partir da experiência em projetos de compras complexos, a{" "}
-              <span className="font-semibold uppercase tracking-wider">CUT4MORE™</span> organiza a
-              análise, a estratégia, a negociação e a validação financeira dos savings.
+              <span className="font-semibold uppercase tracking-wider text-green">CUT4MORE™</span>{" "}
+              organiza a análise, a estratégia, a negociação e a validação financeira dos savings.
             </p>
           </div>
 
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
-            {framework.map((step) => (
-              <li key={step.n} className="bg-navy p-8 lg:p-10">
-                <span className="font-tabular font-serif text-4xl text-green">{step.n}</span>
-                <p className="mt-6 font-serif text-xl text-white">{step.t}</p>
-                <p className="mt-3 text-sm leading-relaxed text-white/65">{step.d}</p>
-              </li>
-            ))}
-          </ol>
+          <div className="relative mt-16">
+            {/* Connector line - desktop only */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute left-0 right-0 top-[4.25rem] hidden h-px bg-gradient-to-r from-transparent via-green/40 to-transparent lg:block"
+            />
+            <ol className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {framework.map((step, idx) => (
+                <li
+                  key={step.n}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-green/40 hover:from-green/10 hover:to-white/[0.02] hover:shadow-[0_22px_60px_-20px_rgba(212,175,55,0.35)] lg:p-9"
+                >
+                  {/* Watermark step number */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-3 -top-6 select-none font-serif text-[8rem] font-medium leading-none text-white/[0.04] transition-colors duration-500 group-hover:text-green/10"
+                  >
+                    {step.n}
+                  </span>
+
+                  {/* Icon badge on the connector line */}
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/20 bg-gradient-to-br from-green/25 to-green/5 text-green shadow-[0_8px_24px_-12px_rgba(212,175,55,0.4)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:border-green/50">
+                    <step.icon className="h-6 w-6" />
+                  </div>
+
+                  <div className="relative mt-6 flex items-center gap-3">
+                    <span className="font-tabular font-serif text-xl text-green/90">{step.n}</span>
+                    <span className="h-px flex-1 bg-gradient-to-r from-green/40 to-transparent" />
+                    {idx < framework.length - 1 && (
+                      <ArrowUpRight className="h-3.5 w-3.5 text-green/50 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-green" />
+                    )}
+                  </div>
+
+                  <h3 className="relative mt-4 font-serif text-xl leading-snug text-white">
+                    {step.t}
+                  </h3>
+                  <p className="relative mt-3 text-sm leading-relaxed text-white/65">{step.d}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
+
 
       {/* DIFFERENTIATION MOAT */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
