@@ -14,6 +14,7 @@ const servicos = [
 const empresa = [
   { to: "/sobre", label: "Sobre a Buy Group" },
   { to: "/servicos", label: "Todos os serviços" },
+  { to: "/metodologia", label: "Metodologia CUT4MORE™" },
   { to: "/reducao-de-custos", label: "Onde atuamos" },
   { to: "/cursos", label: "Buy Group Academy" },
   { to: "/contato", label: "Falar com especialista" },
