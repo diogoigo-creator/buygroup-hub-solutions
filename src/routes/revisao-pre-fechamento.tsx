@@ -421,7 +421,7 @@ function SecondOpinionPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/50">
-                  Remuneração de 50% sobre os R$ 280k capturados — negociação conduzida pela Buy Group
+                  REMUNERAÇÃO DE 50% SOBRE OS R$ 280K&nbsp; — NEGOCIAÇÃO CONDUZIDA PELA BUY GROUP
                 </p>
               </div>
             </div>
