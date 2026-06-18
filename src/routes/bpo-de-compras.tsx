@@ -48,7 +48,7 @@ export const Route = createFileRoute("/bpo-de-compras")({
           children: JSON.stringify(
             serviceJsonLd({
               name: "BPO de Compras",
-              serviceType: "Business Process Outsourcing — Compras",
+              serviceType: "Business Process Outsourcing (Compras)",
               description,
               path: "/bpo-de-compras",
             }),

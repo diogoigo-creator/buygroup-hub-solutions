@@ -231,7 +231,7 @@ function CostOptimizationPage() {
               Quando a Otimização de Custos faz sentido
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-              O programa é desenhado para empresas que sabem — ou desconfiam — que estão deixando
+              O programa é desenhado para empresas que sabem (ou desconfiam) que estão deixando
               dinheiro na mesa em contratos, fornecedores e categorias estratégicas, mas não têm
               capacidade interna para destravar os savings com governança.
             </p>

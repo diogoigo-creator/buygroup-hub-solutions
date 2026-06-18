@@ -85,7 +85,7 @@ const frameworkDetail = [
     n: "02",
     icon: Compass,
     t: "Estratégia de Compra",
-    d: "Decomposição da estrutura de custos por categoria e desenho de estratégia de fornecimento — competitiva, de parceria ou híbrida — alinhada ao risco operacional e ao apetite de margem do cliente.",
+    d: "Decomposição da estrutura de custos por categoria e desenho de estratégia de fornecimento (competitiva, de parceria ou híbrida), alinhada ao risco operacional e ao apetite de margem do cliente.",
     activities: [
       "Should-cost analysis por categoria",
       "Mapeamento de fornecedores alternativos qualificados",
@@ -166,7 +166,7 @@ function MetodologiaPage() {
             <span className="text-green">Do baseline ao saving homologado.</span>
           </>
         }
-        description="CUT4MORE™ é o método pelo qual a Buy Group estrutura projetos de redução de custos em compras: análise, estratégia, negociação e validação financeira — com rastreabilidade contábil e remuneração vinculada ao resultado."
+        description="CUT4MORE™ é o método pelo qual a Buy Group estrutura projetos de redução de custos em compras: análise, estratégia, negociação e validação financeira, com rastreabilidade contábil e remuneração vinculada ao resultado."
         identity={{ kind: "mark" }}
         cta={
           <>
@@ -223,7 +223,7 @@ function MetodologiaPage() {
             <span className="text-green">e o que esperar em métricas.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-pretty text-muted-foreground">
-            Cada fase tem entregáveis, atividades-chave e indicadores próprios — tornando o
+            Cada fase tem entregáveis, atividades-chave e indicadores próprios, tornando o
             processo auditável de ponta a ponta, do baseline ao saving homologado.
           </p>
         </div>

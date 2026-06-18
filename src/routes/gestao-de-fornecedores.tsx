@@ -100,7 +100,7 @@ const steps = [
     n: "02",
     title: "Classificação de risco",
     deadline: "20 dias",
-    body: "Avaliação financeira, operacional, ESG, compliance e concentração — matriz de criticidade.",
+    body: "Avaliação financeira, operacional, ESG, compliance e concentração, com matriz de criticidade.",
   },
   {
     n: "03",

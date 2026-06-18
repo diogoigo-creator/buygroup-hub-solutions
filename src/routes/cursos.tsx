@@ -43,7 +43,7 @@ export const Route = createFileRoute("/cursos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
+        { property: "og:title", content: "Buy Group Academy: capacitação para equipes de compras" },
         {
           property: "og:description",
           content: "Capacitação prática para equipes que precisam gerar economia com método e governança.",
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/cursos")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "Buy Group Academy — cursos in-company",
+            name: "Buy Group Academy: cursos in-company",
             itemListElement: courses.map((c, i) => ({
               "@type": "ListItem",
               position: i + 1,
