@@ -22,10 +22,10 @@ const empresa = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="surface-dark bg-navy text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr] lg:gap-10 lg:px-10 lg:py-16">
         <div className="space-y-5">
-          <BuyGroupLogo className="h-7 w-auto text-white" />
+          <BuyGroupLogo className="h-7 w-auto" />
           <p className="max-w-xs text-sm leading-relaxed text-white/65">
             Consultoria executiva de compras e negociação. Economia com método, governança
             financeira e resultado validado.

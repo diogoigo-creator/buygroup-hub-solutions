@@ -1,54 +1,75 @@
-## Objetivo
+## Contexto
 
-Logo SVG totalmente responsiva e que **herda a cor do contexto**: preta sobre fundos claros, branca sobre fundos escuros — sem manter dois arquivos coloridos.
+O site não tem um tema global escuro/claro alternável — tem **superfícies** com fundos diferentes na mesma página (Header claro, Footer/Hero escuros). Vou padronizar com **tokens semânticos** para que a logo escolha a cor sozinha conforme a superfície onde estiver.
 
 ## Mudanças
 
-### 1. Novo componente `src/components/site/BuyGroupLogo.tsx`
-Componente React que retorna o SVG **inline** com `fill="currentColor"`. Aceita `className` para tamanho e cor:
+### 1. Tokens em `src/styles.css`
 
-```tsx
-export function BuyGroupLogo({ className }: { className?: string }) {
-  return (
-    <svg xmlns="..." viewBox="0 0 1584 672" fill="currentColor" role="img" aria-label="Buy Group" className={className}>
-      <g transform="...">...paths...</g>
-    </svg>
-  );
+Adicionar dois tokens semânticos (entre o `@theme inline` e o `:root`):
+
+```css
+:root {
+  /* Cor da logomarca por superfície. Default: superfície clara → preto. */
+  --logo: oklch(0.15 0.02 256);   /* preto/quase-preto, casa com --foreground */
+}
+
+/* Qualquer superfície marcada como "escura" inverte automaticamente */
+.surface-dark {
+  --logo: oklch(1 0 0);            /* branco puro */
 }
 ```
 
-A cor passa a ser controlada via `text-*` no Tailwind (currentColor), o tamanho via `w-*` / `h-*`. Proporção preservada automaticamente pelo `viewBox`.
-
-### 2. Substituir os 3 usos atuais
-
-**`Header.tsx`** (fundo claro → preto, com fallback para quando rolado):
-```tsx
-<BuyGroupLogo className="h-7 w-auto text-foreground sm:h-8" />
+E registrar como cor Tailwind dentro do `@theme inline` existente:
+```css
+--color-logo: var(--logo);
 ```
 
-**`Footer.tsx`** (fundo navy → branco):
+Isso libera as utilities `text-logo`, `bg-logo`, etc.
+
+### 2. Componente `BuyGroupLogo`
+
+Trocar a cor passada pela página por uma cor herdada do token. O componente passa a renderizar com `text-logo` por padrão (ou aceita `className` se alguém quiser sobrescrever):
+
 ```tsx
-<BuyGroupLogo className="h-7 w-auto text-white" />
+<svg ... className={cn("text-logo", className)} fill="currentColor" ...>
 ```
 
-**`FullLockup.tsx`** (hero escuro → branco, com tamanhos responsivos atuais preservados):
+### 3. Marcar as superfícies escuras
+
+- `Footer.tsx` (`<footer class="bg-navy ...">`) → adicionar `surface-dark`
+- `FullLockup.tsx` wrapper → o hero já vive sobre fundo escuro; adicionar `surface-dark` no `<div>` raiz do lockup
+- `Header.tsx` → **não** recebe `surface-dark` (fica preto sobre branco automaticamente)
+
+### 4. Limpeza nos usos
+
+Remover `text-white` / `text-navy` específicos dos 3 call-sites — passa a ser automático:
+
 ```tsx
-<BuyGroupLogo className="w-[220px] sm:w-[300px] lg:w-[380px] h-auto text-white animate-lockup-reveal select-none" />
+// Header
+<BuyGroupLogo className="h-8 w-auto shrink-0 sm:h-9" />
+
+// Footer (dentro de um wrapper com classe surface-dark)
+<BuyGroupLogo className="h-7 w-auto" />
+
+// FullLockup (wrapper raiz com surface-dark)
+<BuyGroupLogo className="h-auto w-[220px] sm:w-[300px] lg:w-[380px] ..." />
 ```
 
-### 3. Responsividade
+### 5. Bônus — suporte futuro a tema escuro global
 
-- O SVG já é vetorial — não há perda em nenhuma DPI.
-- Mantenho os breakpoints já existentes (`sm:` / `lg:`).
-- `w-auto` + `h-*` (ou vice-versa) preserva a proporção 1584:672 do `viewBox` em todos os tamanhos.
-- Adiciono `shrink-0` no Header para impedir distorção quando o menu mobile espreme o layout.
+O `@custom-variant dark` já existe em `styles.css`. Adicionar também:
+```css
+.dark {
+  --logo: oklch(1 0 0);
+}
+```
 
-### 4. Limpeza
-- Remover `src/assets/buy-group-logo.svg` e `src/assets/buy-group-logo-white.svg` (substituídos pelo componente inline — uma única fonte de verdade).
+Assim, se um dia o site ganhar toggle dark/light global (classe `.dark` no `<html>`), a logo já acompanha sem mais nenhuma alteração.
 
 ## Arquivos afetados
-- **novo:** `src/components/site/BuyGroupLogo.tsx`
-- **editar:** `src/components/site/Header.tsx`, `src/components/site/Footer.tsx`, `src/components/site/hero-identities/FullLockup.tsx`
-- **remover:** `src/assets/buy-group-logo.svg`, `src/assets/buy-group-logo-white.svg`
+- `src/styles.css` — adicionar tokens `--logo` + `--color-logo` + regra `.surface-dark` + regra `.dark`
+- `src/components/site/BuyGroupLogo.tsx` — default `text-logo`
+- `src/components/site/Header.tsx`, `Footer.tsx`, `hero-identities/FullLockup.tsx` — adicionar `surface-dark` nos wrappers escuros e remover `text-navy`/`text-white` da logo
 
-Posso seguir?
+Posso aplicar?
