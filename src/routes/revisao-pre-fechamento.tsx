@@ -325,7 +325,7 @@ function SecondOpinionPage() {
                 atuamos como intermediários entre você e o fornecedor sem sua autorização.
               </p>
               <p className="border-l-2 border-green pl-6 font-serif text-xl leading-snug text-navy md:text-2xl">
-                A Revisão Pré-Fechamento é uma camada de inteligência independente — seu time
+                A Revisão Pré-Fechamento é uma camada de inteligência independente seu time
                 continua no controle da relação com o fornecedor.
               </p>
             </div>
