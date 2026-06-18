@@ -117,8 +117,13 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
+          width={1280}
+          height={720}
+          fetchPriority="high"
+          decoding="async"
           className="hero-cinematic-image pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
         />
+
         <div className="hero-cinematic-light pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="hero-cinematic-glow pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
