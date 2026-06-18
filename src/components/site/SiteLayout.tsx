@@ -32,7 +32,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 type Identity =
   | { kind: "mark"; intensity?: "default" | "bold" }
-  | { kind: "lockup"; caption?: string; slogan?: { primary: string; accent?: string } }
+  | { kind: "lockup"; caption?: string; subCaption?: string; slogan?: { primary: string; accent?: string } }
   | { kind: "slogan"; lines: { text: string; accent?: boolean }[][] };
 
 export function PageHero({
