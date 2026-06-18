@@ -1,18 +1,19 @@
-## Verificação: todos os itens já estão aplicados
+## Diagnóstico
 
-Investigando `src/routes/contato.tsx`, `src/routes/reducao-de-custos.tsx` e `src/components/site/Header.tsx`, confirmei que as 6 correções solicitadas **já estão no código**. Nada precisa ser alterado.
+Confirmei no código atual de `src/routes/index.tsx`:
 
-| # | Item | Status |
-|---|---|---|
-| 1 | Telefone/WhatsApp no /contato (aside + rodapé) | ✅ Já removidos. Aside mostra apenas e-mail + endereço; rodapé (Footer) não contém telefone nem `wa.me`. |
-| 2 | Cidade no /contato | ✅ Já é "Savassi, Belo Horizonte — MG" no aside (linha 223) e no Footer (linha 83). Não há "São Paulo" no site. |
-| 3 | "Currently accepting 3 new engagements…" | ✅ Não existe no /contato. |
-| 4 | Números "R$ 2,1Bi+" / "200+ engagements" | ✅ Não existem no /contato. A página não tem bloco de credenciais com esses números. |
-| 5 | `wa.me/5511940000000` em /reducao-de-custos | ✅ Não existe na página. |
-| 6 | Menu Sobre / Serviços / Metodologia / Onde Atuamos / Academy + CTA "Falar com especialista" | ✅ Já é o conteúdo do `Header.tsx` global, usado por todas as páginas via `SiteLayout`. |
+- **Linha 127**: `Encontramos oportunidades que os líderes{" "}` — com espaço, e os dois `<span>` são `block` (cada um em sua linha).
+- **Linha 395**: `BRIEFING EXECUTIVO · NÍVEL DIRETIVO · 20 MIN` — já em português.
 
-### Observação sobre o e-mail
-O prompt menciona `contato@buygroup.com.br`, mas o site usa `atendimento@buygroup.com.br` (consistente em todas as páginas). Como você não pediu para trocar — apenas para "manter" — vou manter `atendimento@`. Se quiser padronizar para `contato@`, me confirme e altero em todo o site (contato, footer, JSON-LD).
+Ou seja, as duas correções **estão no código-fonte**. O que você está vendo na tela é provavelmente:
 
-### Próximo passo
-Nada a alterar. Se quiser que eu force alguma mudança mesmo assim (ex.: trocar e-mail para `contato@`), me diga qual.
+1. Cache do navegador / preview não atualizado, ou
+2. Você está olhando para a versão **publicada** (publish anterior), e não para o preview atual.
+
+## Plano
+
+1. Rodar o Playwright contra o preview local (`http://localhost:8080`) e tirar screenshots do H1 e da seção de briefing, para provar o que está sendo de fato renderizado pelo build atual.
+2. Se as screenshots mostrarem o texto correto → é cache; recomendo Ctrl+Shift+R no preview e, em seguida, republicar o site para propagar.
+3. Se as screenshots mostrarem o texto colado / em inglês → investigar outro componente / CSS que esteja sobrescrevendo (improvável, mas vou checar `text-balance`, animações e qualquer regra global que possa afetar o `display: block`).
+
+Nada será alterado até confirmarmos o estado real do render.
