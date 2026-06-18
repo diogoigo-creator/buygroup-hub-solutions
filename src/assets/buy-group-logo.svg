@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 240" fill="none" role="img" aria-label="buygroup">
+  <g fill="currentColor">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M60 12h120c26.51 0 48 21.49 48 48v120c0 26.51-21.49 48-48 48H60c-26.51 0-48-21.49-48-48V60c0-26.51 21.49-48 48-48zm0 24c-13.255 0-24 10.745-24 24v120c0 13.255 10.745 24 24 24h120c13.255 0 24-10.745 24-24V60c0-13.255-10.745-24-24-24H60z"/>
+    <path d="M70 120l70-52v28h60v48h-60v28z"/>
+  </g>
+  <g fill="currentColor" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="170" letter-spacing="-6">
+    <text x="262" y="180">buygroup</text>
+  </g>
+</svg>
