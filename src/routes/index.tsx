@@ -69,21 +69,25 @@ const credibility = [
 const framework = [
   {
     n: "01",
+    icon: Search,
     t: "Mapeamento de Oportunidades",
     d: "Analisamos despesas, contratos e fornecedores para construir um baseline confiável e priorizar oportunidades de economia.",
   },
   {
     n: "02",
+    icon: Compass,
     t: "Estratégia de Compra",
     d: "Avaliamos a composição de custos e as alternativas de fornecimento para estruturar negociações competitivas.",
   },
   {
     n: "03",
+    icon: Handshake,
     t: "Condução da Negociação",
     d: "Conduzimos as negociações com foco em margem, sem comprometer SLA, qualidade ou continuidade operacional.",
   },
   {
     n: "04",
+    icon: CheckCircle2,
     t: "Validação dos Savings",
     d: "Acompanhamos os resultados e validamos financeiramente os savings conforme o baseline aprovado.",
   },
