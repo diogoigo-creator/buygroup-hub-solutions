@@ -57,7 +57,7 @@ export function Header() {
         <Link
           to="/"
           className="flex items-center gap-3 transition-opacity hover:opacity-80"
-          aria-label="Buy Group — início"
+          aria-label="Buy Group: início"
         >
           <BuyGroupLogo className="h-8 w-auto shrink-0 sm:h-9" />
         </Link>

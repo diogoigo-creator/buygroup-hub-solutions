@@ -25,7 +25,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/maturidade-em-compras")({
   head: () => {
-    const title = "Maturidade em Compras — Buy Group";
+    const title = "Maturidade em Compras | Buy Group";
     const description =
       "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.";
     const url = "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras";
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/maturidade-em-compras")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Maturidade em Compras — Buy Group" },
+        { property: "og:title", content: "Maturidade em Compras | Buy Group" },
         {
           property: "og:description",
           content: "Benchmark, gap analysis e plano de evolução de compras com business case.",

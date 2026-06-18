@@ -73,14 +73,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buy Group — Compras estratégicas e margem" },
+      { title: "Buy Group: compras estratégicas e margem" },
       {
         name: "description",
         content:
           "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, resultado validado e governança financeira.",
       },
       { name: "author", content: "Buy Group" },
-      { property: "og:title", content: "Buy Group — Compras estratégicas e margem" },
+      { property: "og:title", content: "Buy Group: compras estratégicas e margem" },
       {
         property: "og:description",
         content:

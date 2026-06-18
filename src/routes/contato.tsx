@@ -15,7 +15,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
   head: () => {
-    const title = "Contato — Buy Group";
+    const title = "Contato | Buy Group";
     const description = "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.";
     const url = `${SITE_URL}/contato`;
     return {
@@ -79,7 +79,7 @@ function ContatoPage() {
     "second-opinion": "Revisão Pré-Fechamento",
     "supplier-risk": "Gestão de Fornecedores",
     "procurement-maturity": "Maturidade em Compras",
-    "academy": "Academy — capacitação para a equipe",
+    "academy": "Academy: capacitação para a equipe",
   };
   const defaultInterest = interesse ? interestMap[interesse] : undefined;
 
@@ -158,8 +158,8 @@ function ContatoPage() {
                   "Revisão Pré-Fechamento",
                   "Gestão de Fornecedores",
                   "Maturidade em Compras",
-                  "Academy — capacitação para a equipe",
-                  "Ainda não sei — quero uma conversa executiva",
+                  "Academy: capacitação para a equipe",
+                  "Ainda não sei, quero uma conversa executiva",
                 ]}
               />
               <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
@@ -218,8 +218,8 @@ function ContatoPage() {
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-green" />
                 <span className="leading-relaxed">
-                  R. Rio Grande do Norte, 1436 — Sala 813<br />
-                  Savassi, Belo Horizonte — MG<br />
+                  R. Rio Grande do Norte, 1436, Sala 813<br />
+                  Savassi, Belo Horizonte, MG<br />
                   CEP 30130-138 · Brasil
                 </span>
               </li>

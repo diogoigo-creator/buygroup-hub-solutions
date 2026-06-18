@@ -35,7 +35,7 @@ export const Route = createFileRoute("/cursos")({
     solicitar: z.string().optional(),
   }),
   head: () => {
-    const title = "Buy Group Academy — capacitação para compras";
+    const title = "Buy Group Academy: capacitação para compras";
     const description =
       "Programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.";
     const url = `${SITE_URL}/cursos`;
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/cursos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Buy Group Academy — capacitação para equipes de compras" },
+        { property: "og:title", content: "Buy Group Academy: capacitação para equipes de compras" },
         {
           property: "og:description",
           content: "Capacitação prática para equipes que precisam gerar economia com método e governança.",
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/cursos")({
           children: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ItemList",
-            name: "Buy Group Academy — cursos in-company",
+            name: "Buy Group Academy: cursos in-company",
             itemListElement: courses.map((c, i) => ({
               "@type": "ListItem",
               position: i + 1,
@@ -162,7 +162,7 @@ const courses: Course[] = [
       "Análise de gastos: coleta, limpeza e categorização dos dados",
       "Painéis de análise de gastos em Excel e Power BI",
       "Segmentação de categorias e Matriz de Kraljic",
-      "TCO — Custo Total de Propriedade",
+      "TCO (Custo Total de Propriedade)",
       "Processo de RFI, RFQ e RFP",
       "Avaliação e seleção de fornecedores",
       "Negociação baseada em dados",
@@ -180,7 +180,7 @@ const courses: Course[] = [
     level: "Iniciante",
     topics: [
       "O papel estratégico de compras na empresa",
-      "Ciclo completo de compras — P2P",
+      "Ciclo completo de compras (P2P)",
       "Tipos de compras: diretas, indiretas e serviços",
       "Processo de cotação e equalização de propostas",
       "Relacionamento com fornecedores",
@@ -213,7 +213,7 @@ const courses: Course[] = [
     icon: Handshake,
     title: "Negociação Avançada com Fornecedores",
     description:
-      "Técnicas práticas de negociação para compradores: planejamento, BATNA, ancoragem, táticas e contra-táticas — com simulações baseadas em situações reais do mercado.",
+      "Técnicas práticas de negociação para compradores: planejamento, BATNA, ancoragem, táticas e contra-táticas, com simulações baseadas em situações reais do mercado.",
     hours: "8h a 16h",
     level: "Intermediário",
     topics: [
@@ -232,7 +232,7 @@ const courses: Course[] = [
     icon: Bot,
     title: "IA Aplicada à Cadeia de Suprimentos",
     description:
-      "Como usar inteligência artificial para prever demanda, analisar riscos de fornecedores, automatizar compras e criar painéis inteligentes — sem necessidade de programação.",
+      "Como usar inteligência artificial para prever demanda, analisar riscos de fornecedores, automatizar compras e criar painéis inteligentes, sem necessidade de programação.",
     hours: "16h a 40h",
     level: "Intermediário",
     topics: [
@@ -304,7 +304,7 @@ const courses: Course[] = [
     id: "supply-chain-4",
     category: "IA e Tecnologia",
     icon: Cpu,
-    title: "Cadeia de Suprimentos 4.0 — Tecnologia e Inovação",
+    title: "Cadeia de Suprimentos 4.0: Tecnologia e Inovação",
     description:
       "Como aplicar os conceitos da Indústria 4.0 na cadeia de suprimentos: automação, internet das coisas, dados e tecnologias que transformam compras e logística.",
     hours: "12h a 22h",
@@ -325,7 +325,7 @@ const courses: Course[] = [
     icon: TrendingDown,
     title: "Redução de Custos Indiretos na Prática",
     description:
-      "Metodologia completa para identificar e executar projetos de redução em despesas indiretas: energia, telecom, TI, facilities, logística e serviços — com ou sem troca de fornecedor.",
+      "Metodologia completa para identificar e executar projetos de redução em despesas indiretas: energia, telecom, TI, facilities, logística e serviços, com ou sem troca de fornecedor.",
     hours: "12h a 24h",
     level: "Intermediário",
     topics: [

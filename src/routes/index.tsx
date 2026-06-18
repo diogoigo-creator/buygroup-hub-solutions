@@ -20,7 +20,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Buy Group — Economia em compras com governança";
+    const title = "Buy Group: economia em compras com governança";
     const description =
       "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.";
     const url = "https://buygroup-hub-solutions.lovable.app/";
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Buy Group — Compras estratégicas e margem real" },
+        { property: "og:title", content: "Buy Group: compras estratégicas e margem real" },
         {
           property: "og:description",
           content: "Economia em compras, negociações estratégicas e savings validados com governança financeira.",

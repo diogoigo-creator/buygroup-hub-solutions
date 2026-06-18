@@ -23,7 +23,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/inteligencia-de-gastos")({
   head: () => {
-    const title = "Inteligência de Gastos · Assessment — Buy Group";
+    const title = "Inteligência de Gastos · Assessment | Buy Group";
     const description =
       "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.";
     const url = "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos";
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/inteligencia-de-gastos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Inteligência de Gastos — Buy Group" },
+        { property: "og:title", content: "Inteligência de Gastos | Buy Group" },
         {
           property: "og:description",
           content: "Assessment de spend sob NDA. Painel executivo e oportunidades em 30 dias.",

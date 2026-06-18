@@ -19,7 +19,7 @@ import { SOCIAL_META, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => {
-    const title = "Redução de Custos em Compras — Buy Group";
+    const title = "Redução de Custos em Compras | Buy Group";
     const description =
       "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.";
     const url = "https://buygroup-hub-solutions.lovable.app/reducao-de-custos";

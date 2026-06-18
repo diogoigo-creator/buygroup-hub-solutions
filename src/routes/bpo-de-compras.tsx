@@ -23,7 +23,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/bpo-de-compras")({
   head: () => {
-    const title = "BPO de Compras para empresas — Buy Group";
+    const title = "BPO de Compras para empresas | Buy Group";
     const description =
       "BPO de Compras com governança, SLA, inteligência de mercado e foco em savings homologados para empresas de médio e grande porte.";
     const url = "https://buygroup-hub-solutions.lovable.app/bpo-de-compras";
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/bpo-de-compras")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "BPO de Compras com foco em performance — Buy Group" },
+        { property: "og:title", content: "BPO de Compras com foco em performance | Buy Group" },
         {
           property: "og:description",
           content: "Uma célula externa de compras orientada a governança, savings e margem capturada.",
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/bpo-de-compras")({
           children: JSON.stringify(
             serviceJsonLd({
               name: "BPO de Compras",
-              serviceType: "Business Process Outsourcing — Compras",
+              serviceType: "Business Process Outsourcing (Compras)",
               description,
               path: "/bpo-de-compras",
             }),

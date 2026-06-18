@@ -19,7 +19,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/servicos")({
   head: () => {
-    const title = "Portfólio Buy Group — Por onde começar";
+    const title = "Portfólio Buy Group: por onde começar";
     const description =
       "Programas estruturados de redução de custos em compras indiretas, BPO, inteligência de gastos e governança financeira para grandes empresas.";
     const url = `${SITE_URL}/servicos`;
@@ -254,7 +254,7 @@ function ServicosPage() {
               </p>
               <h3 className="mt-3 font-serif text-2xl leading-snug md:text-3xl">
                 Todos os produtos são entregues pela{" "}
-                <span className="text-green">CUT4MORE™</span> — 4 fases auditáveis, do baseline ao
+                <span className="text-green">CUT4MORE™</span>, com 4 fases auditáveis, do baseline ao
                 saving homologado.
               </h3>
               <p className="mt-3 max-w-2xl text-sm text-white/70">

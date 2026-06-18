@@ -26,7 +26,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/revisao-pre-fechamento")({
   head: () => {
-    const title = "Revisão Pré-Fechamento de Propostas — Buy Group";
+    const title = "Revisão Pré-Fechamento de Propostas | Buy Group";
     const description =
       "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.";
     const url = "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento";
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Revisão Pré-Fechamento — Buy Group" },
+        { property: "og:title", content: "Revisão Pré-Fechamento | Buy Group" },
         {
           property: "og:description",
           content:
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
         },
         { property: "og:url", content: url },
         ...SOCIAL_META,
-        { name: "twitter:title", content: "Revisão Pré-Fechamento — Buy Group" },
+        { name: "twitter:title", content: "Revisão Pré-Fechamento | Buy Group" },
         {
           name: "twitter:description",
           content: "Saving residual de propostas já negociadas, sob NDA. Retorno em 48h.",
@@ -179,7 +179,7 @@ function SecondOpinionPage() {
             </h1>
             <p className="mt-7 max-w-3xl text-pretty text-base leading-relaxed text-white/70 lg:text-lg">
               Revisamos propostas comerciais já negociadas pelo seu time e extraímos o saving
-              residual antes do comprometimento do orçamento. Sem substituir sua equipe — somando
+              residual antes do comprometimento do orçamento. Sem substituir sua equipe, somando
               inteligência de mercado no momento crítico.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -220,11 +220,11 @@ function SecondOpinionPage() {
             <p className="text-lg leading-relaxed text-muted-foreground">
               Equipes internas de compras negociam bem dentro do referencial que conhecem. O problema
               é que o fornecedor sempre sabe mais sobre sua própria margem do que o comprador. O
-              resultado é um acordo que parece bom — mas deixa saving na mesa.
+              resultado é um acordo que parece bom, mas que deixa saving na mesa.
             </p>
             <p className="mt-6 border-l-2 border-green pl-6 font-serif text-2xl leading-snug text-navy md:text-3xl">
               A Revisão Pré-Fechamento coloca um especialista sênior entre a proposta negociada e
-              a assinatura do contrato. Não para refazer o trabalho do seu time — para extrair o que
+              a assinatura do contrato. Não para refazer o trabalho do seu time, mas sim para extrair o que
               ainda é possível capturar.
             </p>
           </div>
@@ -421,7 +421,7 @@ function SecondOpinionPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-xs uppercase tracking-[0.18em] text-white/50">
-                  REMUNERAÇÃO DE 50% SOBRE OS R$ 280K&nbsp; — NEGOCIAÇÃO CONDUZIDA PELA BUY GROUP
+                  REMUNERAÇÃO DE 50% SOBRE OS R$ 280K&nbsp; · NEGOCIAÇÃO CONDUZIDA PELA BUY GROUP
                 </p>
               </div>
             </div>
@@ -445,7 +445,7 @@ function SecondOpinionPage() {
               </h2>
               <p className="mt-5 max-w-2xl text-muted-foreground">
                 Envie para revisão. Retorno em até 48 horas. A Buy Group conduz a negociação final
-                e a remuneração é de 50% sobre a economia gerada — sem taxa fixa.
+                e a remuneração é de 50% sobre a economia gerada, sem taxa fixa.
               </p>
             </div>
             <div className="flex flex-col items-start gap-3 lg:items-end">

@@ -24,7 +24,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/otimizacao-de-custos")({
   head: () => {
-    const title = "Otimização de Custos · CUT4MORE™ — Buy Group";
+    const title = "Otimização de Custos · CUT4MORE™ | Buy Group";
     const description =
       "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.";
     const url = "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos";
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/otimizacao-de-custos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Otimização de Custos — Buy Group" },
+        { property: "og:title", content: "Otimização de Custos | Buy Group" },
         {
           property: "og:description",
           content: "Capturamos economia que sua empresa já deveria ter, com governança e resultado validado.",
@@ -231,7 +231,7 @@ function CostOptimizationPage() {
               Quando a Otimização de Custos faz sentido
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-              O programa é desenhado para empresas que sabem — ou desconfiam — que estão deixando
+              O programa é desenhado para empresas que sabem (ou desconfiam) que estão deixando
               dinheiro na mesa em contratos, fornecedores e categorias estratégicas, mas não têm
               capacidade interna para destravar os savings com governança.
             </p>
