@@ -455,20 +455,6 @@ function SecondOpinionPage() {
                   Falar com especialista <ArrowUpRight />
                 </Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                className="h-12 rounded-full bg-whatsapp px-7 text-white hover:bg-whatsapp/90"
-              >
-                <a
-                  href="https://wa.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Falar com a Buy Group pelo WhatsApp"
-                >
-                  <MessageSquare className="h-4 w-4" /> Falar pelo WhatsApp
-                </a>
-              </Button>
               <p className="flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">
                 <FileSearch className="h-3.5 w-3.5 text-green" /> NDA assinado antes do recebimento
                 de qualquer documento

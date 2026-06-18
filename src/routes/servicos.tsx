@@ -21,7 +21,7 @@ export const Route = createFileRoute("/servicos")({
   head: () => {
     const title = "Portfólio Buy Group — Por onde começar";
     const description =
-      "Portfólio de produtos da Buy Group: Otimização de Custos, BPO de Compras, Inteligência de Gastos, Academy e serviços complementares.";
+      "Programas estruturados de redução de custos em compras indiretas, BPO, inteligência de gastos e governança financeira para grandes empresas.";
     const url = `${SITE_URL}/servicos`;
     const items: { name: string; path: string }[] = [
       { name: "Otimização de Custos", path: "/otimizacao-de-custos" },
