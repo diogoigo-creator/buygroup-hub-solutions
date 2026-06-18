@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { OutrosServicos } from "@/components/site/OutrosServicos";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
@@ -164,7 +163,7 @@ const reasons: { icon: ComponentType<{ className?: string }>; title: string; bod
 function SecondOpinionPage() {
   return (
     <SiteLayout>
-      <Breadcrumb currentLabel="Revisão Pré-Fechamento" currentSlug="revisao-pre-fechamento" />
+      
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-navy text-white lg:min-h-[78svh] lg:flex lg:items-center">
         <div className="pointer-events-none absolute -right-48 top-0 h-[580px] w-[580px] rounded-full bg-green/15 blur-3xl" />

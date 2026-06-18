@@ -15,7 +15,6 @@ import {
   Recycle,
 } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
-import { Breadcrumb } from "@/components/site/Breadcrumb";
 import { SOCIAL_META, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/reducao-de-custos")({
@@ -144,7 +143,7 @@ function ReducaoDeCustosPage() {
         description="As faixas indicam potenciais observados por categoria. O saving real depende da análise das despesas, dos contratos e dos fornecedores, e o projeto só avança após a validação do caso com o cliente."
         identity={{ kind: "mark", intensity: "bold" }}
       />
-      <Breadcrumb currentLabel="Redução de Custos" />
+      
 
 
       <section className="border-t border-border bg-secondary/30">
