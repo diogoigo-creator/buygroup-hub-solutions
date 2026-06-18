@@ -6,6 +6,5 @@ export const Route = createFileRoute("/spend-intelligence")({
   },
   head: () => ({
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos" }],
-    meta: [{ name: "robots", content: "noindex, follow" }],
   }),
 });

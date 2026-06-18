@@ -6,6 +6,5 @@ export const Route = createFileRoute("/procurement-maturity")({
   },
   head: () => ({
     links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/maturidade-em-compras" }],
-    meta: [{ name: "robots", content: "noindex, follow" }],
   }),
 });
