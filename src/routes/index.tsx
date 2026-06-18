@@ -191,8 +191,7 @@ function Index() {
               R$ 12MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro, com faturamento de R$ 3,2 bilhões e volume anual de
-              compras de R$ 380 milhões. Resultado validado pelo comitê de auditoria.
+              Grupo industrial brasileiro. Faturamento de R$ 3,2 bilhões.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R$ 380 milhões em compras indiretas mapeadas e validadas pelo comitê de auditoria.
             </p>
             <Link
               to="/contato"
