@@ -22,7 +22,7 @@ import { SOCIAL_META, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gestao-de-fornecedores")({
   head: () => {
-    const title = "Gestão de Fornecedores — Buy Group";
+    const title = "Gestão de Fornecedores | Buy Group";
     const description =
       "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.";
     const url = "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores";
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/gestao-de-fornecedores")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Gestão de Fornecedores — Buy Group" },
+        { property: "og:title", content: "Gestão de Fornecedores | Buy Group" },
         {
           property: "og:description",
           content: "Governança estruturada para fornecedores críticos, sob NDA.",

@@ -15,7 +15,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/metodologia")({
   head: () => {
-    const title = "Metodologia CUT4MORE™ — Buy Group";
+    const title = "Metodologia CUT4MORE™ | Buy Group";
     const description =
       "CUT4MORE™ é a metodologia proprietária da Buy Group para captura de savings em compras: 4 fases auditáveis, do baseline ao saving homologado.";
     const url = `${SITE_URL}/metodologia`;
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/metodologia")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Metodologia CUT4MORE™ — Buy Group" },
+        { property: "og:title", content: "Metodologia CUT4MORE™ | Buy Group" },
         {
           property: "og:description",
           content:

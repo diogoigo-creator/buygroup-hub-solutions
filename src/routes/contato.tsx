@@ -15,7 +15,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
   head: () => {
-    const title = "Contato — Buy Group";
+    const title = "Contato | Buy Group";
     const description = "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.";
     const url = `${SITE_URL}/contato`;
     return {
