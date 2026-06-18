@@ -1,17 +1,24 @@
-## Summary of Changes
-We will update the banner (hero section) of the About page (`src/routes/sobre.tsx`) to completely remove the old phrase "Consultoria em compras e negociação" and replace it with the new slogan: "Mais que comprar. É comprar bem.", matching the premium typography and style of the main caption.
+## Problema
 
-## Proposed Steps
-1. **Update `src/routes/sobre.tsx`**:
-   - Change the `identity` property in the `PageHero` component from:
-     ```tsx
-     identity={{ kind: "lockup", caption: "Consultoria em compras e negociação", subCaption: "Mais que comprar. É comprar bem." }}
-     ```
-     to:
-     ```tsx
-     identity={{ kind: "lockup", caption: "Mais que comprar. É comprar bem." }}
-     ```
-   - This ensures the old caption is removed, and the new slogan takes its place with the exact same premium font family, letter spacing, and subtle fade-up animation.
+As logos atuais (`src/assets/buy-group-logo.webp` e `buy-group-logo-white.webp`) estão em **311×72 px**. Como são exibidas em até 380px de largura no banner e em telas Retina (2x/3x DPI) o navegador precisa de 760–1140 px reais, o resultado fica visivelmente serrilhado.
 
-## Technical Details
-No other modifications are needed because `FullLockup` and `SiteLayout` are already built to dynamically render either/both/none of the caption and sub-caption. By passing only the new slogan as the `caption`, it automatically displays directly underneath the logo banner with correct alignment.
+## O que vou fazer
+
+1. **Gerar a versão em alta resolução** (1600×370, ~5x maior) da logo **Buy Group** com IA, recriando fielmente:
+   - Símbolo: carrinho/sacola estilizado em laranja-âmbar (cor atual da marca)
+   - Wordmark: "BUY GROUP" em sans-serif geométrica bold
+   - Fundo transparente (PNG)
+2. **Gerar a variante branca** (mesma logo em branco puro sobre fundo transparente) para uso em headers/footers escuros.
+3. **Salvar como PNG transparente** em `src/assets/`:
+   - `src/assets/buy-group-logo.png` (substitui a webp)
+   - `src/assets/buy-group-logo-white.png` (substitui a webp)
+4. **Atualizar os 3 imports** em:
+   - `src/components/site/Header.tsx`
+   - `src/components/site/Footer.tsx`
+   - `src/components/site/hero-identities/FullLockup.tsx`
+5. **Adicionar `loading="eager"` e `decoding="async"`** onde fizer sentido, e garantir que o `<img>` use a renderização nítida (sem upscale forçado além do natural).
+6. **Remover os arquivos .webp antigos** após confirmação visual.
+
+## Observação
+
+A recriação por IA pode ter pequenas variações de detalhes finos em relação à logo original. Se notar qualquer divergência, o ideal a longo prazo é você me enviar o **arquivo vetorial original (SVG)** — aí a logo fica perfeita em qualquer tamanho sem nenhuma regeração. Posso seguir agora com a regeração?
