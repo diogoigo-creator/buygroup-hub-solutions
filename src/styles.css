@@ -10,28 +10,28 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/outfit-regular.ttf") format("truetype");
+    src: url("./assets/outfit-regular.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url("./assets/outfit-medium.ttf") format("truetype");
+    src: url("./assets/outfit-medium.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url("./assets/outfit-semibold.ttf") format("truetype");
+    src: url("./assets/outfit-semibold.woff2") format("woff2");
   }
   @font-face {
     font-family: "Outfit";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("./assets/outfit-bold.ttf") format("truetype");
+    src: url("./assets/outfit-bold.woff2") format("woff2");
   }
 }
 
@@ -489,5 +489,29 @@
   .animate-slogan-underline {
     animation: underline-draw 0.8s cubic-bezier(0.65, 0, 0.35, 1) both;
     transform-origin: left center;
+  }
+
+  /* Mobile perf: kill infinite/heavy animations to protect INP, LCP, FCP.
+     Visual identity preserved on desktop (>=768px). */
+  @media (max-width: 767px) {
+    .hero-cinematic-image,
+    .hero-cinematic-light,
+    .hero-cinematic-glow,
+    .animate-mark-bob,
+    .animate-mark-float,
+    .animate-mark-spin-slow,
+    .animate-mark-pulse-ring,
+    .animate-orbit-cw,
+    .animate-orbit-ccw {
+      animation: none !important;
+      will-change: auto !important;
+    }
+    /* Hero text reveal: render instantly on mobile (no blur, no delay) */
+    .hero-editorial {
+      animation: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+    }
   }
 }

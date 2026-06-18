@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { SectionWatermark } from "@/components/site/SectionWatermark";
-import heroImg from "@/assets/hero-boardroom.jpg";
+import heroImg from "@/assets/hero-boardroom.webp";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -38,7 +38,15 @@ export const Route = createFileRoute("/")({
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [
+        { rel: "canonical", href: url },
+        {
+          rel: "preload",
+          as: "image",
+          href: heroImg,
+          fetchpriority: "high",
+        } as unknown as { rel: string; href: string },
+      ],
       scripts: [
         {
           type: "application/ld+json",
@@ -109,8 +117,13 @@ function Index() {
           src={heroImg}
           alt=""
           aria-hidden="true"
+          width={1280}
+          height={720}
+          fetchPriority="high"
+          decoding="async"
           className="hero-cinematic-image pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
         />
+
         <div className="hero-cinematic-light pointer-events-none absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/10 to-transparent" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
         <div className="hero-cinematic-glow pointer-events-none absolute -right-40 top-1/3 h-[420px] w-[420px] rounded-full bg-green/10 blur-3xl" />
