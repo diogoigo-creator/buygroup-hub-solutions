@@ -64,6 +64,7 @@
   --color-green: var(--green);
   --color-green-soft: var(--green-soft);
   --color-whatsapp: var(--whatsapp);
+  --color-logo: var(--logo);
   --font-serif: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
@@ -81,6 +82,10 @@
   --green: oklch(0.75 0.13 86); /* #D4AF37 institutional gold */
   --green-soft: oklch(0.94 0.05 88); /* soft champagne */
   --whatsapp: oklch(0.72 0.19 145);
+
+  /* Logomarca: preto em superfícies claras (default). Sobrescrito em .surface-dark / .dark */
+  --logo: oklch(0.15 0.02 256);
+
 
 
   --background: oklch(1 0 0);

@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 export function BuyGroupLogo({ className }: { className?: string }) {
   return (
     <svg
@@ -5,7 +7,7 @@ export function BuyGroupLogo({ className }: { className?: string }) {
       viewBox="0 0 1461.327305 342.083193"
       role="img"
       aria-label="Buy Group"
-      className={className}
+      className={cn("text-logo", className)}
     >
       <g transform="translate(-60.989958,506.738930) scale(0.100000,-0.100000)"
 fill="currentColor" stroke="none">
