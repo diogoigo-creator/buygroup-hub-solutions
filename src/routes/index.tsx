@@ -67,79 +67,11 @@ const credibility = [
 ];
 
 
-const frameworkDetail = [
-  {
-    n: "01",
-    icon: Search,
-    t: "Mapeamento de Oportunidades",
-    d: "Diagnóstico estruturado de despesas, contratos e fornecedores. Construímos um baseline financeiro auditável e priorizamos as categorias com maior potencial de captura no curto e médio prazo.",
-    activities: [
-      "Análise de spend dos últimos 12 meses",
-      "Revisão de contratos vigentes e cláusulas críticas",
-      "Entrevistas com stakeholders e áreas usuárias",
-      "Benchmarking de preços e condições de mercado",
-      "Matriz de priorização por impacto x esforço",
-    ],
-    metrics: [
-      { v: "100%", l: "do spend endereçável mapeado" },
-      { v: "5–12", l: "categorias priorizadas" },
-      { v: "≤ 3 sem.", l: "para baseline aprovado" },
-    ],
-  },
-  {
-    n: "02",
-    icon: Compass,
-    t: "Estratégia de Compra",
-    d: "Decomposição da estrutura de custos por categoria e desenho de estratégia de fornecimento — competitiva, de parceria ou híbrida — alinhada ao risco operacional e ao apetite de margem do cliente.",
-    activities: [
-      "Should-cost analysis por categoria",
-      "Mapeamento de fornecedores alternativos qualificados",
-      "Definição de lotes e modelagem de cenários",
-      "Estruturação de RFI / RFP",
-      "Validação técnica com áreas usuárias",
-    ],
-    metrics: [
-      { v: "3–8", l: "fornecedores qualificados por categoria" },
-      { v: "2–4", l: "cenários de negociação por contrato" },
-      { v: "30–50%", l: "de redução no ciclo de sourcing" },
-    ],
-  },
-  {
-    n: "03",
-    icon: Handshake,
-    t: "Condução da Negociação",
-    d: "Negociação direta com fornecedores conduzida por especialistas seniores, preservando SLA, qualidade e continuidade. Atuamos como extensão da área de compras, sob NDA e sob autoridade definida com o cliente.",
-    activities: [
-      "Rodadas de negociação estruturadas",
-      "Leilões reversos quando aplicável",
-      "Contraproposta técnica e comercial",
-      "Redação de adendos e instrumentos contratuais",
-      "Governança de aprovação interna",
-    ],
-    metrics: [
-      { v: "8%–22%", l: "de saving médio por categoria" },
-      { v: "90%", l: "de fornecedores estratégicos preservados" },
-      { v: "< 60 dias", l: "para renegociação concluída" },
-    ],
-  },
-  {
-    n: "04",
-    icon: CheckCircle2,
-    t: "Validação dos Savings",
-    d: "Homologação financeira dos resultados frente ao baseline aprovado, com rastreabilidade contábil e validação pelo controller e auditoria do cliente. A remuneração da Buy Group é vinculada ao saving validado.",
-    activities: [
-      "Reconciliação de notas fiscais vs. preços novos",
-      "Dashboard de captura mensal",
-      "Relatório executivo para CFO e comitê",
-      "Validação por controller e auditoria",
-      "Ajustes de carve-out e tratamento de exceções",
-    ],
-    metrics: [
-      { v: "100%", l: "dos savings com lastro documental" },
-      { v: "8,7x", l: "ROI médio dos projetos" },
-      { v: "< 90 dias", l: "de payback" },
-    ],
-  },
+const frameworkOverview = [
+  { n: "01", icon: Search, t: "Mapeamento de Oportunidades" },
+  { n: "02", icon: Compass, t: "Estratégia de Compra" },
+  { n: "03", icon: Handshake, t: "Condução da Negociação" },
+  { n: "04", icon: CheckCircle2, t: "Validação dos Savings" },
 ];
 
 
