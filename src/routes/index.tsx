@@ -362,19 +362,16 @@ function Index() {
         </div>
       </section>
 
-      {/* COMO FUNCIONA — CUT4MORE EM DETALHE */}
+      {/* CUT4MORE — DETALHE POR FASE */}
       <section className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
-              Como funciona
+              Detalhe por fase
             </p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              CUT4MORE™ em detalhe.
-              <span className="text-green">
-                {" "}
-                O que acontece em cada fase e o que esperar em métricas.
-              </span>
+              O que acontece em cada fase{" "}
+              <span className="text-green">e o que esperar em métricas.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-pretty text-muted-foreground">
               Cada fase tem entregáveis, atividades-chave e indicadores próprios — tornando o
@@ -383,6 +380,7 @@ function Index() {
           </div>
 
           <div className="mt-14 space-y-6 lg:mt-16 lg:space-y-8">
+
             {frameworkDetail.map((phase) => (
               <article
                 key={phase.n}
