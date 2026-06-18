@@ -203,7 +203,7 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
               {[
-                { k: "Saving capturado", v: "12,4%", s: "sobre o volume anual analisado" },
+                { k: "SAVING\u00A0 CAPTURADO", v: "12,4%", s: "sobre o volume anual analisado" },
                 { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
                 { k: "ROI do projeto", v: "9,3x", s: "sobre o investimento na Buy Group" },
               ].map((c) => (
