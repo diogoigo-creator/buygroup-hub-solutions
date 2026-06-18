@@ -121,6 +121,14 @@
   --shadow-green: 0 12px 32px -12px oklch(0.21 0.04 256 / 0.35);
 }
 
+/* Qualquer superfície escura inverte a cor da logomarca (preto → branco) */
+.surface-dark,
+.dark {
+  --logo: oklch(1 0 0);
+}
+
+
+
 @layer base {
   * {
     border-color: var(--color-border);
