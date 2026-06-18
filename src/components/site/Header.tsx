@@ -7,6 +7,7 @@ import { useFocusTrap } from "@/hooks/use-focus-trap";
 const nav = [
   { to: "/sobre", label: "Sobre" },
   { to: "/servicos", label: "Serviços" },
+  { to: "/metodologia", label: "Metodologia" },
   { to: "/reducao-de-custos", label: "Onde Atuamos" },
   { to: "/cursos", label: "Academy" },
 ] as const;
