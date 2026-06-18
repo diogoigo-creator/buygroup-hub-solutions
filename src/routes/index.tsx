@@ -386,7 +386,7 @@ function Index() {
                   d: "background dos sócios em projetos globais e indústria",
                 },
               ].map((c) => (
-                <div key={c.t} className="rounded-2xl border border-border bg-white p-6">
+                <div key={c.t} className="rounded-2xl border border-border bg-white p-6 text-center flex flex-col items-center justify-center">
                   <c.icon className="h-5 w-5 text-green" />
                   <p className="mt-5 font-serif text-2xl text-navy">{c.t}</p>
                   <p className="mt-2 text-sm leading-snug text-muted-foreground">{c.d}</p>
