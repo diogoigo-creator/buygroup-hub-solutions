@@ -381,8 +381,105 @@ function Index() {
         </div>
       </section>
 
+      {/* COMO FUNCIONA — CUT4MORE EM DETALHE */}
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
+              Como funciona
+            </p>
+            <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
+              CUT4MORE™ em detalhe.
+              <span className="text-green">
+                {" "}
+                O que acontece em cada fase e o que esperar em métricas.
+              </span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-pretty text-muted-foreground">
+              Cada fase tem entregáveis, atividades-chave e indicadores próprios — tornando o
+              processo auditável de ponta a ponta, do baseline ao saving homologado.
+            </p>
+          </div>
+
+          <div className="mt-14 space-y-6 lg:mt-16 lg:space-y-8">
+            {frameworkDetail.map((phase) => (
+              <article
+                key={phase.n}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-white p-8 transition-all duration-500 hover:-translate-y-0.5 hover:border-green/40 hover:shadow-[0_22px_50px_-20px_rgba(15,23,42,0.18)] lg:p-12"
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-green/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+                  {/* Header column */}
+                  <header className="lg:col-span-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-green/20 bg-gradient-to-br from-green/20 to-green/5 text-navy shadow-sm">
+                        <phase.icon className="h-6 w-6" />
+                      </div>
+                      <span className="font-tabular font-serif text-4xl text-green/90">
+                        {phase.n}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 font-serif text-2xl leading-snug text-navy md:text-3xl">
+                      {phase.t}
+                    </h3>
+                    <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+                      {phase.d}
+                    </p>
+                  </header>
+
+                  {/* Activities */}
+                  <div className="lg:col-span-4">
+                    <p className="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55">
+                      Atividades-chave
+                    </p>
+                    <ul className="mt-5 space-y-3">
+                      {phase.activities.map((act) => (
+                        <li
+                          key={act}
+                          className="flex items-start gap-3 text-sm leading-relaxed text-navy/80"
+                        >
+                          <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-green" />
+                          <span>{act}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="lg:col-span-4">
+                    <p className="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55">
+                      Métricas esperadas
+                    </p>
+                    <dl className="mt-5 grid gap-4">
+                      {phase.metrics.map((m) => (
+                        <div
+                          key={m.l}
+                          className="rounded-2xl border border-border bg-secondary/40 p-5"
+                        >
+                          <dt className="font-tabular font-serif text-3xl text-navy">{m.v}</dt>
+                          <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">
+                            {m.l}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-10 text-xs leading-relaxed text-muted-foreground lg:mt-12">
+            Faixas de métricas baseadas no histórico agregado de projetos da Buy Group. Resultados
+            individuais variam conforme categoria, maturidade da função de compras e escopo
+            contratado.
+          </p>
+        </div>
+      </section>
 
       {/* DIFFERENTIATION MOAT */}
+
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
         <div className="max-w-3xl">
           <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
