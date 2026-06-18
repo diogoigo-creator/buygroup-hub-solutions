@@ -402,7 +402,7 @@ function SecondOpinionPage() {
                   Proposta de serviços de facilities negociada pelo time interno por{" "}
                   <span className="text-white">R$ 2,1MM</span>. Parecer de revisão identificou{" "}
                   <span className="text-green">saving residual de R$ 280k</span> em itens de mão de
-                  obra e margem de gestão. Rodada final conduzida pelo próprio time do cliente.
+                  obra e margem de gestão. Rodada final conduzida pelo próprio time Buy Group.
                 </p>
                 <div className="mt-8 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
                   <div>
