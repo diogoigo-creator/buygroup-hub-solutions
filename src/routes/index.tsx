@@ -66,32 +66,6 @@ const credibility = [
   { value: "100%", label: "Remuneração vinculada ao resultado validado" },
 ];
 
-const framework = [
-  {
-    n: "01",
-    icon: Search,
-    t: "Mapeamento de Oportunidades",
-    d: "Analisamos despesas, contratos e fornecedores para construir um baseline confiável e priorizar oportunidades de economia.",
-  },
-  {
-    n: "02",
-    icon: Compass,
-    t: "Estratégia de Compra",
-    d: "Avaliamos a composição de custos e as alternativas de fornecimento para estruturar negociações competitivas.",
-  },
-  {
-    n: "03",
-    icon: Handshake,
-    t: "Condução da Negociação",
-    d: "Conduzimos as negociações com foco em margem, sem comprometer SLA, qualidade ou continuidade operacional.",
-  },
-  {
-    n: "04",
-    icon: CheckCircle2,
-    t: "Validação dos Savings",
-    d: "Acompanhamos os resultados e validamos financeiramente os savings conforme o baseline aprovado.",
-  },
-];
 
 const frameworkDetail = [
   {
@@ -337,63 +311,41 @@ function Index() {
             </p>
           </div>
 
-          <div className="relative mt-16">
-            {/* Connector line - desktop only */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute left-0 right-0 top-[4.25rem] hidden h-px bg-gradient-to-r from-transparent via-green/40 to-transparent lg:block"
-            />
-            <ol className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {framework.map((step, idx) => (
-                <li
-                  key={step.n}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-green/40 hover:from-green/10 hover:to-white/[0.02] hover:shadow-[0_22px_60px_-20px_rgba(212,175,55,0.35)] lg:p-9"
-                >
-                  {/* Watermark step number */}
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -right-3 -top-6 select-none font-serif text-[8rem] font-medium leading-none text-white/[0.04] transition-colors duration-500 group-hover:text-green/10"
-                  >
-                    {step.n}
-                  </span>
-
-                  {/* Icon badge on the connector line */}
-                  <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-green/20 bg-gradient-to-br from-green/25 to-green/5 text-green shadow-[0_8px_24px_-12px_rgba(212,175,55,0.4)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:border-green/50">
-                    <step.icon className="h-6 w-6" />
-                  </div>
-
-                  <div className="relative mt-6 flex items-center gap-3">
-                    <span className="font-tabular font-serif text-xl text-green/90">{step.n}</span>
-                    <span className="h-px flex-1 bg-gradient-to-r from-green/40 to-transparent" />
-                    {idx < framework.length - 1 && (
-                      <ArrowUpRight className="h-3.5 w-3.5 text-green/50 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-green" />
-                    )}
-                  </div>
-
-                  <h3 className="relative mt-4 font-serif text-xl leading-snug text-white">
+          <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-4">
+            {frameworkDetail.map((step, idx) => (
+              <li
+                key={step.n}
+                className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-md transition-all duration-300 hover:border-green/40 hover:bg-green/10"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-green/20 bg-gradient-to-br from-green/25 to-green/5 text-green">
+                  <step.icon className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <span className="font-tabular font-serif text-xs text-green/80">{step.n}</span>
+                  <p className="mt-0.5 truncate font-serif text-sm leading-snug text-white">
                     {step.t}
-                  </h3>
-                  <p className="relative mt-3 text-sm leading-relaxed text-white/65">{step.d}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
+                  </p>
+                </div>
+                {idx < frameworkDetail.length - 1 && (
+                  <ArrowUpRight className="hidden h-3.5 w-3.5 shrink-0 text-green/40 lg:block" />
+                )}
+              </li>
+            ))}
+          </ol>
+
         </div>
       </section>
 
-      {/* COMO FUNCIONA — CUT4MORE EM DETALHE */}
+      {/* CUT4MORE — DETALHE POR FASE */}
       <section className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-10 lg:py-28">
           <div className="max-w-3xl">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
-              Como funciona
+              Detalhe por fase
             </p>
             <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
-              CUT4MORE™ em detalhe.
-              <span className="text-green">
-                {" "}
-                O que acontece em cada fase e o que esperar em métricas.
-              </span>
+              O que acontece em cada fase{" "}
+              <span className="text-green">e o que esperar em métricas.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-pretty text-muted-foreground">
               Cada fase tem entregáveis, atividades-chave e indicadores próprios — tornando o
@@ -402,6 +354,7 @@ function Index() {
           </div>
 
           <div className="mt-14 space-y-6 lg:mt-16 lg:space-y-8">
+
             {frameworkDetail.map((phase) => (
               <article
                 key={phase.n}
