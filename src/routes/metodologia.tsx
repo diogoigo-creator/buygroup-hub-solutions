@@ -272,14 +272,14 @@ function MetodologiaPage() {
                 </div>
 
                 <div className="lg:col-span-4">
-                  <p className="font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55">
+                  <p className="text-center font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55lg:text-left">
                     Métricas esperadas
                   </p>
                   <dl className="mt-5 grid gap-4">
                     {phase.metrics.map((m) => (
                       <div
                         key={m.l}
-                        className="rounded-2xl border border-border bg-secondary/40 p-5"
+                        className="flex flex-col items-center justify-center rounded-2xl border border-border bg-secondary/40 p-5 text-center"
                       >
                         <dt className="font-tabular font-serif text-3xl text-navy">{m.v}</dt>
                         <dd className="mt-1.5 text-xs leading-snug text-muted-foreground">
