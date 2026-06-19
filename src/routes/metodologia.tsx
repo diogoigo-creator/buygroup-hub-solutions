@@ -272,7 +272,7 @@ function MetodologiaPage() {
                 </div>
 
                 <div className="lg:col-span-4">
-                  <p className="text-center font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55lg:text-left">
+                  <p className="text-center font-sans text-[0.7rem] uppercase tracking-[0.28em] text-navy/55 lg:text-left">
                     Métricas esperadas
                   </p>
                   <dl className="mt-5 grid gap-4">
