@@ -90,12 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Buy Group" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Buy Group: compras estratégicas e margem" },
-      { name: "description", content: "Buy Group Advantage offers cost reduction, in-company training, and procurement outsourcing services." },
-      { property: "og:description", content: "Buy Group Advantage offers cost reduction, in-company training, and procurement outsourcing services." },
-      { name: "twitter:description", content: "Buy Group Advantage offers cost reduction, in-company training, and procurement outsourcing services." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/703cca53-a3d4-4933-8f86-9498f0ee8153/id-preview-67eb96be--8481e0ea-fbb3-434b-b80d-a886baad2d4f.lovable.app-1781845421363.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/703cca53-a3d4-4933-8f86-9498f0ee8153/id-preview-67eb96be--8481e0ea-fbb3-434b-b80d-a886baad2d4f.lovable.app-1781845421363.png" },
     ],
     links: [
       {
