@@ -209,7 +209,7 @@ function ServicosPage() {
 
       {/* POR ONDE COMEÇAR */}
       <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-10 lg:pt-16">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.28em] text-navy/55">Por onde começar</p>
           <h2 className="mt-4 text-balance font-serif text-4xl text-navy md:text-5xl">
             Três perfis de entrada
@@ -220,7 +220,7 @@ function ServicosPage() {
             <Link
               key={p.product}
               to={p.to}
-              className="group relative flex flex-col rounded-2xl border border-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
+              className="group relative flex flex-col items-center rounded-2xl border border-border bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-green/50 hover:shadow-[var(--shadow-soft)]"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-green/10 bg-gradient-to-br from-green/20 to-green/5 text-navy">
                 <p.icon className="h-6 w-6" />
