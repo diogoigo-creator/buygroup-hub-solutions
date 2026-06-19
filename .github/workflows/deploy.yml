@@ -1,4 +1,4 @@
- : Deploy Lovable via FTP na Hostinger
+name: Deploy Lovable via FTP na Hostinger
 on:
   push:
     branches: ["main"]
@@ -49,6 +49,3 @@ jobs:
             **/.git*/**
             **/.github/**
             **/node_modules/**
-FTP_HOST        exemplo: ftp.seudominio.com
-FTP_USER        seu usuário FTP
-FTP_PASS        sua senha FTP
