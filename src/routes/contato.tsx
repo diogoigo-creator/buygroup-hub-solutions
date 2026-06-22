@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, CheckCircle2, Lock, Loader2 } from "lucide-react";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
+import { submitContact } from "@/lib/contact.functions";
 
 
 export const Route = createFileRoute("/contato")({
