@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { z } from "zod";
+import { toast } from "sonner";
+import { submitCourseSignup } from "@/lib/contact.functions";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
   Dialog,
@@ -699,8 +701,6 @@ function RequestSection({
     if (Object.keys(next).length > 0) return;
 
     setSubmitting(true);
-    const { supabase } = await import("@/integrations/supabase/client");
-    const { toast } = await import("sonner");
     const payload = {
       nome: String(fd.get("nome") ?? "").trim(),
       empresa: String(fd.get("empresa") ?? "").trim(),
@@ -712,14 +712,15 @@ function RequestSection({
       formato: String(fd.get("formato") ?? "").trim() || null,
       mensagem: String(fd.get("mensagem") ?? "").trim() || null,
     };
-    const { error } = await supabase.from("course_signups").insert(payload);
-    setSubmitting(false);
-    if (error) {
-      console.error("[cursos] insert failed", error);
+    try {
+      await submitCourseSignup({ data: payload });
+      setSent(true);
+    } catch (err) {
+      console.error("[cursos] submit failed", err);
       toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
-      return;
+    } finally {
+      setSubmitting(false);
     }
-    setSent(true);
   }
 
 

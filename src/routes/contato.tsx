@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, CheckCircle2, Lock, Loader2 } from "lucide-react";
 import { z } from "zod";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
+import { submitContact } from "@/lib/contact.functions";
 
 
 export const Route = createFileRoute("/contato")({
@@ -71,6 +72,7 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const send = useServerFn(submitContact);
   const { interesse } = Route.useSearch();
   const interestMap: Record<string, string> = {
     "cost-optimization": "Otimização de Custos",
@@ -99,14 +101,15 @@ function ContatoPage() {
       desafio_compras: String(fd.get("desafio_compras") ?? "").trim() || null,
       mensagem: String(fd.get("mensagem") ?? "").trim() || null,
     };
-    const { error } = await supabase.from("contact_submissions").insert(payload);
-    setSubmitting(false);
-    if (error) {
-      console.error("[contato] insert failed", error);
+    try {
+      await send({ data: payload });
+      setSent(true);
+    } catch (error) {
+      console.error("[contato] submit failed", error);
       toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
-      return;
+    } finally {
+      setSubmitting(false);
     }
-    setSent(true);
   }
 
 
