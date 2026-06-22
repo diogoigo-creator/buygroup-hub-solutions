@@ -72,6 +72,7 @@ export const Route = createFileRoute("/contato")({
 function ContatoPage() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const send = useServerFn(submitContact);
   const { interesse } = Route.useSearch();
   const interestMap: Record<string, string> = {
     "cost-optimization": "Otimização de Custos",
@@ -100,14 +101,15 @@ function ContatoPage() {
       desafio_compras: String(fd.get("desafio_compras") ?? "").trim() || null,
       mensagem: String(fd.get("mensagem") ?? "").trim() || null,
     };
-    const { error } = await supabase.from("contact_submissions").insert(payload);
-    setSubmitting(false);
-    if (error) {
-      console.error("[contato] insert failed", error);
+    try {
+      await send({ data: payload });
+      setSent(true);
+    } catch (error) {
+      console.error("[contato] submit failed", error);
       toast.error("Não foi possível enviar agora. Tente novamente em instantes.");
-      return;
+    } finally {
+      setSubmitting(false);
     }
-    setSent(true);
   }
 
 
