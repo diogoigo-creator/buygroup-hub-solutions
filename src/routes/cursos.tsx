@@ -701,8 +701,6 @@ function RequestSection({
     if (Object.keys(next).length > 0) return;
 
     setSubmitting(true);
-    const { submitCourseSignup } = await import("@/lib/contact.functions");
-    const { toast } = await import("sonner");
     const payload = {
       nome: String(fd.get("nome") ?? "").trim(),
       empresa: String(fd.get("empresa") ?? "").trim(),
