@@ -204,9 +204,6 @@ function MetodologiaPage() {
                   {step.t}
                 </p>
               </div>
-              {idx < frameworkDetail.length - 1 && (
-                <ArrowUpRight className="hidden h-3.5 w-3.5 shrink-0 text-green/50 lg:block" />
-              )}
             </li>
           ))}
         </ol>
