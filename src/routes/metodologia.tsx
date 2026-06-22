@@ -200,7 +200,7 @@ function MetodologiaPage() {
               </div>
               <div className="min-w-0 flex-1">
                 <span className="font-tabular font-serif text-xs text-green/90">{step.n}</span>
-                <p className="mt-0.5 truncate font-serif text-sm leading-snug text-navy">
+                <p className="mt-0.5 font-serif text-sm leading-snug text-navy">
                   {step.t}
                 </p>
               </div>
