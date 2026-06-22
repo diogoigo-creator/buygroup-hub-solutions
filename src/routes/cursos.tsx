@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { z } from "zod";
+import { toast } from "sonner";
+import { submitCourseSignup } from "@/lib/contact.functions";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
   Dialog,
