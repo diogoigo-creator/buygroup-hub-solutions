@@ -1,8 +1,7 @@
-Na seção "Quem conduz os engajamentos" em `src/routes/sobre.tsx`, ajustar a faixa de 3 cards (2013 · Belo Horizonte · 14 setores) para:
+Ajustar o tamanho e enquadramento da foto no card de Diogo Igor Silva Moraes em `src/routes/sobre.tsx` para disfarçar a baixa resolução:
 
-- Centralizar verticalmente o conteúdo de cada card (`items-center` já está) e garantir alinhamento horizontal consistente do ícone + texto.
-- Centralizar o bloco inteiro de cada card horizontalmente dentro da célula (`justify-center`), para que os 3 itens fiquem visualmente alinhados no eixo central da faixa.
-- Corrigir o card "Belo Horizonte · MG" que quebra em duas linhas e sobrepõe o label "SEDE": reduzir o tamanho da fonte nesse card (de `text-3xl` para algo como `text-2xl`) e/ou usar `whitespace-nowrap`/`leading-tight` para evitar a sobreposição.
-- Manter ícone à esquerda, número/label à direita, mas com o conjunto centralizado dentro de cada célula.
+- Reduzir um pouco o tamanho visual do avatar (por exemplo, de `h-20 w-20` para `h-16 w-16`) para que a densidade de pixels aumente e pareça mais nítido em telas de alta densidade (Retina).
+- Aplicar um leve filtro de nitidez (`contrast-[1.02] saturate-[1.02] brightness-[1.01]`) ou borda suave para integrar melhor a imagem ao fundo branco e disfarçar eventuais artefatos de compressão.
+- Garantir que o enquadramento continue correto com `object-cover object-top`.
 
-Sem alterações em outras seções, dados ou estilos globais.
+Sem alterações em outras páginas, componentes ou dados.
