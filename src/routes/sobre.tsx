@@ -177,7 +177,7 @@ function SobrePage() {
                 <img
                   src={diogoPhoto.url}
                   alt="Diogo Igor Silva Moraes"
-                  className="h-32 w-32 shrink-0 rounded-full object-cover object-top ring-1 ring-border [filter:contrast(1.04)_saturate(1.05)_brightness(1.01)] md:h-36 md:w-36"
+                  className="h-32 w-32 shrink-0 rounded-full object-cover object-[50%_30%] ring-1 ring-border [filter:contrast(1.05)_saturate(1.06)_brightness(1.02)] md:h-36 md:w-36"
                 />
 
                 <div className="text-center sm:text-left">
