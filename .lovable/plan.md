@@ -1,33 +1,21 @@
-## Objetivo
-Trocar o remetente dos e-mails do site (formulário de Contato e Academy) de `onboarding@resend.dev` para um endereço do domínio `buygroup.com.br`, usando a infraestrutura nativa de e-mails do Lovable.
+### Passo a passo para configurar o DNS:
 
-## Pré-requisito (ação sua)
-Antes da implementação, preciso que você configure o subdomínio de envio pelo diálogo guiado. Sugestão: `notify.buygroup.com.br`.
+1. **Acesse o seu provedor de DNS:** Acesse o painel onde você gerencia o domínio `buygroup.com.br` (ex: Registro.br, Cloudflare, GoDaddy, HostGator, etc.).
+2. **Crie dois novos registros do tipo NS:**
+   - **Registro 1:**
+     - **Tipo:** `NS`
+     - **Nome/Host:** `notify` (ou `notify.buygroup.com.br`, dependendo do painel)
+     - **Valor/Servidor de nomes:** `ns3.lovable.cloud`
+   - **Registro 2:**
+     - **Tipo:** `NS`
+     - **Nome/Host:** `notify` (ou `notify.buygroup.com.br`)
+     - **Valor/Servidor de nomes:** `ns4.lovable.cloud`
+3. **Salve as alterações** e aguarde a propagação (geralmente leva alguns minutos).
 
-Você receberá registros NS (`ns3.lovable.cloud` / `ns4.lovable.cloud`) para colar no seu provedor de DNS. SPF/DKIM/MX ficam por conta do Lovable automaticamente.
+---
 
-```
-<presentation-actions>
-<presentation-open-email-setup>Configurar domínio de e-mail</presentation-open-email-setup>
-</presentation-actions>
-```
+### Plano de Implementação (após a configuração do DNS):
 
-## O que vou implementar depois que o domínio estiver configurado
-
-1. **Provisionar infraestrutura de e-mails** (filas, supressão, processador de envio em background).
-2. **Criar template React Email "Buy Group"** com a identidade do site (navy/verde, tipografia atual), renderizando os campos enviados em tabela limpa e profissional. Um template para Contato, outro para Academy.
-3. **Substituir o envio via Resend** em `src/lib/contact.functions.ts`:
-   - `submitContact` e `submitCourseSignup` deixam de chamar a API da Resend e passam a enfileirar e-mail pela infraestrutura do Lovable.
-   - Destinatário: `atendimento@buygroup.com.br` (inalterado).
-   - Remetente: `Buy Group Site <no-reply@notify.buygroup.com.br>`.
-   - `reply-to`: e-mail do lead (resposta direta continua funcionando).
-   - `idempotencyKey` baseado no ID da submissão para evitar duplicatas em retry.
-4. **Persistência inalterada** — `contact_submissions` e `course_signups` continuam recebendo os registros normalmente.
-5. **Remover `RESEND_API_KEY`** dos secrets após validar que tudo está chegando em `atendimento@buygroup.com.br`.
-
-## Detalhes técnicos
-- Templates ficam em `src/lib/email-templates/` (`.tsx` React Email) e são registrados em `registry.ts`.
-- O envio passa a usar `/lovable/email/transactional/send` via helper interno; nada muda no frontend dos formulários.
-- Enquanto o DNS propaga, os e-mails ficam enfileirados e começam a sair automaticamente assim que a verificação concluir (monitorável em Cloud → Emails).
-
-Confirma o subdomínio sugerido `notify.buygroup.com.br` e abre o diálogo para começar?
+1. **Ativar infraestrutura de e-mail:** Assim que o DNS estiver configurado, ativaremos as filas e tabelas de e-mail na nuvem.
+2. **Substituir o Resend no código:** Migrar as funções em `src/lib/contact.functions.ts` de Resend para o serviço nativo de e-mails, enviando a partir de `no-reply@notify.buygroup.com.br` para `atendimento@buygroup.com.br`, mantendo o e-mail do lead no `reply-to` para que você possa respondê-los diretamente.
+3. **Testar os fluxos:** Validar que os formulários continuam registrando os dados no banco de dados e enviando os e-mails com sucesso.
