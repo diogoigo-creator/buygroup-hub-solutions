@@ -174,9 +174,12 @@ function SobrePage() {
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <article className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-soft)] md:col-span-1">
               <div className="flex items-start gap-5">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-secondary text-xl font-semibold tracking-wider text-navy">
-                  DM
-                </div>
+                <img
+                  src={diogoPhoto.url}
+                  alt="Diogo Igor Silva Moraes"
+                  className="h-20 w-20 shrink-0 rounded-full object-cover object-top"
+                />
+
                 <div>
                   <h3 className="font-serif text-2xl text-navy">Diogo Igor Silva Moraes</h3>
                   <p className="mt-1 text-sm font-medium text-green">Head de Supply Chain</p>
