@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
+import diogoPhoto from "@/assets/diogo-moraes.png.asset.json";
 import { Quote, ArrowUpRight, ShieldCheck, Lock, Award, Scale, Building2, MapPin, Layers } from "lucide-react";
 
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
