@@ -1,7 +1,8 @@
-Substituir o avatar com iniciais "DM" no card de Diogo Igor Silva Moraes (página /sobre, seção "Quem conduz os engajamentos") pela foto enviada.
+Na seção "Quem conduz os engajamentos" em `src/routes/sobre.tsx`, ajustar a faixa de 3 cards (2013 · Belo Horizonte · 14 setores) para:
 
-## Passos
+- Centralizar verticalmente o conteúdo de cada card (`items-center` já está) e garantir alinhamento horizontal consistente do ícone + texto.
+- Centralizar o bloco inteiro de cada card horizontalmente dentro da célula (`justify-center`), para que os 3 itens fiquem visualmente alinhados no eixo central da faixa.
+- Corrigir o card "Belo Horizonte · MG" que quebra em duas linhas e sobrepõe o label "SEDE": reduzir o tamanho da fonte nesse card (de `text-3xl` para algo como `text-2xl`) e/ou usar `whitespace-nowrap`/`leading-tight` para evitar a sobreposição.
+- Manter ícone à esquerda, número/label à direita, mas com o conjunto centralizado dentro de cada célula.
 
-1. Subir a imagem como Lovable Asset (`src/assets/diogo-moraes.jpg.asset.json`).
-2. Em `src/routes/sobre.tsx`, trocar o `<div>` circular com "DM" por um `<img>` redondo (h-20 w-20, object-cover, rounded-full) usando a URL do asset, com `alt="Diogo Igor Silva Moraes"`.
-3. Manter o restante do card (nome, cargo, descrição, tags de setores) intacto.
+Sem alterações em outras seções, dados ou estilos globais.
