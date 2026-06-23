@@ -196,24 +196,24 @@ function SobrePage() {
           </div>
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
-            <div className="flex items-center gap-4 bg-white p-7">
-              <Building2 className="h-6 w-6 text-green" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-4 bg-white p-7">
+              <Building2 className="h-6 w-6 shrink-0 text-green" aria-hidden="true" />
               <div>
-                <p className="font-tabular font-serif text-3xl text-navy">2013</p>
+                <p className="font-tabular font-serif text-2xl leading-tight text-navy">2013</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Ano de fundação</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 bg-white p-7">
-              <MapPin className="h-6 w-6 text-green" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-4 bg-white p-7">
+              <MapPin className="h-6 w-6 shrink-0 text-green" aria-hidden="true" />
               <div>
-                <p className="font-serif text-3xl text-navy">Belo Horizonte · MG</p>
+                <p className="whitespace-nowrap font-serif text-2xl leading-tight text-navy">Belo Horizonte · MG</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Sede</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 bg-white p-7">
-              <Layers className="h-6 w-6 text-green" aria-hidden="true" />
+            <div className="flex items-center justify-center gap-4 bg-white p-7">
+              <Layers className="h-6 w-6 shrink-0 text-green" aria-hidden="true" />
               <div>
-                <p className="font-tabular font-serif text-3xl text-navy">14 setores</p>
+                <p className="font-tabular font-serif text-2xl leading-tight text-navy">14 setores</p>
                 <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Setores atendidos</p>
               </div>
             </div>
