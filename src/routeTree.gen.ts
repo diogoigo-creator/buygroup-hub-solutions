@@ -19,6 +19,7 @@ import { Route as InteligenciaDeGastosRouteImport } from './routes/inteligencia-
 import { Route as MaturidadeEmComprasRouteImport } from './routes/maturidade-em-compras'
 import { Route as MetodologiaRouteImport } from './routes/metodologia'
 import { Route as OtimizacaoDeCustosRouteImport } from './routes/otimizacao-de-custos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as ProcurementMaturityRouteImport } from './routes/procurement-maturity'
 import { Route as ReducaoDeCustosRouteImport } from './routes/reducao-de-custos'
 import { Route as RevisaoPreFechamentoRouteImport } from './routes/revisao-pre-fechamento'
@@ -78,6 +79,11 @@ const MetodologiaRoute = MetodologiaRouteImport.update({
 const OtimizacaoDeCustosRoute = OtimizacaoDeCustosRouteImport.update({
   id: '/otimizacao-de-custos',
   path: '/otimizacao-de-custos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcurementMaturityRoute = ProcurementMaturityRouteImport.update({
@@ -143,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
@@ -165,6 +172,7 @@ export interface FileRoutesByTo {
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
@@ -188,6 +196,7 @@ export interface FileRoutesById {
   '/maturidade-em-compras': typeof MaturidadeEmComprasRoute
   '/metodologia': typeof MetodologiaRoute
   '/otimizacao-de-custos': typeof OtimizacaoDeCustosRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/procurement-maturity': typeof ProcurementMaturityRoute
   '/reducao-de-custos': typeof ReducaoDeCustosRoute
   '/revisao-pre-fechamento': typeof RevisaoPreFechamentoRoute
@@ -212,6 +221,7 @@ export interface FileRouteTypes {
     | '/maturidade-em-compras'
     | '/metodologia'
     | '/otimizacao-de-custos'
+    | '/politica-de-privacidade'
     | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
@@ -234,6 +244,7 @@ export interface FileRouteTypes {
     | '/maturidade-em-compras'
     | '/metodologia'
     | '/otimizacao-de-custos'
+    | '/politica-de-privacidade'
     | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
@@ -256,6 +267,7 @@ export interface FileRouteTypes {
     | '/maturidade-em-compras'
     | '/metodologia'
     | '/otimizacao-de-custos'
+    | '/politica-de-privacidade'
     | '/procurement-maturity'
     | '/reducao-de-custos'
     | '/revisao-pre-fechamento'
@@ -279,6 +291,7 @@ export interface RootRouteChildren {
   MaturidadeEmComprasRoute: typeof MaturidadeEmComprasRoute
   MetodologiaRoute: typeof MetodologiaRoute
   OtimizacaoDeCustosRoute: typeof OtimizacaoDeCustosRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   ProcurementMaturityRoute: typeof ProcurementMaturityRoute
   ReducaoDeCustosRoute: typeof ReducaoDeCustosRoute
   RevisaoPreFechamentoRoute: typeof RevisaoPreFechamentoRoute
@@ -361,6 +374,13 @@ declare module '@tanstack/react-router' {
       path: '/otimizacao-de-custos'
       fullPath: '/otimizacao-de-custos'
       preLoaderRoute: typeof OtimizacaoDeCustosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/procurement-maturity': {
@@ -447,6 +467,7 @@ const rootRouteChildren: RootRouteChildren = {
   MaturidadeEmComprasRoute: MaturidadeEmComprasRoute,
   MetodologiaRoute: MetodologiaRoute,
   OtimizacaoDeCustosRoute: OtimizacaoDeCustosRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   ProcurementMaturityRoute: ProcurementMaturityRoute,
   ReducaoDeCustosRoute: ReducaoDeCustosRoute,
   RevisaoPreFechamentoRoute: RevisaoPreFechamentoRoute,

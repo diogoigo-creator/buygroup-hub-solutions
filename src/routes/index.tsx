@@ -207,11 +207,10 @@ function Index() {
             </Link>
           </div>
           <div className="lg:col-span-7">
-            <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
               {[
                 { k: "SAVING\u00A0 CAPTURADO", v: "12,4%", s: "sobre o volume anual analisado" },
                 { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
-                { k: "ROI do projeto", v: "9,3x", s: "sobre o investimento na Buy Group" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8 text-center flex flex-col items-center justify-center">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
@@ -221,16 +220,6 @@ function Index() {
               ))}
             </div>
 
-            <figure className="mt-6 rounded-2xl border border-border bg-secondary/40 p-8">
-              <blockquote className="font-serif text-2xl leading-snug text-navy">
-                "Em 90 dias, savings que permaneciam não capturados havia dois anos foram
-                destravados com governança financeira, risco compartilhado e validação do
-                resultado."
-              </blockquote>
-              <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                CFO · Grupo industrial · R$ 3.2Bi faturamento
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>

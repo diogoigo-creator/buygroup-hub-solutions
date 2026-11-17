@@ -1,3 +1,10 @@
+# Privacidade, consentimento e estudo de caso
+
+- [x] Remover somente o ROI e a citação do estudo de caso da home.
+- [x] Criar a política de privacidade, seus metadados, sitemap e links nos formulários e rodapé.
+- [x] Adicionar o aviso de cookies com Consent Mode, preferências reabertas e integração com a barra mobile.
+- [x] Verificar 25 testes, navegação e diagnósticos sem enviar formulários nem publicar; build automático OK.
+
 # Google Tag Manager
 
 - [x] Instalar o contêiner solicitado, limitado aos dois domínios oficiais, sem dependências ou publicação.

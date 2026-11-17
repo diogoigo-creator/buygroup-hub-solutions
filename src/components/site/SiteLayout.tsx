@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/contact-details";
 import { pushDataLayer } from "@/lib/gtm";
 import { shouldShowMobileContact } from "@/lib/mobile-contact";
+import { COOKIE_NOTICE_VISIBILITY_EVENT } from "@/lib/cookie-preferences";
+import { CookieNotice } from "./CookieNotice";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MarkOrbit } from "./hero-identities/MarkOrbit";
@@ -17,6 +19,15 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
   const layoutRef = useRef<HTMLDivElement>(null);
   const [showContactBar, setShowContactBar] = useState(false);
+  const [cookieNoticeVisible, setCookieNoticeVisible] = useState(false);
+
+  useEffect(() => {
+    const updateCookieNotice = (event: Event) => {
+      setCookieNoticeVisible((event as CustomEvent<boolean>).detail === true);
+    };
+    window.addEventListener(COOKIE_NOTICE_VISIBILITY_EVENT, updateCookieNotice);
+    return () => window.removeEventListener(COOKIE_NOTICE_VISIBILITY_EVENT, updateCookieNotice);
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -33,6 +44,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         scrollY: window.scrollY,
         footerVisible: visible(layoutRef.current?.querySelector("footer")),
         courseFormVisible: visible(layoutRef.current?.querySelector("#solicitar form")),
+        cookieNoticeVisible,
       }));
     };
     const schedule = () => {
@@ -49,7 +61,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
     };
-  }, [pathname]);
+  }, [pathname, cookieNoticeVisible]);
 
   return (
     <div ref={layoutRef} data-page={pathname} className={`site-layout flex min-h-screen flex-col bg-background text-foreground ${pathname !== "/contato" ? "mobile-contact-space" : ""}`}>
@@ -68,6 +80,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="relative">{children}</div>
       </main>
       <Footer />
+      <CookieNotice />
       {showContactBar && (
         <nav aria-label="Contato rápido" className="mobile-contact-bar fixed inset-x-0 bottom-0 z-40 grid grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] gap-2 bg-navy px-3 md:hidden">
           <Button asChild variant="outline" className="h-11 min-w-0 border-primary/40 bg-navy px-2 text-xs text-primary hover:bg-navy-soft hover:text-primary">

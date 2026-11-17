@@ -512,7 +512,7 @@
     .site-layout[data-page="/cursos"] form :is(input, select, textarea) {
       font-size: 16px;
     }
-    .site-footer a {
+    .site-footer :is(a, button) {
       display: inline-flex;
       align-items: center;
       min-height: 44px;

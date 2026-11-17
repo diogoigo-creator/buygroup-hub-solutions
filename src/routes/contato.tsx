@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
@@ -199,6 +199,12 @@ function ContatoPage() {
                     "Agendar conversa executiva"
                   )}
                 </Button>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  Ao enviar, você concorda com a nossa{" "}
+                  <Link to="/politica-de-privacidade" className="font-medium text-navy underline underline-offset-4">
+                    Política de Privacidade
+                  </Link>.
+                </p>
                 <p className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-2 text-xs leading-relaxed text-muted-foreground">
                   <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0" />
                   <span>

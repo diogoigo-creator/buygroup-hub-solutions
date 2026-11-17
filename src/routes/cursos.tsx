@@ -27,7 +27,6 @@ import {
   Users,
   Check,
   CheckCircle2,
-  Lock,
   type LucideIcon,
 } from "lucide-react";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
@@ -844,9 +843,11 @@ function RequestSection({
                 {submitting ? "Enviando…" : "Enviar solicitação"}
               </button>
 
-              <p className="flex items-center justify-center gap-2 text-xs text-white/55">
-                <Lock className="h-3.5 w-3.5" />
-                Seus dados estão seguros. Não compartilhamos suas informações.
+              <p className="text-center text-xs leading-relaxed text-white/55">
+                Ao enviar, você concorda com a nossa{" "}
+                <Link to="/politica-de-privacidade" className="font-medium text-white underline underline-offset-4">
+                  Política de Privacidade
+                </Link>.
               </p>
             </form>
           )}

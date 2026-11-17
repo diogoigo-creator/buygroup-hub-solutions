@@ -1,6 +1,7 @@
 # Architecture rules
 
 - Keep GTM initialization hostname-gated in the root head and analytics pushes in a browser-safe, field-allowlisted helper; tracking must not expose personal data or interrupt existing flows.
+- Keep consent defaults before GTM and consent state in the shared browser-safe consent module; the cookie notice owns choices and signals its visibility to the mobile contact bar.
 
 - Keep shared contact link data in a browser-safe module so every contact entry uses the same destination.
 - Keep mobile contact-bar rendering in SiteLayout and its visibility rules in a browser-safe helper with tests, so route exclusions and viewport thresholds stay consistent.

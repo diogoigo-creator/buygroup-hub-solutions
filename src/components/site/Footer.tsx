@@ -4,6 +4,7 @@ import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 
 import { WHATSAPP_URL, WHATSAPP_NUMBER, LINKEDIN_URL } from "@/lib/contact-details";
 import { pushDataLayer } from "@/lib/gtm";
+import { requestCookiePreferences } from "@/lib/cookie-preferences";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
@@ -104,8 +105,16 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-xs text-white/50 lg:px-10">
-          © {new Date().getFullYear()} Buy Group Consultoria. Todos os direitos reservados.
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+          <p>© {new Date().getFullYear()} Buy Group Consultoria. Todos os direitos reservados.</p>
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-5">
+            <Link to="/politica-de-privacidade" className="transition-colors hover:text-green">
+              Política de Privacidade
+            </Link>
+            <button type="button" onClick={requestCookiePreferences} className="text-left transition-colors hover:text-green">
+              Preferências de cookies
+            </button>
+          </div>
         </div>
       </div>
     </footer>

@@ -14,6 +14,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { LINKEDIN_URL } from "@/lib/contact-details";
 import { GTM_ID } from "@/lib/seo";
 import { GTM_SCRIPT } from "@/lib/gtm";
+import { BG_CONSENT_DEFAULT, CONSENT_DEFAULTS } from "@/lib/consent-defaults";
 
 function NotFoundComponent() {
   return (
@@ -146,6 +147,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULTS }} />
+        <script dangerouslySetInnerHTML={{ __html: BG_CONSENT_DEFAULT }} />
         <script dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
         <HeadContent />
       </head>

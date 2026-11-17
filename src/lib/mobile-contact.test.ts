@@ -17,6 +17,10 @@ test("contact page never shows the mobile bar", () => {
 test("visible footer hides the mobile bar", () => {
   expect(shouldShowMobileContact({ ...state, footerVisible: true })).toBe(false);
 });
+test("visible cookie notice hides the mobile bar", () => {
+  expect(shouldShowMobileContact({ ...state, cookieNoticeVisible: true })).toBe(false);
+  expect(shouldShowMobileContact({ ...state, cookieNoticeVisible: false })).toBe(true);
+});
 test("visible Academy form hides the bar only on the Academy page", () => {
   expect(shouldShowMobileContact({ ...state, pathname: "/cursos", courseFormVisible: true })).toBe(false);
   expect(shouldShowMobileContact({ ...state, pathname: "/cursos", courseFormVisible: false })).toBe(true);
