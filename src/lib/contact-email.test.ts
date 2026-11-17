@@ -52,6 +52,7 @@ test('fixed recipient, sender domain, reply-to and event id are preserved', asyn
   spies.push(spyOn(globalThis, 'fetch').mockImplementation(fakeFetch));
   expect(await sendFormNotification(params)).toEqual({ ok: true });
   expect(payload.to).toBe('atendimento@buygroup.com.br');
+  expect(payload.from).toBe('Buy Group Site <no-reply@notify.buygroup.com.br>');
   expect(payload.sender_domain).toBe('notify.buygroup.com.br');
   expect(payload.reply_to).toBe('lead@example.com');
   expect(payload.idempotency_key).toBe('form-notification-test-event-1');

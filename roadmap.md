@@ -14,4 +14,7 @@
 - [x] Sincronizar description do ContactPage com a descrição da página.
 - [x] Testar os links e os dois formulários e salvar as alterações.
 - [x] Migrar os dois formulários para o domínio nativo e verificar os testes.
-- [ ] Confirmar entrega real — aguarda verificação do DNS de notify.buygroup.com.br.
+- [x] Confirmar domínio notify.buygroup.com.br ativo no Lovable Emails.
+- [x] Conferir envio nativo dos dois formulários e ajustar apenas o remetente solicitado.
+- [x] Enviar um único teste real, sem inserir solicitações, e confirmar aceitação no registro de envios (sent em 2026-11-17T03:21:28Z).
+- [ ] Confirmar chegada na caixa de entrada — depende da confirmação do destinatário após o teste.
