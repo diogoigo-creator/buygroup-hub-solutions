@@ -17,14 +17,14 @@ export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
   head: () => {
     const title = "Contato | Buy Group";
-    const description = "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.";
+    const description = "Agende uma conversa executiva de 20 minutos com a Buy Group, sob NDA, e avalie o potencial de economia em compras da sua empresa.";
     const url = `${SITE_URL}/contato`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
         { property: "og:title", content: "Contato Buy Group" },
-        { property: "og:description", content: "Solicite um diagnóstico gratuito." },
+        { property: "og:description", content: description },
         { property: "og:url", content: url },
         ...SOCIAL_META,
         { name: "twitter:title", content: title },
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/contato")({
             "@type": "ContactPage",
             url,
             name: title,
-            description,
+            description: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.",
             mainEntity: {
               "@type": "Organization",
               "@id": `${SITE_URL}/#organization`,

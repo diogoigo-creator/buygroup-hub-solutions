@@ -27,7 +27,7 @@ export const Route = createFileRoute("/otimizacao-de-custos")({
     const title = "Otimização de Custos · CUT4MORE™ | Buy Group";
     const description =
       "Programa estruturado de redução de custos com remuneração 100% vinculada aos savings homologados. Da análise forense ao contrato renegociado.";
-    const url = "https://buygroup-hub-solutions.lovable.app/otimizacao-de-custos";
+    const url = "https://buygroup.com.br/otimizacao-de-custos";
     return {
       meta: [
         { title },

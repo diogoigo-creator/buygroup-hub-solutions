@@ -18,6 +18,7 @@ export function KineticSlogan({
       <img
         src={markWhite}
         alt=""
+        aria-hidden="true"
         className="pointer-events-none absolute right-6 top-1/2 h-[220px] w-[220px] -translate-y-1/2 select-none opacity-[0.06] animate-mark-bob lg:right-16 lg:h-[360px] lg:w-[360px] lg:opacity-[0.08]"
       />
       <div className="relative max-w-[92%] text-center lg:max-w-[640px] lg:text-right">

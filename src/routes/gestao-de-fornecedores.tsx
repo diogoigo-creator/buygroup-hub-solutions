@@ -25,7 +25,7 @@ export const Route = createFileRoute("/gestao-de-fornecedores")({
     const title = "Gestão de Fornecedores | Buy Group";
     const description =
       "Homologação, segmentação, avaliação e desenvolvimento de fornecedores críticos sob a ótica de risco, ESG e continuidade operacional.";
-    const url = "https://buygroup-hub-solutions.lovable.app/gestao-de-fornecedores";
+    const url = "https://buygroup.com.br/gestao-de-fornecedores";
     return {
       meta: [
         { title },

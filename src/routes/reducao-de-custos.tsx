@@ -22,7 +22,7 @@ export const Route = createFileRoute("/reducao-de-custos")({
     const title = "Redução de Custos em Compras | Buy Group";
     const description =
       "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.";
-    const url = "https://buygroup-hub-solutions.lovable.app/reducao-de-custos";
+    const url = "https://buygroup.com.br/reducao-de-custos";
     return {
       meta: [
         { title },

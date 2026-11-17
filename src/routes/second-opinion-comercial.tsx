@@ -5,6 +5,6 @@ export const Route = createFileRoute("/second-opinion-comercial")({
     throw redirect({ to: "/revisao-pre-fechamento" });
   },
   head: () => ({
-    links: [{ rel: "canonical", href: "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento" }],
+    links: [{ rel: "canonical", href: "https://buygroup.com.br/revisao-pre-fechamento" }],
   }),
 });

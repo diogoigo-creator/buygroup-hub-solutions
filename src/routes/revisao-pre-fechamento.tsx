@@ -29,7 +29,7 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
     const title = "Revisão Pré-Fechamento de Propostas | Buy Group";
     const description =
       "Revisão independente de propostas comerciais já negociadas pelo seu time. A Buy Group conduz a rodada final e captura o saving residual. Remuneração de 50% sobre a economia gerada. Retorno em 48h.";
-    const url = "https://buygroup-hub-solutions.lovable.app/revisao-pre-fechamento";
+    const url = "https://buygroup.com.br/revisao-pre-fechamento";
     return {
       meta: [
         { title },

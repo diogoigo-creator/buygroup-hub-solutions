@@ -12,7 +12,6 @@ export function FullLockup({
 }) {
   return (
     <div
-      aria-hidden="true"
       className="surface-dark pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-auto lg:right-10 lg:translate-x-0"
     >
       <div className="relative flex flex-col items-center gap-5">

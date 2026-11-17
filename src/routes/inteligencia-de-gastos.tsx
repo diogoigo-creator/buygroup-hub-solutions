@@ -26,7 +26,7 @@ export const Route = createFileRoute("/inteligencia-de-gastos")({
     const title = "Inteligência de Gastos · Assessment | Buy Group";
     const description =
       "Classificação forense de 24 meses de gasto. Baseline oficial auditável. Quick wins identificados em 30 dias.";
-    const url = "https://buygroup-hub-solutions.lovable.app/inteligencia-de-gastos";
+    const url = "https://buygroup.com.br/inteligencia-de-gastos";
     return {
       meta: [
         { title },

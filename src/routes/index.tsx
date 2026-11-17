@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
     const title = "Buy Group: economia em compras com governança";
     const description =
       "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.";
-    const url = "https://buygroup-hub-solutions.lovable.app/";
+    const url = "https://buygroup.com.br/";
     return {
       meta: [
         { title },

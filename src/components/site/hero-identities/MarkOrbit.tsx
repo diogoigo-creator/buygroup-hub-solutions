@@ -25,6 +25,7 @@ export function MarkOrbit({ intensity = "default" }: { intensity?: "default" | "
         <img
           src={markWhite}
           alt=""
+          aria-hidden="true"
           className="absolute inset-0 m-auto h-[55%] w-[55%] select-none opacity-[0.10] animate-mark-float lg:opacity-[0.22]"
         />
       </div>
