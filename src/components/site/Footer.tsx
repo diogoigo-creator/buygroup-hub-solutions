@@ -114,6 +114,14 @@ export function Footer() {
             <button type="button" onClick={requestCookiePreferences} className="text-left transition-colors hover:text-green">
               Preferências de cookies
             </button>
+            <a
+              href="https://tiraprova.buygroup.com.br"
+              target="_blank"
+              rel="noopener"
+              className="transition-colors hover:text-green"
+            >
+              Para condomínios: Tira-Prova
+            </a>
           </div>
         </div>
       </div>
