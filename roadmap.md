@@ -1,3 +1,9 @@
+# Google Analytics 4 direto
+
+- [x] Instalar GA4 após os padrões de consentimento, nos dois hostnames oficiais, mantendo GTM e sem page_view manual.
+- [x] Encaminhar somente os campos permitidos dos eventos para GA4, sem interromper fluxos.
+- [x] Verificar 45 testes, navegador e build automático OK; salvar sem publicar ou enviar formulários.
+
 # Privacidade, consentimento e estudo de caso
 
 - [x] Remover somente o ROI e a citação do estudo de caso da home.

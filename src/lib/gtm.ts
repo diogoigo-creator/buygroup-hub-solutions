@@ -1,6 +1,9 @@
-import { GTM_ID } from "./seo";
+import { GA4_ID, GTM_ID } from "./seo";
 
 export const GTM_SCRIPT = `if(location.hostname==='buygroup.com.br'||location.hostname==='www.buygroup.com.br'){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');}`;
+
+// The single config sends the initial page view; enhanced measurement owns history changes.
+export const GA4_SCRIPT = `if(location.hostname==='buygroup.com.br'||location.hostname==='www.buygroup.com.br'){var ga4Script=document.createElement('script');ga4Script.async=true;ga4Script.src='https://www.googletagmanager.com/gtag/js?id=${GA4_ID}';document.head.appendChild(ga4Script);gtag('js',new Date());gtag('config','${GA4_ID}');}`;
 
 type EventParams = {
   generate_lead: { form_name: "contato" | "academy" };
@@ -10,6 +13,7 @@ type EventParams = {
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -27,5 +31,11 @@ export function pushDataLayer<E extends keyof EventParams>(event: E, params: Eve
     window.dataLayer.push(entry);
   } catch {
     // Analytics must never interrupt a form confirmation or navigation.
+  }
+  try {
+    const { event: eventName, ...allowedParams } = entry;
+    window.gtag?.("event", eventName, allowedParams);
+  } catch {
+    // Each transport is best-effort, independently of the other.
   }
 }

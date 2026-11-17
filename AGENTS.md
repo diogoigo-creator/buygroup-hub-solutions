@@ -1,6 +1,6 @@
 # Architecture rules
 
-- Keep GTM initialization hostname-gated in the root head and analytics pushes in a browser-safe, field-allowlisted helper; tracking must not expose personal data or interrupt existing flows.
+- Keep GTM and direct GA4 initialization hostname-gated in the root head after consent defaults, with one GA4 config and no manual page views; forward allowlisted events through independently best-effort dataLayer and gtag transports to preserve flows and avoid duplicate views.
 - Keep global denied consent defaults before GTM and require a valid explicit per-purpose grant in the shared browser-safe consent module, including after cross-tab deletion; regional or untimestamped legacy acceptance must not grant permission. The cookie notice owns choices and signals its visibility to the mobile contact bar.
 
 - Keep shared contact link data in a browser-safe module so every contact entry uses the same destination.
