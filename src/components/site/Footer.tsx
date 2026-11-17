@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Linkedin } from "lucide-react";
 import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 
-import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact-details";
+import { WHATSAPP_URL, WHATSAPP_NUMBER, LINKEDIN_URL } from "@/lib/contact-details";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
@@ -24,7 +24,7 @@ const empresa = [
 
 export function Footer() {
   return (
-    <footer className="surface-dark bg-navy text-white">
+    <footer className="site-footer surface-dark bg-navy text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr] lg:gap-10 lg:px-10 lg:py-16">
         <div className="space-y-5">
           <BuyGroupLogo className="h-7 w-auto" />
@@ -69,6 +69,12 @@ export function Footer() {
             Contato
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-white/80">
+            <li>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Buy Group" className="inline-flex items-center gap-2.5 transition-colors hover:text-primary">
+                <Linkedin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <span>LinkedIn</span>
+              </a>
+            </li>
             <li>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2.5 transition-colors hover:text-primary">
                 <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />

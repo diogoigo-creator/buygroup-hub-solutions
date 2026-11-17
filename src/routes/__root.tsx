@@ -11,6 +11,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
+import { LINKEDIN_URL } from "@/lib/contact-details";
 
 function NotFoundComponent() {
   return (
@@ -108,6 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Buy Group",
           legalName: "Buy Group Consultoria",
           url: "https://buygroup.com.br",
+          sameAs: [LINKEDIN_URL],
           logo: "https://buygroup.com.br/og-buygroup.jpg",
           description:
             "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem e governança financeira.",

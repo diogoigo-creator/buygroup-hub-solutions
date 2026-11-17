@@ -131,7 +131,7 @@ const frameworkDetail = [
     ],
     metrics: [
       { v: "100%", l: "dos savings com lastro documental" },
-      { v: "8,7x", l: "ROI médio dos projetos" },
+      { v: "Mensal", l: "acompanhamento da captura dos savings" },
       { v: "< 90 dias", l: "de payback" },
     ],
   },

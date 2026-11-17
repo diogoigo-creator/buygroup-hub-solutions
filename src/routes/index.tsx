@@ -70,8 +70,8 @@ export const Route = createFileRoute("/")({
 
 const credibility = [
   { value: "R$ 1,4 bi+", label: "Em volume de compras analisado" },
-  { value: "23", label: "Grandes empresas atendidas" },
-  { value: "8,7x", label: "ROI médio nos projetos" },
+  { value: "4 fases", label: "Metodologia proprietária CUT4MORE™" },
+  { value: "Sob NDA", label: "Confidencialidade desde a primeira conversa" },
   { value: "100%", label: "Remuneração vinculada ao resultado\u00A0" },
 ];
 
@@ -374,7 +374,7 @@ function Index() {
                   t: "15+ anos",
                   d: "experiência média da equipe em compras e negociação",
                 },
-                { icon: TrendingUp, t: "100+", d: "projetos conduzidos em verticais críticas" },
+                { icon: TrendingUp, t: "Multicategoria", d: "telecom, energia, logística, tecnologia, seguros e serviços corporativos" },
                 {
                   icon: Award,
                   t: "Vivência executiva",

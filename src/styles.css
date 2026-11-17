@@ -75,6 +75,7 @@
   /* Sticky offsets — keep header height + breadcrumb in sync with anchor scroll */
   --header-h: 64px;
   --scroll-anchor: 8rem; /* header + breadcrumb + breathing room */
+  --mobile-contact-height: calc(68px + env(safe-area-inset-bottom, 0px));
 
   /* Navy & Gold — private-banking palette */
   --navy: oklch(0.21 0.06 264); /* #0F1B3C deep navy */
@@ -507,6 +508,22 @@
   /* Mobile perf: kill infinite/heavy animations to protect INP, LCP, FCP.
      Visual identity preserved on desktop (>=768px). */
   @media (max-width: 767px) {
+    .site-layout[data-page="/contato"] form :is(input, select, textarea),
+    .site-layout[data-page="/cursos"] form :is(input, select, textarea) {
+      font-size: 16px;
+    }
+    .site-footer a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .mobile-contact-space {
+      padding-bottom: var(--mobile-contact-height);
+    }
+    .mobile-contact-bar {
+      padding-top: 12px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    }
     .hero-cinematic-image,
     .hero-cinematic-light,
     .hero-cinematic-glow,

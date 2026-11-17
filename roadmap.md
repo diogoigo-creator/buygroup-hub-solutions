@@ -1,3 +1,10 @@
+# Ajustes de conteúdo, LinkedIn e contato mobile
+
+- [x] Trocar somente os quatro conteúdos solicitados na home e na metodologia.
+- [x] Adicionar LinkedIn ao contato compartilhado, rodapé e Organization.
+- [x] Ajustar fontes dos formulários, toque no rodapé e barra mobile com exclusões.
+- [x] Conferir telas de 375px e desktop, executar testes e verificar diagnósticos automáticos (build OK; typecheck separado não exposto pelo ambiente).
+
 # Correção de SEO técnico
 
 - [x] Substituir a origem antiga por https://buygroup.com.br em todo o projeto.
