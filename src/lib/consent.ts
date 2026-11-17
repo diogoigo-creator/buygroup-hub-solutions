@@ -9,11 +9,6 @@ const LEGACY_KEY = "cookie_consent";
 const MAX_AGE_DAYS: Record<Choice, number> = { denied: 183, granted: 365 };
 const DAY_MS = 86_400_000;
 const CHANGE_EVENT = "consent-change";
-const CONSENT_COUNTRIES =
-  "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,DE,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,IS,LI,NO,GB,CH,RE,GP,MQ,GF,YT,MF,AX,CA".split(
-    ",",
-  );
-let consentRegion: Promise<boolean> | undefined;
 const unsaved: Partial<Record<Purpose, Choice>> = {};
 
 function isPurpose(purpose: string): purpose is Purpose {
@@ -28,37 +23,13 @@ function gtag(...args: unknown[]) {
   (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.(...args);
 }
 
-function isConsentRequiredRegion(): Promise<boolean> {
-  return (consentRegion ??= lookupConsentRegion());
-}
-
-async function lookupConsentRegion(): Promise<boolean> {
-  try {
-    const res = await fetch("/cdn-cgi/trace", { signal: AbortSignal.timeout(2000) });
-    if (!res.ok) return true;
-    const trace = await res.text();
-    // Behind a rewrite proxy the trace answers for the proxy's connection under another host.
-    const host = trace
-      .match(/^h=(.+)$/m)?.[1]
-      ?.trim()
-      .toLowerCase()
-      .replace(/:\d+$/, "");
-    if (host !== location.hostname) return true;
-    const country = trace.match(/^loc=([A-Z0-9]{2})$/m)?.[1];
-    if (!country || country === "XX" || country === "T1") return true;
-    return CONSENT_COUNTRIES.includes(country);
-  } catch {
-    return true;
-  }
-}
-
 function storedAnswer(purpose: Purpose): { choice: Choice; stale: boolean } | null {
   const pending = unsaved[purpose];
   if (pending) return { choice: pending, stale: false };
   try {
     const saved = JSON.parse(localStorage.getItem(keyOf(purpose)) ?? "null");
     const choice = saved?.choice;
-    if ((choice !== "granted" && choice !== "denied") || typeof saved.at !== "number") return null;
+    if ((choice !== "granted" && choice !== "denied") || typeof saved.at !== "number" || !Number.isFinite(saved.at) || saved.at < 0 || saved.at > Date.now()) return null;
     return { choice, stale: Date.now() - saved.at >= MAX_AGE_DAYS[choice as Choice] * DAY_MS };
   } catch {
     return null;
@@ -83,11 +54,7 @@ export function readChoice(purpose: Purpose): Choice | null {
 }
 
 export async function canTrack(purpose: Purpose): Promise<boolean> {
-  const choice = readChoice(purpose);
-  if (choice !== null) return choice === "granted";
-  const required = await isConsentRequiredRegion();
-  const latest = readChoice(purpose);
-  return latest !== null ? latest === "granted" : !required;
+  return readChoice(purpose) === "granted";
 }
 
 export function applySignals(purpose: Purpose, choice: Choice) {
@@ -99,15 +66,8 @@ export function applySignals(purpose: Purpose, choice: Choice) {
 
 function restoreChoices(purposes: Purpose[]) {
   for (const purpose of purposes) {
-    const choice = readChoice(purpose);
-    if (choice) {
-      applySignals(purpose, choice);
-      continue;
-    }
-    // A cleared answer falls back to the regional default.
-    void isConsentRequiredRegion().then((required) => {
-      if (readChoice(purpose) === null) applySignals(purpose, required ? "denied" : "granted");
-    });
+    // Missing, cleared or expired acceptance never grants permission.
+    applySignals(purpose, readChoice(purpose) ?? "denied");
   }
 }
 
@@ -129,8 +89,7 @@ export function saveChoices(choices: Partial<Record<Purpose, Choice>>) {
 }
 
 export async function needsAnswer(purposes: Purpose[]): Promise<boolean> {
-  const required = await isConsentRequiredRegion();
-  return required && !globalPrivacyControl() && purposes.some((purpose) => storedAnswer(purpose)?.stale ?? true);
+  return !globalPrivacyControl() && purposes.some((purpose) => storedAnswer(purpose)?.stale ?? true);
 }
 
 /** Fires on changes from this tab and from other tabs. */

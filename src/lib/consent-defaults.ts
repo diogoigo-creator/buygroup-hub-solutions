@@ -8,17 +8,6 @@ gtag("consent", "default", {
   ad_user_data: "denied",
   ad_personalization: "denied",
 });
-gtag("consent", "default", {
-  analytics_storage: "denied",
-  ad_storage: "denied",
-  ad_user_data: "denied",
-  ad_personalization: "denied",
-  wait_for_update: 500,
-  region:
-    "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,DE,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,IS,LI,NO,GB,CH,RE,GP,MQ,GF,YT,MF,AX,CA-QC".split(
-      ",",
-    ),
-});
 (function () {
   var signals = {
     analytics: ["analytics_storage"],
@@ -30,6 +19,7 @@ gtag("consent", "default", {
       var saved = JSON.parse(localStorage.getItem("cookie_consent_" + purpose) || "null");
       if (
         saved &&
+        typeof saved.at === "number" && isFinite(saved.at) && saved.at >= 0 && saved.at <= Date.now() &&
         (saved.choice === "denied" || (saved.choice === "granted" && Date.now() - saved.at < 365 * 86400000))
       ) {
         choice = saved.choice;
@@ -49,8 +39,9 @@ gtag("consent", "default", {
 export const BG_CONSENT_DEFAULT = `try {
   if (navigator.globalPrivacyControl !== true) {
     var bgChoice = localStorage.getItem("bg_cookie_consent");
-    if (bgChoice === "granted" || bgChoice === "denied") {
-      gtag("consent", "update", { analytics_storage: bgChoice });
+    // Legacy acceptance has no timestamp and cannot override the valid per-purpose answer.
+    if (bgChoice === "denied") {
+      gtag("consent", "update", { analytics_storage: "denied" });
     }
   }
 } catch (e) {}`;

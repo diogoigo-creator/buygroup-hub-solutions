@@ -1,7 +1,7 @@
 import { afterEach, expect, test } from "bun:test";
 import { runInNewContext } from "node:vm";
 import { BG_CONSENT_DEFAULT, CONSENT_DEFAULTS } from "./consent-defaults";
-import { readChoice } from "./consent";
+import { canTrack, needsAnswer, onConsentChange, readChoice } from "./consent";
 import { BG_COOKIE_CONSENT_KEY, saveAnalyticsChoice } from "./cookie-preferences";
 
 const descriptors = ["window", "localStorage", "navigator"].map((key) => [
@@ -19,6 +19,7 @@ afterEach(() => {
 function browser() {
   const values = new Map<string, string>();
   const calls: unknown[][] = [];
+  const listeners = new Map<string, EventListener>();
   Object.defineProperty(globalThis, "localStorage", {
     configurable: true,
     value: {
@@ -32,9 +33,11 @@ function browser() {
     value: {
       gtag: (...args: unknown[]) => calls.push(args),
       dispatchEvent: () => true,
+      addEventListener: (name: string, listener: EventListener) => listeners.set(name, listener),
+      removeEventListener: (name: string) => listeners.delete(name),
     },
   });
-  return { values, calls };
+  return { values, calls, listeners };
 }
 
 test("defaults deny every signal and a stored acceptance grants analytics only", () => {
@@ -43,7 +46,7 @@ test("defaults deny every signal and a stored acceptance grants analytics only",
     window: { dataLayer },
     dataLayer,
     localStorage: {
-      getItem: (key: string) => key === BG_COOKIE_CONSENT_KEY ? "granted" : null,
+      getItem: (key: string) => key === "cookie_consent_analytics" ? JSON.stringify({ choice: "granted", at: Date.now() }) : null,
     },
     navigator: {},
     Date,
@@ -87,4 +90,61 @@ test("the browser privacy signal overrides a stored acceptance", () => {
     value: { globalPrivacyControl: true },
   });
   expect(readChoice("analytics")).toBe("denied");
+});
+
+for (const country of ["BR", "US", "DE", "CA", "XX"]) {
+  test(`unanswered analytics and advertising are denied everywhere (${country})`, async () => {
+    browser();
+    // Any regional metadata is irrelevant to the global consent default.
+    Object.defineProperty(globalThis, "navigator", { configurable: true, value: { language: country } });
+    expect(await canTrack("analytics")).toBe(false);
+    expect(await canTrack("advertising")).toBe(false);
+    expect(await needsAnswer(["analytics", "advertising"])).toBe(true);
+    const dataLayer: Record<number, unknown>[] = [];
+    runInNewContext(`${CONSENT_DEFAULTS}\n${BG_CONSENT_DEFAULT}`, {
+      window: { dataLayer }, dataLayer, navigator: {},
+      location: { country }, localStorage: { getItem: () => null },
+    });
+    expect(dataLayer).toHaveLength(1);
+    expect(dataLayer[0]?.[2]).toEqual({ analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
+  });
+}
+
+for (const key of ["cookie_consent_analytics", "cookie_consent_advertising", null]) {
+  test(`cross-tab deletion restores denied signals (${key ?? "clear all"})`, async () => {
+    const { values, calls, listeners } = browser();
+    values.set("cookie_consent_analytics", JSON.stringify({ choice: "granted", at: Date.now() }));
+    values.set("cookie_consent_advertising", JSON.stringify({ choice: "granted", at: Date.now() }));
+    expect(await canTrack("analytics")).toBe(true);
+    expect(await canTrack("advertising")).toBe(true);
+    let changes = 0;
+    const unsubscribe = onConsentChange(() => changes++);
+    if (key === null) values.clear();
+    else values.delete(key);
+    listeners.get("storage")?.({ key } as StorageEvent);
+    for (const purpose of ["analytics", "advertising"] as const) {
+      if (key !== null && key !== `cookie_consent_${purpose}`) continue;
+      expect(await canTrack(purpose)).toBe(false);
+      expect(await needsAnswer([purpose])).toBe(true);
+    }
+    expect(calls).toContainEqual(["consent", "update", key === "cookie_consent_advertising" ? { ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" } : { analytics_storage: "denied" }]);
+    expect(changes).toBe(1);
+    unsubscribe();
+  });
+}
+
+test("legacy, expired and invalid acceptance cannot grant permission", async () => {
+  const { values } = browser();
+  values.set(BG_COOKIE_CONSENT_KEY, "granted");
+  for (const at of [undefined, Date.now() - 366 * 86400000, Date.now() + 86400000]) {
+    values.set("cookie_consent_analytics", JSON.stringify({ choice: "granted", at }));
+    expect(await canTrack("analytics")).toBe(false);
+    const dataLayer: Record<number, unknown>[] = [];
+    runInNewContext(`${CONSENT_DEFAULTS}\n${BG_CONSENT_DEFAULT}`, {
+      window: { dataLayer }, dataLayer, navigator: {},
+      localStorage: { getItem: (key: string) => values.get(key) ?? null },
+    });
+    expect(dataLayer).toHaveLength(1);
+    expect(dataLayer[0]?.[2]).toMatchObject({ analytics_storage: "denied" });
+  }
 });
