@@ -1,41 +1,35 @@
-const TO_EMAIL = "atendimento@buygroup.com.br";
-const FROM_EMAIL = "Buy Group Site <onboarding@resend.dev>";
+import { sendTemplateEmail } from './email-templates/send-email';
 
-export async function sendResend(params: {
+export async function sendFormNotification(params: {
+  submissionId: string;
   subject: string;
-  html: string;
+  title: string;
+  subtitle: string;
+  rows: Array<[string, string | null | undefined]>;
   replyTo: string;
 }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error("[email] RESEND_API_KEY missing");
-    return { ok: false as const, error: "missing_api_key" };
-  }
   try {
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      from: FROM_EMAIL,
-      to: [TO_EMAIL],
-      reply_to: params.replyTo,
-      subject: params.subject,
-      html: params.html,
-    }),
-  });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    console.error("[email] Resend send failed", res.status, body);
-    return { ok: false as const, error: `resend_${res.status}` };
-  }
-  return { ok: true as const };
+    const result = await sendTemplateEmail('form-notification', 'atendimento@buygroup.com.br', {
+      idempotencyKey: `form-notification-${params.submissionId}`,
+      replyTo: params.replyTo,
+      templateData: {
+        subject: params.subject,
+        title: params.title,
+        subtitle: params.subtitle,
+        rows: params.rows,
+      },
+    });
+    if (!result.sent) {
+      console.error('[email] Form notification not sent', result.reason);
+      return { ok: false as const, error: result.reason };
+    }
+    return { ok: true as const };
   } catch (error) {
-    const reason = error instanceof Error ? error.name : "UnknownError";
-    console.error("[email] Resend transport failed", reason);
-    return { ok: false as const, error: `transport_${reason}` };
+    const reason = error && typeof error === 'object' && 'code' in error
+      ? String(error.code)
+      : error instanceof Error ? error.name : 'UnknownError';
+    console.error('[email] Form notification failed', reason);
+    return { ok: false as const, error: reason };
   }
 }
 

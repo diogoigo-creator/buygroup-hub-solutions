@@ -28,6 +28,7 @@ import { Route as CostOptimizationRouteImport } from './routes/cost-optimization
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as BpoDeComprasRouteImport } from './routes/bpo-de-compras'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const SupplierRiskRoute = SupplierRiskRouteImport.update({
   id: '/supplier-risk',
@@ -124,6 +125,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
   '/supplier-risk': typeof SupplierRiskRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -166,6 +174,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
   '/supplier-risk': typeof SupplierRiskRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -188,6 +197,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/spend-intelligence': typeof SpendIntelligenceRoute
   '/supplier-risk': typeof SupplierRiskRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/spend-intelligence'
     | '/supplier-risk'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/spend-intelligence'
     | '/supplier-risk'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
@@ -253,6 +265,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/spend-intelligence'
     | '/supplier-risk'
+    | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -275,6 +288,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   SpendIntelligenceRoute: typeof SpendIntelligenceRoute
   SupplierRiskRoute: typeof SupplierRiskRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -412,6 +426,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -435,6 +456,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   SpendIntelligenceRoute: SpendIntelligenceRoute,
   SupplierRiskRoute: SupplierRiskRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

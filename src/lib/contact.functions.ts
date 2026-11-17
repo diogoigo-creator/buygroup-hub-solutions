@@ -27,52 +27,6 @@ const courseSchema = z.object({
   mensagem: z.string().trim().max(2000).optional().nullable(),
 });
 
-function escapeHtml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function renderRows(rows: Array<[string, string | null | undefined]>): string {
-  return rows
-    .filter(([, v]) => v && String(v).trim().length > 0)
-    .map(
-      ([label, value]) => `
-        <tr>
-          <td style="padding:8px 12px;background:#f6f7f9;border:1px solid #e5e7eb;font-size:13px;color:#475569;width:220px;vertical-align:top;">${escapeHtml(label)}</td>
-          <td style="padding:8px 12px;border:1px solid #e5e7eb;font-size:14px;color:#0f172a;white-space:pre-wrap;">${escapeHtml(String(value))}</td>
-        </tr>`,
-    )
-    .join("");
-}
-
-function buildEmail(title: string, subtitle: string, rowsHtml: string): string {
-  return `<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f1f5f9;padding:24px 0;">
-    <tr><td align="center">
-      <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="max-width:640px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-        <tr><td style="background:#0a1f3d;color:#ffffff;padding:24px 28px;">
-          <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#86efac;">Buy Group · Site</div>
-          <div style="font-size:22px;font-weight:600;margin-top:6px;">${escapeHtml(title)}</div>
-          <div style="font-size:14px;color:#cbd5e1;margin-top:4px;">${escapeHtml(subtitle)}</div>
-        </td></tr>
-        <tr><td style="padding:24px 28px;">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
-            ${rowsHtml}
-          </table>
-          <p style="margin:20px 0 0;font-size:12px;color:#64748b;">Responda este e-mail para entrar em contato direto com a pessoa que preencheu o formulário.</p>
-        </td></tr>
-      </table>
-    </td></tr>
-  </table>
-</body></html>`;
-}
-
 function getServerSupabase() {
   const url = process.env.SUPABASE_URL;
   const key =
@@ -86,9 +40,11 @@ function getServerSupabase() {
 export const submitContact = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
-    const { sendResend } = await import("./contact-email.server");
+    const { sendFormNotification } = await import("./contact-email.server");
     const supabase = getServerSupabase();
+    const submissionId = crypto.randomUUID();
     const { error } = await supabase.from("contact_submissions").insert({
+      id: submissionId,
       nome: data.nome,
       empresa: data.empresa,
       email: data.email,
@@ -104,7 +60,7 @@ export const submitContact = createServerFn({ method: "POST" })
       throw new Error("Não foi possível salvar o contato.");
     }
 
-    const rowsHtml = renderRows([
+    const rows: Array<[string, string | null | undefined]> = [
       ["Nome", data.nome],
       ["Empresa", data.empresa],
       ["E-mail", data.email],
@@ -114,23 +70,20 @@ export const submitContact = createServerFn({ method: "POST" })
       ["Compradores internos", data.compradores_internos],
       ["Principal desafio", data.desafio_compras],
       ["Mensagem", data.mensagem],
-    ]);
-    const html = buildEmail(
-      "Novo contato recebido",
-      `${data.nome} · ${data.empresa}`,
-      rowsHtml,
-    );
+    ];
     const subject = `Novo contato site — ${data.empresa || data.nome}`;
-    const send = await sendResend({ subject, html, replyTo: data.email });
+    const send = await sendFormNotification({ submissionId, subject, title: "Novo contato recebido", subtitle: `${data.nome} · ${data.empresa}`, rows, replyTo: data.email });
     return { ok: true, emailSent: send.ok };
   });
 
 export const submitCourseSignup = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => courseSchema.parse(data))
   .handler(async ({ data }) => {
-    const { sendResend } = await import("./contact-email.server");
+    const { sendFormNotification } = await import("./contact-email.server");
     const supabase = getServerSupabase();
+    const submissionId = crypto.randomUUID();
     const { error } = await supabase.from("course_signups").insert({
+      id: submissionId,
       nome: data.nome,
       empresa: data.empresa,
       cargo: data.cargo,
@@ -146,7 +99,7 @@ export const submitCourseSignup = createServerFn({ method: "POST" })
       throw new Error("Não foi possível salvar a solicitação.");
     }
 
-    const rowsHtml = renderRows([
+    const rows: Array<[string, string | null | undefined]> = [
       ["Nome", data.nome],
       ["Empresa", data.empresa],
       ["Cargo", data.cargo],
@@ -156,13 +109,8 @@ export const submitCourseSignup = createServerFn({ method: "POST" })
       ["Tamanho da turma", data.tamanho],
       ["Formato", data.formato],
       ["Mensagem", data.mensagem],
-    ]);
-    const html = buildEmail(
-      "Nova solicitação de treinamento",
-      `${data.nome} · ${data.empresa}`,
-      rowsHtml,
-    );
+    ];
     const subject = `Nova solicitação Academy — ${data.empresa || data.nome}`;
-    const send = await sendResend({ subject, html, replyTo: data.email });
+    const send = await sendFormNotification({ submissionId, subject, title: "Nova solicitação de treinamento", subtitle: `${data.nome} · ${data.empresa}`, rows, replyTo: data.email });
     return { ok: true, emailSent: send.ok };
   });

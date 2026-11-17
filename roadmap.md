@@ -13,4 +13,5 @@
 - [x] Preservar registros dos formulários quando o envio falhar e registrar o motivo no servidor.
 - [x] Sincronizar description do ContactPage com a descrição da página.
 - [x] Testar os links e os dois formulários e salvar as alterações.
-- [ ] Migrar envio após configuração e verificação do domínio nativo — aguarda configuração do remetente e DNS pelo usuário.
+- [x] Migrar os dois formulários para o domínio nativo e verificar os testes.
+- [ ] Confirmar entrega real — aguarda verificação do DNS de notify.buygroup.com.br.
