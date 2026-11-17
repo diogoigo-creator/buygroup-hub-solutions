@@ -56,7 +56,7 @@ function PrivacyPolicyPage() {
 
         <PolicySection title="1. Quem somos">
           <p>
-            Esta política explica como a Buy Group Consultoria ("Buy Group") trata dados pessoais recebidos pelo site buygroup.com.br. A Buy Group é a controladora desses dados. Endereço: R. Rio Grande do Norte, 1436, Sala 813, Savassi, Belo Horizonte, MG, CEP 30130-138. Contato para assuntos de privacidade: atendimento@buygroup.com.br.
+            Esta política explica como a Buy Group Consultoria ("Buy Group") trata dados pessoais recebidos pelo site buygroup.com.br. A Buy Group, inscrita no CNPJ sob o nº 38.478.032/0001-70, é a controladora desses dados. Endereço: R. Rio Grande do Norte, 1436, Sala 813, Savassi, Belo Horizonte, MG, CEP 30130-138. Contato para assuntos de privacidade: atendimento@buygroup.com.br.
           </p>
         </PolicySection>
 
@@ -113,7 +113,7 @@ function PrivacyPolicyPage() {
 
         <PolicySection title="7. Seus direitos">
           <p>
-            Você pode pedir confirmação do tratamento, acesso, correção, anonimização, bloqueio ou eliminação, portabilidade, informação sobre compartilhamento, revogação do consentimento e oposição ao tratamento (LGPD, art. 18). Envie o pedido para atendimento@buygroup.com.br. Respondemos em até 15 dias. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).
+            Você pode pedir confirmação do tratamento, acesso, correção, anonimização, bloqueio ou eliminação, portabilidade, informação sobre compartilhamento, revogação do consentimento e oposição ao tratamento (LGPD, art. 18). Envie o pedido para atendimento@buygroup.com.br. Respondemos em até 72 horas. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).
           </p>
         </PolicySection>
 
