@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
+
+import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact-details";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
@@ -67,6 +69,12 @@ export function Footer() {
             Contato
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-white/80">
+            <li>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2.5 transition-colors hover:text-primary">
+                <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <span>WhatsApp {WHATSAPP_NUMBER}</span>
+              </a>
+            </li>
             <li className="flex items-start gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-green" aria-hidden="true" />
               <a

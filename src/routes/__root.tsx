@@ -123,6 +123,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "Atendimento executivo",
+            telephone: "+55-31-99008-7887",
             email: "atendimento@buygroup.com.br",
             availableLanguage: ["Portuguese"],
           },

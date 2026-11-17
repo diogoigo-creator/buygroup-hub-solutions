@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, CheckCircle2, Lock, Loader2 } from "lucide-react";
+import { Mail, MapPin, CheckCircle2, Lock, Loader2, MessageCircle } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
+import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact-details";
 import { submitContact } from "@/lib/contact.functions";
 
 
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/contato")({
             "@type": "ContactPage",
             url,
             name: title,
-            description: "Fale com a Buy Group e solicite um diagnóstico gratuito de redução de custos.",
+            description,
             mainEntity: {
               "@type": "Organization",
               "@id": `${SITE_URL}/#organization`,
@@ -212,6 +213,12 @@ function ContatoPage() {
           <div className="rounded-2xl bg-navy p-8 text-white">
             <h3 className="font-serif text-2xl">Fale direto com a gente</h3>
             <ul className="mt-6 space-y-4 text-sm">
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-3 transition-colors hover:text-primary">
+                  <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  <span>WhatsApp: {WHATSAPP_NUMBER}</span>
+                </a>
+              </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-green" />
                 <a href="mailto:atendimento@buygroup.com.br" className="hover:text-green">

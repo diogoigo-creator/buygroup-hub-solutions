@@ -1,8 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, MessageCircle } from "lucide-react";
 import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+
+import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact-details";
 
 const nav = [
   { to: "/sobre", label: "Sobre" },
@@ -62,7 +65,7 @@ export function Header() {
           <BuyGroupLogo className="h-8 w-auto shrink-0 sm:h-9" />
         </Link>
 
-        <nav className="hidden md:flex">
+        <nav className="hidden min-[1100px]:flex">
           <ul className="flex items-center gap-1 rounded-full border border-border/60 bg-white/60 p-1 shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset,0_8px_24px_-16px_rgba(15,23,42,0.2)] backdrop-blur-xl">
             {nav.map((n) => (
               <li key={n.to}>
@@ -91,7 +94,12 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden md:flex">
+        <div className="hidden shrink-0 items-center gap-2 min-[1100px]:flex">
+          <Button asChild variant="ghost" className="min-h-11 rounded-full px-3 text-[13px] text-foreground">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle aria-hidden="true" /> WhatsApp
+            </a>
+          </Button>
           <Link
             to="/contato" hash="form"
             className="group inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-[13px] font-semibold text-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-soft hover:shadow-[0_14px_30px_-12px_rgba(15,23,42,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2"
@@ -102,7 +110,7 @@ export function Header() {
         </div>
 
         <button
-          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-white/70 text-navy backdrop-blur transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 md:hidden"
+          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-white/70 text-navy backdrop-blur transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2 min-[1100px]:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -122,7 +130,7 @@ export function Header() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+        className={`min-[1100px]:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!open}
       >
         <div
@@ -163,6 +171,11 @@ export function Header() {
                 </li>
               ))}
             </ul>
+            <Button asChild variant="ghost" className="mt-2 min-h-11 w-full justify-start rounded-2xl px-4 text-[15px] text-foreground">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                <MessageCircle aria-hidden="true" /> WhatsApp
+              </a>
+            </Button>
             <Link
               to="/contato" hash="form"
               onClick={() => setOpen(false)}
