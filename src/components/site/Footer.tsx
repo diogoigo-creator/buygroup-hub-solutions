@@ -3,6 +3,7 @@ import { Mail, MapPin, MessageCircle, Linkedin } from "lucide-react";
 import { BuyGroupLogo } from "@/components/site/BuyGroupLogo";
 
 import { WHATSAPP_URL, WHATSAPP_NUMBER, LINKEDIN_URL } from "@/lib/contact-details";
+import { pushDataLayer } from "@/lib/gtm";
 
 const servicos = [
   { to: "/otimizacao-de-custos", label: "Otimização de Custos" },
@@ -76,7 +77,7 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2.5 transition-colors hover:text-primary">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => pushDataLayer("whatsapp_click", { link_location: "footer" })} className="inline-flex min-h-11 items-center gap-2.5 transition-colors hover:text-primary">
                 <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                 <span>WhatsApp {WHATSAPP_NUMBER}</span>
               </a>

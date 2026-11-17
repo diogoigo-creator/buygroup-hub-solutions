@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { submitCourseSignup } from "@/lib/contact.functions";
+import { pushDataLayer } from "@/lib/gtm";
 import { SiteLayout, PageHero } from "@/components/site/SiteLayout";
 import {
   Dialog,
@@ -714,6 +715,7 @@ function RequestSection({
     };
     try {
       await submitCourseSignup({ data: payload });
+      pushDataLayer("generate_lead", { form_name: "academy" });
       setSent(true);
     } catch (err) {
       console.error("[cursos] submit failed", err);

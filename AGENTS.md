@@ -1,5 +1,7 @@
 # Architecture rules
 
+- Keep GTM initialization hostname-gated in the root head and analytics pushes in a browser-safe, field-allowlisted helper; tracking must not expose personal data or interrupt existing flows.
+
 - Keep shared contact link data in a browser-safe module so every contact entry uses the same destination.
 - Keep mobile contact-bar rendering in SiteLayout and its visibility rules in a browser-safe helper with tests, so route exclusions and viewport thresholds stay consistent.
 - Keep best-effort form email delivery in a server-only helper and invoke it after saving the submission; transport failures must not invalidate saved leads.

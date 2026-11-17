@@ -3,6 +3,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/contact-details";
+import { pushDataLayer } from "@/lib/gtm";
 import { shouldShowMobileContact } from "@/lib/mobile-contact";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -70,7 +71,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {showContactBar && (
         <nav aria-label="Contato rápido" className="mobile-contact-bar fixed inset-x-0 bottom-0 z-40 grid grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] gap-2 bg-navy px-3 md:hidden">
           <Button asChild variant="outline" className="h-11 min-w-0 border-primary/40 bg-navy px-2 text-xs text-primary hover:bg-navy-soft hover:text-primary">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Buy Group pelo WhatsApp">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => pushDataLayer("whatsapp_click", { link_location: "barra_mobile" })} aria-label="Falar com a Buy Group pelo WhatsApp">
               <MessageCircle aria-hidden="true" /> WhatsApp
             </a>
           </Button>

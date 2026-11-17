@@ -2,6 +2,7 @@
 // Quando o domínio final for definido, alterar SITE_URL aqui e em sitemap[.]xml.ts.
 
 export const SITE_URL = "https://buygroup.com.br";
+export const GTM_ID = "GTM-WDCJPM6Z";
 export const OG_IMAGE = `${SITE_URL}/og-buygroup.jpg`;
 export const OG_IMAGE_ALT =
   "Buy Group — Consultoria executiva de compras e negociação";

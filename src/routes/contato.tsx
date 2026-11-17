@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact-details";
 import { submitContact } from "@/lib/contact.functions";
+import { pushDataLayer } from "@/lib/gtm";
 
 
 export const Route = createFileRoute("/contato")({
@@ -104,6 +105,7 @@ function ContatoPage() {
     };
     try {
       await send({ data: payload });
+      pushDataLayer("generate_lead", { form_name: "contato" });
       setSent(true);
     } catch (error) {
       console.error("[contato] submit failed", error);
@@ -214,7 +216,7 @@ function ContatoPage() {
             <h3 className="font-serif text-2xl">Fale direto com a gente</h3>
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-3 transition-colors hover:text-primary">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => pushDataLayer("whatsapp_click", { link_location: "contato" })} className="inline-flex min-h-11 items-center gap-3 transition-colors hover:text-primary">
                   <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                   <span>WhatsApp: {WHATSAPP_NUMBER}</span>
                 </a>

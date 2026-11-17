@@ -1,3 +1,9 @@
+# Google Tag Manager
+
+- [x] Instalar o contêiner solicitado, limitado aos dois domínios oficiais, sem dependências ou publicação.
+- [x] Registrar sucesso dos dois formulários e cliques nas cinco posições de WhatsApp sem dados pessoais.
+- [x] Verificar 20 testes, cinco cliques e dois sucessos simulados sem gravação/envio; build automático OK, sem erros de hidratação; typecheck separado não executado por restrição do ambiente.
+
 # Ajustes de conteúdo, LinkedIn e contato mobile
 
 - [x] Trocar somente os quatro conteúdos solicitados na home e na metodologia.

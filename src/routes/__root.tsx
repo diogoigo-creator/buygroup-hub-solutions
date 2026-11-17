@@ -12,6 +12,8 @@ import {
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { LINKEDIN_URL } from "@/lib/contact-details";
+import { GTM_ID } from "@/lib/seo";
+import { GTM_SCRIPT } from "@/lib/gtm";
 
 function NotFoundComponent() {
   return (
@@ -144,9 +146,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
+        </noscript>
         {children}
         <Scripts />
       </body>

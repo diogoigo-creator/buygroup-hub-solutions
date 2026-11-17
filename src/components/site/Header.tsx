@@ -6,6 +6,7 @@ import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL } from "@/lib/contact-details";
+import { pushDataLayer } from "@/lib/gtm";
 
 const nav = [
   { to: "/sobre", label: "Sobre" },
@@ -96,7 +97,7 @@ export function Header() {
 
         <div className="hidden shrink-0 items-center gap-2 min-[1100px]:flex">
           <Button asChild variant="ghost" className="min-h-11 rounded-full px-3 text-[13px] text-foreground">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => pushDataLayer("whatsapp_click", { link_location: "header" })}>
               <MessageCircle aria-hidden="true" /> WhatsApp
             </a>
           </Button>
@@ -172,7 +173,7 @@ export function Header() {
               ))}
             </ul>
             <Button asChild variant="ghost" className="mt-2 min-h-11 w-full justify-start rounded-2xl px-4 text-[15px] text-foreground">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => { pushDataLayer("whatsapp_click", { link_location: "menu_mobile" }); setOpen(false); }}>
                 <MessageCircle aria-hidden="true" /> WhatsApp
               </a>
             </Button>
