@@ -169,7 +169,7 @@ function Index() {
 
       {/* CREDIBILITY MATRIX */}
       <section className="border-y border-white/5 bg-navy text-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
+        <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 lg:grid-cols-4">
           {credibility.map((m, index) => (
             <div
               key={m.label}
@@ -182,6 +182,10 @@ function Index() {
               <p className="mt-3 text-sm leading-snug text-white/65">{m.label}</p>
             </div>
           ))}
+          <span
+            aria-hidden="true"
+            className="credibility-beam pointer-events-none absolute inset-x-0 top-[54px] sm:top-[68px] lg:top-[72px]"
+          />
         </div>
       </section>
 

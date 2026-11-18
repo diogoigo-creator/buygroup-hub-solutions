@@ -365,6 +365,56 @@
     animation: credibility-value-settle 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
 
+  /* Linha de luz que atravessa os números da matriz de credibilidade */
+  @keyframes credibility-beam {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%) translateY(-50%);
+    }
+    8% {
+      opacity: 1;
+    }
+    42% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
+  }
+  .credibility-beam {
+    height: 2px;
+    opacity: 0;
+    mix-blend-mode: plus-lighter;
+    will-change: transform, opacity;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.75 0.13 86 / 0.3) 36%,
+      oklch(0.94 0.05 88) 50%,
+      oklch(0.75 0.13 86 / 0.3) 64%,
+      transparent 100%
+    );
+    animation: credibility-beam 6.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+  }
+  .credibility-beam::before {
+    content: "";
+    position: absolute;
+    inset: -9px 14%;
+    border-radius: 9999px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      oklch(0.75 0.13 86 / 0.5) 0%,
+      oklch(0.75 0.13 86 / 0.16) 55%,
+      transparent 100%
+    );
+    filter: blur(6px);
+  }
+
   @keyframes mark-float {
     0%,
     100% {
