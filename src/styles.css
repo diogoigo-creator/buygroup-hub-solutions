@@ -365,19 +365,19 @@
     animation: credibility-value-settle 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
 
-  /* Linha de luz que atravessa os números da matriz de credibilidade */
+  /* Linha de luz que percorre a borda superior da matriz de credibilidade */
   @keyframes credibility-beam {
     0% {
       opacity: 0;
       transform: translateX(-100%) translateY(-50%);
     }
-    8% {
+    5% {
       opacity: 1;
     }
-    42% {
+    88% {
       opacity: 1;
     }
-    50% {
+    95% {
       opacity: 0;
       transform: translateX(100%) translateY(-50%);
     }
@@ -399,12 +399,12 @@
       oklch(0.75 0.13 86 / 0.3) 64%,
       transparent 100%
     );
-    animation: credibility-beam 6.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+    animation: credibility-beam 16s linear infinite;
   }
   .credibility-beam::before {
     content: "";
     position: absolute;
-    inset: -9px 14%;
+    inset: -1px 12% -16px;
     border-radius: 9999px;
     background: radial-gradient(
       50% 50% at 50% 50%,

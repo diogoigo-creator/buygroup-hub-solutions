@@ -184,7 +184,7 @@ function Index() {
           ))}
           <span
             aria-hidden="true"
-            className="credibility-beam pointer-events-none absolute inset-x-0 top-[54px] sm:top-[68px] lg:top-[72px]"
+            className="credibility-beam pointer-events-none absolute inset-x-0 top-0"
           />
         </div>
       </section>
