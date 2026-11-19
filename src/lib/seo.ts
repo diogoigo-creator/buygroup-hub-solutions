@@ -6,7 +6,7 @@ export const GTM_ID = "GTM-WDCJPM6Z";
 export const GA4_ID = "G-T0K88B24JZ";
 export const OG_IMAGE = `${SITE_URL}/og-buygroup.jpg`;
 export const OG_IMAGE_ALT =
-  "Buy Group — Consultoria executiva de compras e negociação";
+  "Buy Group — Mais que comprar. É comprar bem.";
 
 export const ORG_REF = {
   "@type": "Organization",
