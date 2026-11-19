@@ -1,5 +1,7 @@
 # Architecture rules
 
+- Do not mount viewport-positioned decorative watermarks in the shared layout or home case study; this prevents collisions across screen sizes.
+
 - Compose social-sharing artwork from the official vector logo without generative redrawing, preserving brand geometry and legibility at thumbnail size.
 
 - Derive browser icons from the existing official brand mark and declare a color-scheme-adaptive SVG plus PNG/ICO fallbacks in the root head; keep page titles in leaf heads so branding remains consistent and legible across browser themes without changing visible content.

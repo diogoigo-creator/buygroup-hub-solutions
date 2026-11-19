@@ -13,8 +13,6 @@ import { MarkOrbit } from "./hero-identities/MarkOrbit";
 import { FullLockup } from "./hero-identities/FullLockup";
 import { KineticSlogan } from "./hero-identities/KineticSlogan";
 
-import { SectionWatermark } from "./SectionWatermark";
-
 export function SiteLayout({ children }: { children: ReactNode }) {
   const { pathname } = useLocation();
   const layoutRef = useRef<HTMLDivElement>(null);
@@ -70,13 +68,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       </a>
       <Header />
       <main id="conteudo-principal" className="relative flex-1 overflow-hidden" tabIndex={-1}>
-        {/* Decorative watermarks — dark mark visible on light sections, light mark visible on dark sections */}
-        <SectionWatermark variant="right" tone="dark" className="top-[40vh]" />
-        <SectionWatermark variant="left" tone="dark" className="top-[120vh]" />
-        <SectionWatermark variant="right" tone="dark" className="top-[200vh]" />
-        <SectionWatermark variant="left" tone="light" className="top-[10vh]" />
-        <SectionWatermark variant="right" tone="light" className="top-[80vh]" />
-        <SectionWatermark variant="left" tone="light" className="top-[160vh]" />
         <div className="relative">{children}</div>
       </main>
       <Footer />

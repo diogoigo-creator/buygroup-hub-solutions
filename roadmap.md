@@ -1,3 +1,10 @@
+# Harmonia visual aprovada
+
+- [x] Remover marcas d'água globais e do estudo de caso.
+- [x] Organizar o endereço do rodapé e manter o CEP indivisível.
+- [x] Remover espaços artificiais e padronizar rótulos do estudo de caso.
+- [x] Corrigir a prioridade da imagem e verificar telas de 375, 822 e 1280px, console e 59 testes sem publicar.
+
 # SEO local e Perfil da Empresa
 
 - [x] Bloquear indexação no domínio Lovable publicado e redirecionar preservando caminho e consulta.

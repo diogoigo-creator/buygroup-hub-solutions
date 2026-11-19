@@ -95,7 +95,9 @@ export function Footer() {
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-green" aria-hidden="true" />
               <span className="leading-relaxed">
-                Rua Rio Grande do Norte, 1436, Sala 813 · Savassi · Belo Horizonte/MG · CEP 30130-138
+                Rua Rio Grande do Norte, 1436, Sala 813<br />
+                Savassi · Belo Horizonte/MG<br />
+                <span className="whitespace-nowrap">CEP 30130-138</span>
               </span>
             </li>
           </ul>

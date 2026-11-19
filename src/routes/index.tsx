@@ -14,7 +14,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { SectionWatermark } from "@/components/site/SectionWatermark";
 import heroImg from "@/assets/hero-boardroom.webp";
 import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
@@ -44,7 +43,7 @@ export const Route = createFileRoute("/")({
           rel: "preload",
           as: "image",
           href: heroImg,
-          fetchpriority: "high",
+          fetchPriority: "high",
         } as unknown as { rel: string; href: string },
       ],
       scripts: [
@@ -191,7 +190,6 @@ function Index() {
 
       {/* CASE STUDY HERO */}
       <section className="relative overflow-hidden mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-28">
-        <SectionWatermark variant="right" tone="dark" />
         <div className="relative grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <p className="font-sans text-xs uppercase tracking-[0.28em] text-navy/55">
@@ -201,7 +199,7 @@ function Index() {
               R$ 12MM capturados em <span className="text-green">90 dias</span>.
             </h2>
             <p className="mt-6 text-pretty text-muted-foreground">
-              Grupo industrial brasileiro. Faturamento de R$ 3,2 bilhões.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R$ 380 milhões em compras <span className="font-bold">indiretas</span> mapeadas e validadas pelo comitê de auditoria.
+              Grupo industrial brasileiro. Faturamento de R$ 3,2 bilhões. R$ 380 milhões em compras <span className="font-bold">indiretas</span> mapeadas e validadas pelo comitê de auditoria.
             </p>
             <Link
               to="/contato" hash="form"
@@ -213,8 +211,8 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
               {[
-                { k: "SAVING\u00A0 CAPTURADO", v: "12,4%", s: "sobre o volume anual analisado" },
-                { k: "Retorno", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
+                { k: "SAVING CAPTURADO", v: "12,4%", s: "sobre o volume anual analisado" },
+                { k: "RETORNO", v: "< 90 dias", s: "a partir do primeiro contrato renegociado" },
               ].map((c) => (
                 <div key={c.k} className="bg-white p-8 text-center flex flex-col items-center justify-center">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">{c.k}</p>
