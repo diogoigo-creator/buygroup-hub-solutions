@@ -1,3 +1,9 @@
+# Imagem executiva de compartilhamento
+
+- [x] Revisar a direção visual solicitada a partir de referências corporativas.
+- [x] Criar a arte com a marca original, acabamento institucional e dados existentes.
+- [x] Conferir a imagem em 1200×630 e miniatura, validar HTTP 200 e disponibilizar a prévia no chat, sem publicar.
+
 # Marca na aba do navegador
 
 - [x] Gerar ícones a partir da marca oficial e configurar no cabeçalho compartilhado.

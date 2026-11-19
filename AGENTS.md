@@ -1,5 +1,7 @@
 # Architecture rules
 
+- Compose social-sharing artwork from the official vector logo without generative redrawing, preserving brand geometry and legibility at thumbnail size.
+
 - Derive browser icons from the existing official brand mark and declare them in the root head; keep page titles in leaf heads so branding remains consistent without changing visible content.
 
 - Keep GTM and direct GA4 initialization hostname-gated in the root head after consent defaults, with one GA4 config and no manual page views; forward allowlisted events through independently best-effort dataLayer and gtag transports to preserve flows and avoid duplicate views.
