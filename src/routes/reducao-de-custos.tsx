@@ -19,7 +19,7 @@ import { SOCIAL_META, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/reducao-de-custos")({
   head: () => {
-    const title = "Redução de Custos em Compras | Buy Group";
+    const title = "Redução de Custos e Categorias de Gasto | Buy Group";
     const description =
       "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.";
     const url = "https://buygroup.com.br/reducao-de-custos";
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/reducao-de-custos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Redução de Custos · Categorias endereçáveis" },
+        { property: "og:title", content: title },
         {
           property: "og:description",
           content: "Onde encontramos economia e como cada categoria pode contribuir para a margem.",

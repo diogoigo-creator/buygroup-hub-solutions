@@ -19,7 +19,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/servicos")({
   head: () => {
-    const title = "Portfólio Buy Group: por onde começar";
+    const title = "Soluções e Portfólio de Serviços | Buy Group";
     const description =
       "Programas estruturados de redução de custos em compras indiretas, BPO, inteligência de gastos e governança financeira para grandes empresas.";
     const url = `${SITE_URL}/servicos`;
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/servicos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Portfólio Buy Group" },
+        { property: "og:title", content: title },
         {
           property: "og:description",
           content: "Cada produto é desenhado para um momento diferente da maturidade de compras. Escolha o ponto de entrada certo.",

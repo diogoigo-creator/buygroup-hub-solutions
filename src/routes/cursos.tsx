@@ -37,7 +37,7 @@ export const Route = createFileRoute("/cursos")({
     solicitar: z.string().optional(),
   }),
   head: () => {
-    const title = "Buy Group Academy: capacitação para compras";
+    const title = "Buy Group Academy | Capacitação Executiva em Compras";
     const description =
       "Programas in-company de estratégia de compra, negociação, IA aplicada, ESG e gestão de fornecedores para equipes de grandes empresas.";
     const url = `${SITE_URL}/cursos`;
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/cursos")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Buy Group Academy: capacitação para equipes de compras" },
+        { property: "og:title", content: title },
         {
           property: "og:description",
           content: "Capacitação prática para equipes que precisam gerar economia com método e governança.",

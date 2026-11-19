@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Buy Group: compras estratégicas e margem" },
+      { title: "Buy Group | Consultoria Estratégica em Compras e Redução de Custos" },
       {
         name: "description",
         content:
           "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, resultado validado e governança financeira.",
       },
       { name: "author", content: "Buy Group" },
-      { property: "og:title", content: "Buy Group: compras estratégicas e margem" },
+      { property: "og:title", content: "Buy Group | Consultoria Estratégica em Compras e Redução de Custos" },
       {
         property: "og:description",
         content:
@@ -97,6 +97,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       {
         rel: "stylesheet",
         href: appCss,

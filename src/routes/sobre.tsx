@@ -7,7 +7,7 @@ import { SOCIAL_META, SITE_URL, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/sobre")({
   head: () => {
-    const title = "Sobre a Buy Group: compras estratégicas";
+    const title = "Sobre a Buy Group | Excelência em Compras Estratégicas";
     const description =
       "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, governança e resultado validado.";
     const url = `${SITE_URL}/sobre`;
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/sobre")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Sobre a Buy Group" },
+        { property: "og:title", content: title },
         {
           property: "og:description",
           content: "Compras como alavanca de margem, com abordagem independente e governança financeira.",

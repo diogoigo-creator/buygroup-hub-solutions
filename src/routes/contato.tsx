@@ -18,14 +18,14 @@ import { pushDataLayer } from "@/lib/gtm";
 export const Route = createFileRoute("/contato")({
   validateSearch: z.object({ interesse: z.string().optional() }),
   head: () => {
-    const title = "Contato | Buy Group";
+    const title = "Contato e Diagnóstico | Buy Group";
     const description = "Agende uma conversa executiva de 20 minutos com a Buy Group, sob NDA, e avalie o potencial de economia em compras da sua empresa.";
     const url = `${SITE_URL}/contato`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Contato Buy Group" },
+        { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
         ...SOCIAL_META,

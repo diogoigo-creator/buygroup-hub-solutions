@@ -1,3 +1,9 @@
+# Marca na aba do navegador
+
+- [x] Gerar ícones a partir da marca oficial e configurar no cabeçalho compartilhado.
+- [x] Revisar somente títulos das páginas, preservando serviços e redação em português.
+- [x] Conferir 14 títulos, três arquivos de ícones, 45 testes e build automático OK; salvar sem publicar.
+
 # Google Analytics 4 direto
 
 - [x] Instalar GA4 após os padrões de consentimento, nos dois hostnames oficiais, mantendo GTM e sem page_view manual.

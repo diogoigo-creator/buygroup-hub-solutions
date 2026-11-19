@@ -34,7 +34,7 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
       meta: [
         { title },
         { name: "description", content: description },
-        { property: "og:title", content: "Revisão Pré-Fechamento | Buy Group" },
+        { property: "og:title", content: title },
         {
           property: "og:description",
           content:
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/revisao-pre-fechamento")({
         },
         { property: "og:url", content: url },
         ...SOCIAL_META,
-        { name: "twitter:title", content: "Revisão Pré-Fechamento | Buy Group" },
+        { name: "twitter:title", content: title },
         {
           name: "twitter:description",
           content: "Saving residual de propostas já negociadas, sob NDA. Retorno em 48h.",
