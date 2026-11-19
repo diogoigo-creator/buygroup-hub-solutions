@@ -85,6 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem, resultado validado e governança financeira.",
       },
       { name: "author", content: "Buy Group" },
+      { name: "google-site-verification", content: "XAlLn0dzNkYPuvPEzUuVKH0YnHujpaLf9BHmJA3sL_A" },
       { property: "og:title", content: "Buy Group | Consultoria Estratégica em Compras e Redução de Custos" },
       {
         property: "og:description",
