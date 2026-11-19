@@ -1,3 +1,10 @@
+# SEO local e Perfil da Empresa
+
+- [x] Bloquear indexação no domínio Lovable publicado e redirecionar preservando caminho e consulta.
+- [x] Atualizar canônicos e dados estruturados locais para o domínio oficial com www.
+- [x] Adicionar mapa em Contato e padronizar endereço no rodapé.
+- [x] Validar regras de domínio, dados locais e 14 páginas sem publicar.
+
 # Imagem executiva de compartilhamento
 
 - [x] Revisar a direção visual solicitada a partir de referências corporativas.

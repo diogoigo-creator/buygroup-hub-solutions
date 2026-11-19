@@ -28,7 +28,7 @@ export const Route = createFileRoute("/maturidade-em-compras")({
     const title = "Diagnóstico de Maturidade em Compras | Buy Group";
     const description =
       "Diagnóstico da área de compras frente a referências de mercado, com plano priorizado e justificativa financeira para os próximos 12 a 24 meses.";
-    const url = "https://buygroup.com.br/maturidade-em-compras";
+    const url = "https://www.buygroup.com.br/maturidade-em-compras";
     return {
       meta: [
         { title },

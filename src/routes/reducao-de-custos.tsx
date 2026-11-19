@@ -22,7 +22,7 @@ export const Route = createFileRoute("/reducao-de-custos")({
     const title = "Redução de Custos e Categorias de Gasto | Buy Group";
     const description =
       "Categorias estratégicas e potenciais de economia em telecomunicações, energia, logística, tecnologia, seguros, serviços e insumos.";
-    const url = "https://buygroup.com.br/reducao-de-custos";
+    const url = "https://www.buygroup.com.br/reducao-de-custos";
     return {
       meta: [
         { title },

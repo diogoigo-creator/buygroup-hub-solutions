@@ -236,7 +236,7 @@ function ContatoPage() {
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-green" />
                 <span className="leading-relaxed">
-                  R. Rio Grande do Norte, 1436, Sala 813<br />
+                  Rua Rio Grande do Norte, 1436, Sala 813<br />
                   Savassi, Belo Horizonte, MG<br />
                   CEP 30130-138 · Brasil
                 </span>
@@ -254,6 +254,27 @@ function ContatoPage() {
             </p>
           </div>
         </aside>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10 lg:pb-24">
+        <iframe
+          src="https://www.google.com/maps?q=Buy+Group+Consultoria,+Rua+Rio+Grande+do+Norte,+1436,+Savassi,+Belo+Horizonte+-+MG&output=embed"
+          loading="lazy"
+          title="Mapa — Buy Group Consultoria"
+          className="h-[360px] w-full rounded-2xl border border-border"
+        />
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          Rua Rio Grande do Norte, 1436, Sala 813 · Savassi · Belo Horizonte/MG · CEP 30130-138
+        </p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Buy+Group+Consultoria+Belo+Horizonte"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4"
+        >
+          <MapPin className="h-4 w-4" aria-hidden="true" />
+          Ver no Google Maps
+        </a>
       </section>
 
     </SiteLayout>

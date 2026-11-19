@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: substituir pelo domínio final quando publicado (ex.: https://www.buygroup.com.br)
-const BASE_URL = "https://buygroup.com.br";
+const BASE_URL = "https://www.buygroup.com.br";
 
 interface SitemapEntry {
   path: string;

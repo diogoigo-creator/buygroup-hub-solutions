@@ -26,7 +26,7 @@ export const Route = createFileRoute("/bpo-de-compras")({
     const title = "BPO de Compras Corporativo | Buy Group";
     const description =
       "BPO de Compras com governança, SLA, inteligência de mercado e foco em savings homologados para empresas de médio e grande porte.";
-    const url = "https://buygroup.com.br/bpo-de-compras";
+    const url = "https://www.buygroup.com.br/bpo-de-compras";
     return {
       meta: [
         { title },

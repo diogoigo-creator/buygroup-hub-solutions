@@ -1,7 +1,7 @@
 // SEO helpers — centraliza domínio, og:image padrão e geração de JSON-LD.
-// Quando o domínio final for definido, alterar SITE_URL aqui e em sitemap[.]xml.ts.
+// Origem canônica compartilhada pelos metadados e dados estruturados.
 
-export const SITE_URL = "https://buygroup.com.br";
+export const SITE_URL = "https://www.buygroup.com.br";
 export const GTM_ID = "GTM-WDCJPM6Z";
 export const GA4_ID = "G-T0K88B24JZ";
 export const OG_IMAGE = `${SITE_URL}/og-buygroup.jpg`;
@@ -49,6 +49,8 @@ export function serviceJsonLd(params: {
 }
 
 export const SOCIAL_META = [
+  { property: "og:type", content: "website" },
+  { name: "twitter:card", content: "summary_large_image" },
   { property: "og:image", content: OG_IMAGE },
   { property: "og:image:alt", content: OG_IMAGE_ALT },
   { property: "og:image:width", content: "1200" },

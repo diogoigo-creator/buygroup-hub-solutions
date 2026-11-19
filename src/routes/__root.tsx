@@ -11,10 +11,11 @@ import {
 
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
-import { LINKEDIN_URL } from "@/lib/contact-details";
 import { GTM_ID } from "@/lib/seo";
 import { GA4_SCRIPT, GTM_SCRIPT } from "@/lib/gtm";
 import { BG_CONSENT_DEFAULT, CONSENT_DEFAULTS } from "@/lib/consent-defaults";
+import { LOCAL_BUSINESS } from "@/lib/local-business";
+import { PUBLISHED_HOST_SCRIPT } from "@/lib/site-host";
 
 function NotFoundComponent() {
   return (
@@ -114,19 +115,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://buygroup.com.br/#organization",
-          name: "Buy Group",
+          "@id": "https://www.buygroup.com.br/#organization",
+          name: "Buy Group Consultoria",
           legalName: "Buy Group Consultoria",
-          url: "https://buygroup.com.br",
-          sameAs: [LINKEDIN_URL],
-          logo: "https://buygroup.com.br/og-buygroup.jpg",
+          url: "https://www.buygroup.com.br",
+          sameAs: LOCAL_BUSINESS.sameAs,
+          logo: "https://www.buygroup.com.br/og-buygroup.jpg",
           description:
             "Consultoria executiva de compras e negociação para grandes empresas, com foco em margem e governança financeira.",
           slogan: "Mais que comprar. É comprar bem.",
           areaServed: "BR",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "R. Rio Grande do Norte, 1436 - Sala 813 - Savassi",
+            streetAddress: "Rua Rio Grande do Norte, 1436, Sala 813",
             addressLocality: "Belo Horizonte",
             addressRegion: "MG",
             postalCode: "30130-138",
@@ -141,6 +142,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(LOCAL_BUSINESS),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -153,6 +158,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: PUBLISHED_HOST_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULTS }} />
         <script dangerouslySetInnerHTML={{ __html: BG_CONSENT_DEFAULT }} />
         <script dangerouslySetInnerHTML={{ __html: GA4_SCRIPT }} />
