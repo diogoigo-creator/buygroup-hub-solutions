@@ -7,6 +7,7 @@
 
 # Marca na aba do navegador
 
+- [x] Adaptar o favicon oficial ao modo claro/escuro; conferir cores, marca visível, arquivos HTTP 200 e build automático OK, sem publicar.
 - [x] Gerar ícones a partir da marca oficial e configurar no cabeçalho compartilhado.
 - [x] Revisar somente títulos das páginas, preservando serviços e redação em português.
 - [x] Conferir 14 títulos, três arquivos de ícones, 45 testes e build automático OK; salvar sem publicar.
