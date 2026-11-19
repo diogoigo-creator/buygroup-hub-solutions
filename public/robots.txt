@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.buygroup.com.br/sitemap.xml
+Sitemap: https://buygroup.com.br/sitemap.xml

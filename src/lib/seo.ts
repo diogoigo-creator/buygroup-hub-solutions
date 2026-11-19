@@ -1,7 +1,7 @@
 // SEO helpers — centraliza domínio, og:image padrão e geração de JSON-LD.
 // Origem canônica compartilhada pelos metadados e dados estruturados.
 
-export const SITE_URL = "https://www.buygroup.com.br";
+export const SITE_URL = "https://buygroup.com.br";
 export const GTM_ID = "GTM-WDCJPM6Z";
 export const GA4_ID = "G-T0K88B24JZ";
 export const OG_IMAGE = `${SITE_URL}/og-buygroup.jpg`;

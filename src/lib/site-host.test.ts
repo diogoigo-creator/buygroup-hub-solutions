@@ -22,11 +22,11 @@ for (const [hostname, expected] of [
       window: { location: { hostname, pathname: "/contato", search: "?interesse=bpo", replace: (url: string) => replacements.push(url) } },
       document: { querySelector: () => meta },
     });
-    expect(replacements).toEqual(expected ? ["https://www.buygroup.com.br/contato?interesse=bpo"] : []);
+    expect(replacements).toEqual(expected ? ["https://buygroup.com.br/contato?interesse=bpo"] : []);
     expect(meta.content).toBe(expected ? "noindex, nofollow" : "");
   });
 }
 
-test("canonical origin uses the requested www domain", () => {
-  expect(SITE_URL).toBe("https://www.buygroup.com.br");
+test("canonical origin uses the requested domain without www", () => {
+  expect(SITE_URL).toBe("https://buygroup.com.br");
 });

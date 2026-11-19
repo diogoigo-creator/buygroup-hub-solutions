@@ -3,9 +3,9 @@ import { LINKEDIN_URL } from "./contact-details";
 export const LOCAL_BUSINESS = {
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
-  "@id": "https://www.buygroup.com.br/#organization",
+  "@id": "https://buygroup.com.br/#organization",
   name: "Buy Group Consultoria",
-  url: "https://www.buygroup.com.br",
+  url: "https://buygroup.com.br",
   telephone: "+55-31-99008-7887",
   email: "atendimento@buygroup.com.br",
   address: {

@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
     const title = "Buy Group | Consultoria Estratégica em Compras e Redução de Custos";
     const description =
       "A Buy Group ajuda grandes empresas a transformar despesas em margem por meio de análise, negociação estratégica e governança financeira.";
-    const url = "https://www.buygroup.com.br/";
+    const url = "https://buygroup.com.br/";
     return {
       meta: [
         { title },

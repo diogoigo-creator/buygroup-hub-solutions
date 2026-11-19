@@ -14,7 +14,7 @@ export function redirectPublishedLovableHost() {
     document.head.appendChild(robots);
   }
   robots.content = "noindex, nofollow";
-  window.location.replace("https://www.buygroup.com.br" + window.location.pathname + window.location.search);
+  window.location.replace("https://buygroup.com.br" + window.location.pathname + window.location.search);
 }
 
 export const PUBLISHED_HOST_SCRIPT = `(${redirectPublishedLovableHost.toString()})();`;

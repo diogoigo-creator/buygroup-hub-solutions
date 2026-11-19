@@ -15,7 +15,7 @@ test("opening hours are weekdays from 08:00 to 18:00", () => {
 });
 test("official business identity and foundation date", () => {
   expect(LOCAL_BUSINESS.name).toBe("Buy Group Consultoria");
-  expect(LOCAL_BUSINESS.url).toBe("https://www.buygroup.com.br");
+  expect(LOCAL_BUSINESS.url).toBe("https://buygroup.com.br");
   expect(LOCAL_BUSINESS.telephone).toBe("+55-31-99008-7887");
   expect(LOCAL_BUSINESS.email).toBe("atendimento@buygroup.com.br");
   expect(LOCAL_BUSINESS.foundingDate).toBe("2020-09-16");
